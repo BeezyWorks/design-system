@@ -1,0 +1,49 @@
+import React from 'react'
+import {Pressable} from 'react-native'
+import {Stack} from '../Stack'
+import {Text} from '../Text'
+
+export interface SideNavItemProps {
+  /** The already-rendered tab icon — typically a `TabBarIcon` returned by
+   * calling `options.tabBarIcon({focused, color, size})`, React
+   * Navigation's own render-prop contract, so the side rail stays driven by
+   * the same per-route config as the native tab bar. */
+  icon: React.ReactNode
+  label: string
+  focused: boolean
+  onPress: () => void
+}
+
+/** One row of the wide-web side rail — an icon + label with focused/pressed
+ * feedback, standing in for the floating bottom tab pill at that
+ * breakpoint. */
+export const SideNavItem: React.FunctionComponent<SideNavItemProps> = ({
+  icon,
+  label,
+  focused,
+  onPress,
+}) => (
+  <Pressable onPress={onPress} accessibilityRole="button">
+    {({pressed}) => (
+      <Stack
+        direction="row"
+        align="center"
+        gap="md"
+        paddingHorizontal="md"
+        height={48}
+        radius="md"
+        background={focused ? 'overlay' : undefined}
+        opacity={pressed ? 0.7 : 1}
+      >
+        {icon}
+        <Text
+          variant="headline"
+          tone={focused ? 'tabActive' : 'tabOffColor'}
+          numberOfLines={1}
+        >
+          {label}
+        </Text>
+      </Stack>
+    )}
+  </Pressable>
+)
