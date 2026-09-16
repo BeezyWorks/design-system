@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {Platform, StyleSheet, View, useWindowDimensions} from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
-import {BottomTabBarHeightContext} from '@react-navigation/bottom-tabs'
+import {BottomTabBarHeightContext} from 'expo-router/js-tabs'
 import {
   TAB_BAR_CONTENT_GAP,
   SIDE_NAV_CONTENT_GAP,
