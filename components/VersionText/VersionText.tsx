@@ -4,7 +4,7 @@ import {Text} from '../Text'
 
 export interface VersionTextProps {
   versionName: string
-  buildNumber: string | number
+  buildNumber?: string
 }
 
 /** The small centered "vX.Y.Z (build)" footer shown at the bottom of the
@@ -15,7 +15,8 @@ export const VersionText: React.FunctionComponent<VersionTextProps> = ({
 }) => (
   <Stack align="center" paddingVertical="xs">
     <Text align="center" tone="secondaryTextColor">
-      v{versionName} ({buildNumber})
+      v{versionName}
+      {buildNumber ? ` (${buildNumber})` : ''}
     </Text>
   </Stack>
 )
