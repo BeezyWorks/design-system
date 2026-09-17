@@ -3,28 +3,40 @@ import {Stack, StackProps} from '../Stack'
 
 export interface CardProps extends Omit<
   StackProps,
-  'shadow' | 'radius' | 'background' | 'padding'
+  'shadow' | 'radius' | 'background' | 'padding' | 'borderWidth' | 'borderColor'
 > {
   padding?: StackProps['padding']
   radius?: StackProps['radius']
   background?: StackProps['background']
   shadow?: StackProps['shadow']
+  borderWidth?: StackProps['borderWidth']
+  borderColor?: StackProps['borderColor']
 }
 
-/** A raised surface — the design-system replacement for a one-off
- * `{borderRadius, backgroundColor, shadow...}` style block. */
+/** The one raised-surface primitive every card in the app is built from —
+ * the Books/Siddur menu sections and the Settings sections both use this
+ * directly rather than hand-rolling their own background/border/radius,
+ * so the two stay visually identical by construction, not by convention. */
 export const Card: React.FunctionComponent<CardProps> = ({
-  padding = 'md',
-  radius = 'md',
-  background = 'surfaceRaised',
+  padding,
+  paddingVertical = 20,
+  paddingHorizontal = 22,
+  radius = 'lg',
+  background = 'surfaceCard',
   shadow = 'card',
+  borderWidth = 1,
+  borderColor = 'border',
   ...stackProps
 }) => (
   <Stack
     padding={padding}
+    paddingVertical={padding === undefined ? paddingVertical : undefined}
+    paddingHorizontal={padding === undefined ? paddingHorizontal : undefined}
     radius={radius}
     background={background}
     shadow={shadow}
+    borderWidth={borderWidth}
+    borderColor={borderColor}
     {...stackProps}
   />
 )

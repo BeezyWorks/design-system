@@ -1,7 +1,8 @@
 import React from 'react'
-import {Stack} from '../Stack'
+import {Card} from '../Card'
 import {Text} from '../Text'
-import {Touchable} from '../Touchable'
+import {Stack} from '../Stack'
+import {MenuItemRow} from '../MenuItemRow'
 
 export interface MenuItem {
   key: string
@@ -14,35 +15,26 @@ export interface MenuSectionProps {
   items: MenuItem[]
 }
 
-/** A titled list of tappable rows with a trailing accent bar — the RTL menu
- * pattern shared by the Books and Siddur (tefila) list screens. */
+/** A titled card of tappable rows — the Books/Siddur menu pattern. Built on
+ * the shared `Card` primitive so it's visually identical to a Settings
+ * section. */
 export const MenuSection: React.FunctionComponent<MenuSectionProps> = ({
   title,
   items,
 }) => (
-  <Stack>
-    <Text variant="titleLarge" tone="secondaryTextColor" align="right">
-      {title}{' '}
+  <Card gap="xs">
+    <Text variant="sectionHeader" align="right">
+      {title}
     </Text>
-    <Stack direction="rowReverse" paddingBottom="xl">
-      <Stack grow>
-        {items.map((item) => (
-          <Touchable key={item.key} onPress={item.onPress}>
-            <Stack paddingVertical="md" paddingEnd="md">
-              <Text align="right">{item.label}</Text>
-            </Stack>
-          </Touchable>
-        ))}
-      </Stack>
-      <Stack
-        width={3}
-        radius="sm"
-        background="secondaryTextColor"
-        position="absolute"
-        top="md"
-        bottom="md"
-        left="none"
-      />
+    <Stack>
+      {items.map((item, index) => (
+        <MenuItemRow
+          key={item.key}
+          label={item.label}
+          onPress={item.onPress}
+          isLast={index === items.length - 1}
+        />
+      ))}
     </Stack>
-  </Stack>
+  </Card>
 )

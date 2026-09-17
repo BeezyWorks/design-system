@@ -33,11 +33,14 @@ export const TypefaceChips: React.FunctionComponent<TypefaceChipsProps> = ({
         <Touchable key={item.key} onPress={() => onSelect(item.key)}>
           <Stack
             width={76}
+            height={76}
             align="center"
+            justify="center"
             paddingVertical="sm"
             paddingHorizontal="xs"
             radius="sm"
             gap="xs"
+            shadow="card"
             background={selected ? 'primaryColor' : 'backgroundColor'}
             backgroundOpacity={selected ? 0.1 : undefined}
           >
@@ -48,6 +51,7 @@ export const TypefaceChips: React.FunctionComponent<TypefaceChipsProps> = ({
               variant="caption"
               align="center"
               tone={selected ? 'primaryColor' : 'primaryTextColor'}
+              numberOfLines={1}
             >
               {item.label}
             </Text>

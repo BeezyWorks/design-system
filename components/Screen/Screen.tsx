@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {createContext, useContext} from 'react'
 import {Platform, StyleSheet, View, useWindowDimensions} from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import {BottomTabBarHeightContext} from 'expo-router/js-tabs'
@@ -12,6 +12,18 @@ import {useColors, Colors} from '../../colors'
 export interface ScreenProps {
   children?: React.ReactNode
 }
+
+const ScreenBottomInsetContext = createContext(0)
+
+/** How much extra bottom padding a screen's own scrollable content needs
+ * so its last item can clear the floating tab pill — `Screen` provides
+ * this via context instead of clipping its own content area short, so
+ * content can scroll to be visible *behind* the translucent pill (as it
+ * should, being translucent) rather than stopping dead above it with a
+ * dead gap always showing beneath the last item. `ScrollStack` already
+ * applies this automatically; reach for it directly only if a screen uses
+ * some other scrollable primitive. */
+export const useScreenBottomInset = () => useContext(ScreenBottomInsetContext)
 
 const isWeb = Platform.OS === 'web'
 // Readable line-length cap for list/menu screens once the web side rail
@@ -39,9 +51,10 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({children}) => {
   // pixel box again, so `overflow: hidden`/a ScrollView's own scrolling can
   // actually clip against it.
   const {height: windowHeight} = useWindowDimensions()
+  // Not applied to `wrapper` below on purpose — see `useScreenBottomInset`.
+  const bottomInset =
+    !isWideWeb && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0
   const style = styleCreator(colors, {
-    paddingBottom:
-      !isWideWeb && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0,
     paddingLeft:
       isWideWeb && insideTabs ? sideNavWidth + SIDE_NAV_CONTENT_GAP : 0,
     height: isWeb ? windowHeight : undefined,
@@ -52,7 +65,11 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({children}) => {
   return (
     <Container style={style.base}>
       <View style={style.wrapper}>
-        <View style={style.content}>{children}</View>
+        <View style={style.content}>
+          <ScreenBottomInsetContext.Provider value={bottomInset}>
+            {children}
+          </ScreenBottomInsetContext.Provider>
+        </View>
       </View>
     </Container>
   )
@@ -60,7 +77,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({children}) => {
 
 const styleCreator = (
   colors: Colors,
-  padding: {paddingBottom: number; paddingLeft: number; height?: number},
+  padding: {paddingLeft: number; height?: number},
 ) =>
   StyleSheet.create({
     base: {
@@ -71,14 +88,17 @@ const styleCreator = (
       // this can't also carry `flex: 1`.
       flex: padding.height === undefined ? 1 : undefined,
       height: padding.height,
-      backgroundColor: colors.backgroundColorDirty,
+      // `surface/background`, matching `wrapper` below — both need to be
+      // the same color (not `backgroundColorDirty`/`surfaceCard`) so the
+      // safe-area inset (notch/home-indicator strip, painted by this outer
+      // view) doesn't show as a visibly different color from the content.
+      backgroundColor: colors.backgroundColor,
       zIndex: 999,
     },
     wrapper: {
       backgroundColor: colors.backgroundColor,
       flex: 1,
       overflow: 'hidden',
-      paddingBottom: padding.paddingBottom,
       paddingLeft: padding.paddingLeft,
     },
     content: isWeb

@@ -1,6 +1,7 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {useColors} from '../../colors'
+import {spacing} from '../../spacing'
 import {ThemeStyle} from '@models'
 
 export interface AgendaSectionHeaderProps {
@@ -30,10 +31,19 @@ export const AgendaSectionHeader: React.FunctionComponent<
 const styles = StyleSheet.create({
   box: {
     flexDirection: 'row',
-    flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'space-between',
-    padding: 8,
+    paddingVertical: 8,
+    // Escapes the Luach panel's own horizontal gutter (the phone swiper
+    // wraps every panel in `paddingHorizontal="md"`) so this bar's
+    // *background* runs edge to edge like a real section divider, while
+    // the extra padding keeps the text itself sitting where the old inset
+    // put it instead of also sliding out to the edge. In the wide/grid
+    // layouts, where the panel has no such gutter, `DarkSurface`'s own
+    // clipped `overflow: hidden` absorbs the negative margin with no
+    // visual difference.
+    paddingHorizontal: 8 + spacing.md,
+    marginHorizontal: -spacing.md,
   },
   text: {marginHorizontal: 4, fontWeight: 'bold'},
 })

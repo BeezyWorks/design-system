@@ -10,15 +10,16 @@ export interface SettingsCardProps {
   grow?: boolean
 }
 
-/** A titled settings section — the design-system replacement for the old
- * bordered `SettingsCard` widget. Renders as an elevated `Card` (tokenized
- * shadow instead of a hand-rolled border). */
+/** A titled settings section — just `Card` with its own title row, so it
+ * stays visually identical to every other card (the Books/Siddur menu
+ * sections included) by construction. Doesn't override `Card`'s own
+ * padding/radius/border/background defaults — that's the point. */
 export const SettingsCard: React.FunctionComponent<SettingsCardProps> = ({
   title,
   children,
   grow,
 }) => (
-  <Card grow={grow} radius="lg" padding="lg" gap="sm">
+  <Card grow={grow} gap="sm">
     {title && (
       <Text variant="label" tone="secondaryTextColor">
         {title}

@@ -16,6 +16,12 @@ export type Align = 'start' | 'center' | 'end' | 'stretch' | 'baseline'
 export type Justify =
   'start' | 'center' | 'end' | 'spaceBetween' | 'spaceAround' | 'spaceEvenly'
 export type Background = keyof Colors
+/** A rhythm-scale token, or a literal pixel value for the rare case a
+ * design spec calls for something the scale doesn't have. */
+export type Spacing = SpacingToken | number
+
+const resolveSpacing = (value: Spacing | undefined): number | undefined =>
+  typeof value === 'number' ? value : value ? spacing[value] : undefined
 
 const directionMap: Record<Direction, FlexStyle['flexDirection']> = {
   row: 'row',
@@ -55,14 +61,14 @@ export interface StackProps extends Pick<
   justify?: Justify
   wrap?: boolean
   /** Gap between children along the main and cross axis. */
-  gap?: SpacingToken
-  padding?: SpacingToken
-  paddingHorizontal?: SpacingToken
-  paddingVertical?: SpacingToken
-  paddingTop?: SpacingToken
-  paddingBottom?: SpacingToken
-  paddingStart?: SpacingToken
-  paddingEnd?: SpacingToken
+  gap?: Spacing
+  padding?: Spacing
+  paddingHorizontal?: Spacing
+  paddingVertical?: Spacing
+  paddingTop?: Spacing
+  paddingBottom?: Spacing
+  paddingStart?: Spacing
+  paddingEnd?: Spacing
   /** Grow to fill available main-axis space, like `flex: 1`. */
   grow?: boolean
   /** Exact flex-basis dimensions — a declarative scalar, not a style object. */
@@ -83,7 +89,11 @@ export interface StackProps extends Pick<
   right?: SpacingToken
   opacity?: number
   zIndex?: number
-  borderBottomWidth?: 'hairline' | 'none'
+  /** A full border on every side, in logical pixels — pair with
+   * `borderColor`. Use `borderBottomWidth` instead for a divider-only
+   * bottom edge. */
+  borderWidth?: number
+  borderBottomWidth?: 'hairline' | 'none' | number
   borderColor?: Background
 }
 
@@ -120,6 +130,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   right,
   opacity,
   zIndex,
+  borderWidth,
   borderBottomWidth,
   borderColor,
   ...viewProps
@@ -139,16 +150,14 @@ export const Stack: React.FunctionComponent<StackProps> = ({
       alignItems: align ? alignMap[align] : undefined,
       justifyContent: justify ? justifyMap[justify] : undefined,
       flexWrap: wrap ? 'wrap' : undefined,
-      gap: gap ? spacing[gap] : undefined,
-      padding: padding ? spacing[padding] : undefined,
-      paddingHorizontal: paddingHorizontal
-        ? spacing[paddingHorizontal]
-        : undefined,
-      paddingVertical: paddingVertical ? spacing[paddingVertical] : undefined,
-      paddingTop: paddingTop ? spacing[paddingTop] : undefined,
-      paddingBottom: paddingBottom ? spacing[paddingBottom] : undefined,
-      paddingStart: paddingStart ? spacing[paddingStart] : undefined,
-      paddingEnd: paddingEnd ? spacing[paddingEnd] : undefined,
+      gap: resolveSpacing(gap),
+      padding: resolveSpacing(padding),
+      paddingHorizontal: resolveSpacing(paddingHorizontal),
+      paddingVertical: resolveSpacing(paddingVertical),
+      paddingTop: resolveSpacing(paddingTop),
+      paddingBottom: resolveSpacing(paddingBottom),
+      paddingStart: resolveSpacing(paddingStart),
+      paddingEnd: resolveSpacing(paddingEnd),
       flexGrow: grow ? 1 : undefined,
       width: fill ? '100%' : width,
       height: fill ? '100%' : height,
@@ -162,8 +171,13 @@ export const Stack: React.FunctionComponent<StackProps> = ({
       right: right ? spacing[right] : undefined,
       opacity,
       zIndex,
+      borderWidth,
       borderBottomWidth:
-        borderBottomWidth === 'hairline' ? StyleSheet.hairlineWidth : undefined,
+        typeof borderBottomWidth === 'number'
+          ? borderBottomWidth
+          : borderBottomWidth === 'hairline'
+            ? StyleSheet.hairlineWidth
+            : undefined,
       borderColor: borderColor ? colors[borderColor] : undefined,
     } as FlexStyle,
     shadow ? shadows[shadow] : null,

@@ -279,10 +279,13 @@ const styleCreator = (colors: Colors) =>
       alignItems: 'center',
       justifyContent: 'space-between',
       alignSelf: 'stretch',
+      // iOS matches the screen's own background (was `backgroundColorDirty`
+      // — harmless back when that was a near-neutral gray close to
+      // `backgroundColor`, but now that it's `surfaceCard`/white against a
+      // warm cream screen, the mismatch actually shows). Android keeps its
+      // own filled colored app-bar convention.
       backgroundColor:
-        Platform.OS === 'ios'
-          ? colors.backgroundColorDirty
-          : colors.primaryColor,
+        Platform.OS === 'ios' ? colors.backgroundColor : colors.primaryColor,
       height: layout.headerHeight,
       borderBottomWidth: Platform.OS === 'ios' ? 1 : undefined,
       borderBottomColor: colors.scrimColor,
