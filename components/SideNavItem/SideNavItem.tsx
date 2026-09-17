@@ -32,13 +32,13 @@ export const SideNavItem: React.FunctionComponent<SideNavItemProps> = ({
         paddingHorizontal="md"
         height={48}
         radius="md"
-        background={focused ? 'overlay' : undefined}
+        background={focused ? 'tintAccent' : undefined}
         opacity={pressed ? 0.7 : 1}
       >
         {icon}
         <Text
           variant="headline"
-          tone={focused ? 'tabActive' : 'tabOffColor'}
+          tone={focused ? 'accent' : 'primaryTextColor'}
           numberOfLines={1}
         >
           {label}

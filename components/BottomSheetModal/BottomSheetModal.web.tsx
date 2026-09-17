@@ -28,8 +28,21 @@ const PANEL_WIDTH = 380
 // enter/exit slide, just driven by RN's Animated (web has no pan gesture
 // to drive a spring off of, and no drag handle — dismiss is tap-X or
 // tap-scrim, so the header carries an explicit close icon native omits).
-export const BottomSheetModal = ({title, children}: BottomSheetProps) => {
+export const BottomSheetModal = ({
+  title,
+  titleNode,
+  headerLeft,
+  headerRight,
+  children,
+}: BottomSheetProps) => {
   const {dismiss, dismissed, setModal} = useModalContext()
+  // See the native `BottomSheetModal`'s identical comment: guards against
+  // a stale close-animation callback clearing a sheet that was reopened
+  // while the previous one was still animating out.
+  const dismissedRef = useRef(dismissed)
+  useEffect(() => {
+    dismissedRef.current = dismissed
+  }, [dismissed])
   const colors = useColors()
   const {width: windowWidth, height: windowHeight} = useWindowDimensions()
   const isWide = windowWidth >= SIDE_NAV_BREAKPOINT
@@ -50,13 +63,24 @@ export const BottomSheetModal = ({title, children}: BottomSheetProps) => {
   }, [])
 
   useEffect(() => {
-    if (!dismissed) return
+    if (!dismissed) {
+      // Reopen-while-closing race (see the native version's comment): a
+      // new sheet shown before the previous close animation finished
+      // would otherwise stay parked off-screen with nothing to bring it
+      // back — also fires harmlessly on first mount.
+      Animated.timing(progress, {
+        toValue: 1,
+        duration: 160,
+        useNativeDriver: true,
+      }).start()
+      return
+    }
     Animated.timing(progress, {
       toValue: 0,
       duration: 160,
       useNativeDriver: true,
     }).start(({finished}) => {
-      if (finished) setModal()
+      if (finished && dismissedRef.current) setModal()
     })
   }, [dismissed, progress, setModal])
 
@@ -83,15 +107,40 @@ export const BottomSheetModal = ({title, children}: BottomSheetProps) => {
         ]}
       >
         <View style={styles.header}>
-          <Text style={styles.title} numberOfLines={1}>
-            {title}
-          </Text>
-          <Icon
-            name="close"
-            size={22}
-            tone="primaryTextColor"
-            onPress={dismiss}
-          />
+          {headerLeft || headerRight ? (
+            // `header`'s `flexDirection` is `row-reverse` (below) — visual
+            // left-to-right order is the *reverse* of JSX order, so
+            // headerRight has to come first in JSX to land on the visual
+            // right, headerLeft last to land on the visual left.
+            <>
+              {headerRight}
+              <View style={styles.titleCentered}>
+                {titleNode ?? (
+                  <Text
+                    style={[styles.title, styles.titleCenteredText]}
+                    numberOfLines={1}
+                  >
+                    {title}
+                  </Text>
+                )}
+              </View>
+              {headerLeft}
+            </>
+          ) : (
+            <>
+              {titleNode ?? (
+                <Text style={styles.title} numberOfLines={1}>
+                  {title}
+                </Text>
+              )}
+              <Icon
+                name="close"
+                size={22}
+                tone="primaryTextColor"
+                onPress={dismiss}
+              />
+            </>
+          )}
         </View>
         <View style={styles.content}>{children}</View>
       </Animated.View>
@@ -156,6 +205,17 @@ const styleCreator = (
       flex: 1,
       textAlign: 'right',
       marginLeft: 12,
+    },
+    // Cancel/Save header variant: the title sits centered between the two
+    // actions rather than right-aligned against a single close icon.
+    titleCentered: {
+      flex: 1,
+      alignItems: 'center',
+    },
+    titleCenteredText: {
+      flex: undefined,
+      textAlign: 'center',
+      marginLeft: 0,
     },
     content: {
       flex: 1,

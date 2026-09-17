@@ -14,6 +14,7 @@ import {
   Plus,
   Clock,
   X,
+  Pencil,
   LucideIcon,
 } from 'lucide-react-native'
 import {useColors, Colors} from '../../colors'
@@ -34,6 +35,7 @@ export type IconName =
   | 'add'
   | 'clock-outline'
   | 'close'
+  | 'edit'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -51,6 +53,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   add: Plus,
   'clock-outline': Clock,
   close: X,
+  edit: Pencil,
 }
 
 export interface IconProps {

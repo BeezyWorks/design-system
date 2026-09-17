@@ -2,7 +2,6 @@ import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {useColors, EventCategory} from '../../colors'
 import {EventDot} from '../EventDot'
-import {ThemeStyle} from '@models'
 
 export interface AgendaRowProps {
   name: string
@@ -17,7 +16,7 @@ export const AgendaRow: React.FunctionComponent<AgendaRowProps> = ({
   name,
   category,
 }) => {
-  const colors = useColors(ThemeStyle.Dark)
+  const colors = useColors()
   return (
     <View style={styles.row}>
       <RNText style={[styles.text, {color: colors.primaryTextColor}]}>

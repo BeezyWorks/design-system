@@ -1,6 +1,6 @@
 import React, {createContext, useContext} from 'react'
 import {Platform, StyleSheet, View, useWindowDimensions} from 'react-native'
-import {SafeAreaView} from 'react-native-safe-area-context'
+import {Edge, SafeAreaView} from 'react-native-safe-area-context'
 import {BottomTabBarHeightContext} from 'expo-router/js-tabs'
 import {
   TAB_BAR_CONTENT_GAP,
@@ -8,9 +8,15 @@ import {
 } from 'navigation/tabBar.constants'
 import {useIsWideWebNav, useSideNavWidth} from 'navigation/sideNav.hook'
 import {useColors, Colors} from '../../colors'
+import {isFloatingTabBar} from '../TabBarBackground'
 
 export interface ScreenProps {
   children?: React.ReactNode
+  /** Skip the top safe-area inset — for the one screen so far that shows
+   * a real native header (`headerShown: true`), which already reserves
+   * that same notch/status-bar space itself; without this, the inset
+   * would double up as a dead gap below the header. */
+  hasNativeHeader?: boolean
 }
 
 const ScreenBottomInsetContext = createContext(0)
@@ -33,7 +39,13 @@ const MAX_CONTENT_WIDTH = 720
 /** The standard screen chrome: safe-area handling, the room the bottom tab
  * pill / side rail needs, and the web reading-width cap. Every top-level
  * screen renders this once as its outermost element. */
-export const Screen: React.FunctionComponent<ScreenProps> = ({children}) => {
+const allEdges: Edge[] = ['top', 'right', 'bottom', 'left']
+const edgesWithoutTop: Edge[] = ['right', 'bottom', 'left']
+
+export const Screen: React.FunctionComponent<ScreenProps> = ({
+  children,
+  hasNativeHeader,
+}) => {
   const colors = useColors()
   // Only set when this screen sits inside the tab navigator (bottom pill on
   // native/narrow web, side rail on wide web) — leaves the padding out for
@@ -52,8 +64,12 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({children}) => {
   // actually clip against it.
   const {height: windowHeight} = useWindowDimensions()
   // Not applied to `wrapper` below on purpose — see `useScreenBottomInset`.
+  // Only the iOS floating pill overlaps content and needs this clearance —
+  // the docked bar on Android/web already reserves its own space in the
+  // tab navigator's layout, so adding this there just leaves a dead gap
+  // above a bar that was never covering anything.
   const bottomInset =
-    !isWideWeb && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0
+    isFloatingTabBar && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0
   const style = styleCreator(colors, {
     paddingLeft:
       isWideWeb && insideTabs ? sideNavWidth + SIDE_NAV_CONTENT_GAP : 0,
@@ -63,7 +79,10 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({children}) => {
   const Container = isWeb ? View : SafeAreaView
 
   return (
-    <Container style={style.base}>
+    <Container
+      style={style.base}
+      edges={isWeb ? undefined : hasNativeHeader ? edgesWithoutTop : allEdges}
+    >
       <View style={style.wrapper}>
         <View style={style.content}>
           <ScreenBottomInsetContext.Provider value={bottomInset}>

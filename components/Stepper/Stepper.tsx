@@ -1,6 +1,5 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import {Pressable} from 'react-native'
-import {spacing} from '../../spacing'
 import {radius} from '../../radius'
 import {useColors} from '../../colors'
 import {Stack} from '../Stack'
@@ -14,10 +13,46 @@ export interface StepperProps {
   incrementDisabled?: boolean
 }
 
-const buttonSize = spacing.xl
+// 44px — the spec's minimum touch target, not `spacing.xl` (32px), which
+// was too small a hit target for a control tapped repeatedly.
+const buttonSize = 44
+const holdDelayMs = 400
+const repeatIntervalMs = 100
+
+/** Fires `onTick` once per tap; holding past `holdDelayMs` instead repeats
+ * it on `repeatIntervalMs` until release. The single-tap fire is
+ * suppressed once a hold has actually kicked in, so a long press doesn't
+ * also fire one extra tick on release. */
+const useHoldToRepeat = (onTick: () => void) => {
+  const holdTimeout = useRef<ReturnType<typeof setTimeout>>(undefined)
+  const repeatInterval = useRef<ReturnType<typeof setInterval>>(undefined)
+  const didRepeat = useRef(false)
+
+  const clear = () => {
+    clearTimeout(holdTimeout.current)
+    clearInterval(repeatInterval.current)
+  }
+
+  useEffect(() => clear, [])
+
+  return {
+    onPressIn: () => {
+      didRepeat.current = false
+      holdTimeout.current = setTimeout(() => {
+        didRepeat.current = true
+        onTick()
+        repeatInterval.current = setInterval(onTick, repeatIntervalMs)
+      }, holdDelayMs)
+    },
+    onPressOut: clear,
+    onPress: () => {
+      if (!didRepeat.current) onTick()
+    },
+  }
+}
 
 /** A −/value/+ control for stepping through a numeric range or a fixed,
- * ordered list of values. */
+ * ordered list of values. Tap steps once; press-and-hold repeats. */
 export const Stepper: React.FunctionComponent<StepperProps> = ({
   label,
   onDecrement,
@@ -26,11 +61,13 @@ export const Stepper: React.FunctionComponent<StepperProps> = ({
   incrementDisabled,
 }) => {
   const colors = useColors()
+  const decrementHold = useHoldToRepeat(onDecrement)
+  const incrementHold = useHoldToRepeat(onIncrement)
 
   return (
     <Stack direction="row" align="center">
       <Pressable
-        onPress={onDecrement}
+        {...decrementHold}
         disabled={decrementDisabled}
         style={({pressed}) => ({
           width: buttonSize,
@@ -54,7 +91,7 @@ export const Stepper: React.FunctionComponent<StepperProps> = ({
         <Text align="center">{label}</Text>
       </Stack>
       <Pressable
-        onPress={onIncrement}
+        {...incrementHold}
         disabled={incrementDisabled}
         style={({pressed}) => ({
           width: buttonSize,

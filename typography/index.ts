@@ -37,6 +37,38 @@ export const type = {
     fontSize: 17,
     fontWeight: '400',
   },
+  // Notification list row's zman name — same family as `item`, but the
+  // spec calls for a 600 weight; the font only ships Regular/Bold faces,
+  // so the Bold face stands in for "600" here (same trick `pageHeader`
+  // already uses for its own 700).
+  itemHeader: {
+    fontFamily: 'FrankRuhlLibre_700Bold',
+    fontSize: 17,
+    fontWeight: '600',
+  },
+  // Chrome "Detail"/"Description" role — offset text under a zman name, a
+  // special-notification's blurb, etc. One variant covers both; the 1.4
+  // line-height only matters once text wraps to 2+ lines.
+  detail: {fontSize: 13, fontWeight: '400', lineHeight: 18},
+  // Chrome "Supplemental" role — the computed clock time trailing a
+  // notification row.
+  supplemental: {fontSize: 15, fontWeight: '600'},
+  // Sheet title (Cancel/title/Save header row) — distinct from the plain
+  // `BottomSheetHeader` title style used by every other sheet in the app.
+  sheetTitle: {fontSize: 17, fontWeight: '600'},
+  // Zman Picker row, unselected/selected — mirrors the Settings nav-row
+  // (`item`) and typeface-chip selection convention (weight + tone flip,
+  // not a whole different visual language).
+  menuOption: {
+    fontFamily: 'FrankRuhlLibre_400Regular',
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  menuOptionSelected: {
+    fontFamily: 'FrankRuhlLibre_700Bold',
+    fontSize: 16,
+    fontWeight: '600',
+  },
 } as const satisfies Record<string, TextStyle>
 
 export type TypeVariant = keyof typeof type
@@ -50,6 +82,11 @@ const variantTone: Partial<Record<TypeVariant, keyof Colors>> = {
   // needed.
   sectionHeader: 'secondaryTextColor',
   item: 'ink',
+  itemHeader: 'ink',
+  detail: 'secondaryTextColor',
+  supplemental: 'accent',
+  menuOption: 'ink',
+  menuOptionSelected: 'accent',
 }
 
 // Resolves a chrome type-ramp step to a concrete style, with the app's

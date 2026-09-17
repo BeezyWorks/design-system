@@ -25,10 +25,14 @@ export interface Colors extends ThemeColors {
   accent: string
   surfaceBackground: string
   surfaceCard: string
+  transparent: string
   /** A light tint over `surfaceCard` for hover/press states — not a theme
    * field of its own since it's always just a small ink wash, not a color
    * that itself varies independently by theme. */
   surfaceHover: string
+  /** Flat fill for a selected/pressed row (e.g. a picked zman in a list) —
+   * distinct from `surfaceHover`'s opacity wash. */
+  tint: string
 }
 
 export const useColors = (override?: ThemeStyle): Colors => {
@@ -46,6 +50,8 @@ export const useColors = (override?: ThemeStyle): Colors => {
     surfaceBackground: theme.backgroundColor,
     surfaceCard: theme.backgroundColorDirty,
     surfaceHover: withOpacity(theme.primaryTextColor, 0.04),
+    tint: theme.tintColor,
+    transparent: withOpacity('#fff', 0),
   }
 }
 

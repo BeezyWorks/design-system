@@ -23,6 +23,9 @@ export const SurfaceCardDark = '#262320'
 export const BorderColor = 'rgba(30, 25, 20, 0.10)'
 export const BorderColorDark = 'rgba(255, 255, 255, 0.12)'
 
+export const TintColor = '#F2EDE2'
+export const TintColorDark = '#34302A'
+
 // Pre-redesign names, kept as aliases — a handful of call sites use these
 // as fixed, theme-independent colors (accent-tinted buttons, the Luach
 // home screen's always-dark kotel-photo chrome) rather than through the
@@ -68,6 +71,8 @@ export const DarkTheme: ThemeColors = {
   tabOffColor: withOpacity(ColorInkDark, 0.6),
   warningColor: WarningColor,
   borderColor: BorderColorDark,
+  tintColor: TintColorDark,
+  tintAccent: withOpacity(ColorAccentDark, 0.6),
 }
 
 export const LightTheme: ThemeColors = {
@@ -83,4 +88,6 @@ export const LightTheme: ThemeColors = {
   tabOffColor: withOpacity(ColorInk, 0.6),
   warningColor: WarningColor,
   borderColor: BorderColor,
+  tintColor: TintColor,
+  tintAccent: withOpacity(ColorAccent, 0.08),
 }

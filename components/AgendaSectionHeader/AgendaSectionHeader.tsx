@@ -2,7 +2,6 @@ import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {useColors} from '../../colors'
 import {spacing} from '../../spacing'
-import {ThemeStyle} from '@models'
 
 export interface AgendaSectionHeaderProps {
   gregorianDate: string
@@ -15,7 +14,7 @@ export interface AgendaSectionHeaderProps {
 export const AgendaSectionHeader: React.FunctionComponent<
   AgendaSectionHeaderProps
 > = ({gregorianDate, hebrewDate}) => {
-  const colors = useColors(ThemeStyle.Dark)
+  const colors = useColors()
   return (
     <View style={[styles.box, {backgroundColor: colors.backgroundColor}]}>
       <RNText style={[styles.text, {color: colors.secondaryTextColor}]}>

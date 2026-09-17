@@ -1,7 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {useColors} from '../../colors'
-import {ThemeStyle} from '@models'
 
 export interface ZmanimRowProps {
   time: string
@@ -18,7 +17,7 @@ export const ZmanimRow: React.FunctionComponent<ZmanimRowProps> = ({
   label,
   past,
 }) => {
-  const colors = useColors(ThemeStyle.Dark)
+  const colors = useColors()
   const labelColor = past ? colors.secondaryTextColor : colors.primaryTextColor
   return (
     <View style={styles.row}>

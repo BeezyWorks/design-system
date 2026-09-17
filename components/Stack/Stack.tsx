@@ -144,7 +144,6 @@ export const Stack: React.FunctionComponent<StackProps> = ({
     : undefined
 
   const style = [
-    position === 'absoluteFill' ? StyleSheet.absoluteFill : null,
     {
       flexDirection: directionMap[direction],
       alignItems: align ? alignMap[align] : undefined,
@@ -180,6 +179,14 @@ export const Stack: React.FunctionComponent<StackProps> = ({
             : undefined,
       borderColor: borderColor ? colors[borderColor] : undefined,
     } as FlexStyle,
+    // Must come *after* the object above, not before: RN's style-array
+    // flattening does a plain per-key merge across entries in order, and
+    // that object above always includes `position`/`top`/`left`/`right`/
+    // `bottom` keys (as `undefined` when not driven by a prop) — an
+    // earlier `StyleSheet.absoluteFill` here would have its real values
+    // overwritten back to `undefined` by those, silently breaking every
+    // `position="absoluteFill"` fill (scrims, loaders) into a non-fill.
+    position === 'absoluteFill' ? StyleSheet.absoluteFill : null,
     shadow ? shadows[shadow] : null,
   ]
 

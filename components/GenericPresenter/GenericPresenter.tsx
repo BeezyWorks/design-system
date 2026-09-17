@@ -4,6 +4,13 @@ import {BottomSheetModal} from '../BottomSheetModal'
 
 export const GenericPresenter = (config: GenericModalConfig) => {
   return (
-    <BottomSheetModal title={config.title}>{config.content}</BottomSheetModal>
+    <BottomSheetModal
+      title={config.title}
+      titleNode={config.titleNode}
+      headerLeft={config.headerLeft}
+      headerRight={config.headerRight}
+    >
+      {config.content}
+    </BottomSheetModal>
   )
 }

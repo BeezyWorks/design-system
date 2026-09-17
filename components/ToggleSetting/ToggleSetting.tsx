@@ -1,9 +1,8 @@
 import React from 'react'
-import {Switch} from 'react-native'
-import {useColors, withOpacity} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
+import {ToggleSwitch} from '../ToggleSwitch'
 
 export interface ToggleSettingProps {
   title: string
@@ -25,10 +24,6 @@ export const ToggleSetting: React.FunctionComponent<ToggleSettingProps> = ({
   titleOff = '',
   disabled,
 }) => {
-  const colors = useColors()
-  const trackOnColor = colors.primaryColor
-  const trackOffColor = withOpacity(colors.primaryColor, 0.3)
-
   return (
     <Touchable disabled={disabled} onPress={() => onSwitch(!enabled)}>
       <Stack
@@ -42,11 +37,9 @@ export const ToggleSetting: React.FunctionComponent<ToggleSettingProps> = ({
           {title + (enabled ? titleOn : titleOff)}
         </Text>
         <Stack pointerEvents="none">
-          <Switch
-            trackColor={{false: trackOffColor, true: trackOnColor}}
-            ios_backgroundColor={trackOffColor}
-            onValueChange={onSwitch}
+          <ToggleSwitch
             value={enabled}
+            onValueChange={onSwitch}
             disabled={disabled}
           />
         </Stack>
