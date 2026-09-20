@@ -27,6 +27,7 @@ export interface TextProps extends Pick<
   /** Overrides the variant's default color with a semantic token. */
   tone?: Tone
   align?: TextAlign
+  bold?: boolean
   /** Decorative font family override (e.g. the Hebrew display faces),
    * independent of the content/user-settings typeface. */
   typeface?: TypeFace
@@ -38,6 +39,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
   content,
   tone,
   align,
+  bold,
   typeface,
   ...textProps
 }) => {
@@ -55,6 +57,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
         base,
         {color},
         align ? {textAlign: align} : null,
+        bold ? {fontWeight: '700'} : null,
         typeface ? {fontFamily: getFontFamilyName(typeface)} : null,
       ]}
     >
