@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, Text as RNText} from 'react-native'
+import {Platform, StyleSheet, Text as RNText, View} from 'react-native'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
@@ -24,50 +24,62 @@ export const SegmentedControl = <T extends string>({
 }: SegmentedControlProps<T>) => {
   const labelStyle = useTypeStyle('label')
   return (
-    <Stack
-      direction="row"
-      background="surface"
-      shadow="card"
-      radius="md"
-      padding="xs"
-      gap="xs"
-    >
-      {options.map((option) => {
-        const selected = option.key === value
-        return (
-          // Equal-width, ≥44px-tall segments: the outer `grow` Stack is
-          // the actual row flex-item (so all options share the row width
-          // evenly); `Touchable`/its inner `fill` Stack then just stretch
-          // to fill whatever that wrapper was given.
-          <Stack key={option.key} grow height={44}>
-            <Touchable onPress={() => onChange(option.key)}>
-              <Stack
-                fill
-                align="center"
-                justify="center"
-                radius="sm"
-                background={selected ? 'primaryColor' : undefined}
-              >
-                {selected ? (
-                  // `headerTextColor` isn't an "on-primaryColor" contrast
-                  // token (it's the iOS nav-bar tint, same blue as
-                  // `primaryColor` itself) — a literal white matches what
-                  // this control always rendered for its selected pill.
-                  <RNText style={[labelStyle, styles.selectedLabel]}>
-                    {option.label}
-                  </RNText>
-                ) : (
-                  <Text variant="label" tone="primaryTextColor">
-                    {option.label}
-                  </Text>
-                )}
-              </Stack>
-            </Touchable>
-          </Stack>
-        )
-      })}
-    </Stack>
+    // On web the parent card can be very wide; keep the track compact
+    // (sized to its labels) instead of stretching every segment across it.
+    <View style={styles.wrapper}>
+      <Stack
+        direction="row"
+        background="surface"
+        shadow="card"
+        radius="md"
+        padding="xs"
+        gap="xs"
+      >
+        {options.map((option) => {
+          const selected = option.key === value
+          return (
+            // Equal-width, 44px-tall segments: the outer flex:1 View shares the
+            // row evenly; the inner Stack has an explicit height because a
+            // percentage height doesn't resolve against Pressable on web.
+            <View key={option.key} style={styles.segment}>
+              <Touchable onPress={() => onChange(option.key)}>
+                <Stack
+                  width="100%"
+                  height={44}
+                  align="center"
+                  justify="center"
+                  radius="sm"
+                  background={selected ? 'primaryColor' : undefined}
+                >
+                  {selected ? (
+                    // `headerTextColor` isn't an "on-primaryColor" contrast
+                    // token (it's the iOS nav-bar tint, same blue as
+                    // `primaryColor` itself) — a literal white matches what
+                    // this control always rendered for its selected pill.
+                    <RNText style={[labelStyle, styles.selectedLabel]}>
+                      {option.label}
+                    </RNText>
+                  ) : (
+                    <Text variant="label" tone="primaryTextColor">
+                      {option.label}
+                    </Text>
+                  )}
+                </Stack>
+              </Touchable>
+            </View>
+          )
+        })}
+      </Stack>
+    </View>
   )
 }
 
-const styles = StyleSheet.create({selectedLabel: {color: '#ffffff'}})
+const styles = StyleSheet.create({
+  selectedLabel: {color: '#ffffff'},
+  wrapper: {
+    ...(Platform.OS === 'web' ? {alignSelf: 'flex-start' as const} : null),
+    maxWidth: '100%',
+  },
+  // flex: 1 (basis 0) makes segments equal-width regardless of label length.
+  segment: {flex: 1, minWidth: Platform.OS === 'web' ? 88 : 0},
+})
