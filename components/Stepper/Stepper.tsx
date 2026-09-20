@@ -17,36 +17,59 @@ export interface StepperProps {
 // was too small a hit target for a control tapped repeatedly.
 const buttonSize = 44
 const holdDelayMs = 400
-const repeatIntervalMs = 100
+// One tick per 400ms is slow enough to stop on an exact minute; after
+// holding for a full second and a half (the point where you're clearly
+// trying to cover distance, not dial in a value) it speeds up so reaching
+// the far end of the range doesn't take forever.
+const initialRepeatMs = 400
+const acceleratedRepeatMs = 100
+const accelerateAfterMs = 1500
 
 /** Fires `onTick` once per tap; holding past `holdDelayMs` instead repeats
- * it on `repeatIntervalMs` until release. The single-tap fire is
- * suppressed once a hold has actually kicked in, so a long press doesn't
- * also fire one extra tick on release. */
+ * it (self-rescheduling rather than `setInterval`, so it always reads the
+ * latest `onTick` — a stale closure here previously meant a long hold kept
+ * re-applying the value from the moment the hold started instead of
+ * actually counting up/down). The single-tap fire is suppressed once a
+ * hold has actually kicked in, so a long press doesn't also fire one
+ * extra tick on release. */
 const useHoldToRepeat = (onTick: () => void) => {
-  const holdTimeout = useRef<ReturnType<typeof setTimeout>>(undefined)
-  const repeatInterval = useRef<ReturnType<typeof setInterval>>(undefined)
-  const didRepeat = useRef(false)
+  const onTickRef = useRef(onTick)
+  onTickRef.current = onTick
 
-  const clear = () => {
-    clearTimeout(holdTimeout.current)
-    clearInterval(repeatInterval.current)
-  }
+  const timeout = useRef<ReturnType<typeof setTimeout>>(undefined)
+  const didRepeat = useRef(false)
+  const holdStartedAt = useRef(0)
+
+  const clear = () => clearTimeout(timeout.current)
 
   useEffect(() => clear, [])
 
+  const scheduleNextRepeat = () => {
+    const heldFor = Date.now() - holdStartedAt.current
+    const delay =
+      heldFor > accelerateAfterMs ? acceleratedRepeatMs : initialRepeatMs
+    timeout.current = setTimeout(() => {
+      onTickRef.current()
+      scheduleNextRepeat()
+    }, delay)
+  }
+
   return {
     onPressIn: () => {
+      // Defensive: guarantees a stray leftover timer from a previous
+      // press can never stack with this one.
+      clear()
       didRepeat.current = false
-      holdTimeout.current = setTimeout(() => {
+      holdStartedAt.current = Date.now()
+      timeout.current = setTimeout(() => {
         didRepeat.current = true
-        onTick()
-        repeatInterval.current = setInterval(onTick, repeatIntervalMs)
+        onTickRef.current()
+        scheduleNextRepeat()
       }, holdDelayMs)
     },
     onPressOut: clear,
     onPress: () => {
-      if (!didRepeat.current) onTick()
+      if (!didRepeat.current) onTickRef.current()
     },
   }
 }
