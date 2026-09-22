@@ -31,6 +31,12 @@ export interface TextProps extends Pick<
   /** Decorative font family override (e.g. the Hebrew display faces),
    * independent of the content/user-settings typeface. */
   typeface?: TypeFace
+  /** Renders in Noto Rashi Hebrew (ktav Rashi/semi-cursive script) instead
+   * of whatever `typeface`/content font would otherwise apply. Used for
+   * peirush text (Rashi, Targum, or a plain-pasuk repeat standing in for
+   * commentary) when the user has ktav Rashi enabled — independent of
+   * `typeface` since it's a script choice, not a Hebrew display face. */
+  rashiScript?: boolean
 }
 
 export const Text: React.FunctionComponent<TextProps> = ({
@@ -41,6 +47,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
   align,
   bold,
   typeface,
+  rashiScript,
   ...textProps
 }) => {
   const chromeStyle = useTypeStyle(variant)
@@ -59,6 +66,13 @@ export const Text: React.FunctionComponent<TextProps> = ({
         align ? {textAlign: align} : null,
         bold ? {fontWeight: '700'} : null,
         typeface ? {fontFamily: getFontFamilyName(typeface)} : null,
+        rashiScript
+          ? {
+              fontFamily: bold
+                ? 'NotoRashiHebrew_700Bold'
+                : 'NotoRashiHebrew_400Regular',
+            }
+          : null,
       ]}
     >
       {children}
