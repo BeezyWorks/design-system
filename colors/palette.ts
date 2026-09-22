@@ -54,7 +54,8 @@ export const BackgroundDarkDirty = '#515151'
 export const DarkTheme: ThemeColors = {
   primaryColor: ColorAccentDark,
   secondaryColor: ColorSecondary,
-  headerTextColor: Platform.OS === 'ios' ? ColorAccentDark : SurfaceCardDark,
+  headerTextColor:
+    Platform.OS === 'android' ? SurfaceCardDark : ColorAccentDark,
   primaryTextColor: ColorInkDark,
   specialTextColor: ColorAccentDark,
   secondaryTextColor: withOpacity(ColorInkDark, 0.5),
@@ -79,7 +80,7 @@ export const LightTheme: ThemeColors = {
   primaryColor: ColorAccent,
   secondaryColor: ColorSecondary,
   specialTextColor: ColorAccent,
-  headerTextColor: Platform.OS === 'ios' ? ColorAccent : SurfaceCard,
+  headerTextColor: Platform.OS === 'android' ? SurfaceCard : ColorAccent,
   primaryTextColor: ColorInk,
   secondaryTextColor: withOpacity(ColorInk, 0.5),
   backgroundColor: SurfaceBackground,

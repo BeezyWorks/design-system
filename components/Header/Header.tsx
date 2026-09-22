@@ -279,15 +279,18 @@ const styleCreator = (colors: Colors) =>
       alignItems: 'center',
       justifyContent: 'space-between',
       alignSelf: 'stretch',
-      // iOS matches the screen's own background (was `backgroundColorDirty`
-      // — harmless back when that was a near-neutral gray close to
-      // `backgroundColor`, but now that it's `surfaceCard`/white against a
-      // warm cream screen, the mismatch actually shows). Android keeps its
-      // own filled colored app-bar convention.
+      // iOS and narrow web match the screen's own background (was
+      // `backgroundColorDirty` — harmless back when that was a
+      // near-neutral gray close to `backgroundColor`, but now that it's
+      // `surfaceCard`/white against a warm cream screen, the mismatch
+      // actually shows). Android keeps its own filled colored app-bar
+      // convention.
       backgroundColor:
-        Platform.OS === 'ios' ? colors.backgroundColor : colors.primaryColor,
+        Platform.OS === 'android'
+          ? colors.primaryColor
+          : colors.backgroundColor,
       height: layout.headerHeight,
-      borderBottomWidth: Platform.OS === 'ios' ? 1 : undefined,
+      borderBottomWidth: Platform.OS === 'android' ? undefined : 1,
       borderBottomColor: colors.scrimColor,
       elevation: 6,
       // A z-index set only on the popovers nested inside this View doesn't
