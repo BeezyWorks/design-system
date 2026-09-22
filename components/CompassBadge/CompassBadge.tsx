@@ -12,7 +12,15 @@ export interface CompassBadgeProps {
 export const CompassBadge: React.FunctionComponent<CompassBadgeProps> = ({
   children,
 }) => (
-  <Stack position="absolute" width={90} height={90} right="md" top="xxl">
+  <Stack
+    position="absolute"
+    width={90}
+    height={90}
+    right="md"
+    top="xxl"
+    align="center"
+    justify="center"
+  >
     {children}
   </Stack>
 )
