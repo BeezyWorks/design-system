@@ -4,18 +4,27 @@ import {spacing} from '../../spacing'
 import {radius} from '../../radius'
 import {useColors, Colors} from '../../colors'
 import {Text} from '../Text'
+import {Icon, IconName} from '../Icon'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'destructive'
+export type ButtonVariant =
+  'primary' | 'secondary' | 'ghost' | 'destructive' | 'outline'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 const variantTone: Record<
   ButtonVariant,
-  {background: keyof Colors; label: keyof Colors}
+  {background: keyof Colors; label: keyof Colors; border?: keyof Colors}
 > = {
   primary: {background: 'primaryColor', label: 'headerTextColor'},
   secondary: {background: 'backgroundColorDirty', label: 'primaryTextColor'},
   ghost: {background: 'backgroundColor', label: 'primaryColor'},
   destructive: {background: 'danger', label: 'headerTextColor'},
+  // Outline: no fill, just a border — distinct from `secondary`, which is
+  // a solid (if muted) filled button.
+  outline: {
+    background: 'backgroundColor',
+    label: 'primaryTextColor',
+    border: 'border',
+  },
 }
 
 const sizePadding: Record<ButtonSize, {vertical: number; horizontal: number}> =
@@ -29,6 +38,8 @@ export interface ButtonProps {
   title: string
   variant?: ButtonVariant
   size?: ButtonSize
+  /** A leading icon before the label. */
+  icon?: IconName
   loading?: boolean
   disabled?: boolean
   onPress?: () => void
@@ -40,6 +51,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   title,
   variant = 'primary',
   size = 'md',
+  icon,
   loading,
   disabled,
   onPress,
@@ -62,8 +74,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       style={({pressed}) => ({
         backgroundColor: colors[tone.background],
         borderRadius: radius.md,
+        borderWidth: tone.border ? 1 : 0,
+        borderColor: tone.border ? colors[tone.border] : undefined,
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        gap: spacing.md,
         opacity: disabled ? 0.4 : pressed ? 0.7 : 1,
         paddingVertical: padding.vertical,
         paddingHorizontal: padding.horizontal,
@@ -72,9 +88,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       {loading ? (
         <ActivityIndicator color={colors[tone.label]} />
       ) : (
-        <Text variant="headline" tone={tone.label}>
-          {title}
-        </Text>
+        <>
+          {!!icon && <Icon name={icon} size={18} tone={tone.label} />}
+          <Text variant="headline" tone={tone.label}>
+            {title}
+          </Text>
+        </>
       )}
     </Pressable>
   )

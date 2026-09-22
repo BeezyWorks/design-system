@@ -29,7 +29,7 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
     )}
     {!!actionLabel && !!onAction && (
       <Stack paddingTop="sm">
-        <Button title={actionLabel} onPress={onAction} variant="primary" />
+        <Button title={actionLabel} onPress={onAction} variant="outline" />
       </Stack>
     )}
   </Stack>

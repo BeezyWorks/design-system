@@ -1,5 +1,5 @@
 import React from 'react'
-import {Pressable, StyleSheet, View} from 'react-native'
+import {Platform, Pressable, StyleSheet, View} from 'react-native'
 import {GlassView, isLiquidGlassAvailable} from 'expo-glass-effect'
 import {useColors} from '../../colors'
 import {shadows} from '../../shadows'
@@ -37,15 +37,11 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
     </Pressable>
   )
 
-  if (isLiquidGlassAvailable()) {
-    return (
-      <GlassView glassEffectStyle="regular" isInteractive style={styles.circle}>
-        {button}
-      </GlassView>
-    )
-  }
-
-  return (
+  const content = isLiquidGlassAvailable() ? (
+    <GlassView glassEffectStyle="regular" isInteractive style={styles.circle}>
+      {button}
+    </GlassView>
+  ) : (
     <View
       style={[
         styles.circle,
@@ -55,6 +51,16 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
     >
       {button}
     </View>
+  )
+
+  // Native platforms get this edge spacing for free from the OS nav bar's
+  // own layout (UIKit/the Android toolbar reserve it around header items).
+  // Expo Router's web header is plain JS layout with no such built-in
+  // inset, so without this the button sits flush against the screen edge.
+  return Platform.OS === 'web' ? (
+    <View style={styles.webMargin}>{content}</View>
+  ) : (
+    content
   )
 }
 
@@ -73,4 +79,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pressed: {opacity: 0.6},
+  webMargin: {marginHorizontal: 8},
 })

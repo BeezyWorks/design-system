@@ -5,43 +5,46 @@ import {IconButton} from '../IconButton'
 
 export interface EventRowProps {
   description: string
-  gregorianDate: string
   hebrewDate: string
-  thisYearGregorianDate: string
+  /** The Gregorian date of this event's next upcoming occurrence — not
+   * the date it was originally saved with. */
+  nextOccurrenceDate: string
   onDelete: () => void
+  /** Omits the bottom divider — set on the last row in a card. */
+  isLast?: boolean
 }
 
-/** One row in the User Events list: description, the event's Gregorian and
- * Hebrew dates, this (Hebrew) year's matching Gregorian date, and a
- * trailing delete action. */
+/** One user event: title/Hebrew date, the next Gregorian occurrence
+ * trailing on the right, then delete — same layout as `NotificationRow`,
+ * minus the enable toggle and edit action neither of which events have
+ * yet. */
 export const EventRow: React.FunctionComponent<EventRowProps> = ({
   description,
-  gregorianDate,
   hebrewDate,
-  thisYearGregorianDate,
+  nextOccurrenceDate,
   onDelete,
+  isLast,
 }) => (
-  <Stack direction="row" justify="spaceBetween" paddingVertical="xs">
-    <Stack>
-      <Text variant="label" tone="secondaryTextColor" align="left">
-        {description}
-      </Text>
-      <Text variant="subheader" align="left">
-        {gregorianDate}
-      </Text>
-      <Stack direction="row" gap="xs">
-        <Text variant="subheader" align="left">
-          {hebrewDate}
-        </Text>
-        <Text variant="caption" tone="secondaryTextColor" align="left">
-          ({thisYearGregorianDate})
-        </Text>
-      </Stack>
+  <Stack
+    direction="row"
+    align="center"
+    gap="sm"
+    paddingVertical="sm"
+    borderBottomWidth={isLast ? 'none' : 1}
+    borderColor="border"
+  >
+    <Stack grow width={0} gap="xs">
+      <Text variant="itemHeader">{description}</Text>
+      <Text variant="detail">{hebrewDate}</Text>
     </Stack>
-    <Stack justify="end">
+    <Text variant="supplemental" align="right">
+      {nextOccurrenceDate}
+    </Text>
+    <Stack direction="row">
       <IconButton
         name="delete"
-        tone="danger"
+        size={20}
+        tone="secondaryTextColor"
         onPress={onDelete}
         accessibilityLabel="Delete event"
       />

@@ -40,13 +40,13 @@ export const BottomSheetHeader = ({
         // Explicit flex order sidesteps that entirely, matching how every
         // other row in this app already avoids relying on `left`/`right`.
         <View style={styles.base}>
-          <View style={styles.side}>{left}</View>
+          <View style={styles.sideLeft}>{left}</View>
           {titleNode ?? (
             <Text numberOfLines={1} style={styles.text}>
               {title}
             </Text>
           )}
-          <View style={styles.side}>{right}</View>
+          <View style={styles.sideRight}>{right}</View>
         </View>
       )}
     </View>
@@ -67,19 +67,30 @@ const styleCreator = (colors: Colors) =>
       flexShrink: 1,
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'space-between',
     },
     text: {
-      flex: 1,
       fontSize: 22,
       fontWeight: '600',
       textAlign: 'center',
       color: colors.secondaryTextColor,
     },
-    // Sized to its own content (a Cancel/Save button or nothing) rather
-    // than a fixed width — the centered title's own `flex: 1` is what
-    // actually balances the row.
-    side: {
-      justifyContent: 'center',
+    // Both sides share the same `flex: 1`, so they always take up equal
+    // width regardless of how wide their own content is (e.g. "Cancel"
+    // vs "Save") — that equal split is what actually keeps the title
+    // (sized to its own content, not flexed) centered on the row. Giving
+    // the title itself `flex: 1` instead — the previous approach — made
+    // it center within whatever space was left over from two unequal-
+    // width sides, which visibly skewed it toward the wider one.
+    sideLeft: {
+      flex: 1,
+      flexShrink: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+    },
+    sideRight: {
+      flex: 1,
+      flexShrink: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
     },
   })
