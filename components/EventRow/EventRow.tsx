@@ -35,7 +35,14 @@ export const EventRow: React.FunctionComponent<EventRowProps> = ({
   >
     <Stack grow width={0} gap="xs">
       <Text variant="itemHeader">{description}</Text>
-      <Text variant="detail">{hebrewDate}</Text>
+      {/* `hebrewDate` is pure Hebrew script (gematriya + month name) — RN's
+          default "natural" text alignment reads that as RTL and floats it
+          to the right edge of this column even though the layout itself is
+          LTR, so it needs to be pinned `left` to actually sit under
+          `description` instead of drifting away from it. */}
+      <Text variant="detail" align="left">
+        {hebrewDate}
+      </Text>
     </Stack>
     <Text variant="supplemental" align="right">
       {nextOccurrenceDate}
