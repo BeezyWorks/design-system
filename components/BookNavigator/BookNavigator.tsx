@@ -1,6 +1,6 @@
 import React from 'react'
 import {SemanticColor} from '../../colors'
-import {formatGematriya} from 'siddurCalendar/hebcal.utils'
+import {formatGematriya} from '../../hebrewDate'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'

@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
-import {removeUglyHebCalChars} from 'siddurCalendar/hebcal.utils'
+import {removeUglyHebCalChars} from '../../hebrewDate'
 import {useColors} from '../../colors/useColors'
 
 export interface DashboardRowProps {

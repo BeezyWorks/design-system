@@ -6,8 +6,8 @@ import {
   HebrewDateValue,
   HebrewMonthKey,
   getHebrewMonthOption,
-} from 'siddurCalendar/models/hebrewMonthOptions'
-import {formatGematriya} from 'siddurCalendar/hebcal.utils'
+} from '../../hebrewDate'
+import {formatGematriya} from '../../hebrewDate'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {SemanticColor} from '../../colors'
