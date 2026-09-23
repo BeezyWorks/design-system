@@ -14,15 +14,15 @@ const variantTone: Record<
   ButtonVariant,
   {background: keyof Colors; label: keyof Colors; border?: keyof Colors}
 > = {
-  primary: {background: 'primaryColor', label: 'headerTextColor'},
-  secondary: {background: 'backgroundColorDirty', label: 'primaryTextColor'},
+  primary: {background: 'primaryColor', label: 'backgroundColor'},
+  secondary: {background: 'backgroundColorDirty', label: 'primaryColor'},
   ghost: {background: 'backgroundColor', label: 'primaryColor'},
-  destructive: {background: 'danger', label: 'headerTextColor'},
+  destructive: {background: 'danger', label: 'backgroundColor'},
   // Outline: no fill, just a border — distinct from `secondary`, which is
   // a solid (if muted) filled button.
   outline: {
     background: 'backgroundColor',
-    label: 'primaryTextColor',
+    label: 'primaryColor',
     border: 'border',
   },
 }
