@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {Touchable} from '../Touchable'
-import {useColors} from '../../colors'
+import {useColors, NextTefilaPill} from '../../colors'
 import {shadows} from '../../shadows'
 import {getFontFamilyName, ThemeStyle} from '@models'
 
@@ -15,8 +15,8 @@ export interface UpcomingZmanButtonProps {
 }
 
 // Fixed brand-accent blue for the round "next tefila" button — deliberately
-// the same in light and dark mode, matching the original `#3B7FB4` circle.
-const PILL_BACKGROUND = '#3B7FB4'
+// the same in light and dark mode.
+const PILL_BACKGROUND = NextTefilaPill
 const PILL_SIZE = 180
 
 /** The Luach hero's round "next tefila" button — always sits on the dark

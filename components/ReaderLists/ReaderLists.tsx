@@ -7,7 +7,7 @@ import {useTranslation} from 'translation/translation.hook'
 import {getValuesForZmanim} from 'siddurCalendar/zmanim/zman.calculator'
 import {Zman, zmanimNames} from 'siddurCalendar/zmanim/zman.model'
 import moment from 'moment'
-import {useColors, Colors, ColorPrimary, withOpacity} from '../../colors'
+import {useColors, Colors, ColorPrimary, White, withOpacity} from '../../colors'
 
 // Shared list content for the reader's wide-layout header popovers — plain
 // React Native, no web-only APIs.
@@ -47,7 +47,7 @@ export const SectionsList = ({
   // used instead — same relationship the reference design specifies.
   const selectedBg =
     themeStyle === 'dark'
-      ? withOpacity('#ffffff', 0.08)
+      ? withOpacity(White, 0.08)
       : withOpacity(ColorPrimary, 0.1)
   return (
     <>

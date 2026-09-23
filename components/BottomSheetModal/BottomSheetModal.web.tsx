@@ -10,7 +10,7 @@ import {
 import {useModalContext} from 'modal/context/modal-context'
 import {BottomSheetProps} from 'modal/components/bottomSheet.props'
 import {SIDE_NAV_BREAKPOINT} from 'navigation/tabBar.constants'
-import {useColors, Colors} from '../../colors'
+import {useColors, Colors, Black} from '../../colors'
 import {Icon} from '../Icon'
 
 const PANEL_WIDTH = 380
@@ -169,7 +169,7 @@ const styleCreator = (
       backgroundColor: colors.backgroundColor,
       borderLeftWidth: StyleSheet.hairlineWidth,
       borderLeftColor: colors.scrimColor,
-      shadowColor: '#000',
+      shadowColor: Black,
       shadowOffset: {width: -2, height: 0},
       shadowOpacity: 0.15,
       shadowRadius: 12,
@@ -184,7 +184,7 @@ const styleCreator = (
       borderTopLeftRadius: 16,
       borderTopRightRadius: 16,
       overflow: 'hidden',
-      shadowColor: '#000',
+      shadowColor: Black,
       shadowOffset: {width: 0, height: -2},
       shadowOpacity: 0.15,
       shadowRadius: 12,

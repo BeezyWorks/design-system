@@ -24,6 +24,7 @@ import {
   ColorPrimary,
   BackgroundDark,
   BackgroundLight,
+  ThemeSwatchSystem,
   withOpacity,
 } from '../../colors'
 
@@ -45,12 +46,10 @@ const labelSheet = createTranslationSheet({
 // ThemeStyle.System has no single background of its own — approximate it
 // with a neutral mid-tone so its swatch reads as distinct from the two
 // concrete themes rather than arbitrarily picking one of their colors.
-const SYSTEM_SWATCH_COLOR = '#C7C2B8'
-
 const themeSwatchColor: Record<ThemeStyle, string> = {
   [ThemeStyle.Light]: BackgroundLight,
   [ThemeStyle.Dark]: BackgroundDark,
-  [ThemeStyle.System]: SYSTEM_SWATCH_COLOR,
+  [ThemeStyle.System]: ThemeSwatchSystem,
 }
 
 // Compact popover-only counterpart to the full DisplaySettings screen (used

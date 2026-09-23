@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {Stack} from '../Stack'
 import {Touchable} from '../Touchable'
-import {useColors, ColorPrimaryLight} from '../../colors'
+import {useColors, ColorPrimaryLight, BorderColorDark} from '../../colors'
 import {ThemeStyle} from '@models'
 
 export interface PanelTab {
@@ -17,9 +17,9 @@ export interface PanelTabRowProps {
 }
 
 // The tab strip always sits on the always-dark content card (`DarkSurface`),
-// so its hairline divider is a fixed translucent white rather than a theme
-// token.
-const DIVIDER_COLOR = 'rgba(255,255,255,0.12)'
+// so its hairline divider is the fixed dark-mode border rather than the
+// theme-reactive one.
+const DIVIDER_COLOR = BorderColorDark
 
 /** The desktop-web Luach layout's panel switcher — Dashboard/Zmanim/Agenda/
  * Calendar tabs above the active panel, replacing the phone swiper's

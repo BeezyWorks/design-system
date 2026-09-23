@@ -41,6 +41,20 @@ export const ColorSecondaryDark = '#c6a700'
 
 export const WarningColor = '#f44336'
 
+// Fixed (non-theme-adaptive) colors — literal white/black for chrome that
+// sits on a photo, a colored fill, or a shadow, plus a few one-off
+// component constants that used to be hex literals at the call site. Named
+// here so no component spells a raw hex/rgba string.
+export const White = '#FFFFFF'
+export const Black = '#000000'
+export const ToggleTrackOff = '#D8D2C4'
+// Placeholder (no design value given yet) — swap once one is provided, same
+// as `TintColorDark`.
+export const ToggleTrackOffDark = '#4A443B'
+export const ThemeSwatchSystem = '#C7C2B8'
+// The Luach hero's round "next tefila" button — same in light and dark.
+export const NextTefilaPill = '#3B7FB4'
+
 export const BackgroundLight = SurfaceCard
 export const BackgroundLightDirty = '#efefef'
 

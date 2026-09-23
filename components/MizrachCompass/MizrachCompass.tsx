@@ -7,6 +7,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated'
 import {Navigation} from 'lucide-react-native'
+import {White} from '../../colors'
 
 export interface MizrachCompassProps {
   /** Degrees to rotate the needle toward the mizrach/Jerusalem bearing. */
@@ -66,7 +67,7 @@ export const MizrachCompass: React.FunctionComponent<MizrachCompassProps> = ({
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <Animated.View style={style}>
-        <Navigation size={30} color="#fff" fill="#fff" />
+        <Navigation size={30} color={White} fill={White} />
       </Animated.View>
     </TouchableWithoutFeedback>
   )

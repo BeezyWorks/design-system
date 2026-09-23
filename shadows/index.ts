@@ -1,4 +1,5 @@
 import {ViewStyle} from 'react-native'
+import {Black} from '../colors/palette'
 
 // React Native's shadow is a set of discrete props, not a single value —
 // each named level below bundles them so components never spell out
@@ -9,7 +10,7 @@ const level = (
   blurRadius: number,
   elevation: number,
 ): ViewStyle => ({
-  shadowColor: '#000',
+  shadowColor: Black,
   shadowOffset: {width: 0, height: offsetHeight},
   shadowOpacity: opacity,
   shadowRadius: blurRadius,

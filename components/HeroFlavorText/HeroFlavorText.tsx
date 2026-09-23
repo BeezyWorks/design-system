@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, Text as RNText} from 'react-native'
 import {Stack} from '../Stack'
 import {getFontFamilyName} from '@models'
+import {White} from '../../colors'
 
 export interface HeroFlavorTextProps {
   children?: React.ReactNode
@@ -44,6 +45,6 @@ const styles = StyleSheet.create({
     // Literal white, not a theme color — this sits over the kotel photo's
     // dark scrim (see `LuachHeroBackground`), which needs light text
     // regardless of the app's own light/dark setting or palette.
-    color: '#ffffff',
+    color: White,
   },
 })

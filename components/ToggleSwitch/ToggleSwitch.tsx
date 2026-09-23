@@ -2,7 +2,12 @@ import React from 'react'
 import {Switch} from 'react-native'
 import {ConcreteThemeStyle} from '@models'
 import {useThemeContext} from 'theme/themeRoot'
-import {useColors} from '../../colors'
+import {
+  useColors,
+  White,
+  ToggleTrackOff,
+  ToggleTrackOffDark,
+} from '../../colors'
 
 export interface ToggleSwitchProps {
   value: boolean
@@ -12,10 +17,9 @@ export interface ToggleSwitchProps {
 
 // Flat (non-opacity) off-track color — the redesign's "no green, ACCENT is
 // the only 'on' color" rule needs a real off color to pair it with rather
-// than an opacity wash. Dark-mode value is a placeholder (no design value
-// given yet) — swap it out once one is provided, same as `TintColorDark`.
-const trackOffColor = '#D8D2C4'
-const trackOffColorDark = '#4A443B'
+// than an opacity wash.
+const trackOffColor = ToggleTrackOff
+const trackOffColorDark = ToggleTrackOffDark
 
 /** The one switch every toggle in the app renders through — wraps RN's
  * built-in `Switch` (not a hand-rolled pill) so native accessibility/
@@ -40,8 +44,8 @@ export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
     // web-only extension, but a real prop react-native-web reads. Both
     // need pinning to white or the redesign's "no green, ACCENT-only"
     // rule quietly breaks on web.
-    activeThumbColor: '#FFFFFF',
-    thumbColor: '#FFFFFF',
+    activeThumbColor: White,
+    thumbColor: White,
     ios_backgroundColor: off,
     onValueChange,
     value,

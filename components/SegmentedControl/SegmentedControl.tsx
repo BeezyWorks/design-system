@@ -4,6 +4,7 @@ import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
 import {useTypeStyle} from '../../typography'
+import {White} from '../../colors'
 
 export interface SegmentOption<T extends string> {
   key: T
@@ -75,7 +76,7 @@ export const SegmentedControl = <T extends string>({
 }
 
 const styles = StyleSheet.create({
-  selectedLabel: {color: '#ffffff'},
+  selectedLabel: {color: White},
   wrapper: {
     ...(Platform.OS === 'web' ? {alignSelf: 'flex-start' as const} : null),
     maxWidth: '100%',

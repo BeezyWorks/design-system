@@ -6,7 +6,7 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native'
-import {useColors, Colors, withOpacity} from '../../colors'
+import {useColors, Colors, Black, withOpacity} from '../../colors'
 import {layout} from '../../layout'
 import {shadows} from '../../shadows'
 
@@ -98,7 +98,7 @@ const styleCreator = (colors: Colors) =>
       elevation: 24,
     },
     scrim: {
-      backgroundColor: withOpacity('#000000', 0.15),
+      backgroundColor: withOpacity(Black, 0.15),
     },
     anchor: {
       position: 'absolute',
