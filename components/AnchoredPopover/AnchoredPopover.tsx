@@ -4,11 +4,13 @@ import {
   ScrollView,
   StyleSheet,
   View,
+  ViewStyle,
   useWindowDimensions,
 } from 'react-native'
-import {useColors, Colors, Black, withOpacity} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 import {layout} from '../../layout'
-import {shadows} from '../../shadows'
+import {useShadow} from '../../shadows'
 
 export interface AnchoredPopoverProps {
   visible: boolean
@@ -39,9 +41,10 @@ export const AnchoredPopover: React.FunctionComponent<AnchoredPopoverProps> = ({
   contentPadding = 16,
   children,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   const {height: windowHeight, width: windowWidth} = useWindowDimensions()
-  const styles = styleCreator(colors)
+  const cardShadow = useShadow('card')
+  const styles = styleCreator(resolve, cardShadow)
 
   if (!visible) return null
 
@@ -81,7 +84,7 @@ export const AnchoredPopover: React.FunctionComponent<AnchoredPopoverProps> = ({
   )
 }
 
-const styleCreator = (colors: Colors) =>
+const styleCreator = (resolve: ColorResolver, cardShadow: ViewStyle) =>
   StyleSheet.create({
     fullScreen: {
       position: 'absolute',
@@ -98,7 +101,7 @@ const styleCreator = (colors: Colors) =>
       elevation: 24,
     },
     scrim: {
-      backgroundColor: withOpacity(Black, 0.15),
+      backgroundColor: resolve(SemanticColor.OverlayScrimSoft),
     },
     anchor: {
       position: 'absolute',
@@ -114,11 +117,11 @@ const styleCreator = (colors: Colors) =>
       paddingRight: 16,
     },
     card: {
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       borderRadius: 14,
       overflow: 'hidden',
       borderWidth: StyleSheet.hairlineWidth,
-      borderColor: colors.scrimColor,
-      ...shadows.card,
+      borderColor: resolve(SemanticColor.BorderStrong),
+      ...cardShadow,
     },
   })

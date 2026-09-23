@@ -7,7 +7,8 @@ import {
   SIDE_NAV_CONTENT_GAP,
 } from 'navigation/tabBar.constants'
 import {useIsWideWebNav, useSideNavWidth} from 'navigation/sideNav.hook'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 import {isFloatingTabBar} from '../TabBarBackground'
 
 export interface ScreenProps {
@@ -46,7 +47,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   children,
   hasNativeHeader,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   // Only set when this screen sits inside the tab navigator (bottom pill on
   // native/narrow web, side rail on wide web) — leaves the padding out for
   // screens pushed above the tabs (e.g. the full-screen siddur reader).
@@ -70,7 +71,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   // above a bar that was never covering anything.
   const bottomInset =
     isFloatingTabBar && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0
-  const style = styleCreator(colors, {
+  const style = styleCreator(resolve, {
     paddingLeft:
       isWideWeb && insideTabs ? sideNavWidth + SIDE_NAV_CONTENT_GAP : 0,
     height: isWeb ? windowHeight : undefined,
@@ -95,7 +96,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
 }
 
 const styleCreator = (
-  colors: Colors,
+  resolve: ColorResolver,
   padding: {paddingLeft: number; height?: number},
 ) =>
   StyleSheet.create({
@@ -111,11 +112,11 @@ const styleCreator = (
       // the same color (not `backgroundColorDirty`/`surfaceCard`) so the
       // safe-area inset (notch/home-indicator strip, painted by this outer
       // view) doesn't show as a visibly different color from the content.
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       zIndex: 999,
     },
     wrapper: {
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       flex: 1,
       overflow: 'hidden',
       paddingLeft: padding.paddingLeft,

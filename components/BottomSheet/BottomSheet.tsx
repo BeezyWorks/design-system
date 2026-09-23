@@ -4,7 +4,8 @@ import {
   BottomSheetProps,
 } from 'modal/components/bottomSheet.props'
 import {LayoutChangeEvent, StyleSheet, View} from 'react-native'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 import {layout} from '../../layout'
 import {BottomSheetHeader} from '../BottomSheetHeader'
 
@@ -22,8 +23,8 @@ export const BottomSheet = ({
   translateY = 0,
   onLayoutHeight,
 }: Props) => {
-  const colors = useColors()
-  const styles = styleCreator(colors)
+  const resolve = useColorResolver()
+  const styles = styleCreator(resolve)
 
   const onLayout = (event: LayoutChangeEvent) => {
     onLayoutHeight(event.nativeEvent.layout.height)
@@ -40,12 +41,12 @@ export const BottomSheet = ({
   )
 }
 
-const styleCreator = (colors: Colors) =>
+const styleCreator = (resolve: ColorResolver) =>
   StyleSheet.create({
     base: {
       borderTopEndRadius: borderRadius,
       borderTopStartRadius: borderRadius,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       paddingBottom: 36,
       marginTop: layout.headerHeight + 36,
     },

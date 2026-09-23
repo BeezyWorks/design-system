@@ -10,7 +10,8 @@ import {
 import {useModalContext} from 'modal/context/modal-context'
 import {BottomSheetProps} from 'modal/components/bottomSheet.props'
 import {SIDE_NAV_BREAKPOINT} from 'navigation/tabBar.constants'
-import {useColors, Colors, Black, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 import {Icon} from '../Icon'
 
 const PANEL_WIDTH = 380
@@ -43,12 +44,12 @@ export const BottomSheetModal = ({
   useEffect(() => {
     dismissedRef.current = dismissed
   }, [dismissed])
-  const colors = useColors()
+  const resolve = useColorResolver()
   const {width: windowWidth, height: windowHeight} = useWindowDimensions()
   const isWide = windowWidth >= SIDE_NAV_BREAKPOINT
   const sheetMaxHeight = windowHeight * 0.85
   const panelWidth = Math.min(PANEL_WIDTH, windowWidth * 0.92)
-  const styles = styleCreator(colors, panelWidth, sheetMaxHeight)
+  const styles = styleCreator(resolve, panelWidth, sheetMaxHeight)
 
   // 0 = offscreen (right for the panel, below for the sheet), 1 = settled.
   const progress = useRef(new Animated.Value(0)).current
@@ -149,7 +150,7 @@ export const BottomSheetModal = ({
 }
 
 const styleCreator = (
-  colors: Colors,
+  resolve: ColorResolver,
   panelWidth: number,
   sheetMaxHeight: number,
 ) =>
@@ -158,7 +159,7 @@ const styleCreator = (
       zIndex: 1000,
     },
     scrim: {
-      backgroundColor: colors.scrimColor,
+      backgroundColor: resolve(SemanticColor.OverlayScrim),
     },
     panel: {
       position: 'absolute',
@@ -166,10 +167,10 @@ const styleCreator = (
       right: 0,
       bottom: 0,
       width: panelWidth,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       borderLeftWidth: StyleSheet.hairlineWidth,
-      borderLeftColor: colors.scrimColor,
-      shadowColor: Black,
+      borderLeftColor: resolve(SemanticColor.BorderStrong),
+      shadowColor: resolve(SemanticColor.OverlayShadow),
       shadowOffset: {width: -2, height: 0},
       shadowOpacity: 0.15,
       shadowRadius: 12,
@@ -180,11 +181,11 @@ const styleCreator = (
       right: 0,
       bottom: 0,
       maxHeight: sheetMaxHeight,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       borderTopLeftRadius: 16,
       borderTopRightRadius: 16,
       overflow: 'hidden',
-      shadowColor: Black,
+      shadowColor: resolve(SemanticColor.OverlayShadow),
       shadowOffset: {width: 0, height: -2},
       shadowOpacity: 0.15,
       shadowRadius: 12,
@@ -196,12 +197,12 @@ const styleCreator = (
       paddingHorizontal: 20,
       height: 64,
       borderBottomWidth: StyleSheet.hairlineWidth,
-      borderBottomColor: colors.scrimColor,
+      borderBottomColor: resolve(SemanticColor.BorderStrong),
     },
     title: {
       fontSize: 18,
       fontWeight: '700',
-      color: colors.primaryTextColor,
+      color: resolve(SemanticColor.TextPrimary),
       flex: 1,
       textAlign: 'right',
       marginLeft: 12,

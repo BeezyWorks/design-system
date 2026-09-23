@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {Touchable} from '../Touchable'
 import {useColors, NextTefilaPill} from '../../colors'
-import {shadows} from '../../shadows'
+import {useShadow} from '../../shadows'
 import {getFontFamilyName, ThemeStyle} from '@models'
 
 export interface UpcomingZmanButtonProps {
@@ -27,13 +27,14 @@ export const UpcomingZmanButton: React.FunctionComponent<
   UpcomingZmanButtonProps
 > = ({tefilaLabel, zmanName, zmanTime, onPress, accessibilityLabel}) => {
   const colors = useColors(ThemeStyle.Dark)
+  const raisedShadow = useShadow('raised')
   return (
     <Touchable
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel ?? zmanName}
     >
-      <View style={[styles.pill, shadows.raised]}>
+      <View style={[styles.pill, raisedShadow]}>
         <RNText style={[styles.tefilaLabel, {color: colors.primaryTextColor}]}>
           {tefilaLabel}
         </RNText>

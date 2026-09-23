@@ -1,7 +1,8 @@
 import React, {useRef} from 'react'
 import {PanResponder, StyleSheet, Text, View} from 'react-native'
 import {BottomSheetHeaderProps} from 'modal/components/bottomSheet.props'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 import {SlideIndicator} from '../SlideIndicator'
 
 // Raw RN `Text` rather than `@design`'s `Text`: the title uses a legacy
@@ -14,8 +15,8 @@ export const BottomSheetHeader = ({
   onPan,
   onPanRelease,
 }: BottomSheetHeaderProps) => {
-  const colors = useColors()
-  const styles = styleCreator(colors)
+  const resolve = useColorResolver()
+  const styles = styleCreator(resolve)
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
@@ -53,7 +54,7 @@ export const BottomSheetHeader = ({
   )
 }
 
-const styleCreator = (colors: Colors) =>
+const styleCreator = (resolve: ColorResolver) =>
   StyleSheet.create({
     wrapper: {
       alignItems: 'stretch',
@@ -72,7 +73,7 @@ const styleCreator = (colors: Colors) =>
       fontSize: 22,
       fontWeight: '600',
       textAlign: 'center',
-      color: colors.secondaryTextColor,
+      color: resolve(SemanticColor.TextSecondary),
     },
     // Both sides share the same `flex: 1`, so they always take up equal
     // width regardless of how wide their own content is (e.g. "Cancel"

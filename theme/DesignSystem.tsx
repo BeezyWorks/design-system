@@ -81,9 +81,11 @@ export const ThemeScope: React.FunctionComponent<ThemeScopeProps> = ({
 /** The mode in effect here (respects the nearest `ThemeScope`). */
 export const useThemeMode = (): ThemeMode => useDesignSystem().mode
 
+export type ColorResolver = (token: SemanticColor) => string
+
 /** A resolver for several tokens at once (third-party APIs that want plain
  * color strings: status bar, calendar themes, navigation theme, …). */
-export const useColorResolver = (): ((token: SemanticColor) => string) => {
+export const useColorResolver = (): ColorResolver => {
   const {mode} = useDesignSystem()
   return useCallback(
     (token: SemanticColor) => resolveColor(mode, token),

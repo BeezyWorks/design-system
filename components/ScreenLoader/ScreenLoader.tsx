@@ -1,10 +1,11 @@
 import React from 'react'
 import {ActivityIndicator} from 'react-native'
 import {Stack} from '../Stack'
-import {useColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export const ScreenLoader: React.FunctionComponent = () => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   return (
     <Stack
       position="absoluteFill"
@@ -12,7 +13,7 @@ export const ScreenLoader: React.FunctionComponent = () => {
       align="center"
       justify="center"
     >
-      <ActivityIndicator color={colors.primaryColor} />
+      <ActivityIndicator color={resolve(SemanticColor.AccentPrimary)} />
     </Stack>
   )
 }

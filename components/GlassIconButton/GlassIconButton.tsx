@@ -1,8 +1,9 @@
 import React from 'react'
 import {Platform, Pressable, StyleSheet, View} from 'react-native'
 import {GlassView, isLiquidGlassAvailable} from 'expo-glass-effect'
-import {useColors, SemanticColor} from '../../colors'
-import {shadows} from '../../shadows'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
+import {useShadow} from '../../shadows'
 import {Icon, IconName} from '../Icon'
 
 export interface GlassIconButtonProps {
@@ -23,7 +24,8 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
   onPress,
   accessibilityLabel,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
+  const cardShadow = useShadow('card')
 
   const button = (
     <Pressable
@@ -46,7 +48,8 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
       style={[
         styles.circle,
         styles.fallback,
-        {backgroundColor: colors.surfaceCard},
+        cardShadow,
+        {backgroundColor: resolve(SemanticColor.SurfaceCard)},
       ]}
     >
       {button}
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     borderRadius: buttonSize / 2,
     overflow: 'hidden',
   },
-  fallback: {...shadows.card},
+  fallback: {},
   pressable: {
     width: buttonSize,
     height: buttonSize,

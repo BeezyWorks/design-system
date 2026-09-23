@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import {spacing, SpacingToken} from '../../spacing'
 import {radius, RadiusToken} from '../../radius'
-import {shadows, ShadowToken} from '../../shadows'
+import {useShadow, ShadowToken} from '../../shadows'
 import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
 
@@ -133,6 +133,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   ...viewProps
 }) => {
   const resolve = useColorResolver()
+  const shadowStyle = useShadow(shadow ?? 'none')
 
   const backgroundColor = background ? resolve(background) : undefined
 
@@ -180,7 +181,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
     // overwritten back to `undefined` by those, silently breaking every
     // `position="absoluteFill"` fill (scrims, loaders) into a non-fill.
     position === 'absoluteFill' ? StyleSheet.absoluteFill : null,
-    shadow ? shadows[shadow] : null,
+    shadow ? shadowStyle : null,
   ]
 
   return (

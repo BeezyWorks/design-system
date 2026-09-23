@@ -1,6 +1,7 @@
 import React from 'react'
 import {StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 
 export interface AlertCardProps {
   title?: string
@@ -17,8 +18,8 @@ export const AlertCard: React.FunctionComponent<AlertCardProps> = ({
   onDismissBackground,
   children,
 }) => {
-  const colors = useColors()
-  const styles = styleCreator(colors)
+  const resolve = useColorResolver()
+  const styles = styleCreator(resolve)
   return (
     <View style={styles.wrapper}>
       <TouchableWithoutFeedback onPress={onDismissBackground}>
@@ -36,15 +37,15 @@ export const AlertCard: React.FunctionComponent<AlertCardProps> = ({
   )
 }
 
-const styleCreator = (colors: Colors) =>
+const styleCreator = (resolve: ColorResolver) =>
   StyleSheet.create({
     wrapper: {
       ...StyleSheet.absoluteFill,
-      backgroundColor: colors.scrimColor,
+      backgroundColor: resolve(SemanticColor.OverlayScrim),
       alignItems: 'center',
     },
     card: {
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
       marginTop: 260,
       borderRadius: 8,
       width: 250,
@@ -52,12 +53,12 @@ const styleCreator = (colors: Colors) =>
     header: {
       padding: 16,
       borderBottomWidth: 1,
-      borderBottomColor: colors.scrimColor,
+      borderBottomColor: resolve(SemanticColor.BorderStrong),
     },
     headerText: {
       fontSize: 20,
       textAlign: 'center',
       fontWeight: 'bold',
-      color: colors.secondaryTextColor,
+      color: resolve(SemanticColor.TextSecondary),
     },
   })

@@ -1,17 +1,18 @@
 import React from 'react'
 import {View, StyleSheet} from 'react-native'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver, ColorResolver} from '../../theme'
 
 export const SlideIndicator = () => {
-  const colors = useColors()
-  const styles = styleCreator(colors)
+  const resolve = useColorResolver()
+  const styles = styleCreator(resolve)
   return <View style={styles.base} />
 }
 
-const styleCreator = (colors: Colors) =>
+const styleCreator = (resolve: ColorResolver) =>
   StyleSheet.create({
     base: {
-      backgroundColor: colors.secondaryTextColor,
+      backgroundColor: resolve(SemanticColor.TextSecondary),
       height: 5,
       width: 50,
       borderRadius: 2.5,

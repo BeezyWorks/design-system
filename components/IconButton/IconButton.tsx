@@ -2,7 +2,8 @@ import React from 'react'
 import {Pressable} from 'react-native'
 import {spacing, SpacingToken} from '../../spacing'
 import {radius} from '../../radius'
-import {useColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {Icon, IconName} from '../Icon'
 
 export interface IconButtonProps {
@@ -28,7 +29,7 @@ export const IconButton: React.FunctionComponent<IconButtonProps> = ({
   accessibilityLabel,
   testID,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   return (
     <Pressable
       accessibilityRole="button"
@@ -42,7 +43,9 @@ export const IconButton: React.FunctionComponent<IconButtonProps> = ({
         padding: spacing[padding],
         borderRadius: radius.full,
         opacity: disabled ? 0.4 : pressed ? 0.6 : 1,
-        backgroundColor: pressed ? colors.backgroundColorDirty : 'transparent',
+        backgroundColor: pressed
+          ? resolve(SemanticColor.SurfaceCard)
+          : 'transparent',
       })}
     >
       <Icon name={name} size={size} color={color} />

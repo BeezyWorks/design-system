@@ -1,6 +1,7 @@
 import React from 'react'
 import {Platform, Pressable, PressableProps} from 'react-native'
-import {useColors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export interface TouchableProps extends Pick<
   PressableProps,
@@ -30,11 +31,11 @@ export const Touchable: React.FunctionComponent<TouchableProps> = ({
   children,
   ...props
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   return (
     <Pressable
       {...props}
-      android_ripple={{color: colors.surfaceHover}}
+      android_ripple={{color: resolve(SemanticColor.SurfaceHover)}}
       style={({pressed}) =>
         // Android shows its own native ripple via `android_ripple` above —
         // an extra background here would just double up on top of it.
@@ -44,7 +45,7 @@ export const Touchable: React.FunctionComponent<TouchableProps> = ({
         // solid fill disappears entirely on a row that's already
         // `backgroundColorDirty` itself, e.g. a card row on `surfaceCard`.
         pressed && Platform.OS !== 'android'
-          ? {backgroundColor: colors.surfaceHover}
+          ? {backgroundColor: resolve(SemanticColor.SurfaceHover)}
           : undefined
       }
     >

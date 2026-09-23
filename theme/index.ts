@@ -6,4 +6,8 @@ export {
   useResolvedColor,
   useContentText,
 } from './DesignSystem'
-export type {DesignSystemProviderProps, ThemeScopeProps} from './DesignSystem'
+export type {
+  ColorResolver,
+  DesignSystemProviderProps,
+  ThemeScopeProps,
+} from './DesignSystem'

@@ -1,8 +1,9 @@
 import React from 'react'
 import {StyleSheet, View} from 'react-native'
 import {radius as radiusTokens, RadiusToken} from '../../radius'
-import {shadows, ShadowToken} from '../../shadows'
-import {BackgroundDark} from '../../colors'
+import {useShadow, ShadowToken} from '../../shadows'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export interface DarkSurfaceProps {
   children?: React.ReactNode
@@ -28,23 +29,27 @@ export const DarkSurface: React.FunctionComponent<DarkSurfaceProps> = ({
   radius = 'lg',
   shadow = 'none',
   grow,
-}) => (
-  <View
-    style={[
-      {
-        height,
-        flexGrow: grow ? 1 : undefined,
-        borderRadius: radiusTokens[radius],
-        backgroundColor: BackgroundDark,
-      },
-      shadows[shadow],
-    ]}
-  >
-    <View style={[styles.inner, {borderRadius: radiusTokens[radius]}]}>
-      {children}
+}) => {
+  const resolve = useColorResolver()
+  const shadowStyle = useShadow(shadow)
+  return (
+    <View
+      style={[
+        {
+          height,
+          flexGrow: grow ? 1 : undefined,
+          borderRadius: radiusTokens[radius],
+          backgroundColor: resolve(SemanticColor.SurfacePanel),
+        },
+        shadowStyle,
+      ]}
+    >
+      <View style={[styles.inner, {borderRadius: radiusTokens[radius]}]}>
+        {children}
+      </View>
     </View>
-  </View>
-)
+  )
+}
 
 const styles = StyleSheet.create({
   inner: {flex: 1, overflow: 'hidden'},

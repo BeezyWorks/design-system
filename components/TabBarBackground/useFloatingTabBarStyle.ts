@@ -1,8 +1,9 @@
 import {Platform, StyleSheet, ViewStyle} from 'react-native'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
-import {useColors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {radius} from '../../radius'
-import {shadows} from '../../shadows'
+import {useShadow} from '../../shadows'
 import {TAB_BAR_HEIGHT, TAB_BAR_MARGIN} from 'navigation/tabBar.constants'
 
 /** The floating, glass tab-bar pill is an iOS design (Liquid Glass has no
@@ -12,12 +13,13 @@ import {TAB_BAR_HEIGHT, TAB_BAR_MARGIN} from 'navigation/tabBar.constants'
  * Non-iOS gets a conventional docked, edge-to-edge bar instead of a shrunk
  * approximation of the pill. */
 export const useFloatingTabBarStyle = (): ViewStyle => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   const insets = useSafeAreaInsets()
+  const floatingShadow = useShadow('floating')
 
   if (Platform.OS !== 'ios') {
     return {
-      backgroundColor: colors.backgroundColorDirty,
+      backgroundColor: resolve(SemanticColor.SurfaceCard),
     }
   }
 
@@ -32,9 +34,9 @@ export const useFloatingTabBarStyle = (): ViewStyle => {
     borderRadius: radius.full,
     borderTopWidth: 0,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.overlay,
+    borderColor: resolve(SemanticColor.BorderStrong),
     backgroundColor: 'transparent',
-    ...shadows.floating,
+    ...floatingShadow,
   }
 }
 
