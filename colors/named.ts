@@ -28,18 +28,14 @@ export const NamedColor = {
   // --- Ink (warm near-black, light-mode text) and its alpha steps
   Ink: '#2A2521',
   InkFaded: 'rgba(42, 37, 33, 0.5)',
-  InkFaded55: 'rgba(42, 37, 33, 0.55)',
   InkFaded60: 'rgba(42, 37, 33, 0.6)',
-  InkFaded65: 'rgba(42, 37, 33, 0.65)',
   InkWash: 'rgba(42, 37, 33, 0.04)',
   InkHairline: 'rgba(30, 25, 20, 0.10)',
 
   // --- Parchment (warm off-white, dark-mode text) and its alpha steps
   Parchment: '#F0ECE4',
   ParchmentFaded: 'rgba(240, 236, 228, 0.5)',
-  ParchmentFaded55: 'rgba(240, 236, 228, 0.55)',
   ParchmentFaded60: 'rgba(240, 236, 228, 0.6)',
-  ParchmentFaded65: 'rgba(240, 236, 228, 0.65)',
   ParchmentWash: 'rgba(240, 236, 228, 0.04)',
   WhiteHairline: 'rgba(255, 255, 255, 0.12)',
   WhiteWash: 'rgba(255, 255, 255, 0.08)',

@@ -9,8 +9,6 @@ export const SemanticColor = {
   // Text
   TextPrimary: 'textPrimary',
   TextSecondary: 'textSecondary',
-  TextSecondaryMedium: 'textSecondaryMedium',
-  TextSecondaryStrong: 'textSecondaryStrong',
   TextTabInactive: 'textTabInactive',
   TextAccent: 'textAccent',
   TextOnAccent: 'textOnAccent',
@@ -42,13 +40,11 @@ export const SemanticColor = {
 
   // Accent
   AccentPrimary: 'accentPrimary',
-  AccentPrimaryFixed: 'accentPrimaryFixed',
   AccentPrimaryBright: 'accentPrimaryBright',
   AccentPrimaryDeep: 'accentPrimaryDeep',
   AccentTabActive: 'accentTabActive',
   AccentTint: 'accentTint',
   AccentTintSelected: 'accentTintSelected',
-  AccentTintFixed: 'accentTintFixed',
   AccentDanger: 'accentDanger',
   AccentAlert: 'accentAlert',
   AccentAlertFaded: 'accentAlertFaded',

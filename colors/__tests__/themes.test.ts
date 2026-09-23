@@ -47,12 +47,6 @@ describe.each([
     expect(next[S.TextTabInactive]).toBe(old.tabOffColor)
     expect(next[S.TextAccent]).toBe(old.specialTextColor)
     expect(next[S.TextDanger]).toBe(old.warningColor)
-    expect(next[S.TextSecondaryMedium]).toBe(
-      withOpacity(old.primaryTextColor, 0.55),
-    )
-    expect(next[S.TextSecondaryStrong]).toBe(
-      withOpacity(old.primaryTextColor, 0.65),
-    )
   })
 
   it('surfaces, borders and overlays', () => {
@@ -75,11 +69,9 @@ describe.each([
 
 describe('mode-independent colors match the legacy fixed exports', () => {
   it.each([lightTheme, darkTheme])('%#', (theme) => {
-    expect(theme[S.AccentPrimaryFixed]).toBe(legacy.ColorPrimary)
     expect(theme[S.AccentTabActive]).toBe(legacy.ColorPrimary)
     expect(theme[S.AccentPrimaryBright]).toBe(legacy.ColorPrimaryLight)
     expect(theme[S.AccentPrimaryDeep]).toBe(legacy.NextTefilaPill)
-    expect(theme[S.AccentTintFixed]).toBe(withOpacity(legacy.ColorPrimary, 0.1))
     expect(theme[S.SurfacePanel]).toBe(legacy.BackgroundDark)
     expect(theme[S.SurfaceThumb]).toBe(legacy.White)
     expect(theme[S.TextOnAccent]).toBe(legacy.White)
