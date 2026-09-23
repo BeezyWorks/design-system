@@ -1,0 +1,6947 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components (dark theme) Button destructive variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#f44336",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button disabled 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 0.4,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button ghost variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#1C1A17",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#6FA3E8",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button lg size 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 24,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button loading 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <ActivityIndicator
+    color="#1C1A17"
+  />
+</View>
+`;
+
+exports[`components (dark theme) Button md size 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button outline variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#1C1A17",
+      "borderColor": "rgba(255, 255, 255, 0.12)",
+      "borderRadius": 12,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#6FA3E8",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button primary variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button secondary variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#262320",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#6FA3E8",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button sm size 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 8,
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Button with an icon 1`] = `
+<View
+  accessibilityLabel="Add"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#6FA3E8",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <RNSVGSvgView
+    align="xMidYMid"
+    aria-hidden="true"
+    bbHeight={18}
+    bbWidth={18}
+    className="lucide lucide-plus"
+    fill="none"
+    focusable={false}
+    height={18}
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    stroke="#1C1A17"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        {
+          "flex": 0,
+          "height": 18,
+          "width": 18,
+        },
+      ]
+    }
+    vbHeight={24}
+    vbWidth={24}
+    width={18}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <RNSVGGroup
+      fill={null}
+      propList={
+        [
+          "fill",
+          "stroke",
+          "strokeWidth",
+          "strokeLinecap",
+          "strokeLinejoin",
+        ]
+      }
+      stroke={
+        {
+          "payload": 4280031767,
+          "type": 0,
+        }
+      }
+      strokeLinecap={1}
+      strokeLinejoin={1}
+      strokeWidth={2}
+    >
+      <RNSVGPath
+        d="M5 12h14"
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280031767,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      />
+      <RNSVGPath
+        d="M12 5v14"
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280031767,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#1C1A17",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Add
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Card 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": "#262320",
+        "borderBottomWidth": undefined,
+        "borderColor": "rgba(255, 255, 255, 0.12)",
+        "borderRadius": 16,
+        "borderWidth": 1,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": undefined,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": 16,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      {
+        "elevation": 6,
+        "shadowColor": "#000000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.25,
+        "shadowRadius": 3.84,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 14,
+          "fontWeight": "400",
+        },
+        {
+          "color": "#F0ECE4",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Inside
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) Divider 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": "rgba(255, 255, 255, 0.12)",
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": undefined,
+        "height": 0.5,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": "100%",
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+/>
+`;
+
+exports[`components (dark theme) EmptyState title only 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": "center",
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 32,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#F0ECE4",
+        },
+        {
+          "textAlign": "center",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    No notifications
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) EmptyState with subtitle and action 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": "center",
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 32,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#F0ECE4",
+        },
+        {
+          "textAlign": "center",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    No notifications
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "rgba(240, 236, 228, 0.5)",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "lineHeight": 18,
+        },
+        {
+          "color": "rgba(240, 236, 228, 0.5)",
+        },
+        {
+          "textAlign": "center",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Add one to be reminded before a zman.
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": 8,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="Add notification"
+      accessibilityRole="button"
+      accessibilityState={
+        {
+          "busy": false,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#1C1A17",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "borderRadius": 12,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F0ECE4",
+              "fontSize": 16,
+              "fontWeight": "600",
+            },
+            {
+              "color": "#6FA3E8",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        Add notification
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) EventDot erevMinorHoliday 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#FDBA74",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot erevYomTov 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#93C5FD",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot fastDay 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#EF4444",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot minorHoliday 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#F97316",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot roshChodesh 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#F97316",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot unspecified 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#FCD34D",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot userEvent 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#22C55E",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) EventDot yomTov 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#3B82F6",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (dark theme) MenuItemRow last in a section has no divider 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row-reverse",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 13,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 17,
+            "fontWeight": "400",
+          },
+          {
+            "color": "#F0ECE4",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      מעריב
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": 0.35,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={14}
+        bbWidth={14}
+        className="lucide lucide-chevron-left"
+        fill="none"
+        focusable={false}
+        height={14}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 14,
+              "width": 14,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4293979364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="m15 18-6-6 6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) MenuItemRow with a divider 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": 1,
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row-reverse",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 13,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 17,
+            "fontWeight": "400",
+          },
+          {
+            "color": "#F0ECE4",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      שחרית
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": 0.35,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={14}
+        bbWidth={14}
+        className="lucide lucide-chevron-left"
+        fill="none"
+        focusable={false}
+        height={14}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 14,
+              "width": 14,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4293979364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="m15 18-6-6 6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) SectionHeader with a title 1`] = `
+<View
+  style={
+    {
+      "marginTop": 64,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 14,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#6FA3E8",
+        },
+        {
+          "textAlign": "right",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    שחרית
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) SectionHeader without a title reserves the gap 1`] = `
+<View
+  style={
+    {
+      "marginTop": 64,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 14,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#6FA3E8",
+        },
+        {
+          "textAlign": "right",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`components (dark theme) SegmentedControl 1`] = `
+<View
+  style={
+    {
+      "maxWidth": "100%",
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": "#1C1A17",
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": 12,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": 4,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": 4,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        {
+          "elevation": 6,
+          "shadowColor": "#000000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.25,
+          "shadowRadius": 3.84,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "minWidth": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": 8,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": 44,
+                "justifyContent": "center",
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": "100%",
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#F0ECE4",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#F0ECE4",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            System
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "flex": 1,
+          "minWidth": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": "#6FA3E8",
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": 8,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": 44,
+                "justifyContent": "center",
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": "100%",
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#F0ECE4",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#FFFFFF",
+                },
+              ]
+            }
+          >
+            Light
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "flex": 1,
+          "minWidth": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": 8,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": 44,
+                "justifyContent": "center",
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": "100%",
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#F0ECE4",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#F0ECE4",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            Dark
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) SettingsRow 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 8,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          {
+            "color": "#F0ECE4",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Font size
+    </Text>
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 14,
+          "fontWeight": "400",
+        },
+        {
+          "color": "#F0ECE4",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Normal
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) SickNameRow 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": undefined,
+        "height": undefined,
+        "justifyContent": "space-between",
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 4,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#F0ECE4",
+          "fontSize": 22,
+          "fontWeight": "700",
+        },
+        {
+          "color": "#F0ECE4",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Miriam bat Sarah
+  </Text>
+  <View
+    accessibilityLabel="Delete name"
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    hitSlop={8}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "backgroundColor": "transparent",
+        "borderRadius": 9999,
+        "opacity": 1,
+        "padding": 8,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      aria-hidden="true"
+      bbHeight={24}
+      bbWidth={24}
+      className="lucide lucide-trash lucide-trash-2"
+      fill="none"
+      focusable={false}
+      height={24}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="#f44336"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4294198070,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      >
+        <RNSVGPath
+          d="M10 11v6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M14 11v6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M3 6h18"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) Spacer 1`] = `
+[
+  <View
+    style={
+      {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />,
+  <View
+    style={
+      {
+        "height": 32,
+        "width": 32,
+      }
+    }
+  />,
+  <View
+    style={
+      {
+        "flexGrow": 1,
+      }
+    }
+  />,
+]
+`;
+
+exports[`components (dark theme) Text as reading content 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontFamily": "Taamey Frank CLM",
+        "fontSize": 24,
+        "lineHeight": 60,
+        "textAlign": "right",
+      },
+      {
+        "color": "#F0ECE4",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  בראשית ברא
+</Text>
+`;
+
+exports[`components (dark theme) Text body variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontSize": 14,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#F0ECE4",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) Text caption variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontSize": 12,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#F0ECE4",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) Text headline variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontSize": 16,
+        "fontWeight": "600",
+      },
+      {
+        "color": "#F0ECE4",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) Text in ktav Rashi 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontSize": 14,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#F0ECE4",
+      },
+      null,
+      null,
+      null,
+      {
+        "fontFamily": "NotoRashiHebrew_400Regular",
+      },
+    ]
+  }
+>
+  רש״י
+</Text>
+`;
+
+exports[`components (dark theme) Text pageHeader variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#6FA3E8",
+        "fontFamily": "FrankRuhlLibre_700Bold",
+        "fontSize": 30,
+        "fontWeight": "700",
+      },
+      {
+        "color": "#6FA3E8",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) Text sectionHeader variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "rgba(240, 236, 228, 0.5)",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "letterSpacing": 0.72,
+        "textTransform": "uppercase",
+      },
+      {
+        "color": "rgba(240, 236, 228, 0.5)",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) Text title variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontSize": 18,
+        "fontWeight": "700",
+      },
+      {
+        "color": "#F0ECE4",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) Text with tone, alignment and bold 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F0ECE4",
+        "fontSize": 14,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#6FA3E8",
+      },
+      {
+        "textAlign": "center",
+      },
+      {
+        "fontWeight": "700",
+      },
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (dark theme) ToggleSetting enabled=false 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 8,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 14,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#F0ECE4",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Omer alert
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        activeThumbColor="#FFFFFF"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onTintColor="#6FA3E8"
+        style={
+          [
+            {
+              "alignSelf": "flex-start",
+            },
+            {
+              "backgroundColor": "#4A443B",
+              "borderRadius": 16,
+            },
+          ]
+        }
+        thumbTintColor="#FFFFFF"
+        tintColor="#4A443B"
+        value={false}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) ToggleSetting enabled=true 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 8,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 14,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#F0ECE4",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Omer alert
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        activeThumbColor="#FFFFFF"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onTintColor="#6FA3E8"
+        style={
+          [
+            {
+              "alignSelf": "flex-start",
+            },
+            {
+              "backgroundColor": "#4A443B",
+              "borderRadius": 16,
+            },
+          ]
+        }
+        thumbTintColor="#FFFFFF"
+        tintColor="#4A443B"
+        value={true}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) ToggleSetting with on/off titles 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 8,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 14,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#F0ECE4",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      NusachSfard
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        activeThumbColor="#FFFFFF"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onTintColor="#6FA3E8"
+        style={
+          [
+            {
+              "alignSelf": "flex-start",
+            },
+            {
+              "backgroundColor": "#4A443B",
+              "borderRadius": 16,
+            },
+          ]
+        }
+        thumbTintColor="#FFFFFF"
+        tintColor="#4A443B"
+        value={true}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) ToggleSwitch disabled 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  activeThumbColor="#FFFFFF"
+  disabled={true}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#6FA3E8"
+  style={
+    [
+      {
+        "alignSelf": "flex-start",
+      },
+      {
+        "backgroundColor": "#4A443B",
+        "borderRadius": 16,
+      },
+    ]
+  }
+  thumbTintColor="#FFFFFF"
+  tintColor="#4A443B"
+  value={true}
+/>
+`;
+
+exports[`components (dark theme) ToggleSwitch value=false 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  activeThumbColor="#FFFFFF"
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#6FA3E8"
+  style={
+    [
+      {
+        "alignSelf": "flex-start",
+      },
+      {
+        "backgroundColor": "#4A443B",
+        "borderRadius": 16,
+      },
+    ]
+  }
+  thumbTintColor="#FFFFFF"
+  tintColor="#4A443B"
+  value={false}
+/>
+`;
+
+exports[`components (dark theme) ToggleSwitch value=true 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  activeThumbColor="#FFFFFF"
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#6FA3E8"
+  style={
+    [
+      {
+        "alignSelf": "flex-start",
+      },
+      {
+        "backgroundColor": "#4A443B",
+        "borderRadius": 16,
+      },
+    ]
+  }
+  thumbTintColor="#FFFFFF"
+  tintColor="#4A443B"
+  value={true}
+/>
+`;
+
+exports[`components (dark theme) ZmanimRow past 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "color": "#F0ECE4",
+        },
+      ]
+    }
+  >
+    5:10 AM
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "fontWeight": "normal",
+        },
+        {
+          "color": "rgba(240, 236, 228, 0.5)",
+        },
+      ]
+    }
+  >
+    Alos HaShachar
+  </Text>
+</View>
+`;
+
+exports[`components (dark theme) ZmanimRow upcoming 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "color": "#F0ECE4",
+        },
+      ]
+    }
+  >
+    7:42 AM
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#F0ECE4",
+        },
+      ]
+    }
+  >
+    Sof Zman Shma
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button destructive variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#f44336",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button disabled 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 0.4,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button ghost variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FAF7F0",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#3E7FD1",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button lg size 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 24,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button loading 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <ActivityIndicator
+    color="#FAF7F0"
+  />
+</View>
+`;
+
+exports[`components (light theme) Button md size 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button outline variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FAF7F0",
+      "borderColor": "rgba(30, 25, 20, 0.10)",
+      "borderRadius": 12,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#3E7FD1",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button primary variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button secondary variant 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#3E7FD1",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button sm size 1`] = `
+<View
+  accessibilityLabel="Save"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 8,
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Save
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Button with an icon 1`] = `
+<View
+  accessibilityLabel="Add"
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": false,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3E7FD1",
+      "borderColor": undefined,
+      "borderRadius": 12,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <RNSVGSvgView
+    align="xMidYMid"
+    aria-hidden="true"
+    bbHeight={18}
+    bbWidth={18}
+    className="lucide lucide-plus"
+    fill="none"
+    focusable={false}
+    height={18}
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    stroke="#FAF7F0"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        {
+          "flex": 0,
+          "height": 18,
+          "width": 18,
+        },
+      ]
+    }
+    vbHeight={24}
+    vbWidth={24}
+    width={18}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <RNSVGGroup
+      fill={null}
+      propList={
+        [
+          "fill",
+          "stroke",
+          "strokeWidth",
+          "strokeLinecap",
+          "strokeLinejoin",
+        ]
+      }
+      stroke={
+        {
+          "payload": 4294637552,
+          "type": 0,
+        }
+      }
+      strokeLinecap={1}
+      strokeLinejoin={1}
+      strokeWidth={2}
+    >
+      <RNSVGPath
+        d="M5 12h14"
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4294637552,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      />
+      <RNSVGPath
+        d="M12 5v14"
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4294637552,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FAF7F0",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Add
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Card 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": "#FFFFFF",
+        "borderBottomWidth": undefined,
+        "borderColor": "rgba(30, 25, 20, 0.10)",
+        "borderRadius": 16,
+        "borderWidth": 1,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": undefined,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": 16,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      {
+        "elevation": 6,
+        "shadowColor": "#000000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.25,
+        "shadowRadius": 3.84,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 14,
+          "fontWeight": "400",
+        },
+        {
+          "color": "#2A2521",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Inside
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) Divider 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": "rgba(30, 25, 20, 0.10)",
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": undefined,
+        "height": 0.5,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": "100%",
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+/>
+`;
+
+exports[`components (light theme) EmptyState title only 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": "center",
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 32,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#2A2521",
+        },
+        {
+          "textAlign": "center",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    No notifications
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) EmptyState with subtitle and action 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": "center",
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 32,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#2A2521",
+        },
+        {
+          "textAlign": "center",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    No notifications
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "rgba(42, 37, 33, 0.5)",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "lineHeight": 18,
+        },
+        {
+          "color": "rgba(42, 37, 33, 0.5)",
+        },
+        {
+          "textAlign": "center",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Add one to be reminded before a zman.
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": 8,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="Add notification"
+      accessibilityRole="button"
+      accessibilityState={
+        {
+          "busy": false,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FAF7F0",
+          "borderColor": "rgba(30, 25, 20, 0.10)",
+          "borderRadius": 12,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#2A2521",
+              "fontSize": 16,
+              "fontWeight": "600",
+            },
+            {
+              "color": "#3E7FD1",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        Add notification
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) EventDot erevMinorHoliday 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#FDBA74",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot erevYomTov 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#93C5FD",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot fastDay 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#EF4444",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot minorHoliday 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#F97316",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot roshChodesh 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#F97316",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot unspecified 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#FCD34D",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot userEvent 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#22C55E",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) EventDot yomTov 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#3B82F6",
+      "borderRadius": 9999,
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
+
+exports[`components (light theme) MenuItemRow last in a section has no divider 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": "rgba(30, 25, 20, 0.10)",
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row-reverse",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 13,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 17,
+            "fontWeight": "400",
+          },
+          {
+            "color": "#2A2521",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      מעריב
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": 0.35,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={14}
+        bbWidth={14}
+        className="lucide lucide-chevron-left"
+        fill="none"
+        focusable={false}
+        height={14}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 14,
+              "width": 14,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280952097,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="m15 18-6-6 6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) MenuItemRow with a divider 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": 1,
+          "borderColor": "rgba(30, 25, 20, 0.10)",
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row-reverse",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 13,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 17,
+            "fontWeight": "400",
+          },
+          {
+            "color": "#2A2521",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      שחרית
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": 0.35,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={14}
+        bbWidth={14}
+        className="lucide lucide-chevron-left"
+        fill="none"
+        focusable={false}
+        height={14}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 14,
+              "width": 14,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280952097,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="m15 18-6-6 6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) SectionHeader with a title 1`] = `
+<View
+  style={
+    {
+      "marginTop": 64,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 14,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#3E7FD1",
+        },
+        {
+          "textAlign": "right",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    שחרית
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) SectionHeader without a title reserves the gap 1`] = `
+<View
+  style={
+    {
+      "marginTop": 64,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 14,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#3E7FD1",
+        },
+        {
+          "textAlign": "right",
+        },
+        null,
+        null,
+        null,
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`components (light theme) SegmentedControl 1`] = `
+<View
+  style={
+    {
+      "maxWidth": "100%",
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": "#FAF7F0",
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": 12,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": 4,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": 4,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        {
+          "elevation": 6,
+          "shadowColor": "#000000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.25,
+          "shadowRadius": 3.84,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "minWidth": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": 8,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": 44,
+                "justifyContent": "center",
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": "100%",
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            System
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "flex": 1,
+          "minWidth": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": "#3E7FD1",
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": 8,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": 44,
+                "justifyContent": "center",
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": "100%",
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#FFFFFF",
+                },
+              ]
+            }
+          >
+            Light
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "flex": 1,
+          "minWidth": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": 8,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": 44,
+                "justifyContent": "center",
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": "100%",
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            Dark
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) SettingsRow 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 8,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          {
+            "color": "#2A2521",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Font size
+    </Text>
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 14,
+          "fontWeight": "400",
+        },
+        {
+          "color": "#2A2521",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Normal
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) SickNameRow 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": undefined,
+        "height": undefined,
+        "justifyContent": "space-between",
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": 4,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#2A2521",
+          "fontSize": 22,
+          "fontWeight": "700",
+        },
+        {
+          "color": "#2A2521",
+        },
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  >
+    Miriam bat Sarah
+  </Text>
+  <View
+    accessibilityLabel="Delete name"
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    hitSlop={8}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "backgroundColor": "transparent",
+        "borderRadius": 9999,
+        "opacity": 1,
+        "padding": 8,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      aria-hidden="true"
+      bbHeight={24}
+      bbWidth={24}
+      className="lucide lucide-trash lucide-trash-2"
+      fill="none"
+      focusable={false}
+      height={24}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="#f44336"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4294198070,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      >
+        <RNSVGPath
+          d="M10 11v6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M14 11v6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M3 6h18"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+        <RNSVGPath
+          d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294198070,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) Spacer 1`] = `
+[
+  <View
+    style={
+      {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />,
+  <View
+    style={
+      {
+        "height": 32,
+        "width": 32,
+      }
+    }
+  />,
+  <View
+    style={
+      {
+        "flexGrow": 1,
+      }
+    }
+  />,
+]
+`;
+
+exports[`components (light theme) Text as reading content 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontFamily": "Taamey Frank CLM",
+        "fontSize": 24,
+        "lineHeight": 60,
+        "textAlign": "right",
+      },
+      {
+        "color": "#2A2521",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  בראשית ברא
+</Text>
+`;
+
+exports[`components (light theme) Text body variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontSize": 14,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#2A2521",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) Text caption variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontSize": 12,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#2A2521",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) Text headline variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontSize": 16,
+        "fontWeight": "600",
+      },
+      {
+        "color": "#2A2521",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) Text in ktav Rashi 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontSize": 14,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#2A2521",
+      },
+      null,
+      null,
+      null,
+      {
+        "fontFamily": "NotoRashiHebrew_400Regular",
+      },
+    ]
+  }
+>
+  רש״י
+</Text>
+`;
+
+exports[`components (light theme) Text pageHeader variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#3E7FD1",
+        "fontFamily": "FrankRuhlLibre_700Bold",
+        "fontSize": 30,
+        "fontWeight": "700",
+      },
+      {
+        "color": "#3E7FD1",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) Text sectionHeader variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "rgba(42, 37, 33, 0.5)",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "letterSpacing": 0.72,
+        "textTransform": "uppercase",
+      },
+      {
+        "color": "rgba(42, 37, 33, 0.5)",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) Text title variant 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontSize": 18,
+        "fontWeight": "700",
+      },
+      {
+        "color": "#2A2521",
+      },
+      null,
+      null,
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) Text with tone, alignment and bold 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#2A2521",
+        "fontSize": 14,
+        "fontWeight": "400",
+      },
+      {
+        "color": "#3E7FD1",
+      },
+      {
+        "textAlign": "center",
+      },
+      {
+        "fontWeight": "700",
+      },
+      null,
+      null,
+    ]
+  }
+>
+  שלום
+</Text>
+`;
+
+exports[`components (light theme) ToggleSetting enabled=false 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 8,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 14,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#2A2521",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Omer alert
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        activeThumbColor="#FFFFFF"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onTintColor="#3E7FD1"
+        style={
+          [
+            {
+              "alignSelf": "flex-start",
+            },
+            {
+              "backgroundColor": "#D8D2C4",
+              "borderRadius": 16,
+            },
+          ]
+        }
+        thumbTintColor="#FFFFFF"
+        tintColor="#D8D2C4"
+        value={false}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) ToggleSetting enabled=true 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 8,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 14,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#2A2521",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Omer alert
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        activeThumbColor="#FFFFFF"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onTintColor="#3E7FD1"
+        style={
+          [
+            {
+              "alignSelf": "flex-start",
+            },
+            {
+              "backgroundColor": "#D8D2C4",
+              "borderRadius": 16,
+            },
+          ]
+        }
+        thumbTintColor="#FFFFFF"
+        tintColor="#D8D2C4"
+        value={true}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) ToggleSetting with on/off titles 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "row",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": "space-between",
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": 8,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 14,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#2A2521",
+          },
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      NusachSfard
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <RCTSwitch
+        accessibilityRole="switch"
+        activeThumbColor="#FFFFFF"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onTintColor="#3E7FD1"
+        style={
+          [
+            {
+              "alignSelf": "flex-start",
+            },
+            {
+              "backgroundColor": "#D8D2C4",
+              "borderRadius": 16,
+            },
+          ]
+        }
+        thumbTintColor="#FFFFFF"
+        tintColor="#D8D2C4"
+        value={true}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) ToggleSwitch disabled 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  activeThumbColor="#FFFFFF"
+  disabled={true}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#3E7FD1"
+  style={
+    [
+      {
+        "alignSelf": "flex-start",
+      },
+      {
+        "backgroundColor": "#D8D2C4",
+        "borderRadius": 16,
+      },
+    ]
+  }
+  thumbTintColor="#FFFFFF"
+  tintColor="#D8D2C4"
+  value={true}
+/>
+`;
+
+exports[`components (light theme) ToggleSwitch value=false 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  activeThumbColor="#FFFFFF"
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#3E7FD1"
+  style={
+    [
+      {
+        "alignSelf": "flex-start",
+      },
+      {
+        "backgroundColor": "#D8D2C4",
+        "borderRadius": 16,
+      },
+    ]
+  }
+  thumbTintColor="#FFFFFF"
+  tintColor="#D8D2C4"
+  value={false}
+/>
+`;
+
+exports[`components (light theme) ToggleSwitch value=true 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  activeThumbColor="#FFFFFF"
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#3E7FD1"
+  style={
+    [
+      {
+        "alignSelf": "flex-start",
+      },
+      {
+        "backgroundColor": "#D8D2C4",
+        "borderRadius": 16,
+      },
+    ]
+  }
+  thumbTintColor="#FFFFFF"
+  tintColor="#D8D2C4"
+  value={true}
+/>
+`;
+
+exports[`components (light theme) ZmanimRow past 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "color": "#2A2521",
+        },
+      ]
+    }
+  >
+    5:10 AM
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "fontWeight": "normal",
+        },
+        {
+          "color": "rgba(42, 37, 33, 0.5)",
+        },
+      ]
+    }
+  >
+    Alos HaShachar
+  </Text>
+</View>
+`;
+
+exports[`components (light theme) ZmanimRow upcoming 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "color": "#2A2521",
+        },
+      ]
+    }
+  >
+    7:42 AM
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "paddingVertical": 4,
+        },
+        {
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#2A2521",
+        },
+      ]
+    }
+  >
+    Sof Zman Shma
+  </Text>
+</View>
+`;
