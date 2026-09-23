@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {View} from 'react-native'
 import {layout} from '../../layout'
 import {Text} from '../Text'
@@ -17,7 +18,7 @@ export const SectionHeader: React.FunctionComponent<SectionHeaderProps> = ({
   title,
 }) => (
   <View style={{marginTop: layout.headerHeight}}>
-    <Text variant="bodyStrong" tone="primaryColor" align="right">
+    <Text variant="bodyStrong" color={SemanticColor.TextAccent} align="right">
       {title}
     </Text>
   </View>

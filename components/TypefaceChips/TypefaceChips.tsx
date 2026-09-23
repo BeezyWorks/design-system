@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {TypeFace} from '@models'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
@@ -41,8 +42,11 @@ export const TypefaceChips: React.FunctionComponent<TypefaceChipsProps> = ({
             radius="sm"
             gap="xs"
             shadow="card"
-            background={selected ? 'primaryColor' : 'backgroundColor'}
-            backgroundOpacity={selected ? 0.1 : undefined}
+            background={
+              selected
+                ? SemanticColor.AccentTintSelected
+                : SemanticColor.SurfaceBackground
+            }
           >
             <Text variant="titleLarge" align="center" typeface={item.face}>
               {sampleText}
@@ -50,7 +54,9 @@ export const TypefaceChips: React.FunctionComponent<TypefaceChipsProps> = ({
             <Text
               variant="caption"
               align="center"
-              tone={selected ? 'primaryColor' : 'primaryTextColor'}
+              color={
+                selected ? SemanticColor.TextAccent : SemanticColor.TextPrimary
+              }
               numberOfLines={1}
             >
               {item.label}

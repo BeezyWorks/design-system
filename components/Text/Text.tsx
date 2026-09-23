@@ -1,10 +1,10 @@
 import React from 'react'
 import {Text as NativeText, TextProps as NativeTextProps} from 'react-native'
 import {TypeVariant, useTypeStyle, useContentTypeStyle} from '../../typography'
-import {useColors, Colors} from '../../colors'
-import {TypeFace, getFontFamilyName} from '@models'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
+import {FontFamily, Typeface, typefaceFontFamily} from '../../typography'
 
-export type Tone = keyof Colors
 export type TextAlign = 'auto' | 'left' | 'right' | 'center' | 'justify'
 
 export interface TextProps extends Pick<
@@ -25,12 +25,12 @@ export interface TextProps extends Pick<
    * `useBaseTextStyle`. */
   content?: boolean
   /** Overrides the variant's default color with a semantic token. */
-  tone?: Tone
+  color?: SemanticColor
   align?: TextAlign
   bold?: boolean
   /** Decorative font family override (e.g. the Hebrew display faces),
    * independent of the content/user-settings typeface. */
-  typeface?: TypeFace
+  typeface?: Typeface
   /** Renders in Noto Rashi Hebrew (ktav Rashi/semi-cursive script) instead
    * of whatever `typeface`/content font would otherwise apply. Used for
    * peirush text (Rashi, Targum, or a plain-pasuk repeat standing in for
@@ -43,7 +43,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
   children,
   variant = 'body',
   content,
-  tone,
+  color,
   align,
   bold,
   typeface,
@@ -52,25 +52,25 @@ export const Text: React.FunctionComponent<TextProps> = ({
 }) => {
   const chromeStyle = useTypeStyle(variant)
   const contentStyle = useContentTypeStyle()
-  const colors = useColors()
+  const resolve = useColorResolver()
 
   const base = content ? contentStyle : chromeStyle
-  const color = tone ? colors[tone] : base.color
+  const resolvedColor = color ? resolve(color) : base.color
 
   return (
     <NativeText
       {...textProps}
       style={[
         base,
-        {color},
+        {color: resolvedColor},
         align ? {textAlign: align} : null,
         bold ? {fontWeight: '700'} : null,
-        typeface ? {fontFamily: getFontFamilyName(typeface)} : null,
+        typeface ? {fontFamily: typefaceFontFamily[typeface]} : null,
         rashiScript
           ? {
               fontFamily: bold
-                ? 'NotoRashiHebrew_700Bold'
-                : 'NotoRashiHebrew_400Regular',
+                ? FontFamily.NotoRashiHebrewBold
+                : FontFamily.NotoRashiHebrew,
             }
           : null,
       ]}

@@ -15,7 +15,7 @@ import {Text} from '../Text'
 import {ToggleSetting} from '../ToggleSetting'
 import {ToggleSwitch} from '../ToggleSwitch'
 import {ZmanimRow} from '../ZmanimRow'
-import {eventCategoryColors} from '../../colors'
+import {eventCategoryColors, SemanticColor} from '../../colors'
 import {
   pressables,
   renderWithTheme,
@@ -71,7 +71,7 @@ describe.each(themes)('components (%s theme)', (theme) => {
 
     it('with tone, alignment and bold', () => {
       expectSnapshot(
-        <Text tone="primaryColor" align="center" bold>
+        <Text color={SemanticColor.TextAccent} align="center" bold>
           שלום
         </Text>,
         theme,

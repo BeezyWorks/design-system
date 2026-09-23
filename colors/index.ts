@@ -71,5 +71,7 @@ export const eventCategoryColors = {
 
 export type EventCategory = keyof typeof eventCategoryColors
 
+export {SemanticColor} from './semantic'
+export type {ThemeMode} from './themes'
 export {withOpacity} from './withOpacity'
 export * from './palette'

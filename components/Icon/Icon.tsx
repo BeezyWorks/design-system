@@ -18,7 +18,8 @@ import {
   Download,
   LucideIcon,
 } from 'lucide-react-native'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useResolvedColor} from '../../theme'
 
 export type IconName =
   | 'calendar-today'
@@ -62,9 +63,9 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
 export interface IconProps {
   name: IconName
   size?: number
-  /** Semantic color token — never a raw hex value. Defaults to the current
-   * primary text color. */
-  tone?: keyof Colors
+  /** Semantic color token — never a raw hex value. Defaults to
+   * `SemanticColor.TextPrimary`. */
+  color?: SemanticColor
   onPress?: () => void
   accessibilityLabel?: string
 }
@@ -72,13 +73,13 @@ export interface IconProps {
 export const Icon: React.FunctionComponent<IconProps> = ({
   name,
   size = 24,
-  tone = 'primaryTextColor',
+  color = SemanticColor.TextPrimary,
   onPress,
   accessibilityLabel,
 }) => {
-  const colors = useColors()
+  const resolvedColor = useResolvedColor(color)
   const IconComponent = lucideIconForName[name] ?? Settings
-  const icon = <IconComponent size={size} color={colors[tone]} />
+  const icon = <IconComponent size={size} color={resolvedColor} />
 
   if (!onPress) return icon
   return (

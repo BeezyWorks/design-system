@@ -1,7 +1,7 @@
 import React from 'react'
 import {ActivityIndicator} from 'react-native'
 import {LoaderModalConfig} from '@models'
-import {useColors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 
 export const LoaderModalPresenter = ({}: LoaderModalConfig) => {
@@ -9,7 +9,7 @@ export const LoaderModalPresenter = ({}: LoaderModalConfig) => {
   return (
     <Stack
       position="absoluteFill"
-      background="scrimColor"
+      background={SemanticColor.OverlayScrim}
       align="center"
       justify="center"
     >
@@ -18,7 +18,7 @@ export const LoaderModalPresenter = ({}: LoaderModalConfig) => {
         height={50}
         align="center"
         justify="center"
-        background="backgroundColor"
+        background={SemanticColor.SurfaceBackground}
         radius="sm"
       >
         <ActivityIndicator color={colors.primaryColor} />

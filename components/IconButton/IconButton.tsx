@@ -2,13 +2,13 @@ import React from 'react'
 import {Pressable} from 'react-native'
 import {spacing, SpacingToken} from '../../spacing'
 import {radius} from '../../radius'
-import {useColors, Colors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 import {Icon, IconName} from '../Icon'
 
 export interface IconButtonProps {
   name: IconName
   size?: number
-  tone?: keyof Colors
+  color?: SemanticColor
   padding?: SpacingToken
   disabled?: boolean
   onPress?: () => void
@@ -21,7 +21,7 @@ export interface IconButtonProps {
 export const IconButton: React.FunctionComponent<IconButtonProps> = ({
   name,
   size = 24,
-  tone = 'primaryTextColor',
+  color = SemanticColor.TextPrimary,
   padding = 'sm',
   disabled,
   onPress,
@@ -45,7 +45,7 @@ export const IconButton: React.FunctionComponent<IconButtonProps> = ({
         backgroundColor: pressed ? colors.backgroundColorDirty : 'transparent',
       })}
     >
-      <Icon name={name} size={size} tone={tone} />
+      <Icon name={name} size={size} color={color} />
     </Pressable>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import {TextInput, TextInputProps} from 'react-native'
 import {useTypeStyle} from '../../typography'
-import {useColors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 
 export type TextFieldAlign = 'left' | 'right' | 'center'
@@ -30,7 +30,7 @@ export const TextField = React.forwardRef<TextInput, TextFieldProps>(
     return (
       <Stack
         borderBottomWidth="hairline"
-        borderColor="border"
+        borderColor={SemanticColor.BorderDefault}
         paddingVertical="sm"
       >
         <TextInput

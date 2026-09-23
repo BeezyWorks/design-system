@@ -4,7 +4,7 @@ import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
 import {useTypeStyle} from '../../typography'
-import {White} from '../../colors'
+import {White, SemanticColor} from '../../colors'
 
 export interface SegmentOption<T extends string> {
   key: T
@@ -30,7 +30,7 @@ export const SegmentedControl = <T extends string>({
     <View style={styles.wrapper}>
       <Stack
         direction="row"
-        background="surface"
+        background={SemanticColor.SurfaceBackground}
         shadow="card"
         radius="md"
         padding="xs"
@@ -50,7 +50,9 @@ export const SegmentedControl = <T extends string>({
                   align="center"
                   justify="center"
                   radius="sm"
-                  background={selected ? 'primaryColor' : undefined}
+                  background={
+                    selected ? SemanticColor.AccentPrimary : undefined
+                  }
                 >
                   {selected ? (
                     // `headerTextColor` isn't an "on-primaryColor" contrast
@@ -61,7 +63,7 @@ export const SegmentedControl = <T extends string>({
                       {option.label}
                     </RNText>
                   ) : (
-                    <Text variant="label" tone="primaryTextColor">
+                    <Text variant="label" color={SemanticColor.TextPrimary}>
                       {option.label}
                     </Text>
                   )}

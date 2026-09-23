@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Card} from '../Card'
 import {Text} from '../Text'
 
@@ -7,8 +8,8 @@ interface Props {
 }
 export const MessageCard = ({message}: Props) => {
   return (
-    <Card background="tintAccent">
-      <Text variant="detail" align="center" tone="accent">
+    <Card background={SemanticColor.AccentTint}>
+      <Text variant="detail" align="center" color={SemanticColor.TextAccent}>
         {message}
       </Text>
     </Card>

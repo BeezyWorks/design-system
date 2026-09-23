@@ -1,5 +1,6 @@
 import React from 'react'
 import {Stack, StackProps} from '../Stack'
+import {SemanticColor} from '../../colors'
 
 export interface CardProps extends Omit<
   StackProps,
@@ -22,10 +23,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
   paddingVertical = 20,
   paddingHorizontal = 22,
   radius = 'lg',
-  background = 'surfaceCard',
+  background = SemanticColor.SurfaceCard,
   shadow = 'card',
   borderWidth = 1,
-  borderColor = 'border',
+  borderColor = SemanticColor.BorderDefault,
   ...stackProps
 }) => (
   <Stack

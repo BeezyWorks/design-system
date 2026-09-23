@@ -10,7 +10,7 @@ import {
 import {formatGematriya} from 'siddurCalendar/hebcal.utils'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
-import {useColors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 import {radius} from '../../radius'
 import {spacing} from '../../spacing'
 
@@ -57,7 +57,11 @@ export const HebrewDatePicker: React.FunctionComponent<Props> = ({
   return (
     <Stack direction="row" gap="sm">
       <Stack width={90}>
-        <Text variant="label" tone="secondaryTextColor" align="center">
+        <Text
+          variant="label"
+          color={SemanticColor.TextSecondary}
+          align="center"
+        >
           Day
         </Text>
         <Picker
@@ -72,7 +76,11 @@ export const HebrewDatePicker: React.FunctionComponent<Props> = ({
         </Picker>
       </Stack>
       <Stack grow>
-        <Text variant="label" tone="secondaryTextColor" align="center">
+        <Text
+          variant="label"
+          color={SemanticColor.TextSecondary}
+          align="center"
+        >
           Month
         </Text>
         <Picker

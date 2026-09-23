@@ -10,7 +10,7 @@ import {
 import {useModalContext} from 'modal/context/modal-context'
 import {BottomSheetProps} from 'modal/components/bottomSheet.props'
 import {SIDE_NAV_BREAKPOINT} from 'navigation/tabBar.constants'
-import {useColors, Colors, Black} from '../../colors'
+import {useColors, Colors, Black, SemanticColor} from '../../colors'
 import {Icon} from '../Icon'
 
 const PANEL_WIDTH = 380
@@ -136,7 +136,7 @@ export const BottomSheetModal = ({
               <Icon
                 name="close"
                 size={22}
-                tone="primaryTextColor"
+                color={SemanticColor.TextPrimary}
                 onPress={dismiss}
               />
             </>

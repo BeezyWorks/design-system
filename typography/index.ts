@@ -1,9 +1,8 @@
 import {TextStyle} from 'react-native'
-import {useSelector} from 'state/store'
-import {getTextSettings} from '@selectors'
-import {getFontFamilyName, TypeFace} from '@models'
-import {useColors, Colors} from '../colors'
+import {SemanticColor} from '../colors/semantic'
+import {useContentText, useResolvedColor} from '../theme'
 import {FontFamily} from './fontFamily'
+import {Typeface, typefaceFontFamily} from './content'
 
 // Chrome (UI-label) type ramp — every raw `fontSize`/`fontWeight` the app
 // used to spell out ad hoc, named by role and snapped to the sizes already
@@ -74,48 +73,46 @@ export const type = {
 
 export type TypeVariant = keyof typeof type
 
-// Variants whose default color isn't the usual `primaryTextColor` (ink at
-// full opacity) — unlisted variants fall back to that as before.
-const variantTone: Partial<Record<TypeVariant, keyof Colors>> = {
-  pageHeader: 'accent',
-  // `secondaryTextColor` *is* ink at 50% opacity (see `LightTheme`/
-  // `DarkTheme` in palette.ts) — already exactly the spec, no new token
-  // needed.
-  sectionHeader: 'secondaryTextColor',
-  item: 'ink',
-  itemHeader: 'ink',
-  detail: 'secondaryTextColor',
-  supplemental: 'accent',
-  menuOption: 'ink',
-  menuOptionSelected: 'accent',
+// Variants whose default color isn't the usual `TextPrimary` — unlisted
+// variants fall back to that.
+const variantColor: Partial<Record<TypeVariant, SemanticColor>> = {
+  pageHeader: SemanticColor.TextAccent,
+  sectionHeader: SemanticColor.TextSecondary,
+  item: SemanticColor.TextPrimary,
+  itemHeader: SemanticColor.TextPrimary,
+  detail: SemanticColor.TextSecondary,
+  supplemental: SemanticColor.TextAccent,
+  menuOption: SemanticColor.TextPrimary,
+  menuOptionSelected: SemanticColor.TextAccent,
 }
 
-// Resolves a chrome type-ramp step to a concrete style, with the app's
-// semantic text color mixed in (callers may still override color via a
-// `tone` prop on `Text`, never via a raw style object).
+// Resolves a chrome type-ramp step to a concrete style, with its default
+// semantic text color mixed in (callers may still override color via the
+// `color` prop on `Text`, never via a raw style object).
 export const useTypeStyle = (variant: TypeVariant): TextStyle => {
-  const colors = useColors()
-  const tone = variantTone[variant] ?? 'primaryTextColor'
-  return {...type[variant], color: colors[tone]}
+  const color = useResolvedColor(
+    variantColor[variant] ?? SemanticColor.TextPrimary,
+  )
+  return {...type[variant], color}
 }
 
 // The davening/siddur reading content uses a *different*, user-configurable
-// ramp (typeface, font size, line height all come from Settings) — this is
-// the direct replacement for the old `useBaseTextStyle`.
+// ramp (typeface, font size, line height all come from the user's selection
+// passed to `DesignSystemProvider`).
 export const useContentTypeStyle = (): TextStyle => {
-  const {typeface, fontSize, lineHeight} = useSelector(getTextSettings)
-  const colors = useColors()
+  const {fontFamily, fontSize, lineHeight} = useContentText()
+  const color = useResolvedColor(SemanticColor.TextPrimary)
   return {
-    color: colors.primaryTextColor,
+    color,
     fontSize,
-    fontFamily: getFontFamilyName(typeface),
+    fontFamily,
     lineHeight,
     textAlign: 'right',
   }
 }
 
-export const useTypefaceFontFamily = (typeface: TypeFace) =>
-  getFontFamilyName(typeface)
+export const useTypefaceFontFamily = (typeface: Typeface) =>
+  typefaceFontFamily[typeface]
 
 export {DesignFonts} from './fonts'
 export * from './fontFamily'

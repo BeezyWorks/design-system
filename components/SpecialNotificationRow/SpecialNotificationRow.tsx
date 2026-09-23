@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {ToggleSwitch} from '../ToggleSwitch'
@@ -24,7 +25,7 @@ export const SpecialNotificationRow: React.FunctionComponent<
     gap="sm"
     paddingVertical="sm"
     borderBottomWidth={isLast ? 'none' : 1}
-    borderColor="border"
+    borderColor={SemanticColor.BorderDefault}
   >
     <ToggleSwitch value={enabled} onValueChange={onToggle} />
     {/* `width={0}` alongside `grow`: RN's yoga defaults to `flexShrink: 0`

@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {TouchableWithoutFeedback} from 'react-native'
 import {useSpring, animated} from '@react-spring/native'
 import {Stack} from '../Stack'
@@ -23,7 +24,7 @@ export const Scrim: React.FunctionComponent<ScrimProps> = ({
     <TouchableWithoutFeedback onPress={onPress}>
       <Stack
         position="absoluteFill"
-        background="scrimColor"
+        background={SemanticColor.OverlayScrim}
         opacity={opacity ?? scrimOpacity}
       />
     </TouchableWithoutFeedback>

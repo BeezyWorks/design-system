@@ -1,7 +1,7 @@
 import React from 'react'
 import {Platform, Pressable, StyleSheet, View} from 'react-native'
 import {GlassView, isLiquidGlassAvailable} from 'expo-glass-effect'
-import {useColors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 import {shadows} from '../../shadows'
 import {Icon, IconName} from '../Icon'
 
@@ -33,7 +33,7 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
       hitSlop={8}
       style={({pressed}) => [styles.pressable, pressed && styles.pressed]}
     >
-      <Icon name={name} size={iconSize} tone="ink" />
+      <Icon name={name} size={iconSize} color={SemanticColor.TextPrimary} />
     </Pressable>
   )
 

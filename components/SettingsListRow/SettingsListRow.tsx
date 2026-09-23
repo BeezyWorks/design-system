@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
@@ -29,7 +30,7 @@ export const SettingsListRow: React.FunctionComponent<SettingsListRowProps> = ({
       opacity={disabled ? 0.5 : undefined}
     >
       <Text variant="bodyStrong">{title}</Text>
-      <Text tone="secondaryTextColor">{value}</Text>
+      <Text color={SemanticColor.TextSecondary}>{value}</Text>
     </Stack>
   </Touchable>
 )

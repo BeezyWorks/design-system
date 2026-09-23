@@ -18,6 +18,7 @@ export const lightTheme: ThemeDefinition = {
   [S.TextAccent]: C.SiddurBlue,
   [S.TextOnAccent]: C.White,
   [S.TextOnPhoto]: C.White,
+  [S.TextInverse]: C.Cream,
   [S.TextDanger]: C.DangerRed,
 
   [S.SurfaceBackground]: C.Cream,
@@ -32,6 +33,7 @@ export const lightTheme: ThemeDefinition = {
   [S.SurfaceSwatchDark]: C.PanelGray,
   [S.SurfaceSwatchSystem]: C.Stone,
   [S.SurfaceTransparent]: C.Transparent,
+  [S.SurfaceDanger]: C.DangerRed,
 
   [S.BorderDefault]: C.InkHairline,
   [S.BorderStrong]: C.BlackScrim50,
@@ -62,6 +64,7 @@ export const darkTheme: ThemeDefinition = {
   [S.TextAccent]: C.SiddurBlueLight,
   [S.TextOnAccent]: C.White,
   [S.TextOnPhoto]: C.White,
+  [S.TextInverse]: C.Coal,
   [S.TextDanger]: C.DangerRed,
 
   [S.SurfaceBackground]: C.Coal,
@@ -76,6 +79,7 @@ export const darkTheme: ThemeDefinition = {
   [S.SurfaceSwatchDark]: C.PanelGray,
   [S.SurfaceSwatchSystem]: C.Stone,
   [S.SurfaceTransparent]: C.Transparent,
+  [S.SurfaceDanger]: C.DangerRed,
 
   [S.BorderDefault]: C.WhiteHairline,
   [S.BorderStrong]: C.BlackScrim55,

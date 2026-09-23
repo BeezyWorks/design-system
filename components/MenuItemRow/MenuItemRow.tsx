@@ -3,7 +3,7 @@ import {ChevronLeft} from 'lucide-react-native'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
-import {useColors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 
 export interface MenuItemRowProps {
   label: string
@@ -29,7 +29,7 @@ export const MenuItemRow: React.FunctionComponent<MenuItemRowProps> = ({
         justify="spaceBetween"
         paddingVertical={13}
         borderBottomWidth={isLast ? 'none' : 1}
-        borderColor="border"
+        borderColor={SemanticColor.BorderDefault}
       >
         <Text variant="item">{label}</Text>
         <Stack opacity={0.35}>

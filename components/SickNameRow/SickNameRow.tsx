@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {IconButton} from '../IconButton'
@@ -23,7 +24,7 @@ export const SickNameRow: React.FunctionComponent<SickNameRowProps> = ({
     <Text variant="largeTitle">{name}</Text>
     <IconButton
       name="delete"
-      tone="danger"
+      color={SemanticColor.TextDanger}
       onPress={onDelete}
       accessibilityLabel="Delete name"
     />

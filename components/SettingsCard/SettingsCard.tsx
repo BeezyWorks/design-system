@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Card} from '../Card'
 import {Text} from '../Text'
 
@@ -21,7 +22,7 @@ export const SettingsCard: React.FunctionComponent<SettingsCardProps> = ({
 }) => (
   <Card grow={grow} gap="sm">
     {title && (
-      <Text variant="label" tone="secondaryTextColor">
+      <Text variant="label" color={SemanticColor.TextSecondary}>
         {title}
       </Text>
     )}

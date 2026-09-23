@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {formatGematriya} from 'siddurCalendar/hebcal.utils'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
@@ -34,9 +35,9 @@ export const BookNavigator: React.FunctionComponent<BookNavigatorProps> = ({
     bottom="none"
     left="none"
     right="none"
-    background="backgroundColorDirty"
+    background={SemanticColor.SurfaceCard}
   >
-    <Divider tone="overlay" />
+    <Divider color={SemanticColor.OverlayScrim} />
     <Stack
       direction="row"
       justify="spaceBetween"
@@ -47,14 +48,18 @@ export const BookNavigator: React.FunctionComponent<BookNavigatorProps> = ({
       <IconButton
         name="chevron-left"
         size={iconSize}
-        tone={chapter < lastChapter ? 'primaryColor' : 'backgroundColorDirty'}
+        color={
+          chapter < lastChapter
+            ? SemanticColor.TextAccent
+            : SemanticColor.SurfaceCard
+        }
         onPress={onNext}
         accessibilityLabel="הפרק הבא"
       />
 
       <Touchable onPress={titleClick}>
         <Stack padding="md">
-          <Text variant="largeTitle" tone="primaryColor">
+          <Text variant="largeTitle" color={SemanticColor.TextAccent}>
             {title ? title : 'פרק ' + formatGematriya(chapter + 1)}
           </Text>
         </Stack>
@@ -63,7 +68,9 @@ export const BookNavigator: React.FunctionComponent<BookNavigatorProps> = ({
       <IconButton
         name="chevron-right"
         size={iconSize}
-        tone={chapter === 0 ? 'backgroundColorDirty' : 'primaryColor'}
+        color={
+          chapter === 0 ? SemanticColor.SurfaceCard : SemanticColor.TextAccent
+        }
         onPress={onPrevious}
         accessibilityLabel="הפרק הקודם"
       />

@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 
@@ -16,11 +17,11 @@ export const SettingsBox: React.FunctionComponent<SettingsBoxProps> = ({
 }) => (
   <Stack gap="xs">
     {title && (
-      <Text variant="label" tone="secondaryTextColor">
+      <Text variant="label" color={SemanticColor.TextSecondary}>
         {title}
       </Text>
     )}
-    <Stack background="backgroundColorDirty" radius="sm" padding="sm">
+    <Stack background={SemanticColor.SurfaceCard} radius="sm" padding="sm">
       {children}
     </Stack>
   </Stack>

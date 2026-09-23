@@ -13,6 +13,7 @@ export const SemanticColor = {
   TextAccent: 'textAccent',
   TextOnAccent: 'textOnAccent',
   TextOnPhoto: 'textOnPhoto',
+  TextInverse: 'textInverse',
   TextDanger: 'textDanger',
 
   // Surface
@@ -28,6 +29,7 @@ export const SemanticColor = {
   SurfaceSwatchDark: 'surfaceSwatchDark',
   SurfaceSwatchSystem: 'surfaceSwatchSystem',
   SurfaceTransparent: 'surfaceTransparent',
+  SurfaceDanger: 'surfaceDanger',
 
   // Border
   BorderDefault: 'borderDefault',

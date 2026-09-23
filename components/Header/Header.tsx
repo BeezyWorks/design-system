@@ -6,7 +6,13 @@ import {useModal} from '@modal'
 import {isNullOrEmpty, Log} from '@utils'
 import {Zman} from 'siddurCalendar/zmanim/zman.model'
 import {useIsWideReader} from 'widgets/header/readerBreakpoint'
-import {useColors, Colors, ColorPrimary, withOpacity} from '../../colors'
+import {
+  useColors,
+  Colors,
+  ColorPrimary,
+  withOpacity,
+  SemanticColor,
+} from '../../colors'
 import {layout} from '../../layout'
 import {Icon, IconName} from '../Icon'
 import {AnchoredPopover} from '../AnchoredPopover'
@@ -47,14 +53,14 @@ type Popover = 'title' | 'zmanim' | 'settings' | null
 const WideIconButton = ({
   name,
   onPress,
-  tone,
+  color,
   size = 21,
   variant = 'trailing',
   styles,
 }: {
   name: IconName
   onPress: () => void
-  tone: keyof Colors
+  color: SemanticColor
   size?: number
   variant?: 'back' | 'trailing'
   styles: ReturnType<typeof styleCreator>
@@ -66,7 +72,7 @@ const WideIconButton = ({
       pressed && styles.pressedTint,
     ]}
   >
-    <Icon name={name} size={size} tone={tone} />
+    <Icon name={name} size={size} color={color} />
   </Pressable>
 )
 
@@ -172,7 +178,11 @@ export const Header = ({
             )}
             {!!openSectionPicker && (
               <View style={styles.titleChevron}>
-                <Icon name="chevron-down" size={14} tone="primaryTextColor" />
+                <Icon
+                  name="chevron-down"
+                  size={14}
+                  color={SemanticColor.TextPrimary}
+                />
               </View>
             )}
           </Pressable>
@@ -192,14 +202,14 @@ export const Header = ({
           <WideIconButton
             name={backIconName}
             onPress={goBack}
-            tone="primaryTextColor"
+            color={SemanticColor.TextPrimary}
             size={20}
             variant="back"
             styles={styles}
           />
         ) : (
           <Pressable style={styles.icon} onPress={goBack}>
-            <Icon name={backIconName} tone="headerTextColor" />
+            <Icon name={backIconName} color={SemanticColor.TextAccent} />
           </Pressable>
         ))}
       <View style={[styles.buttonBox, isWide && styles.buttonBoxWide]}>
@@ -208,12 +218,12 @@ export const Header = ({
             <WideIconButton
               name="clock-outline"
               onPress={showFocusZmanim}
-              tone="primaryTextColor"
+              color={SemanticColor.TextPrimary}
               styles={styles}
             />
           ) : (
             <Pressable style={styles.icon} onPress={showFocusZmanim}>
-              <Icon name="clock-outline" tone="headerTextColor" />
+              <Icon name="clock-outline" color={SemanticColor.TextAccent} />
             </Pressable>
           ))}
         {(!!openSettings || !!settingsContent) &&
@@ -221,12 +231,12 @@ export const Header = ({
             <WideIconButton
               name="settings"
               onPress={onSettingsPress}
-              tone="primaryTextColor"
+              color={SemanticColor.TextPrimary}
               styles={styles}
             />
           ) : (
             <Pressable style={styles.icon} onPress={onSettingsPress}>
-              <Icon name="settings" tone="headerTextColor" />
+              <Icon name="settings" color={SemanticColor.TextAccent} />
             </Pressable>
           ))}
       </View>

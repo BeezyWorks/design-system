@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
@@ -31,9 +32,9 @@ export const MenuOption: React.FunctionComponent<MenuOptionProps> = ({
       align="center"
       height={48}
       paddingHorizontal="md"
-      background={selected ? 'tint' : undefined}
+      background={selected ? SemanticColor.SurfaceSelected : undefined}
       borderBottomWidth={isLast ? 'none' : 1}
-      borderColor="border"
+      borderColor={SemanticColor.BorderDefault}
     >
       <Text variant={selected ? 'menuOptionSelected' : 'menuOption'}>
         {label}

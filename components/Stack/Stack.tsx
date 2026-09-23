@@ -9,13 +9,13 @@ import {
 import {spacing, SpacingToken} from '../../spacing'
 import {radius, RadiusToken} from '../../radius'
 import {shadows, ShadowToken} from '../../shadows'
-import {useColors, Colors, withOpacity} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export type Direction = 'row' | 'rowReverse' | 'column' | 'columnReverse'
 export type Align = 'start' | 'center' | 'end' | 'stretch' | 'baseline'
 export type Justify =
   'start' | 'center' | 'end' | 'spaceBetween' | 'spaceAround' | 'spaceEvenly'
-export type Background = keyof Colors
 /** A rhythm-scale token, or a literal pixel value for the rare case a
  * design spec calls for something the scale doesn't have. */
 export type Spacing = SpacingToken | number
@@ -76,9 +76,7 @@ export interface StackProps extends Pick<
   height?: number | `${number}%`
   /** Stretch to fill the parent in both axes. */
   fill?: boolean
-  background?: Background
-  /** 0–1, applied on top of `background`. */
-  backgroundOpacity?: number
+  background?: SemanticColor
   radius?: RadiusToken
   shadow?: ShadowToken
   overflow?: 'visible' | 'hidden'
@@ -94,7 +92,7 @@ export interface StackProps extends Pick<
    * bottom edge. */
   borderWidth?: number
   borderBottomWidth?: 'hairline' | 'none' | number
-  borderColor?: Background
+  borderColor?: SemanticColor
 }
 
 /** The app's one generic layout primitive — every screen composes with this
@@ -119,7 +117,6 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   height,
   fill,
   background,
-  backgroundOpacity,
   radius: radiusToken,
   shadow,
   overflow,
@@ -135,13 +132,9 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   borderColor,
   ...viewProps
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
 
-  const backgroundColor = background
-    ? backgroundOpacity !== undefined
-      ? withOpacity(colors[background], backgroundOpacity)
-      : colors[background]
-    : undefined
+  const backgroundColor = background ? resolve(background) : undefined
 
   const style = [
     {
@@ -177,7 +170,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
           : borderBottomWidth === 'hairline'
             ? StyleSheet.hairlineWidth
             : undefined,
-      borderColor: borderColor ? colors[borderColor] : undefined,
+      borderColor: borderColor ? resolve(borderColor) : undefined,
     } as FlexStyle,
     // Must come *after* the object above, not before: RN's style-array
     // flattening does a plain per-key merge across entries in order, and

@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {StyleSheet} from 'react-native'
 import {BlurView} from 'expo-blur'
 import {Stack} from '../Stack'
@@ -36,7 +37,7 @@ export const SideNavRail: React.FunctionComponent<SideNavRailProps> = ({
       bottom="none"
       right="none"
       width={StyleSheet.hairlineWidth}
-      background="border"
+      background={SemanticColor.BorderDefault}
     />
     <Stack paddingTop="lg" paddingHorizontal="sm" gap="xs">
       {children}

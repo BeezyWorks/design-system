@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {IconButton} from '../IconButton'
@@ -35,7 +36,7 @@ export const NotificationRow: React.FunctionComponent<NotificationRowProps> = ({
     gap="sm"
     paddingVertical="sm"
     borderBottomWidth={isLast ? 'none' : 1}
-    borderColor="border"
+    borderColor={SemanticColor.BorderDefault}
     opacity={enabled ? 1 : 0.5}
   >
     <ToggleSwitch value={enabled} onValueChange={onToggle} />
@@ -53,14 +54,14 @@ export const NotificationRow: React.FunctionComponent<NotificationRowProps> = ({
       <IconButton
         name="edit"
         size={20}
-        tone="secondaryTextColor"
+        color={SemanticColor.TextSecondary}
         onPress={onEdit}
         accessibilityLabel="Edit notification"
       />
       <IconButton
         name="delete"
         size={20}
-        tone="secondaryTextColor"
+        color={SemanticColor.TextSecondary}
         onPress={onDelete}
         accessibilityLabel="Delete notification"
       />

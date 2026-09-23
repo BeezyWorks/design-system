@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Pressable} from 'react-native'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
@@ -32,13 +33,13 @@ export const SideNavItem: React.FunctionComponent<SideNavItemProps> = ({
         paddingHorizontal="md"
         height={48}
         radius="md"
-        background={focused ? 'tintAccent' : undefined}
+        background={focused ? SemanticColor.AccentTint : undefined}
         opacity={pressed ? 0.7 : 1}
       >
         {icon}
         <Text
           variant="headline"
-          tone={focused ? 'accent' : 'primaryTextColor'}
+          color={focused ? SemanticColor.TextAccent : SemanticColor.TextPrimary}
           numberOfLines={1}
         >
           {label}

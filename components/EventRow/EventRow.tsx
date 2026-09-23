@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {IconButton} from '../IconButton'
@@ -31,7 +32,7 @@ export const EventRow: React.FunctionComponent<EventRowProps> = ({
     gap="sm"
     paddingVertical="sm"
     borderBottomWidth={isLast ? 'none' : 1}
-    borderColor="border"
+    borderColor={SemanticColor.BorderDefault}
   >
     <Stack grow width={0} gap="xs">
       <Text variant="itemHeader">{description}</Text>
@@ -51,7 +52,7 @@ export const EventRow: React.FunctionComponent<EventRowProps> = ({
       <IconButton
         name="delete"
         size={20}
-        tone="secondaryTextColor"
+        color={SemanticColor.TextSecondary}
         onPress={onDelete}
         accessibilityLabel="Delete event"
       />

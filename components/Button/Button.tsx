@@ -2,7 +2,8 @@ import React from 'react'
 import {Pressable, ActivityIndicator} from 'react-native'
 import {spacing} from '../../spacing'
 import {radius} from '../../radius'
-import {useColors, Colors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {Text} from '../Text'
 import {Icon, IconName} from '../Icon'
 
@@ -10,20 +11,32 @@ export type ButtonVariant =
   'primary' | 'secondary' | 'ghost' | 'destructive' | 'outline'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
-const variantTone: Record<
+const variantColors: Record<
   ButtonVariant,
-  {background: keyof Colors; label: keyof Colors; border?: keyof Colors}
+  {background: SemanticColor; label: SemanticColor; border?: SemanticColor}
 > = {
-  primary: {background: 'primaryColor', label: 'backgroundColor'},
-  secondary: {background: 'backgroundColorDirty', label: 'primaryColor'},
-  ghost: {background: 'backgroundColor', label: 'primaryColor'},
-  destructive: {background: 'danger', label: 'backgroundColor'},
+  primary: {
+    background: SemanticColor.AccentPrimary,
+    label: SemanticColor.TextInverse,
+  },
+  secondary: {
+    background: SemanticColor.SurfaceCard,
+    label: SemanticColor.TextAccent,
+  },
+  ghost: {
+    background: SemanticColor.SurfaceBackground,
+    label: SemanticColor.TextAccent,
+  },
+  destructive: {
+    background: SemanticColor.SurfaceDanger,
+    label: SemanticColor.TextInverse,
+  },
   // Outline: no fill, just a border — distinct from `secondary`, which is
   // a solid (if muted) filled button.
   outline: {
-    background: 'backgroundColor',
-    label: 'primaryColor',
-    border: 'border',
+    background: SemanticColor.SurfaceBackground,
+    label: SemanticColor.TextAccent,
+    border: SemanticColor.BorderDefault,
   },
 }
 
@@ -58,8 +71,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   testID,
   accessibilityLabel,
 }) => {
-  const colors = useColors()
-  const tone = variantTone[variant]
+  const resolve = useColorResolver()
+  const variantStyle = variantColors[variant]
   const padding = sizePadding[size]
   const isDisabled = !!(disabled || loading)
 
@@ -72,10 +85,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       onPress={onPress}
       testID={testID}
       style={({pressed}) => ({
-        backgroundColor: colors[tone.background],
+        backgroundColor: resolve(variantStyle.background),
         borderRadius: radius.md,
-        borderWidth: tone.border ? 1 : 0,
-        borderColor: tone.border ? colors[tone.border] : undefined,
+        borderWidth: variantStyle.border ? 1 : 0,
+        borderColor: variantStyle.border
+          ? resolve(variantStyle.border)
+          : undefined,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -86,11 +101,11 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       })}
     >
       {loading ? (
-        <ActivityIndicator color={colors[tone.label]} />
+        <ActivityIndicator color={resolve(variantStyle.label)} />
       ) : (
         <>
-          {!!icon && <Icon name={icon} size={18} tone={tone.label} />}
-          <Text variant="headline" tone={tone.label}>
+          {!!icon && <Icon name={icon} size={18} color={variantStyle.label} />}
+          <Text variant="headline" color={variantStyle.label}>
             {title}
           </Text>
         </>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Icon, IconName} from '../Icon'
 
 export interface TabBarIconProps {
@@ -14,4 +15,11 @@ export interface TabBarIconProps {
 export const TabBarIcon: React.FunctionComponent<TabBarIconProps> = ({
   name,
   focused,
-}) => <Icon name={name} tone={focused ? 'tabActive' : 'tabOffColor'} />
+}) => (
+  <Icon
+    name={name}
+    color={
+      focused ? SemanticColor.AccentTabActive : SemanticColor.TextTabInactive
+    }
+  />
+)

@@ -33,7 +33,7 @@ import {VersionText} from '../VersionText'
 import {ZmanimSeparator} from '../ZmanimSeparator'
 import {Menora} from '../Menora'
 import {Scrim} from '../Scrim'
-import {eventCategoryColors} from '../../colors'
+import {eventCategoryColors, SemanticColor} from '../../colors'
 import {
   pressables,
   renderWithTheme,
@@ -106,7 +106,7 @@ describe.each(themes)('more components (%s theme)', (theme) => {
           <Stack
             padding="lg"
             paddingVertical="sm"
-            background="surface"
+            background={SemanticColor.SurfaceBackground}
             radius="md"
             shadow="card"
           >
@@ -223,8 +223,12 @@ describe.each(themes)('more components (%s theme)', (theme) => {
       expectSnapshot(
         <>
           <Icon name="settings" />
-          <Icon name="book" size={32} tone="primaryColor" />
-          <Icon name="chevron-left" size={16} tone="danger" />
+          <Icon name="book" size={32} color={SemanticColor.TextAccent} />
+          <Icon
+            name="chevron-left"
+            size={16}
+            color={SemanticColor.TextDanger}
+          />
         </>,
         theme,
       )

@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 
@@ -18,7 +19,7 @@ export const ReaderParagraph: React.FunctionComponent<ReaderParagraphProps> = ({
   <Stack>
     {heading ? (
       <Stack paddingTop="md">
-        <Text variant="headline" tone="primaryColor" align="right">
+        <Text variant="headline" color={SemanticColor.TextAccent} align="right">
           {heading}
         </Text>
       </Stack>

@@ -1,14 +1,14 @@
 import React from 'react'
 import {ActivityIndicator} from 'react-native'
 import {Stack} from '../Stack'
-import {useColors} from '../../colors'
+import {useColors, SemanticColor} from '../../colors'
 
 export const ScreenLoader: React.FunctionComponent = () => {
   const colors = useColors()
   return (
     <Stack
       position="absoluteFill"
-      background="backgroundColor"
+      background={SemanticColor.SurfaceBackground}
       align="center"
       justify="center"
     >

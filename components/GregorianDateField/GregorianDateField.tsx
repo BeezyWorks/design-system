@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {SemanticColor} from '../../colors'
 import {Platform} from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker'
 import moment from 'moment'
@@ -41,10 +42,14 @@ export const GregorianDateField: React.FunctionComponent<
             paddingVertical="sm"
             paddingHorizontal="md"
             radius="sm"
-            background="backgroundColorDirty"
+            background={SemanticColor.SurfaceCard}
           >
             <Text variant="item">{moment(value).format('D MMMM YYYY')}</Text>
-            <Icon name="chevron-down" size={16} tone="secondaryTextColor" />
+            <Icon
+              name="chevron-down"
+              size={16}
+              color={SemanticColor.TextSecondary}
+            />
           </Stack>
         </Touchable>
         {showAndroidPicker && (

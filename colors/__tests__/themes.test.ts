@@ -55,6 +55,9 @@ describe.each([
     expect(next[S.SurfaceSelected]).toBe(old.tintColor)
     expect(next[S.SurfaceHover]).toBe(withOpacity(old.primaryTextColor, 0.04))
     expect(next[S.SurfaceTransparent]).toBe(withOpacity('#fff', 0))
+    // Button label on a filled accent/danger button was the page background.
+    expect(next[S.TextInverse]).toBe(old.backgroundColor)
+    expect(next[S.SurfaceDanger]).toBe(old.warningColor)
     expect(next[S.BorderDefault]).toBe(old.borderColor)
     expect(next[S.OverlayScrim]).toBe(old.scrimColor)
     // Border colors that historically borrowed the scrim color.

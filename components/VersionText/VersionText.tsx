@@ -1,4 +1,5 @@
 import React from 'react'
+import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 
@@ -14,7 +15,7 @@ export const VersionText: React.FunctionComponent<VersionTextProps> = ({
   buildNumber,
 }) => (
   <Stack align="center" paddingVertical="xs">
-    <Text align="center" tone="secondaryTextColor">
+    <Text align="center" color={SemanticColor.TextSecondary}>
       v{versionName}
       {buildNumber ? ` (${buildNumber})` : ''}
     </Text>
