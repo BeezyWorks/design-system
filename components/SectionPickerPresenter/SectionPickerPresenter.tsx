@@ -9,7 +9,7 @@ export const SectionPickerPresenter = ({
   onSelect,
   currentKey,
   data,
-}: SectionpickerModalConfig) => {
+}: SectionpickerModalConfig<string, {label: string; key: string}>) => {
   const {dismissModal} = useModal()
   const colors = useColors()
 
