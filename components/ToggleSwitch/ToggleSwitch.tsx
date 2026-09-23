@@ -1,25 +1,13 @@
 import React from 'react'
 import {Switch} from 'react-native'
-import {ConcreteThemeStyle} from '@models'
-import {useThemeContext} from 'theme/themeRoot'
-import {
-  useColors,
-  White,
-  ToggleTrackOff,
-  ToggleTrackOffDark,
-} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export interface ToggleSwitchProps {
   value: boolean
   onValueChange: (value: boolean) => void
   disabled?: boolean
 }
-
-// Flat (non-opacity) off-track color — the redesign's "no green, ACCENT is
-// the only 'on' color" rule needs a real off color to pair it with rather
-// than an opacity wash.
-const trackOffColor = ToggleTrackOff
-const trackOffColorDark = ToggleTrackOffDark
 
 /** The one switch every toggle in the app renders through — wraps RN's
  * built-in `Switch` (not a hand-rolled pill) so native accessibility/
@@ -30,13 +18,15 @@ export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
   onValueChange,
   disabled,
 }) => {
-  const colors = useColors()
-  const {themeStyle} = useThemeContext()
-  const off =
-    themeStyle === ConcreteThemeStyle.Dark ? trackOffColorDark : trackOffColor
+  const resolve = useColorResolver()
+  // Flat (non-opacity) off-track color — the redesign's "no green, ACCENT is
+  // the only 'on' color" rule needs a real off color to pair it with rather
+  // than an opacity wash.
+  const off = resolve(SemanticColor.SurfaceTrackOff)
+  const thumb = resolve(SemanticColor.SurfaceThumb)
 
   const props = {
-    trackColor: {false: off, true: colors.accent},
+    trackColor: {false: off, true: resolve(SemanticColor.AccentPrimary)},
     // RN's own `thumbColor` covers the "off" thumb everywhere and the "on"
     // thumb on native, but react-native-web draws the "on" thumb from a
     // *separate* `activeThumbColor` (defaulting to a system green if it's
@@ -44,8 +34,8 @@ export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
     // web-only extension, but a real prop react-native-web reads. Both
     // need pinning to white or the redesign's "no green, ACCENT-only"
     // rule quietly breaks on web.
-    activeThumbColor: White,
-    thumbColor: White,
+    activeThumbColor: thumb,
+    thumbColor: thumb,
     ios_backgroundColor: off,
     onValueChange,
     value,

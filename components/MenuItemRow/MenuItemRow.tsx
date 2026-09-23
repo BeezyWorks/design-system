@@ -3,7 +3,8 @@ import {ChevronLeft} from 'lucide-react-native'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
-import {useColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export interface MenuItemRowProps {
   label: string
@@ -20,7 +21,7 @@ export const MenuItemRow: React.FunctionComponent<MenuItemRowProps> = ({
   onPress,
   isLast,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   return (
     <Touchable onPress={onPress}>
       <Stack
@@ -33,7 +34,7 @@ export const MenuItemRow: React.FunctionComponent<MenuItemRowProps> = ({
       >
         <Text variant="item">{label}</Text>
         <Stack opacity={0.35}>
-          <ChevronLeft size={14} color={colors.ink} />
+          <ChevronLeft size={14} color={resolve(SemanticColor.TextPrimary)} />
         </Stack>
       </Stack>
     </Touchable>

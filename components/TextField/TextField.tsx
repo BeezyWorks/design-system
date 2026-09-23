@@ -1,7 +1,8 @@
 import React from 'react'
 import {TextInput, TextInputProps} from 'react-native'
 import {useTypeStyle} from '../../typography'
-import {useColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {Stack} from '../Stack'
 
 export type TextFieldAlign = 'left' | 'right' | 'center'
@@ -26,7 +27,7 @@ export interface TextFieldProps extends Pick<
 export const TextField = React.forwardRef<TextInput, TextFieldProps>(
   ({align = 'left', ...inputProps}, ref) => {
     const type = useTypeStyle('body')
-    const colors = useColors()
+    const resolve = useColorResolver()
     return (
       <Stack
         borderBottomWidth="hairline"
@@ -35,7 +36,7 @@ export const TextField = React.forwardRef<TextInput, TextFieldProps>(
       >
         <TextInput
           ref={ref}
-          placeholderTextColor={colors.secondaryTextColor}
+          placeholderTextColor={resolve(SemanticColor.TextSecondary)}
           style={[type, {textAlign: align}]}
           {...inputProps}
         />

@@ -1,0 +1,1783 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`date pickers (dark theme) GregorianDateField (android) 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 4,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeBackgroundAndroid={
+      {
+        "alpha": null,
+        "borderless": false,
+        "color": 183561444,
+        "rippleRadius": undefined,
+        "type": "RippleAndroid",
+      }
+    }
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#262320",
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": 8,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "row",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": "space-between",
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": 16,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": 8,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F0ECE4",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            {
+              "color": "#F0ECE4",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        16 June 2020
+      </Text>
+      <RNSVGSvgViewAndroid
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-chevron-down"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="rgba(240, 236, 228, 0.5)"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 16,
+              "width": 16,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": -2131694364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="m6 9 6 6 6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": -2131694364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgViewAndroid>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`date pickers (dark theme) GregorianDateField (ios) 1`] = `
+<RNDateTimePicker
+  date={1592290800000}
+  displayIOS="spinner"
+  enabled={true}
+  mode="date"
+  onChange={[Function]}
+  onPickerDismiss={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  themeVariant="dark"
+/>
+`;
+
+exports[`date pickers (dark theme) GregorianDateField (web input) 1`] = `
+<input
+  onChange={[Function]}
+  style={
+    {
+      "background": "#262320",
+      "border": "1px solid rgba(255, 255, 255, 0.12)",
+      "borderRadius": 8,
+      "boxSizing": "border-box",
+      "color": "#F0ECE4",
+      "fontFamily": "inherit",
+      "fontSize": 16,
+      "padding": "8px 16px",
+      "width": "100%",
+    }
+  }
+  type="date"
+  value="2020-06-16"
+/>
+`;
+
+exports[`date pickers (dark theme) HebrewDatePicker (ios) 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": 90,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(240, 236, 228, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Day
+    </Text>
+    <View>
+      <RNCPicker
+        items={
+          [
+            {
+              "label": "א",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 1,
+            },
+            {
+              "label": "ב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 2,
+            },
+            {
+              "label": "ג",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 3,
+            },
+            {
+              "label": "ד",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 4,
+            },
+            {
+              "label": "ה",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 5,
+            },
+            {
+              "label": "ו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 6,
+            },
+            {
+              "label": "ז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 7,
+            },
+            {
+              "label": "ח",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 8,
+            },
+            {
+              "label": "ט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 9,
+            },
+            {
+              "label": "י",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 10,
+            },
+            {
+              "label": "יא",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 11,
+            },
+            {
+              "label": "יב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 12,
+            },
+            {
+              "label": "יג",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 13,
+            },
+            {
+              "label": "יד",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 14,
+            },
+            {
+              "label": "טו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 15,
+            },
+            {
+              "label": "טז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 16,
+            },
+            {
+              "label": "יז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 17,
+            },
+            {
+              "label": "יח",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 18,
+            },
+            {
+              "label": "יט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 19,
+            },
+            {
+              "label": "כ",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 20,
+            },
+            {
+              "label": "כא",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 21,
+            },
+            {
+              "label": "כב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 22,
+            },
+            {
+              "label": "כג",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 23,
+            },
+            {
+              "label": "כד",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 24,
+            },
+            {
+              "label": "כה",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 25,
+            },
+            {
+              "label": "כו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 26,
+            },
+            {
+              "label": "כז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 27,
+            },
+            {
+              "label": "כח",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 28,
+            },
+            {
+              "label": "כט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 29,
+            },
+            {
+              "label": "ל",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 30,
+            },
+          ]
+        }
+        numberOfLines={1}
+        onChange={[Function]}
+        selectedIndex={23}
+        style={
+          [
+            {
+              "height": 216,
+            },
+            {
+              "color": "#F0ECE4",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(240, 236, 228, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Month
+    </Text>
+    <View>
+      <RNCPicker
+        items={
+          [
+            {
+              "label": "ניסן",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Nissan",
+            },
+            {
+              "label": "אייר",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Eyar",
+            },
+            {
+              "label": "סיון",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Sivan",
+            },
+            {
+              "label": "תמוז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Taamuz",
+            },
+            {
+              "label": "אב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Av",
+            },
+            {
+              "label": "אלול",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Elul",
+            },
+            {
+              "label": "תשרי",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Tishrei",
+            },
+            {
+              "label": "חשון",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Cheshvan",
+            },
+            {
+              "label": "כסלו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Kislev",
+            },
+            {
+              "label": "טבת",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Teves",
+            },
+            {
+              "label": "שבט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Shvat",
+            },
+            {
+              "label": "אדר",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Adar",
+            },
+            {
+              "label": "אדר א",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "AdarI",
+            },
+            {
+              "label": "אדר ב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "AdarII",
+            },
+          ]
+        }
+        numberOfLines={1}
+        onChange={[Function]}
+        selectedIndex={2}
+        style={
+          [
+            {
+              "height": 216,
+            },
+            {
+              "color": "#F0ECE4",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`date pickers (dark theme) HebrewDatePicker (web) 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": 90,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(240, 236, 228, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Day
+    </Text>
+  </View>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0ECE4",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(240, 236, 228, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Month
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`date pickers (light theme) GregorianDateField (android) 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "column",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 4,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeBackgroundAndroid={
+      {
+        "alpha": null,
+        "borderless": false,
+        "color": 170534177,
+        "rippleRadius": undefined,
+        "type": "RippleAndroid",
+      }
+    }
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#FFFFFF",
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": 8,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "row",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": "space-between",
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": 16,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": 8,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#2A2521",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            {
+              "color": "#2A2521",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        16 June 2020
+      </Text>
+      <RNSVGSvgViewAndroid
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-chevron-down"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="rgba(42, 37, 33, 0.5)"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 16,
+              "width": 16,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": -2144721631,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="m6 9 6 6 6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": -2144721631,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgViewAndroid>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`date pickers (light theme) GregorianDateField (ios) 1`] = `
+<RNDateTimePicker
+  date={1592290800000}
+  displayIOS="spinner"
+  enabled={true}
+  mode="date"
+  onChange={[Function]}
+  onPickerDismiss={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  themeVariant="light"
+/>
+`;
+
+exports[`date pickers (light theme) GregorianDateField (web input) 1`] = `
+<input
+  onChange={[Function]}
+  style={
+    {
+      "background": "#FFFFFF",
+      "border": "1px solid rgba(30, 25, 20, 0.10)",
+      "borderRadius": 8,
+      "boxSizing": "border-box",
+      "color": "#2A2521",
+      "fontFamily": "inherit",
+      "fontSize": 16,
+      "padding": "8px 16px",
+      "width": "100%",
+    }
+  }
+  type="date"
+  value="2020-06-16"
+/>
+`;
+
+exports[`date pickers (light theme) HebrewDatePicker (ios) 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": 90,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(42, 37, 33, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Day
+    </Text>
+    <View>
+      <RNCPicker
+        items={
+          [
+            {
+              "label": "א",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 1,
+            },
+            {
+              "label": "ב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 2,
+            },
+            {
+              "label": "ג",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 3,
+            },
+            {
+              "label": "ד",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 4,
+            },
+            {
+              "label": "ה",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 5,
+            },
+            {
+              "label": "ו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 6,
+            },
+            {
+              "label": "ז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 7,
+            },
+            {
+              "label": "ח",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 8,
+            },
+            {
+              "label": "ט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 9,
+            },
+            {
+              "label": "י",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 10,
+            },
+            {
+              "label": "יא",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 11,
+            },
+            {
+              "label": "יב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 12,
+            },
+            {
+              "label": "יג",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 13,
+            },
+            {
+              "label": "יד",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 14,
+            },
+            {
+              "label": "טו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 15,
+            },
+            {
+              "label": "טז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 16,
+            },
+            {
+              "label": "יז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 17,
+            },
+            {
+              "label": "יח",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 18,
+            },
+            {
+              "label": "יט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 19,
+            },
+            {
+              "label": "כ",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 20,
+            },
+            {
+              "label": "כא",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 21,
+            },
+            {
+              "label": "כב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 22,
+            },
+            {
+              "label": "כג",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 23,
+            },
+            {
+              "label": "כד",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 24,
+            },
+            {
+              "label": "כה",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 25,
+            },
+            {
+              "label": "כו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 26,
+            },
+            {
+              "label": "כז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 27,
+            },
+            {
+              "label": "כח",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 28,
+            },
+            {
+              "label": "כט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 29,
+            },
+            {
+              "label": "ל",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": 30,
+            },
+          ]
+        }
+        numberOfLines={1}
+        onChange={[Function]}
+        selectedIndex={23}
+        style={
+          [
+            {
+              "height": 216,
+            },
+            {
+              "color": "#2A2521",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(42, 37, 33, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Month
+    </Text>
+    <View>
+      <RNCPicker
+        items={
+          [
+            {
+              "label": "ניסן",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Nissan",
+            },
+            {
+              "label": "אייר",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Eyar",
+            },
+            {
+              "label": "סיון",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Sivan",
+            },
+            {
+              "label": "תמוז",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Taamuz",
+            },
+            {
+              "label": "אב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Av",
+            },
+            {
+              "label": "אלול",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Elul",
+            },
+            {
+              "label": "תשרי",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Tishrei",
+            },
+            {
+              "label": "חשון",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Cheshvan",
+            },
+            {
+              "label": "כסלו",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Kislev",
+            },
+            {
+              "label": "טבת",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Teves",
+            },
+            {
+              "label": "שבט",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Shvat",
+            },
+            {
+              "label": "אדר",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "Adar",
+            },
+            {
+              "label": "אדר א",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "AdarI",
+            },
+            {
+              "label": "אדר ב",
+              "testID": undefined,
+              "textColor": undefined,
+              "value": "AdarII",
+            },
+          ]
+        }
+        numberOfLines={1}
+        onChange={[Function]}
+        selectedIndex={2}
+        style={
+          [
+            {
+              "height": 216,
+            },
+            {
+              "color": "#2A2521",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`date pickers (light theme) HebrewDatePicker (web) 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderBottomWidth": undefined,
+        "borderColor": undefined,
+        "borderRadius": undefined,
+        "borderWidth": undefined,
+        "bottom": undefined,
+        "flexDirection": "row",
+        "flexGrow": undefined,
+        "flexWrap": undefined,
+        "gap": 8,
+        "height": undefined,
+        "justifyContent": undefined,
+        "left": undefined,
+        "opacity": undefined,
+        "overflow": undefined,
+        "padding": undefined,
+        "paddingBottom": undefined,
+        "paddingEnd": undefined,
+        "paddingHorizontal": undefined,
+        "paddingStart": undefined,
+        "paddingTop": undefined,
+        "paddingVertical": undefined,
+        "position": undefined,
+        "right": undefined,
+        "top": undefined,
+        "width": undefined,
+        "zIndex": undefined,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": undefined,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": 90,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(42, 37, 33, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Day
+    </Text>
+  </View>
+  <View
+    style={
+      [
+        {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderBottomWidth": undefined,
+          "borderColor": undefined,
+          "borderRadius": undefined,
+          "borderWidth": undefined,
+          "bottom": undefined,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexWrap": undefined,
+          "gap": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "left": undefined,
+          "opacity": undefined,
+          "overflow": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingEnd": undefined,
+          "paddingHorizontal": undefined,
+          "paddingStart": undefined,
+          "paddingTop": undefined,
+          "paddingVertical": undefined,
+          "position": undefined,
+          "right": undefined,
+          "top": undefined,
+          "width": undefined,
+          "zIndex": undefined,
+        },
+        null,
+        null,
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#2A2521",
+            "fontSize": 13,
+            "fontWeight": "500",
+          },
+          {
+            "color": "rgba(42, 37, 33, 0.5)",
+          },
+          {
+            "textAlign": "center",
+          },
+          null,
+          null,
+          null,
+        ]
+      }
+    >
+      Month
+    </Text>
+  </View>
+</View>
+`;

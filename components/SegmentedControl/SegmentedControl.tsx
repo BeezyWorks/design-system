@@ -4,7 +4,8 @@ import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
 import {useTypeStyle} from '../../typography'
-import {White, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useResolvedColor} from '../../theme'
 
 export interface SegmentOption<T extends string> {
   key: T
@@ -24,6 +25,7 @@ export const SegmentedControl = <T extends string>({
   onChange,
 }: SegmentedControlProps<T>) => {
   const labelStyle = useTypeStyle('label')
+  const onAccent = useResolvedColor(SemanticColor.TextOnAccent)
   return (
     // On web the parent card can be very wide; keep the track compact
     // (sized to its labels) instead of stretching every segment across it.
@@ -59,7 +61,7 @@ export const SegmentedControl = <T extends string>({
                     // token (it's the iOS nav-bar tint, same blue as
                     // `primaryColor` itself) — a literal white matches what
                     // this control always rendered for its selected pill.
-                    <RNText style={[labelStyle, styles.selectedLabel]}>
+                    <RNText style={[labelStyle, {color: onAccent}]}>
                       {option.label}
                     </RNText>
                   ) : (
@@ -78,7 +80,6 @@ export const SegmentedControl = <T extends string>({
 }
 
 const styles = StyleSheet.create({
-  selectedLabel: {color: White},
   wrapper: {
     ...(Platform.OS === 'web' ? {alignSelf: 'flex-start' as const} : null),
     maxWidth: '100%',

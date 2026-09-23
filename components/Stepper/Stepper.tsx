@@ -1,7 +1,8 @@
 import React, {useEffect, useRef} from 'react'
 import {Pressable} from 'react-native'
 import {radius} from '../../radius'
-import {useColors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 
@@ -83,7 +84,7 @@ export const Stepper: React.FunctionComponent<StepperProps> = ({
   decrementDisabled,
   incrementDisabled,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   const decrementHold = useHoldToRepeat(onDecrement)
   const incrementHold = useHoldToRepeat(onIncrement)
 
@@ -98,13 +99,13 @@ export const Stepper: React.FunctionComponent<StepperProps> = ({
           alignItems: 'center',
           justifyContent: 'center',
           borderWidth: 1.5,
-          borderColor: colors.border,
+          borderColor: resolve(SemanticColor.BorderDefault),
           borderTopLeftRadius: radius.sm,
           borderBottomLeftRadius: radius.sm,
           opacity: decrementDisabled ? 0.4 : 1,
           backgroundColor:
             pressed && !decrementDisabled
-              ? colors.backgroundColorDirty
+              ? resolve(SemanticColor.SurfaceCard)
               : undefined,
         })}
       >
@@ -122,14 +123,14 @@ export const Stepper: React.FunctionComponent<StepperProps> = ({
           alignItems: 'center',
           justifyContent: 'center',
           borderWidth: 1.5,
-          borderColor: colors.border,
+          borderColor: resolve(SemanticColor.BorderDefault),
           borderTopRightRadius: radius.sm,
           borderBottomRightRadius: radius.sm,
           marginStart: -1.5,
           opacity: incrementDisabled ? 0.4 : 1,
           backgroundColor:
             pressed && !incrementDisabled
-              ? colors.backgroundColorDirty
+              ? resolve(SemanticColor.SurfaceCard)
               : undefined,
         })}
       >

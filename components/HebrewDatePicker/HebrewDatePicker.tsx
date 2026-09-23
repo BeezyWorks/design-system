@@ -10,7 +10,8 @@ import {
 import {formatGematriya} from 'siddurCalendar/hebcal.utils'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
-import {useColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {radius} from '../../radius'
 import {spacing} from '../../spacing'
 
@@ -26,7 +27,7 @@ export const HebrewDatePicker: React.FunctionComponent<Props> = ({
   value,
   onChange,
 }) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
   const option = getHebrewMonthOption(value.monthKey)
   const days = Array.from({length: option.maxDays}, (_, i) => i + 1)
 
@@ -43,9 +44,9 @@ export const HebrewDatePicker: React.FunctionComponent<Props> = ({
           paddingHorizontal: spacing.md,
           borderRadius: radius.sm,
           borderWidth: 1,
-          borderColor: colors.border,
-          backgroundColor: colors.backgroundColorDirty,
-          color: colors.primaryTextColor,
+          borderColor: resolve(SemanticColor.BorderDefault),
+          backgroundColor: resolve(SemanticColor.SurfaceCard),
+          color: resolve(SemanticColor.TextPrimary),
         }
       : undefined
 
@@ -67,7 +68,7 @@ export const HebrewDatePicker: React.FunctionComponent<Props> = ({
         <Picker
           selectedValue={value.day}
           onValueChange={(day) => onChange({...value, day: Number(day)})}
-          itemStyle={{color: colors.primaryTextColor}}
+          itemStyle={{color: resolve(SemanticColor.TextPrimary)}}
           style={webPickerStyle}
         >
           {days.map((day) => (
@@ -86,7 +87,7 @@ export const HebrewDatePicker: React.FunctionComponent<Props> = ({
         <Picker
           selectedValue={value.monthKey}
           onValueChange={onMonthChange}
-          itemStyle={{color: colors.primaryTextColor}}
+          itemStyle={{color: resolve(SemanticColor.TextPrimary)}}
           style={webPickerStyle}
         >
           {HEBREW_MONTH_OPTIONS.map(({key, label}) => (

@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
-import {useColors} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 import {radius} from '../../radius'
 import {spacing} from '../../spacing'
 
@@ -17,7 +18,7 @@ export interface GregorianDateFieldProps {
 export const GregorianDateField: React.FunctionComponent<
   GregorianDateFieldProps
 > = ({value, onChange}) => {
-  const colors = useColors()
+  const resolve = useColorResolver()
 
   return (
     <input
@@ -32,9 +33,9 @@ export const GregorianDateField: React.FunctionComponent<
         fontFamily: 'inherit',
         padding: `${spacing.sm}px ${spacing.md}px`,
         borderRadius: radius.sm,
-        border: `1px solid ${colors.border}`,
-        background: colors.backgroundColorDirty,
-        color: colors.primaryTextColor,
+        border: `1px solid ${resolve(SemanticColor.BorderDefault)}`,
+        background: resolve(SemanticColor.SurfaceCard),
+        color: resolve(SemanticColor.TextPrimary),
         width: '100%',
         boxSizing: 'border-box',
       }}

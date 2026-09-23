@@ -3,9 +3,7 @@ import {SemanticColor} from '../../colors'
 import {Platform} from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker'
 import moment from 'moment'
-import {isThemeDark} from '@models'
-import {getAppTheme} from '@selectors'
-import {useSelector} from 'state/store'
+import {useThemeMode} from '../../theme'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
@@ -23,7 +21,7 @@ export interface GregorianDateFieldProps {
 export const GregorianDateField: React.FunctionComponent<
   GregorianDateFieldProps
 > = ({value, onChange}) => {
-  const theme = useSelector(getAppTheme)
+  const mode = useThemeMode()
   const [showAndroidPicker, setShowAndroidPicker] = useState(false)
 
   const onPickerChange = (_: unknown, date?: Date) => {
@@ -54,7 +52,7 @@ export const GregorianDateField: React.FunctionComponent<
         </Touchable>
         {showAndroidPicker && (
           <DateTimePicker
-            themeVariant={isThemeDark(theme) ? 'dark' : 'light'}
+            themeVariant={mode}
             value={value}
             mode="date"
             display="default"
@@ -67,7 +65,7 @@ export const GregorianDateField: React.FunctionComponent<
 
   return (
     <DateTimePicker
-      themeVariant={isThemeDark(theme) ? 'dark' : 'light'}
+      themeVariant={mode}
       value={value}
       mode="date"
       display="spinner"
