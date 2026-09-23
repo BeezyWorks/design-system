@@ -3,6 +3,7 @@ import {useSelector} from 'state/store'
 import {getTextSettings} from '@selectors'
 import {getFontFamilyName, TypeFace} from '@models'
 import {useColors, Colors} from '../colors'
+import {FontFamily} from './fontFamily'
 
 // Chrome (UI-label) type ramp — every raw `fontSize`/`fontWeight` the app
 // used to spell out ad hoc, named by role and snapped to the sizes already
@@ -22,7 +23,7 @@ export const type = {
   // dedicated default color in `variantTone` below rather than the usual
   // uniform `primaryTextColor`.
   pageHeader: {
-    fontFamily: 'FrankRuhlLibre_700Bold',
+    fontFamily: FontFamily.FrankRuhlLibreBold,
     fontSize: 30,
     fontWeight: '700',
   },
@@ -33,7 +34,7 @@ export const type = {
     letterSpacing: 0.72, // 0.06em @ 12px — RN has no em unit, so pre-multiplied
   },
   item: {
-    fontFamily: 'FrankRuhlLibre_400Regular',
+    fontFamily: FontFamily.FrankRuhlLibre,
     fontSize: 17,
     fontWeight: '400',
   },
@@ -42,7 +43,7 @@ export const type = {
   // so the Bold face stands in for "600" here (same trick `pageHeader`
   // already uses for its own 700).
   itemHeader: {
-    fontFamily: 'FrankRuhlLibre_700Bold',
+    fontFamily: FontFamily.FrankRuhlLibreBold,
     fontSize: 17,
     fontWeight: '600',
   },
@@ -60,12 +61,12 @@ export const type = {
   // (`item`) and typeface-chip selection convention (weight + tone flip,
   // not a whole different visual language).
   menuOption: {
-    fontFamily: 'FrankRuhlLibre_400Regular',
+    fontFamily: FontFamily.FrankRuhlLibre,
     fontSize: 16,
     fontWeight: '500',
   },
   menuOptionSelected: {
-    fontFamily: 'FrankRuhlLibre_700Bold',
+    fontFamily: FontFamily.FrankRuhlLibreBold,
     fontSize: 16,
     fontWeight: '600',
   },
@@ -116,4 +117,6 @@ export const useContentTypeStyle = (): TextStyle => {
 export const useTypefaceFontFamily = (typeface: TypeFace) =>
   getFontFamilyName(typeface)
 
-export {AppFonts} from './fonts'
+export {DesignFonts} from './fonts'
+export * from './fontFamily'
+export * from './content'
