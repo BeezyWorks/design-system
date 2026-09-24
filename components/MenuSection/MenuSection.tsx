@@ -15,7 +15,7 @@ export interface MenuSectionProps {
   items: MenuItem[]
 }
 
-/** A titled card of tappable rows — the Books/Siddur menu pattern. Built on
+/** A titled card of tappable rows — the menu pattern. Built on
  * the shared `Card` primitive so it's visually identical to a Settings
  * section. */
 export const MenuSection: React.FunctionComponent<MenuSectionProps> = ({

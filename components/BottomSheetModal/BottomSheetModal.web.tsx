@@ -19,8 +19,8 @@ const PANEL_WIDTH = 380
 // Above the same breakpoint the app shell switches to a persistent side
 // nav (SIDE_NAV_BREAKPOINT), a sheet sliding up over the middle of the
 // screen reads oddly next to that docked chrome — so every modal that
-// goes through BottomSheetModal (section picker, zman sheet, the reader's
-// settings sheet, the Luach day-detail popup) becomes a toggle-able panel
+// goes through BottomSheetModal (pickers, detail sheets, settings
+// sheets) becomes a toggle-able panel
 // docked to the right edge instead. Below it, a narrow web viewport is
 // almost always a touch device in portrait, where a sheet rising from the
 // bottom is the familiar mobile-web pattern — a right-edge panel there

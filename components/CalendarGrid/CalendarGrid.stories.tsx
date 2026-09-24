@@ -5,7 +5,7 @@ import {useResolvedColor} from '../../theme'
 import {CalendarGrid} from './CalendarGrid'
 
 const meta = {
-  title: 'Luach/CalendarGrid',
+  title: 'Calendar/CalendarGrid',
   component: CalendarGrid,
   parameters: {layout: 'padded'},
   args: {current: '2026-09-01'},

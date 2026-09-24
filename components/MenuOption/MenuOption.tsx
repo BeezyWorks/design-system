@@ -12,7 +12,7 @@ export interface MenuOptionProps {
   isLast?: boolean
 }
 
-/** A single selectable row in the Zman Picker sheet — same Hebrew-first
+/** A single selectable row in a picker sheet — same Hebrew-first
  * (`rowReverse`) convention and hairline dividers as `MenuItemRow`, but
  * selectable: a selected row gets a flat `tint` fill and switches its
  * label to the bold/accent face instead of a chevron. */

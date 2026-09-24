@@ -15,7 +15,7 @@ export interface CardProps extends Omit<
 }
 
 /** The one raised-surface primitive every card in the app is built from —
- * the Books/Siddur menu sections and the Settings sections both use this
+ * menu sections and settings sections both use this
  * directly rather than hand-rolling their own background/border/radius,
  * so the two stay visually identical by construction, not by convention. */
 export const Card: React.FunctionComponent<CardProps> = ({

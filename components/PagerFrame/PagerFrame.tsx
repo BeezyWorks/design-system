@@ -3,7 +3,7 @@ import {View} from 'react-native'
 
 export interface PagerFrameProps {
   children?: React.ReactNode
-  /** Bottom clearance for the floating tab pill/safe-area below the Luach
+  /** Bottom clearance for the floating tab pill/safe-area below the
    * phone swiper's `ViewPager` — a numeric, device/tab-bar-height-dependent
    * inset, so it can't come from the spacing token scale the way `Stack`'s
    * padding props do. */

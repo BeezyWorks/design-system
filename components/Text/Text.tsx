@@ -20,7 +20,7 @@ export interface TextProps extends Pick<
   children?: React.ReactNode
   /** Chrome type-ramp step. Default `body`. Ignored when `content` is set. */
   variant?: TypeVariant
-  /** Renders with the user-configurable siddur reading typeface/size/line
+  /** Renders with the user-configurable reading typeface/size/line
    * height instead of the chrome type ramp — the replacement for the old
    * `useBaseTextStyle`. */
   content?: boolean

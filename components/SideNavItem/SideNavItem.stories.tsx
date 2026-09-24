@@ -5,8 +5,8 @@ import {TabBarIcon} from '../TabBarIcon'
 import {SideNavItem} from './SideNavItem'
 
 const tabs = [
-  {label: 'Luach', icon: 'calendar-today'},
-  {label: 'Siddur', icon: 'book'},
+  {label: 'Home', icon: 'calendar-today'},
+  {label: 'Library', icon: 'book'},
   {label: 'Books', icon: 'bookshelf'},
   {label: 'Settings', icon: 'cog'},
 ] as const

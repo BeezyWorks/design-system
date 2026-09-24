@@ -12,7 +12,7 @@ export interface SettingsCardProps {
 }
 
 /** A titled settings section — just `Card` with its own title row, so it
- * stays visually identical to every other card (the Books/Siddur menu
+ * stays visually identical to every other card (the menu
  * sections included) by construction. Doesn't override `Card`'s own
  * padding/radius/border/background defaults — that's the point. */
 export const SettingsCard: React.FunctionComponent<SettingsCardProps> = ({

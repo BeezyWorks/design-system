@@ -20,7 +20,8 @@ export const NamedColor = {
   Graphite: '#262320',
   Smoke: '#34302A',
   Taupe: '#4A443B',
-  // The always-dark Luach panel gray — cooler than the dark theme's warm
+  // A cool panel gray that stays the same in both modes — cooler than the
+  // dark theme's warm
   // browns, kept as its own color on purpose.
   PanelGray: '#313131',
 
@@ -48,14 +49,14 @@ export const NamedColor = {
   Transparent: 'rgba(255, 255, 255, 0)',
 
   // --- Brand blue and its variants
-  SiddurBlue: '#3E7FD1',
-  SiddurBlueLight: '#6FA3E8',
-  SiddurBlueTint08: 'rgba(62, 127, 209, 0.08)',
-  SiddurBlueTint10: 'rgba(62, 127, 209, 0.1)',
-  SiddurBlueLightTint10: 'rgba(111, 163, 232, 0.1)',
-  SiddurBlueLightTint60: 'rgba(111, 163, 232, 0.6)',
+  BrandBlue: '#3E7FD1',
+  BrandBlueLight: '#6FA3E8',
+  BrandBlueTint08: 'rgba(62, 127, 209, 0.08)',
+  BrandBlueTint10: 'rgba(62, 127, 209, 0.1)',
+  BrandBlueLightTint10: 'rgba(111, 163, 232, 0.1)',
+  BrandBlueLightTint60: 'rgba(111, 163, 232, 0.6)',
   SkyBlue: '#6ec6ff',
-  PillBlue: '#3B7FB4',
+  DeepBlue: '#3B7FB4',
 
   // --- Status hues
   DangerRed: '#f44336',

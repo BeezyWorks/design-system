@@ -37,7 +37,7 @@ export const type = {
     fontSize: 17,
     fontWeight: '400',
   },
-  // Notification list row's zman name — same family as `item`, but the
+  // A list row's title — same family as `item`, but the
   // spec calls for a 600 weight; the font only ships Regular/Bold faces,
   // so the Bold face stands in for "600" here (same trick `pageHeader`
   // already uses for its own 700).
@@ -46,19 +46,19 @@ export const type = {
     fontSize: 17,
     fontWeight: '600',
   },
-  // Chrome "Detail"/"Description" role — offset text under a zman name, a
-  // special-notification's blurb, etc. One variant covers both; the 1.4
-  // line-height only matters once text wraps to 2+ lines.
+  // Chrome "Detail"/"Description" role — secondary text under a row title, a
+  // short blurb, etc. The 1.4 line-height only matters once text wraps to
+  // 2+ lines.
   detail: {fontSize: 13, fontWeight: '400', lineHeight: 18},
-  // Chrome "Supplemental" role — the computed clock time trailing a
-  // notification row.
+  // Chrome "Supplemental" role — a value trailing a list row (a time, a
+  // date).
   supplemental: {fontSize: 15, fontWeight: '600'},
   // Sheet title (Cancel/title/Save header row) — distinct from the plain
-  // `BottomSheetHeader` title style used by every other sheet in the app.
+  // `BottomSheetHeader` title style.
   sheetTitle: {fontSize: 17, fontWeight: '600'},
-  // Zman Picker row, unselected/selected — mirrors the Settings nav-row
-  // (`item`) and typeface-chip selection convention (weight + tone flip,
-  // not a whole different visual language).
+  // A picker row, unselected/selected — mirrors the settings nav-row
+  // (`item`) and chip selection convention (weight + tone flip, not a whole
+  // different visual language).
   menuOption: {
     fontFamily: FontFamily.FrankRuhlLibre,
     fontSize: 16,
@@ -96,7 +96,7 @@ export const useTypeStyle = (variant: TypeVariant): TextStyle => {
   return {...type[variant], color}
 }
 
-// The davening/siddur reading content uses a *different*, user-configurable
+// Reading content (long-form text) uses a *different*, user-configurable
 // ramp (typeface, font size, line height all come from the user's selection
 // passed to `DesignSystemProvider`).
 export const useContentTypeStyle = (): TextStyle => {

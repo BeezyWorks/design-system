@@ -16,7 +16,7 @@ export interface AnchoredPopoverProps {
   visible: boolean
   onDismiss: () => void
   // 'center': under the header title. 'end': under the trailing-edge icon
-  // row (zmanim/settings) — "end" rather than "right" since that row sits
+  // row (action icons) — "end" rather than "right" since that row sits
   // on whichever side is RTL-start.
   align: 'center' | 'end'
   // Card width caps out at maxWidth, but never exceeds widthPercent of the
@@ -24,7 +24,7 @@ export interface AnchoredPopoverProps {
   maxWidth?: number
   widthPercent?: number
   // Rows that already carry their own generous padding (the sections list)
-  // want a tighter outer inset than free-floating content (zmanim/settings).
+  // want a tighter outer inset than free-floating content.
   contentPadding?: number
   children: React.ReactNode
 }

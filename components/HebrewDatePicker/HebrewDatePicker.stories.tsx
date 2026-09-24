@@ -17,7 +17,7 @@ const Demo = ({initial}: {initial: Value}) => {
 }
 
 const meta = {
-  title: 'Luach/HebrewDatePicker',
+  title: 'Calendar/HebrewDatePicker',
   parameters: {layout: 'padded'},
 } satisfies Meta
 export default meta

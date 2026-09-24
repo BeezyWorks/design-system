@@ -30,8 +30,7 @@ export interface HeaderProps {
   children?: React.ReactNode
 }
 
-// Wide-only icon button: padding/radius/pressed-tint per the reader header
-// spec. Narrow/native keeps using bare Pressable+Icon below, untouched, so
+// Wide-only icon button: padding/radius/pressed-tint for the wide layout. Narrow/native keeps using bare Pressable+Icon below, untouched, so
 // phone visuals never pass through this at all.
 const WideIconButton = ({
   name,
@@ -99,11 +98,9 @@ export const Header = ({
               pressed && styles.pressedTint,
             ]}
           >
-            <Text style={[styles.tefilaTitle, styles.tefilaTitleWide]}>
-              {title ?? ''}
-            </Text>
+            <Text style={[styles.title, styles.titleWide]}>{title ?? ''}</Text>
             {!!onTitlePress && subtitle && (
-              <Text style={[styles.sectionTitle, styles.sectionTitleWide]}>
+              <Text style={[styles.subtitle, styles.subtitleWide]}>
                 {subtitle ?? ''}
               </Text>
             )}
@@ -121,9 +118,9 @@ export const Header = ({
       ) : (
         <Pressable onPress={onTitlePress} style={styles.titleBox}>
           <View>
-            <Text style={styles.tefilaTitle}>{title ?? ''}</Text>
+            <Text style={styles.title}>{title ?? ''}</Text>
             {!!onTitlePress && subtitle && (
-              <Text style={styles.sectionTitle}>{subtitle ?? ''}</Text>
+              <Text style={styles.subtitle}>{subtitle ?? ''}</Text>
             )}
           </View>
         </Pressable>
@@ -217,22 +214,22 @@ const styleCreator = (resolve: ColorResolver) =>
     pressedTint: {
       backgroundColor: resolve(SemanticColor.SurfaceCard),
     },
-    tefilaTitle: {
+    title: {
       fontSize: 22,
       fontWeight: '700',
       color: resolve(SemanticColor.TextAccent),
       textAlign: 'center',
     },
-    tefilaTitleWide: {
+    titleWide: {
       fontSize: 26,
       color: resolve(SemanticColor.AccentPrimary),
     },
-    sectionTitle: {
+    subtitle: {
       fontSize: 16,
       textAlign: 'center',
       color: resolve(SemanticColor.TextAccent),
     },
-    sectionTitleWide: {
+    subtitleWide: {
       fontSize: 13,
       color: resolve(SemanticColor.TextSecondary),
     },

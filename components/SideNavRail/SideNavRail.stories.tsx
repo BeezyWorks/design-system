@@ -19,13 +19,13 @@ const Demo = ({width}: {width: number}) => {
         }
       >
         <SideNavItem
-          label="Luach"
+          label="Home"
           focused
           onPress={() => {}}
           icon={<TabBarIcon name="calendar-today" focused />}
         />
         <SideNavItem
-          label="Siddur"
+          label="Library"
           focused={false}
           onPress={() => {}}
           icon={<TabBarIcon name="book" focused={false} />}

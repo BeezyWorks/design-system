@@ -13,7 +13,7 @@ export interface MenuItemRowProps {
   isLast?: boolean
 }
 
-/** A single tappable row in a `MenuSection` card — the Books/Siddur menu
+/** A single tappable row in a `MenuSection` card — the menu
  * list pattern. RTL layout (label on the right, chevron on the left),
  * hairline divider between rows, omitted on the last one. */
 export const MenuItemRow: React.FunctionComponent<MenuItemRowProps> = ({

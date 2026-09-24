@@ -51,7 +51,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   const resolve = useColorResolver()
   // Only set when this screen sits inside the tab navigator (bottom pill on
   // native/narrow web, side rail on wide web) — leaves the padding out for
-  // screens pushed above the tabs (e.g. the full-screen siddur reader).
+  // screens pushed above the tabs (e.g. a full-screen reader).
   const tabBarHeight = useTabBarHeight()
   const insideTabs = tabBarHeight !== undefined
   const isWideWeb = useIsWideWebNav()

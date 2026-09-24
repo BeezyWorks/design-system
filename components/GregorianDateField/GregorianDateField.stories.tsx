@@ -13,7 +13,7 @@ const Demo = () => {
 }
 
 const meta = {
-  title: 'Luach/GregorianDateField',
+  title: 'Calendar/GregorianDateField',
   parameters: {layout: 'padded'},
 } satisfies Meta
 export default meta

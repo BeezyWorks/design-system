@@ -29,9 +29,9 @@ export interface HeaderedScrollView {
 // header above a normal ScrollView is both more predictable and more
 // expected on desktop, so `showHeader`/`hideHeader` are no-ops here.
 //
-// Above the wide-reader breakpoint (see readerBreakpoint.ts, shared with
+// Above the wide-layout breakpoint (see layout/breakpoints.ts, shared with
 // native so an iPad gets the same treatment) the header itself stays in
-// place — its title/zmanim/settings buttons switch to anchored popovers
+// place — its title/action buttons switch to anchored popovers
 // instead of bottom sheets, handled entirely inside Header. Section
 // navigation is popover-only (via the title button); there's no separate
 // persistent rail.
