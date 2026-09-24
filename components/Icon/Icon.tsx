@@ -29,6 +29,7 @@ import {
   Mail,
   ExternalLink,
   Check,
+  Search,
   LucideIcon,
 } from 'lucide-react-native'
 import {SemanticColor} from '../../colors'
@@ -66,6 +67,7 @@ export type IconName =
   | 'mail'
   | 'external-link'
   | 'check'
+  | 'search'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -99,6 +101,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   mail: Mail,
   'external-link': ExternalLink,
   check: Check,
+  search: Search,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
