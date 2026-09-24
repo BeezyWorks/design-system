@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/BeezyWorks/design-system/compare/v0.2.0...v0.3.0) (2026-09-24)
+
+
+### Features
+
+* **components:** add FontSwatch, the font picker card ([cecf097](https://github.com/BeezyWorks/design-system/commit/cecf0976081233d943603502e259308748b92f01))
+* **components:** add ThemeSwatchPicker and FontSwatchPicker ([a4f3f6f](https://github.com/BeezyWorks/design-system/commit/a4f3f6f725c6d32a0f69882acd7e0faf48ae7813))
+* **components:** square FontSwatch cards in an RTL-capable grid ([6cf9817](https://github.com/BeezyWorks/design-system/commit/6cf981772a3d124e3fc745f6c81c483a978b761f))
+
 # [0.2.0](https://github.com/BeezyWorks/design-system/compare/v0.1.0...v0.2.0) (2026-09-24)
 
 
