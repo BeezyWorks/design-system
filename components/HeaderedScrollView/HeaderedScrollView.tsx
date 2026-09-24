@@ -7,10 +7,10 @@ import {
 } from 'react-native'
 import {CollapsibleHeaderScrollView} from 'react-native-collapsible-header-views'
 import {layout} from '../../layout'
-import {Header, HeaderProps} from '@components'
 
 interface Props extends ScrollViewProps {
-  headerProps: HeaderProps
+  /** The header element — a design-system `Header`, or an app wrapper of it. */
+  header: React.ReactElement
 }
 
 export interface HeaderedScrollView {
@@ -22,7 +22,7 @@ export interface HeaderedScrollView {
 }
 
 export const HeaderedScrollView = React.forwardRef<HeaderedScrollView, Props>(
-  ({headerProps, onScroll: _onScroll, ...restProps}: Props, ref) => {
+  ({header, onScroll: _onScroll, ...restProps}: Props, ref) => {
     const innerRef = useRef<CollapsibleHeaderScrollView>(null)
     const scrollValueY = useRef(0)
 
@@ -64,7 +64,7 @@ export const HeaderedScrollView = React.forwardRef<HeaderedScrollView, Props>(
         {...restProps}
         ref={innerRef}
         onScroll={onScroll}
-        CollapsibleHeaderComponent={<Header {...headerProps} />}
+        CollapsibleHeaderComponent={header}
         headerHeight={layout.headerHeight}
       />
     )

@@ -8,10 +8,10 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native'
-import {Header, HeaderProps} from '@components'
 
 interface Props extends ScrollViewProps {
-  headerProps: HeaderProps
+  /** The header element — a design-system `Header`, or an app wrapper of it. */
+  header: React.ReactElement
 }
 
 export interface HeaderedScrollView {
@@ -38,7 +38,7 @@ export interface HeaderedScrollView {
 export const HeaderedScrollView = React.forwardRef<HeaderedScrollView, Props>(
   (
     {
-      headerProps,
+      header,
       onScroll: _onScroll,
       contentContainerStyle,
       style,
@@ -84,7 +84,7 @@ export const HeaderedScrollView = React.forwardRef<HeaderedScrollView, Props>(
 
     return (
       <View style={[styles.base, {height: windowHeight}]}>
-        <Header {...headerProps} />
+        {header}
         <ScrollView
           bounces={false}
           {...restProps}
