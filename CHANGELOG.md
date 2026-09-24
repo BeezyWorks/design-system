@@ -1,3 +1,28 @@
+# [0.7.0](https://github.com/BeezyWorks/design-system/compare/v0.6.0...v0.7.0) (2026-09-24)
+
+
+* feat(colors)!: apps own their brand; the design system derives the rest ([1783f6b](https://github.com/BeezyWorks/design-system/commit/1783f6bee04091f644b69589d4bacb6a910fb447))
+
+
+### Bug Fixes
+
+* **screen:** subtract the docked tab bar from web screen height ([4e4596d](https://github.com/BeezyWorks/design-system/commit/4e4596d5284f55624cb4b1f8a39da44e931bbe30))
+
+
+### Features
+
+* fixed-size FontSwatch and shared SWATCH_SIZE ([6d30a25](https://github.com/BeezyWorks/design-system/commit/6d30a25ce40a6281e3e64c4bf85d91efa0170c71))
+
+
+### BREAKING CHANGES
+
+* `brand` is required on DesignSystemProvider and takes a
+BrandPalette ({primary: '#RRGGBB'}) instead of a Brand.* preset. Apps pass
+their own. buildTheme/resolveColor take a brand argument, and
+SemanticColor.AccentPrimaryBright is gone.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
 # [0.6.0](https://github.com/BeezyWorks/design-system/compare/v0.5.0...v0.6.0) (2026-09-24)
 
 
