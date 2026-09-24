@@ -1,15 +1,6 @@
 import {darkTheme, lightTheme, themes, resolveColor} from '../themes'
 import {SemanticColor as S} from '../semantic'
 import {NamedColor} from '../named'
-import {withOpacity} from '../withOpacity'
-import {eventCategoryColors} from '..'
-import * as legacy from '../palette'
-
-// The three-tier tokens must reproduce every color the app shipped with
-// before the refactor. These assertions compare against the legacy palette,
-// so a value can only change deliberately (in a later "unification" pass),
-// never by accident during migration. Delete this file's legacy comparisons
-// together with `palette.ts` once the migration is complete.
 
 describe('theme definitions', () => {
   it('define exactly the same tokens in light and dark', () => {
@@ -37,93 +28,13 @@ describe('theme definitions', () => {
   })
 })
 
-describe.each([
-  ['light', lightTheme, legacy.LightTheme],
-  ['dark', darkTheme, legacy.DarkTheme],
-] as const)('%s theme matches the legacy palette', (_mode, next, old) => {
-  it('text', () => {
-    expect(next[S.TextPrimary]).toBe(old.primaryTextColor)
-    expect(next[S.TextSecondary]).toBe(old.secondaryTextColor)
-    expect(next[S.TextTabInactive]).toBe(old.tabOffColor)
-    expect(next[S.TextAccent]).toBe(old.specialTextColor)
-    expect(next[S.TextDanger]).toBe(old.warningColor)
-  })
-
-  it('surfaces, borders and overlays', () => {
-    expect(next[S.SurfaceBackground]).toBe(old.backgroundColor)
-    expect(next[S.SurfaceCard]).toBe(old.backgroundColorDirty)
-    expect(next[S.SurfaceSelected]).toBe(old.tintColor)
-    expect(next[S.SurfaceHover]).toBe(withOpacity(old.primaryTextColor, 0.04))
-    expect(next[S.SurfaceTransparent]).toBe(withOpacity('#fff', 0))
-    // Button label on a filled accent/danger button was the page background.
-    expect(next[S.TextInverse]).toBe(old.backgroundColor)
-    expect(next[S.SurfaceDanger]).toBe(old.warningColor)
-    expect(next[S.BorderDefault]).toBe(old.borderColor)
-    expect(next[S.OverlayScrim]).toBe(old.scrimColor)
-    // Border colors that historically borrowed the scrim color.
-    expect(next[S.BorderStrong]).toBe(old.scrimColor)
-  })
-
-  it('accents', () => {
-    expect(next[S.AccentPrimary]).toBe(old.primaryColor)
-    expect(next[S.AccentTint]).toBe(old.tintAccent)
-  })
-})
-
-describe('mode-independent colors match the legacy fixed exports', () => {
-  it.each([lightTheme, darkTheme])('%#', (theme) => {
-    expect(theme[S.AccentTabActive]).toBe(legacy.ColorPrimary)
-    expect(theme[S.AccentPrimaryBright]).toBe(legacy.ColorPrimaryLight)
-    expect(theme[S.AccentPrimaryDeep]).toBe(legacy.NextTefilaPill)
-    expect(theme[S.SurfacePanel]).toBe(legacy.BackgroundDark)
-    expect(theme[S.SurfaceThumb]).toBe(legacy.White)
-    expect(theme[S.TextOnAccent]).toBe(legacy.White)
-    expect(theme[S.TextOnPhoto]).toBe(legacy.White)
-    expect(theme[S.SurfaceSwatchLight]).toBe(legacy.BackgroundLight)
-    expect(theme[S.SurfaceSwatchDark]).toBe(legacy.BackgroundDark)
-    expect(theme[S.SurfaceSwatchSystem]).toBe(legacy.ThemeSwatchSystem)
-    expect(theme[S.OverlayShadow]).toBe(legacy.Black)
-    expect(theme[S.OverlayScrimSoft]).toBe(withOpacity(legacy.Black, 0.15))
-    // The Luach hero scrim always used the light theme's scrim.
-    expect(theme[S.OverlayPhotoScrim]).toBe(legacy.LightTheme.scrimColor)
-  })
-
-  it('toggle tracks', () => {
-    expect(lightTheme[S.SurfaceTrackOff]).toBe(legacy.ToggleTrackOff)
-    expect(darkTheme[S.SurfaceTrackOff]).toBe(legacy.ToggleTrackOffDark)
-  })
-
-  it('reader-list selected row (theme-dependent, as before)', () => {
-    expect(lightTheme[S.SurfaceHighlight]).toBe(
-      withOpacity(legacy.ColorPrimary, 0.1),
+// The resolved values are the app's look — pin them so a color can only
+// change on purpose (the snapshot diff is the review).
+describe('resolved themes', () => {
+  it.each(['light', 'dark'] as const)('%s', (mode) => {
+    const resolved = Object.fromEntries(
+      Object.values(S).map((token) => [token, resolveColor(mode, token)]),
     )
-    expect(darkTheme[S.SurfaceHighlight]).toBe(withOpacity(legacy.White, 0.08))
+    expect(resolved).toMatchSnapshot()
   })
-
-  it('typeface-chip selected fill follows the theme accent at 10%', () => {
-    expect(lightTheme[S.AccentTintSelected]).toBe(
-      withOpacity(legacy.LightTheme.primaryColor, 0.1),
-    )
-    expect(darkTheme[S.AccentTintSelected]).toBe(
-      withOpacity(legacy.DarkTheme.primaryColor, 0.1),
-    )
-  })
-})
-
-describe('event category accents', () => {
-  it.each([lightTheme, darkTheme])(
-    '%# matches eventCategoryColors',
-    (theme) => {
-      expect(theme[S.AccentDanger]).toBe(eventCategoryColors.fastDay)
-      expect(theme[S.AccentAlertFaded]).toBe(
-        eventCategoryColors.erevMinorHoliday,
-      )
-      expect(theme[S.AccentAlert]).toBe(eventCategoryColors.minorHoliday)
-      expect(theme[S.AccentAlert]).toBe(eventCategoryColors.roshChodesh)
-      expect(theme[S.AccentWarning]).toBe(eventCategoryColors.unspecified)
-      expect(theme[S.AccentInfo]).toBe(eventCategoryColors.yomTov)
-      expect(theme[S.AccentInfoFaded]).toBe(eventCategoryColors.erevYomTov)
-      expect(theme[S.AccentSuccess]).toBe(eventCategoryColors.userEvent)
-    },
-  )
 })

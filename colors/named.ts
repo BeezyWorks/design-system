@@ -4,10 +4,9 @@
 // speak `SemanticColor` (semantic.ts) instead.
 //
 // Alpha lives *in* the named color (`InkFaded` is Ink at 50%) — a theme never
-// composes opacity on the fly. Rgba strings are spelled exactly as the old
-// `withOpacity()` rendered them so snapshots stay stable through the
-// migration. Every value that shipped before the token refactor keeps its own
-// name (no near-duplicates merged yet — see the "unification pass" notes).
+// composes opacity on the fly. Values that predate the token refactor keep
+// their own names; near-duplicates such as the four blues are deliberately
+// not merged yet.
 export const NamedColor = {
   // --- Neutrals: light-mode surfaces
   White: '#FFFFFF',
