@@ -87,6 +87,8 @@ export interface StackProps extends Pick<
    * (pair with `alignSelf="center"`). */
   maxWidth?: number
   minHeight?: number
+  /** Width over height — `1` for a square that scales with its column. */
+  aspectRatio?: number
   /** Overrides the parent's `align` for this one child. */
   alignSelf?: Align
   /** Stretch to fill the parent in both axes. */
@@ -134,6 +136,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   height,
   maxWidth,
   minHeight,
+  aspectRatio,
   alignSelf,
   fill,
   background,
@@ -178,6 +181,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
       // Only present when set, so existing layouts' styles are unchanged.
       ...(maxWidth !== undefined && {maxWidth}),
       ...(minHeight !== undefined && {minHeight}),
+      ...(aspectRatio !== undefined && {aspectRatio}),
       ...(alignSelf && {alignSelf: alignMap[alignSelf]}),
       backgroundColor,
       borderRadius: radiusToken ? radius[radiusToken] : undefined,

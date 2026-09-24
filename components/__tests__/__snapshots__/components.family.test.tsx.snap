@@ -857,6 +857,327 @@ exports[`family components (dark theme) DetailOverlay as a sheet 1`] = `
 </Modal>
 `;
 
+exports[`family components (dark theme) FontSwatch previews each typeface 1`] = `
+[
+  <View
+    accessibilityLabel="Frank Ruhl Libre"
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": true,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": "100%",
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "backgroundColor": "rgba(111, 163, 232, 0.1)",
+              "borderBottomWidth": undefined,
+              "borderColor": "#6FA3E8",
+              "borderRadius": 12,
+              "borderWidth": 2,
+              "bottom": undefined,
+              "flexDirection": "column",
+              "flexGrow": undefined,
+              "flexWrap": undefined,
+              "gap": undefined,
+              "height": undefined,
+              "justifyContent": "center",
+              "left": undefined,
+              "opacity": undefined,
+              "overflow": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingEnd": undefined,
+              "paddingHorizontal": undefined,
+              "paddingStart": undefined,
+              "paddingTop": undefined,
+              "paddingVertical": undefined,
+              "position": undefined,
+              "right": undefined,
+              "top": undefined,
+              "width": "100%",
+              "zIndex": undefined,
+            },
+            null,
+            null,
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#F0ECE4",
+                "fontSize": 20,
+                "fontWeight": "700",
+              },
+              {
+                "color": "#F0ECE4",
+              },
+              null,
+              null,
+              {
+                "fontFamily": "FrankRuhlLibre_400Regular",
+              },
+              null,
+            ]
+          }
+        >
+          אבגד
+        </Text>
+      </View>
+      <Text
+        style={
+          [
+            {
+              "color": "rgba(240, 236, 228, 0.5)",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            {
+              "color": "#6FA3E8",
+            },
+            {
+              "textAlign": "center",
+            },
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        Frank Ruhl Libre
+      </Text>
+    </View>
+  </View>,
+  <View
+    accessibilityLabel="Inter"
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": false,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": "100%",
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "backgroundColor": "#262320",
+              "borderBottomWidth": undefined,
+              "borderColor": "rgba(255, 255, 255, 0.12)",
+              "borderRadius": 12,
+              "borderWidth": 2,
+              "bottom": undefined,
+              "flexDirection": "column",
+              "flexGrow": undefined,
+              "flexWrap": undefined,
+              "gap": undefined,
+              "height": undefined,
+              "justifyContent": "center",
+              "left": undefined,
+              "opacity": undefined,
+              "overflow": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingEnd": undefined,
+              "paddingHorizontal": undefined,
+              "paddingStart": undefined,
+              "paddingTop": undefined,
+              "paddingVertical": undefined,
+              "position": undefined,
+              "right": undefined,
+              "top": undefined,
+              "width": "100%",
+              "zIndex": undefined,
+            },
+            null,
+            null,
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#F0ECE4",
+                "fontSize": 20,
+                "fontWeight": "700",
+              },
+              {
+                "color": "#F0ECE4",
+              },
+              null,
+              null,
+              {
+                "fontFamily": "Inter_400Regular",
+              },
+              null,
+            ]
+          }
+        >
+          Aa
+        </Text>
+      </View>
+      <Text
+        style={
+          [
+            {
+              "color": "rgba(240, 236, 228, 0.5)",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            {
+              "color": "rgba(240, 236, 228, 0.5)",
+            },
+            {
+              "textAlign": "center",
+            },
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        Inter
+      </Text>
+    </View>
+  </View>,
+]
+`;
+
 exports[`family components (dark theme) GradientCard 1`] = `
 <View
   style={
@@ -2139,6 +2460,845 @@ exports[`family components (dark theme) ThemeSwatch previews each mode 1`] = `
     </View>
   </View>,
 ]
+`;
+
+exports[`family components (dark theme) ThemeSwatchPicker relabels and reports the pressed mode 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    {
+      "flexGrow": 1,
+      "gap": undefined,
+      "padding": undefined,
+      "paddingBottom": undefined,
+    }
+  }
+  horizontal={true}
+  onContentSizeChange={[Function]}
+  showsHorizontalScrollIndicator={false}
+>
+  <View>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "row-reverse",
+            "flexGrow": 1,
+            "flexWrap": undefined,
+            "gap": 16,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": 4,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <View
+        accessibilityLabel="White"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "rgba(30, 25, 20, 0.10)",
+                  "borderRadius": 12,
+                  "borderWidth": 1,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#FAF7F0",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 56,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#2A2521",
+                      "fontSize": 16,
+                      "fontWeight": "600",
+                    },
+                    {
+                      "color": "#2A2521",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                Aa
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            White
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityLabel="Sepia"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": true,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "#3E7FD1",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#EFE1C4",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 56,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#4A3826",
+                      "fontSize": 16,
+                      "fontWeight": "600",
+                    },
+                    {
+                      "color": "#4A3826",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                Aa
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#3E7FD1",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            Sepia
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityLabel="Black"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "rgba(30, 25, 20, 0.10)",
+                  "borderRadius": 12,
+                  "borderWidth": 1,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#1C1A17",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 56,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F0ECE4",
+                      "fontSize": 16,
+                      "fontWeight": "600",
+                    },
+                    {
+                      "color": "#F0ECE4",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                Aa
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            Black
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityLabel="System"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "rgba(30, 25, 20, 0.10)",
+                  "borderRadius": 12,
+                  "borderWidth": 1,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#FAF7F0",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 28,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#1C1A17",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 28,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            />
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            System
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
 `;
 
 exports[`family components (dark theme) new props on existing components 1`] = `
@@ -4330,6 +5490,327 @@ exports[`family components (light theme) DetailOverlay as a sheet 1`] = `
 </Modal>
 `;
 
+exports[`family components (light theme) FontSwatch previews each typeface 1`] = `
+[
+  <View
+    accessibilityLabel="Frank Ruhl Libre"
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": true,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": "100%",
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "backgroundColor": "rgba(62, 127, 209, 0.1)",
+              "borderBottomWidth": undefined,
+              "borderColor": "#3E7FD1",
+              "borderRadius": 12,
+              "borderWidth": 2,
+              "bottom": undefined,
+              "flexDirection": "column",
+              "flexGrow": undefined,
+              "flexWrap": undefined,
+              "gap": undefined,
+              "height": undefined,
+              "justifyContent": "center",
+              "left": undefined,
+              "opacity": undefined,
+              "overflow": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingEnd": undefined,
+              "paddingHorizontal": undefined,
+              "paddingStart": undefined,
+              "paddingTop": undefined,
+              "paddingVertical": undefined,
+              "position": undefined,
+              "right": undefined,
+              "top": undefined,
+              "width": "100%",
+              "zIndex": undefined,
+            },
+            null,
+            null,
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#2A2521",
+                "fontSize": 20,
+                "fontWeight": "700",
+              },
+              {
+                "color": "#2A2521",
+              },
+              null,
+              null,
+              {
+                "fontFamily": "FrankRuhlLibre_400Regular",
+              },
+              null,
+            ]
+          }
+        >
+          אבגד
+        </Text>
+      </View>
+      <Text
+        style={
+          [
+            {
+              "color": "rgba(42, 37, 33, 0.5)",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            {
+              "color": "#3E7FD1",
+            },
+            {
+              "textAlign": "center",
+            },
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        Frank Ruhl Libre
+      </Text>
+    </View>
+  </View>,
+  <View
+    accessibilityLabel="Inter"
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": false,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": "100%",
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "backgroundColor": "#FFFFFF",
+              "borderBottomWidth": undefined,
+              "borderColor": "rgba(30, 25, 20, 0.10)",
+              "borderRadius": 12,
+              "borderWidth": 2,
+              "bottom": undefined,
+              "flexDirection": "column",
+              "flexGrow": undefined,
+              "flexWrap": undefined,
+              "gap": undefined,
+              "height": undefined,
+              "justifyContent": "center",
+              "left": undefined,
+              "opacity": undefined,
+              "overflow": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingEnd": undefined,
+              "paddingHorizontal": undefined,
+              "paddingStart": undefined,
+              "paddingTop": undefined,
+              "paddingVertical": undefined,
+              "position": undefined,
+              "right": undefined,
+              "top": undefined,
+              "width": "100%",
+              "zIndex": undefined,
+            },
+            null,
+            null,
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#2A2521",
+                "fontSize": 20,
+                "fontWeight": "700",
+              },
+              {
+                "color": "#2A2521",
+              },
+              null,
+              null,
+              {
+                "fontFamily": "Inter_400Regular",
+              },
+              null,
+            ]
+          }
+        >
+          Aa
+        </Text>
+      </View>
+      <Text
+        style={
+          [
+            {
+              "color": "rgba(42, 37, 33, 0.5)",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            {
+              "color": "rgba(42, 37, 33, 0.5)",
+            },
+            {
+              "textAlign": "center",
+            },
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        Inter
+      </Text>
+    </View>
+  </View>,
+]
+`;
+
 exports[`family components (light theme) GradientCard 1`] = `
 <View
   style={
@@ -5612,6 +7093,845 @@ exports[`family components (light theme) ThemeSwatch previews each mode 1`] = `
     </View>
   </View>,
 ]
+`;
+
+exports[`family components (light theme) ThemeSwatchPicker relabels and reports the pressed mode 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    {
+      "flexGrow": 1,
+      "gap": undefined,
+      "padding": undefined,
+      "paddingBottom": undefined,
+    }
+  }
+  horizontal={true}
+  onContentSizeChange={[Function]}
+  showsHorizontalScrollIndicator={false}
+>
+  <View>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "row-reverse",
+            "flexGrow": 1,
+            "flexWrap": undefined,
+            "gap": 16,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": 4,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    >
+      <View
+        accessibilityLabel="White"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "rgba(30, 25, 20, 0.10)",
+                  "borderRadius": 12,
+                  "borderWidth": 1,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#FAF7F0",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 56,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#2A2521",
+                      "fontSize": 16,
+                      "fontWeight": "600",
+                    },
+                    {
+                      "color": "#2A2521",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                Aa
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            White
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityLabel="Sepia"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": true,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "#3E7FD1",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#EFE1C4",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 56,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#4A3826",
+                      "fontSize": 16,
+                      "fontWeight": "600",
+                    },
+                    {
+                      "color": "#4A3826",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                Aa
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#3E7FD1",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            Sepia
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityLabel="Black"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "rgba(30, 25, 20, 0.10)",
+                  "borderRadius": 12,
+                  "borderWidth": 1,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#1C1A17",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 56,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F0ECE4",
+                      "fontSize": 16,
+                      "fontWeight": "600",
+                    },
+                    {
+                      "color": "#F0ECE4",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                Aa
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            Black
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityLabel="System"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": undefined,
+                "flexWrap": undefined,
+                "gap": 4,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": undefined,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": undefined,
+                  "backgroundColor": undefined,
+                  "borderBottomWidth": undefined,
+                  "borderColor": "rgba(30, 25, 20, 0.10)",
+                  "borderRadius": 12,
+                  "borderWidth": 1,
+                  "bottom": undefined,
+                  "flexDirection": "row",
+                  "flexGrow": undefined,
+                  "flexWrap": undefined,
+                  "gap": undefined,
+                  "height": 56,
+                  "justifyContent": undefined,
+                  "left": undefined,
+                  "opacity": undefined,
+                  "overflow": "hidden",
+                  "padding": undefined,
+                  "paddingBottom": undefined,
+                  "paddingEnd": undefined,
+                  "paddingHorizontal": undefined,
+                  "paddingStart": undefined,
+                  "paddingTop": undefined,
+                  "paddingVertical": undefined,
+                  "position": undefined,
+                  "right": undefined,
+                  "top": undefined,
+                  "width": 56,
+                  "zIndex": undefined,
+                },
+                null,
+                null,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#FAF7F0",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 28,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#1C1A17",
+                    "borderBottomWidth": undefined,
+                    "borderColor": undefined,
+                    "borderRadius": undefined,
+                    "borderWidth": undefined,
+                    "bottom": undefined,
+                    "flexDirection": "column",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": undefined,
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": undefined,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": undefined,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": 28,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            />
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#2A2521",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                },
+                {
+                  "color": "#2A2521",
+                },
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+          >
+            System
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
 `;
 
 exports[`family components (light theme) new props on existing components 1`] = `
