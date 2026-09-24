@@ -124,15 +124,27 @@ importers:
       '@expo-google-fonts/cardo':
         specifier: ^0.4.1
         version: 0.4.1
+      '@expo-google-fonts/crimson-pro':
+        specifier: ^0.4.2
+        version: 0.4.2
       '@expo-google-fonts/frank-ruhl-libre':
         specifier: ^0.4.1
         version: 0.4.1
+      '@expo-google-fonts/inter':
+        specifier: ^0.4.2
+        version: 0.4.2
+      '@expo-google-fonts/libre-baskerville':
+        specifier: ^0.4.3
+        version: 0.4.3
       '@expo-google-fonts/noto-rashi-hebrew':
         specifier: ^0.4.2
         version: 0.4.2
       '@expo-google-fonts/noto-serif-hebrew':
         specifier: ^0.4.2
         version: 0.4.2
+      '@expo-google-fonts/source-serif-4':
+        specifier: ^0.4.1
+        version: 0.4.1
       '@hebcal/core':
         specifier: ^6.9.2
         version: 6.9.3
@@ -181,6 +193,9 @@ importers:
       expo-glass-effect:
         specifier: ^57.0.3
         version: 57.0.3(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
+      expo-linear-gradient:
+        specifier: ~57.0.2
+        version: 57.0.2(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -214,6 +229,9 @@ importers:
       react-native-collapsible-header-views:
         specifier: ^1.1.2
         version: 1.1.2(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
+      react-native-gesture-handler:
+        specifier: ~2.32.0
+        version: 2.32.0(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
       react-native-pager-view:
         specifier: 8.0.2
         version: 8.0.2(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
@@ -766,6 +784,10 @@ packages:
     resolution: {integrity: sha512-aalGyl7dbB5PArRebDIX43ZvBlXrYm9uWzGJ26t+4SzJVPsOuvfILGGbw5X4yX7i50YEmJ8zvbiWnqH/AAnZqg==}
     engines: {node: '>=22'}
 
+  '@egjs/hammerjs@2.0.17':
+    resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
+    engines: {node: '>=0.8.0'}
+
   '@emnapi/core@1.11.0':
     resolution: {integrity: sha512-l9Oo58x0HOP5znGzVhYW9U3e5wVuA4LAZU2AGezTmkhO1CgQRFDhDg4nneHsu/t3WniXg9QrG2nIXL/ZS8ln8Q==}
 
@@ -961,14 +983,26 @@ packages:
   '@expo-google-fonts/cardo@0.4.1':
     resolution: {integrity: sha512-tIkxZkVtk46WjJmjm17OKGJjKItex4gO93RukaabX2X6042icWKyCBc1SsKQpLS6Fw/JYcr2OOZtL+SXs+5Fbw==}
 
+  '@expo-google-fonts/crimson-pro@0.4.2':
+    resolution: {integrity: sha512-X5pfxna/aQBhxB6CowczCL2mOsObwlxhI2EJ84fE6OMrxie1bd2ro9xBywCfeVg588eQYvzYBBdkHkPWmFTXug==}
+
   '@expo-google-fonts/frank-ruhl-libre@0.4.1':
     resolution: {integrity: sha512-ajgjj4hKpRNI+bt9uKu9gv0DBSU/oGIqr22iuN4LxAb44+Y2dFcU/05wXEwAgKsoypyFaE6GVOBArLOEkdwzog==}
+
+  '@expo-google-fonts/inter@0.4.2':
+    resolution: {integrity: sha512-syfiImMaDmq7cFi0of+waE2M4uSCyd16zgyWxdPOY7fN2VBmSLKEzkfbZgeOjJq61kSqPBNNtXjggiQiSD6gMQ==}
+
+  '@expo-google-fonts/libre-baskerville@0.4.3':
+    resolution: {integrity: sha512-EUd0gcmJ2C9ZzobNFe5ohFEOyfZFAy5rA8qluzl32VJCqdysRO1RjU2uxmK4g5EUxwCq4UHVHVzp3sPS7+Ubrw==}
 
   '@expo-google-fonts/noto-rashi-hebrew@0.4.2':
     resolution: {integrity: sha512-gmXh8KEFvYbFvHBtXysk10/ti7WI4jPqrToOoTTto4E2LncQMOrpuEFKl6TR80oLC7f/eoOXrM1bzLXRrutBmA==}
 
   '@expo-google-fonts/noto-serif-hebrew@0.4.2':
     resolution: {integrity: sha512-rgsdLstcIV5j5kAfou7RjaUU4bwl+dXpaavQezbcKCb6gmOO5ipfBb4AeUQOxQkV3UWbPZlCora2wpZRW544qw==}
+
+  '@expo-google-fonts/source-serif-4@0.4.1':
+    resolution: {integrity: sha512-Ej4UXDjW1kwYPHG8YLq6fK1bqnJGb3K35J3S5atSL0ScKFAFLKvndxoTWeCls7mybtlS9x99hzwDeXCBkiI3rA==}
 
   '@expo/cli@57.0.26':
     resolution: {integrity: sha512-vm769xuEyHMToi3uY66JLzRA2GGK+3WzdH71HNn67FuVhry82dKTvMUoeHYtHiindyeieiWfEvHT8Kr1VyEVPQ==}
@@ -1887,6 +1921,9 @@ packages:
 
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
+
+  '@types/hammerjs@2.0.46':
+    resolution: {integrity: sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==}
 
   '@types/istanbul-lib-coverage@2.0.6':
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
@@ -3074,6 +3111,13 @@ packages:
     peerDependencies:
       expo: '*'
       react: '*'
+
+  expo-linear-gradient@57.0.2:
+    resolution: {integrity: sha512-eGNSfcbdXYvw0B/TQ3nmXKQgj0jLUi3EgsXGlvI79rlXg5RR5dQTkY2yqkf7BQDM3PMd3tqBMZdsLhvBqSUaMg==}
+    peerDependencies:
+      expo: '*'
+      react: '*'
+      react-native: '*'
 
   expo-modules-autolinking@57.0.13:
     resolution: {integrity: sha512-Hj5NjZRlfccazhKab+wK19leRVUr1Y/PUERaRvegIbUSkq4GVxKq6lU9QHlKQyC16MdD/VS4iwsiLivB4o7lvQ==}
@@ -4620,6 +4664,12 @@ packages:
 
   react-native-collapsible-header-views@1.1.2:
     resolution: {integrity: sha512-HjhIKkJa3tkPC6i1G9hh9IdjiG4Df2aB3jU1z1RbNIWBqrCa83BfkstwtbzeAADJVkTBkLTldDd6EbMybbm0DA==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+
+  react-native-gesture-handler@2.32.0:
+    resolution: {integrity: sha512-uYIMOKlKENORq2SABE+jIjbPU+h5I/sQKcq2v16zRq848nwEp1fWRVwML4QWqijc8UcXJC25o54S8GQd4Mf2OA==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -6222,6 +6272,10 @@ snapshots:
 
   '@conventional-changelog/template@1.4.0': {}
 
+  '@egjs/hammerjs@2.0.17':
+    dependencies:
+      '@types/hammerjs': 2.0.46
+
   '@emnapi/core@1.11.0':
     dependencies:
       '@emnapi/wasi-threads': 1.2.2
@@ -6357,11 +6411,19 @@ snapshots:
 
   '@expo-google-fonts/cardo@0.4.1': {}
 
+  '@expo-google-fonts/crimson-pro@0.4.2': {}
+
   '@expo-google-fonts/frank-ruhl-libre@0.4.1': {}
+
+  '@expo-google-fonts/inter@0.4.2': {}
+
+  '@expo-google-fonts/libre-baskerville@0.4.3': {}
 
   '@expo-google-fonts/noto-rashi-hebrew@0.4.2': {}
 
   '@expo-google-fonts/noto-serif-hebrew@0.4.2': {}
+
+  '@expo-google-fonts/source-serif-4@0.4.1': {}
 
   '@expo/cli@57.0.26(@expo/dom-webview@57.0.1)(expo-constants@57.0.19(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(supports-color@8.1.1))(expo-font@57.0.4(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3))(expo@57.0.24)(react-dom@19.2.3(react@19.2.3))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1)(typescript@6.0.3)':
     dependencies:
@@ -7484,6 +7546,8 @@ snapshots:
   '@types/graceful-fs@4.1.9':
     dependencies:
       '@types/node': 26.6.2
+
+  '@types/hammerjs@2.0.46': {}
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -8935,6 +8999,12 @@ snapshots:
     dependencies:
       expo: 57.0.24(@babel/core@7.29.7(supports-color@8.1.1))(@expo/dom-webview@57.0.1)(react-dom@19.2.3(react@19.2.3))(react-native-web@0.21.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1)(typescript@6.0.3)
       react: 19.2.3
+
+  expo-linear-gradient@57.0.2(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3):
+    dependencies:
+      expo: 57.0.24(@babel/core@7.29.7(supports-color@8.1.1))(@expo/dom-webview@57.0.1)(react-dom@19.2.3(react@19.2.3))(react-native-web@0.21.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1)(typescript@6.0.3)
+      react: 19.2.3
+      react-native: 0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1)
 
   expo-modules-autolinking@57.0.13(supports-color@8.1.1)(typescript@6.0.3):
     dependencies:
@@ -10949,6 +11019,15 @@ snapshots:
   react-native-collapsible-header-views@1.1.2(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3):
     dependencies:
       fast-memoize: 2.5.2
+      react: 19.2.3
+      react-native: 0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1)
+
+  react-native-gesture-handler@2.32.0(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3):
+    dependencies:
+      '@egjs/hammerjs': 2.0.17
+      '@types/react-test-renderer': 19.3.0
+      hoist-non-react-statics: 3.3.2
+      invariant: 2.2.4
       react: 19.2.3
       react-native: 0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.1.1)
 

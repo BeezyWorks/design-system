@@ -21,10 +21,25 @@ export const FontFamily = {
   // Ktav Rashi (semi-cursive) script for commentary text.
   NotoRashiHebrew: 'NotoRashiHebrew_400Regular',
   NotoRashiHebrewBold: 'NotoRashiHebrew_700Bold',
-  // Registered but not yet wired to a token or a selectable typeface.
+  // More selectable Hebrew reading faces (see `Typeface`).
   NotoSerifHebrew: 'NotoSerifHebrew_400Regular',
   NotoSerifHebrewBold: 'NotoSerifHebrew_700Bold',
   Rubik: 'Rubik',
+  // Latin reading faces — translations and other long-form English (see
+  // `LatinTypeface`). Each ships regular, bold and italic.
+  SourceSerif4: 'SourceSerif4_400Regular',
+  SourceSerif4Bold: 'SourceSerif4_700Bold',
+  SourceSerif4Italic: 'SourceSerif4_400Regular_Italic',
+  CrimsonPro: 'CrimsonPro_400Regular',
+  CrimsonProBold: 'CrimsonPro_700Bold',
+  CrimsonProItalic: 'CrimsonPro_400Regular_Italic',
+  LibreBaskerville: 'LibreBaskerville_400Regular',
+  LibreBaskervilleBold: 'LibreBaskerville_700Bold',
+  LibreBaskervilleItalic: 'LibreBaskerville_400Regular_Italic',
+  Inter: 'Inter_400Regular',
+  InterBold: 'Inter_700Bold',
+  InterItalic: 'Inter_400Regular_Italic',
+  // Registered but not yet wired to a token or a selectable typeface.
   SiddurIcons: 'SiddurIcons',
 } as const
 

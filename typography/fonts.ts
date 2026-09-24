@@ -11,6 +11,26 @@ import {
   NotoRashiHebrew_400Regular,
   NotoRashiHebrew_700Bold,
 } from '@expo-google-fonts/noto-rashi-hebrew'
+import {
+  SourceSerif4_400Regular,
+  SourceSerif4_700Bold,
+  SourceSerif4_400Regular_Italic,
+} from '@expo-google-fonts/source-serif-4'
+import {
+  CrimsonPro_400Regular,
+  CrimsonPro_700Bold,
+  CrimsonPro_400Regular_Italic,
+} from '@expo-google-fonts/crimson-pro'
+import {
+  LibreBaskerville_400Regular,
+  LibreBaskerville_700Bold,
+  LibreBaskerville_400Regular_Italic,
+} from '@expo-google-fonts/libre-baskerville'
+import {
+  Inter_400Regular,
+  Inter_700Bold,
+  Inter_400Regular_Italic,
+} from '@expo-google-fonts/inter'
 import {FontFamily} from './fontFamily'
 
 // The font assets, keyed by family name — hand this to expo-font's
@@ -35,4 +55,16 @@ export const DesignFonts = {
   [FontFamily.NotoSerifHebrewBold]: NotoSerifHebrew_700Bold,
   [FontFamily.NotoRashiHebrew]: NotoRashiHebrew_400Regular,
   [FontFamily.NotoRashiHebrewBold]: NotoRashiHebrew_700Bold,
+  [FontFamily.SourceSerif4]: SourceSerif4_400Regular,
+  [FontFamily.SourceSerif4Bold]: SourceSerif4_700Bold,
+  [FontFamily.SourceSerif4Italic]: SourceSerif4_400Regular_Italic,
+  [FontFamily.CrimsonPro]: CrimsonPro_400Regular,
+  [FontFamily.CrimsonProBold]: CrimsonPro_700Bold,
+  [FontFamily.CrimsonProItalic]: CrimsonPro_400Regular_Italic,
+  [FontFamily.LibreBaskerville]: LibreBaskerville_400Regular,
+  [FontFamily.LibreBaskervilleBold]: LibreBaskerville_700Bold,
+  [FontFamily.LibreBaskervilleItalic]: LibreBaskerville_400Regular_Italic,
+  [FontFamily.Inter]: Inter_400Regular,
+  [FontFamily.InterBold]: Inter_700Bold,
+  [FontFamily.InterItalic]: Inter_400Regular_Italic,
 }

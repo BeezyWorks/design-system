@@ -7,6 +7,7 @@ export interface ToggleSwitchProps {
   value: boolean
   onValueChange: (value: boolean) => void
   disabled?: boolean
+  accessibilityLabel?: string
 }
 
 /** The one switch every toggle in the app renders through — wraps RN's
@@ -17,6 +18,7 @@ export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
   value,
   onValueChange,
   disabled,
+  accessibilityLabel,
 }) => {
   const resolve = useColorResolver()
   // Flat (non-opacity) off-track color — the redesign's "no green, ACCENT is
@@ -40,6 +42,7 @@ export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
     onValueChange,
     value,
     disabled,
+    accessibilityLabel,
   } as React.ComponentProps<typeof Switch> & {activeThumbColor?: string}
 
   return <Switch {...props} />

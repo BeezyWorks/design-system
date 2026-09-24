@@ -19,6 +19,13 @@ export interface ScreenProps {
    * that same notch/status-bar space itself; without this, the inset
    * would double up as a dead gap below the header. */
   hasNativeHeader?: boolean
+  /** Caps the content column on every platform and centers it: `content`
+   * for lists and menus, `reader` for a wider long-form reading column.
+   * Unset, only web gets the `content` cap. */
+  width?: 'content' | 'reader'
+  /** A panel docked beside the content column, outside its width cap —
+   * e.g. a `DetailOverlay` on a wide layout. */
+  aside?: React.ReactNode
 }
 
 const ScreenBottomInsetContext = createContext(0)
@@ -37,6 +44,7 @@ const isWeb = Platform.OS === 'web'
 // Readable line-length cap for list/menu screens once the web side rail
 // frees up a lot of extra horizontal space.
 const MAX_CONTENT_WIDTH = 720
+const MAX_READER_WIDTH = 860
 
 /** The standard screen chrome: safe-area handling, the room the bottom tab
  * pill / side rail needs, and the web reading-width cap. Every top-level
@@ -47,6 +55,8 @@ const edgesWithoutTop: Edge[] = ['right', 'bottom', 'left']
 export const Screen: React.FunctionComponent<ScreenProps> = ({
   children,
   hasNativeHeader,
+  width,
+  aside,
 }) => {
   const resolve = useColorResolver()
   // Only set when this screen sits inside the tab navigator (bottom pill on
@@ -76,6 +86,9 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
     paddingLeft:
       isWideWeb && insideTabs ? sideNavWidth + SIDE_NAV_CONTENT_GAP : 0,
     height: isWeb ? windowHeight : undefined,
+    maxWidth: width === 'reader' ? MAX_READER_WIDTH : MAX_CONTENT_WIDTH,
+    capEverywhere: width !== undefined,
+    hasAside: aside !== undefined,
   })
   // Web has no notch/home-indicator to avoid.
   const Container = isWeb ? View : SafeAreaView
@@ -91,6 +104,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
             {children}
           </ScreenBottomInsetContext.Provider>
         </View>
+        {aside}
       </View>
     </Container>
   )
@@ -98,7 +112,13 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
 
 const styleCreator = (
   resolve: ColorResolver,
-  padding: {paddingLeft: number; height?: number},
+  padding: {
+    paddingLeft: number
+    height?: number
+    maxWidth: number
+    capEverywhere: boolean
+    hasAside: boolean
+  },
 ) =>
   StyleSheet.create({
     base: {
@@ -121,13 +141,19 @@ const styleCreator = (
       flex: 1,
       overflow: 'hidden',
       paddingLeft: padding.paddingLeft,
+      ...(padding.hasAside && {flexDirection: 'row' as const}),
     },
-    content: isWeb
-      ? {
-          flex: 1,
-          width: '100%',
-          maxWidth: MAX_CONTENT_WIDTH,
-          alignSelf: 'center',
-        }
-      : {flex: 1},
+    content: !(isWeb || padding.capEverywhere)
+      ? {flex: 1}
+      : padding.hasAside
+        ? // In the row beside an aside: take the leftover width (flex), cap
+          // it, and center it there with auto margins — `alignSelf` would
+          // act on the row's vertical axis instead.
+          {flex: 1, maxWidth: padding.maxWidth, marginHorizontal: 'auto'}
+        : {
+            flex: 1,
+            width: '100%',
+            maxWidth: padding.maxWidth,
+            alignSelf: 'center',
+          },
   })

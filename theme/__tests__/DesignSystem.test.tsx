@@ -65,6 +65,8 @@ describe('DesignSystemProvider', () => {
       fontFamily: 'Cardo_400Regular',
       fontSize: 28,
       lineHeight: 28 + 28 * 1.8,
+      latinTypeface: 'Source Serif 4',
+      letterSpacing: 0,
     })
   })
 

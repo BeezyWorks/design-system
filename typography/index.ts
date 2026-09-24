@@ -2,7 +2,7 @@ import {TextStyle} from 'react-native'
 import {SemanticColor} from '../colors/semantic'
 import {useContentText, useResolvedColor} from '../theme'
 import {FontFamily} from './fontFamily'
-import {Typeface, typefaceFontFamily} from './content'
+import {Typeface, latinTypefaceFontFamily, typefaceFontFamily} from './content'
 
 // Chrome (UI-label) type ramp — every raw `fontSize`/`fontWeight` the app
 // used to spell out ad hoc, named by role and snapped to the sizes already
@@ -96,18 +96,35 @@ export const useTypeStyle = (variant: TypeVariant): TextStyle => {
   return {...type[variant], color}
 }
 
+/** Which reading ramp a `content` text uses: the Hebrew reading typeface
+ * (right-aligned) or the Latin one (for translations). */
+export type ContentScript = 'hebrew' | 'latin'
+
+// Secondary reading text (commentary, glosses) sits a step below the main
+// text at the same typeface, so it tracks the user's size setting.
+const SECONDARY_CONTENT_SCALE = 0.8
+
 // Reading content (long-form text) uses a *different*, user-configurable
-// ramp (typeface, font size, line height all come from the user's selection
-// passed to `DesignSystemProvider`).
-export const useContentTypeStyle = (): TextStyle => {
-  const {fontFamily, fontSize, lineHeight} = useContentText()
+// ramp (typeface, font size, line height, tracking all come from the user's
+// selection passed to `DesignSystemProvider`).
+export const useContentTypeStyle = (
+  script: ContentScript = 'hebrew',
+  secondary = false,
+): TextStyle => {
+  const {fontFamily, fontSize, lineHeight, letterSpacing, latinTypeface} =
+    useContentText()
   const color = useResolvedColor(SemanticColor.TextPrimary)
+  const scale = secondary ? SECONDARY_CONTENT_SCALE : 1
   return {
     color,
-    fontSize,
-    fontFamily,
-    lineHeight,
-    textAlign: 'right',
+    fontSize: Math.round(fontSize * scale),
+    lineHeight: Math.round(lineHeight * scale),
+    ...(letterSpacing !== 0 && {letterSpacing: letterSpacing * scale}),
+    fontFamily:
+      script === 'latin'
+        ? latinTypefaceFontFamily[latinTypeface].regular
+        : fontFamily,
+    textAlign: script === 'latin' ? 'left' : 'right',
   }
 }
 

@@ -11,6 +11,8 @@ export interface ToggleSettingProps {
   titleOn?: string
   titleOff?: string
   disabled?: boolean
+  /** A right-to-left (Hebrew) title: the switch moves to the left. */
+  rtl?: boolean
 }
 
 /** A titled row with a trailing switch — the whole row is tappable, the
@@ -23,17 +25,18 @@ export const ToggleSetting: React.FunctionComponent<ToggleSettingProps> = ({
   titleOn = '',
   titleOff = '',
   disabled,
+  rtl,
 }) => {
   return (
     <Touchable disabled={disabled} onPress={() => onSwitch(!enabled)}>
       <Stack
-        direction="row"
+        direction={rtl ? 'rowReverse' : 'row'}
         justify="spaceBetween"
         align="center"
         paddingVertical="sm"
         opacity={disabled ? 0.5 : undefined}
       >
-        <Text variant="bodyStrong">
+        <Text variant="bodyStrong" rtl={rtl}>
           {title + (enabled ? titleOn : titleOff)}
         </Text>
         <Stack pointerEvents="none">

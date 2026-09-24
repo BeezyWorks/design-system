@@ -13,6 +13,9 @@ export interface SideNavItemProps {
   label: string
   focused: boolean
   onPress: () => void
+  /** Icon only — the rail is collapsed. The label stays the accessible
+   * name. */
+  collapsed?: boolean
 }
 
 /** One row of the wide-web side rail — an icon + label with focused/pressed
@@ -23,27 +26,38 @@ export const SideNavItem: React.FunctionComponent<SideNavItemProps> = ({
   label,
   focused,
   onPress,
+  collapsed,
 }) => (
-  <Pressable onPress={onPress} accessibilityRole="button">
+  <Pressable
+    onPress={onPress}
+    accessibilityRole="button"
+    accessibilityLabel={label}
+    accessibilityState={{selected: focused}}
+  >
     {({pressed}) => (
       <Stack
         direction="row"
         align="center"
+        justify={collapsed ? 'center' : undefined}
         gap="md"
-        paddingHorizontal="md"
+        paddingHorizontal={collapsed ? 'sm' : 'md'}
         height={48}
         radius="md"
         background={focused ? SemanticColor.AccentTint : undefined}
         opacity={pressed ? 0.7 : 1}
       >
         {icon}
-        <Text
-          variant="headline"
-          color={focused ? SemanticColor.TextAccent : SemanticColor.TextPrimary}
-          numberOfLines={1}
-        >
-          {label}
-        </Text>
+        {!collapsed && (
+          <Text
+            variant="headline"
+            color={
+              focused ? SemanticColor.TextAccent : SemanticColor.TextPrimary
+            }
+            numberOfLines={1}
+          >
+            {label}
+          </Text>
+        )}
       </Stack>
     )}
   </Pressable>
