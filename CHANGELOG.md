@@ -1,3 +1,18 @@
+# [0.8.0](https://github.com/BeezyWorks/design-system/compare/v0.7.0...v0.8.0) (2026-09-24)
+
+
+* feat(swatches)!: fix swatch size inside the components ([3e78a77](https://github.com/BeezyWorks/design-system/commit/3e78a779b56e436171ba1f682229f50a01a6a968))
+
+
+### BREAKING CHANGES
+
+* FontSwatch no longer takes `size`; FontSwatchPicker no longer
+takes `swatchSize` or `columns` and always lays out a wrapping row of
+fixed-size swatches; the `SWATCH_SIZE` export is removed. Remove those props
+and the import from call sites.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
 # [0.7.0](https://github.com/BeezyWorks/design-system/compare/v0.6.0...v0.7.0) (2026-09-24)
 
 
