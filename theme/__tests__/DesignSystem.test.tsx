@@ -1,7 +1,8 @@
 import React from 'react'
 import {act, create} from 'react-test-renderer'
 import {SemanticColor as S} from '../../colors/semantic'
-import {darkTheme, lightTheme} from '../../colors/themes'
+import {buildTheme} from '../../colors/themes'
+import {testBrand} from '../../colors/sampleBrands'
 import {ContentSize, Leading, Typeface} from '../../typography/content'
 import {
   DesignSystemProvider,
@@ -35,22 +36,30 @@ describe('DesignSystemProvider', () => {
       bg: useResolvedColor(S.SurfaceBackground),
     })
     const light = run(useProbe, (p) => (
-      <DesignSystemProvider mode="light">{p}</DesignSystemProvider>
+      <DesignSystemProvider mode="light" brand={testBrand}>
+        {p}
+      </DesignSystemProvider>
     ))
     const dark = run(useProbe, (p) => (
-      <DesignSystemProvider mode="dark">{p}</DesignSystemProvider>
+      <DesignSystemProvider mode="dark" brand={testBrand}>
+        {p}
+      </DesignSystemProvider>
     ))
     expect(light).toEqual({
       mode: 'light',
-      bg: lightTheme[S.SurfaceBackground],
+      bg: buildTheme('light', testBrand)[S.SurfaceBackground],
     })
-    expect(dark).toEqual({mode: 'dark', bg: darkTheme[S.SurfaceBackground]})
+    expect(dark).toEqual({
+      mode: 'dark',
+      bg: buildTheme('dark', testBrand)[S.SurfaceBackground],
+    })
   })
 
   it('resolves the reading-text selection to concrete values', () => {
     const text = run(useContentText, (p) => (
       <DesignSystemProvider
         mode="light"
+        brand={testBrand}
         content={{
           typeface: Typeface.Cardo,
           size: ContentSize.Large,
@@ -72,7 +81,9 @@ describe('DesignSystemProvider', () => {
 
   it('falls back to default reading text when none is given', () => {
     const text = run(useContentText, (p) => (
-      <DesignSystemProvider mode="light">{p}</DesignSystemProvider>
+      <DesignSystemProvider mode="light" brand={testBrand}>
+        {p}
+      </DesignSystemProvider>
     ))
     expect(text.typeface).toBe(Typeface.Frank)
     expect(text.fontSize).toBe(24)
@@ -91,10 +102,16 @@ describe('DesignSystemProvider', () => {
 
   it('useColorResolver resolves any token for the current mode', () => {
     const resolve = run(useColorResolver, (p) => (
-      <DesignSystemProvider mode="dark">{p}</DesignSystemProvider>
+      <DesignSystemProvider mode="dark" brand={testBrand}>
+        {p}
+      </DesignSystemProvider>
     ))
-    expect(resolve(S.TextPrimary)).toBe(darkTheme[S.TextPrimary])
-    expect(resolve(S.AccentSuccess)).toBe(darkTheme[S.AccentSuccess])
+    expect(resolve(S.TextPrimary)).toBe(
+      buildTheme('dark', testBrand)[S.TextPrimary],
+    )
+    expect(resolve(S.AccentSuccess)).toBe(
+      buildTheme('dark', testBrand)[S.AccentSuccess],
+    )
   })
 })
 
@@ -107,7 +124,7 @@ describe('ThemeScope', () => {
     }
     act(() => {
       create(
-        <DesignSystemProvider mode="light">
+        <DesignSystemProvider mode="light" brand={testBrand}>
           <Probe label="outer" />
           <ThemeScope mode="dark">
             <Probe label="scoped" />
@@ -122,17 +139,17 @@ describe('ThemeScope', () => {
     const color = run(
       () => useResolvedColor(S.SurfaceBackground),
       (p) => (
-        <DesignSystemProvider mode="light">
+        <DesignSystemProvider mode="light" brand={testBrand}>
           <ThemeScope mode="dark">{p}</ThemeScope>
         </DesignSystemProvider>
       ),
     )
-    expect(color).toBe(darkTheme[S.SurfaceBackground])
+    expect(color).toBe(buildTheme('dark', testBrand)[S.SurfaceBackground])
   })
 
   it('nests, innermost scope wins', () => {
     const mode = run(useThemeMode, (p) => (
-      <DesignSystemProvider mode="dark">
+      <DesignSystemProvider mode="dark" brand={testBrand}>
         <ThemeScope mode="light">
           <ThemeScope mode="dark">
             <ThemeScope mode="light">{p}</ThemeScope>
@@ -147,6 +164,7 @@ describe('ThemeScope', () => {
     const text = run(useContentText, (p) => (
       <DesignSystemProvider
         mode="light"
+        brand={testBrand}
         content={{
           typeface: Typeface.Ezra,
           size: ContentSize.Small,

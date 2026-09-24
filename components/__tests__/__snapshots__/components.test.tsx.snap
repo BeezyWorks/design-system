@@ -108,7 +108,7 @@ exports[`components (dark theme) Button disabled 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -202,7 +202,7 @@ exports[`components (dark theme) Button ghost variant 1`] = `
           "fontWeight": "600",
         },
         {
-          "color": "#6FA3E8",
+          "color": "#6DA8F5",
         },
         null,
         null,
@@ -252,7 +252,7 @@ exports[`components (dark theme) Button lg size 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -324,7 +324,7 @@ exports[`components (dark theme) Button loading 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -379,7 +379,7 @@ exports[`components (dark theme) Button md size 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -473,7 +473,7 @@ exports[`components (dark theme) Button outline variant 1`] = `
           "fontWeight": "600",
         },
         {
-          "color": "#6FA3E8",
+          "color": "#6DA8F5",
         },
         null,
         null,
@@ -523,7 +523,7 @@ exports[`components (dark theme) Button primary variant 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -617,7 +617,7 @@ exports[`components (dark theme) Button secondary variant 1`] = `
           "fontWeight": "600",
         },
         {
-          "color": "#6FA3E8",
+          "color": "#6DA8F5",
         },
         null,
         null,
@@ -667,7 +667,7 @@ exports[`components (dark theme) Button sm size 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -739,7 +739,7 @@ exports[`components (dark theme) Button with an icon 1`] = `
   style={
     {
       "alignItems": "center",
-      "backgroundColor": "#6FA3E8",
+      "backgroundColor": "#6DA8F5",
       "borderColor": undefined,
       "borderRadius": 12,
       "borderWidth": 0,
@@ -1231,7 +1231,7 @@ exports[`components (dark theme) EmptyState with subtitle and action 1`] = `
               "fontWeight": "600",
             },
             {
-              "color": "#6FA3E8",
+              "color": "#6DA8F5",
             },
             null,
             null,
@@ -2058,7 +2058,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
             [
               {
                 "alignItems": "center",
-                "backgroundColor": "#6FA3E8",
+                "backgroundColor": "#6DA8F5",
                 "borderBottomWidth": undefined,
                 "borderColor": undefined,
                 "borderRadius": 8,
@@ -2487,13 +2487,13 @@ exports[`components (dark theme) Text pageHeader variant 1`] = `
   style={
     [
       {
-        "color": "#6FA3E8",
+        "color": "#6DA8F5",
         "fontFamily": "FrankRuhlLibre_700Bold",
         "fontSize": 30,
         "fontWeight": "700",
       },
       {
-        "color": "#6FA3E8",
+        "color": "#6DA8F5",
       },
       null,
       null,
@@ -2564,7 +2564,7 @@ exports[`components (dark theme) Text with tone, alignment and bold 1`] = `
         "fontWeight": "400",
       },
       {
-        "color": "#6FA3E8",
+        "color": "#6DA8F5",
       },
       {
         "textAlign": "center",
@@ -2716,7 +2716,7 @@ exports[`components (dark theme) ToggleSetting enabled=false 1`] = `
         onChange={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        onTintColor="#6FA3E8"
+        onTintColor="#6DA8F5"
         style={
           [
             {
@@ -2872,7 +2872,7 @@ exports[`components (dark theme) ToggleSetting enabled=true 1`] = `
         onChange={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        onTintColor="#6FA3E8"
+        onTintColor="#6DA8F5"
         style={
           [
             {
@@ -3028,7 +3028,7 @@ exports[`components (dark theme) ToggleSetting with on/off titles 1`] = `
         onChange={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        onTintColor="#6FA3E8"
+        onTintColor="#6DA8F5"
         style={
           [
             {
@@ -3057,7 +3057,7 @@ exports[`components (dark theme) ToggleSwitch disabled 1`] = `
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  onTintColor="#6FA3E8"
+  onTintColor="#6DA8F5"
   style={
     [
       {
@@ -3082,7 +3082,7 @@ exports[`components (dark theme) ToggleSwitch value=false 1`] = `
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  onTintColor="#6FA3E8"
+  onTintColor="#6DA8F5"
   style={
     [
       {
@@ -3107,7 +3107,7 @@ exports[`components (dark theme) ToggleSwitch value=true 1`] = `
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  onTintColor="#6FA3E8"
+  onTintColor="#6DA8F5"
   style={
     [
       {

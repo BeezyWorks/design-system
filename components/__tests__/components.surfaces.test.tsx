@@ -3,6 +3,7 @@ import {Text as RNText} from 'react-native'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
 import {act, create} from 'react-test-renderer'
 import {DesignSystemProvider} from '../../theme'
+import {testBrand} from '../../colors/sampleBrands'
 import {
   pressables,
   renderWithTheme,
@@ -155,7 +156,7 @@ describe.each(themes)('surfaces (%s theme)', (theme) => {
             insets: {top: 47, left: 0, right: 0, bottom: 34},
           }}
         >
-          <DesignSystemProvider mode={theme}>
+          <DesignSystemProvider mode={theme} brand={testBrand}>
             <Probe />
           </DesignSystemProvider>
         </SafeAreaProvider>,

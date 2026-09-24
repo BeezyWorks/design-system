@@ -1096,7 +1096,7 @@ exports[`surfaces (dark theme) ScreenLoader 1`] = `
   }
 >
   <ActivityIndicator
-    color="#6FA3E8"
+    color="#6DA8F5"
   />
 </View>
 `;

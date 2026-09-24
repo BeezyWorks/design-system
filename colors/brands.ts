@@ -1,54 +1,25 @@
-import {NamedColor} from './named'
+// A brand is one color: the app's hue at "500". The design system does not
+// ship any — each app owns its hue and passes it to `DesignSystemProvider`,
+// and the rest of the scale is derived from it (colors/derive.ts). Define it
+// once at module scope (the themes are memoized per object). Surfaces, text,
+// borders and status colors — info blue included — are deliberately *not*
+// part of a brand; sharing them is what makes the apps feel related.
 
-// A brand is the handful of named colors that tell one app in the family
-// from another. It is tier 1 (named colors), not tier 2: the themes map the
-// brand-derived semantic tokens (`AccentPrimary`, `TextAccent`, the tints…)
-// onto these slots, exactly as they map every other token onto a named
-// color. Surfaces, text, borders and status colors are deliberately *not*
-// part of a brand — sharing them is what makes the apps feel related.
+/** A `#RRGGBB` color. */
+export type HexColor = `#${string}`
+
 export interface BrandPalette {
   /** The brand hue on light and sepia surfaces; also the strong fill that
-   * carries `TextOnAccent` in every mode. */
-  primary: NamedColor
-  /** The brand hue lifted for dark surfaces. */
-  primaryLight: NamedColor
-  /** A brighter accent for small, vivid marks. */
-  bright: NamedColor
-  /** A deep companion hue (e.g. the far end of a brand gradient). */
-  deep: NamedColor
-  /** Quiet wash of `primary` (hovered/selected backgrounds, light modes). */
-  tint: NamedColor
-  /** A slightly stronger wash of `primary`. */
-  tintSelected: NamedColor
-  /** Quiet wash of `primaryLight` (dark mode). */
-  lightTint: NamedColor
-  /** Strong wash of `primaryLight` (dark mode focus backgrounds). */
-  lightTintStrong: NamedColor
+   * carries `TextOnAccent` in every mode, so it needs at least 3:1 against
+   * white. */
+  primary: HexColor
+  /** The hue lifted for dark surfaces. Derived (≥ 7:1 on dark surfaces)
+   * unless the app hand-tunes it. */
+  primaryLight?: HexColor
+  /** A darker companion of the same hue (the far end of the brand gradient,
+   * deep fills). Derived (holds `TextPrimary` at ≥ 5:1) unless hand-tuned. */
+  deep?: HexColor
 }
 
-const C = NamedColor
-
-/** The brands the design system ships. An app passes one to
- * `DesignSystemProvider`; `Brand.Blue` is the default. */
-export const Brand = {
-  Blue: {
-    primary: C.BrandBlue,
-    primaryLight: C.BrandBlueLight,
-    bright: C.SkyBlue,
-    deep: C.DeepBlue,
-    tint: C.BrandBlueTint08,
-    tintSelected: C.BrandBlueTint10,
-    lightTint: C.BrandBlueLightTint10,
-    lightTintStrong: C.BrandBlueLightTint60,
-  },
-  Gold: {
-    primary: C.BrandGold,
-    primaryLight: C.BrandGoldLight,
-    bright: C.Honey,
-    deep: C.Oxblood,
-    tint: C.BrandGoldTint08,
-    tintSelected: C.BrandGoldTint10,
-    lightTint: C.BrandGoldLightTint10,
-    lightTintStrong: C.BrandGoldLightTint60,
-  },
-} as const satisfies Record<string, BrandPalette>
+/** A brand with every slot filled in — what the themes are built from. */
+export type ResolvedBrand = Required<BrandPalette>

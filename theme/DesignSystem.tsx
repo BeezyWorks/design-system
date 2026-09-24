@@ -1,7 +1,7 @@
 import React, {createContext, useCallback, useContext, useMemo} from 'react'
 import {SemanticColor} from '../colors/semantic'
 import {resolveColor, ThemeMode} from '../colors/themes'
-import {Brand, BrandPalette} from '../colors/brands'
+import {BrandPalette} from '../colors/brands'
 import {
   ContentSelection,
   ResolvedContentText,
@@ -35,8 +35,9 @@ const useDesignSystem = (): DesignSystemValue => {
 export interface DesignSystemProviderProps {
   /** Concrete mode. The app resolves "system"/night-mode rules before this. */
   mode: ThemeMode
-  /** The app's brand hue; defaults to `Brand.Blue`. */
-  brand?: BrandPalette
+  /** The app's brand: three hex colors it owns. Define it once at module
+   * scope — the themes are memoized per object. */
+  brand: BrandPalette
   /** The user's reading-text choice; defaults to the DL's defaults. */
   content?: ContentSelection
   children?: React.ReactNode
@@ -45,12 +46,7 @@ export interface DesignSystemProviderProps {
 /** Mount once at the app root. */
 export const DesignSystemProvider: React.FunctionComponent<
   DesignSystemProviderProps
-> = ({
-  mode,
-  brand = Brand.Blue,
-  content = defaultContentSelection,
-  children,
-}) => {
+> = ({mode, brand, content = defaultContentSelection, children}) => {
   const {typeface, size, leading, latinTypeface, tracking} = content
   const value = useMemo<DesignSystemValue>(
     () => ({

@@ -16,7 +16,10 @@ export interface ThemeSwatchProps {
   glyph?: string
 }
 
-const SIZE = 56
+/** Edge length of a swatch tile — `FontSwatchPicker` reuses it so the two
+ * pickers line up in a settings screen. */
+export const SWATCH_SIZE = 56
+const SIZE = SWATCH_SIZE
 
 // Paints its children in `mode` — a real `ThemeScope`, so the preview is the
 // mode's actual background and ink rather than a copy of their values.

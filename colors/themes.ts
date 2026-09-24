@@ -1,6 +1,7 @@
 import {NamedColor} from './named'
 import {SemanticColor} from './semantic'
-import {Brand, BrandPalette} from './brands'
+import type {BrandPalette, ResolvedBrand} from './brands'
+import {resolveBrand} from './derive'
 
 // Tier 3 — the theme definitions. Each maps every semantic token to a named
 // color for one mode and one brand; `Record<SemanticColor, …>` makes a
@@ -10,7 +11,9 @@ import {Brand, BrandPalette} from './brands'
 // Platform.
 export type ThemeMode = 'light' | 'sepia' | 'dark'
 
-export type ThemeDefinition = Record<SemanticColor, NamedColor>
+// Values are named colors, except a brand's washes, which are derived from
+// the brand's named colors (see `withAlpha`).
+export type ThemeDefinition = Record<SemanticColor, string>
 
 const C = NamedColor
 const S = SemanticColor
@@ -20,7 +23,6 @@ type BrandToken =
   | typeof S.TextAccent
   | typeof S.SurfaceHighlight
   | typeof S.AccentPrimary
-  | typeof S.AccentPrimaryBright
   | typeof S.AccentPrimaryDeep
   | typeof S.AccentPrimaryStrong
   | typeof S.AccentTabActive
@@ -28,7 +30,7 @@ type BrandToken =
   | typeof S.AccentTintSelected
 
 type NeutralDefinition = Omit<ThemeDefinition, BrandToken>
-type BrandDefinition = Record<BrandToken, NamedColor>
+type BrandDefinition = Record<BrandToken, string>
 
 const lightNeutrals: NeutralDefinition = {
   [S.TextPrimary]: C.Ink,
@@ -130,40 +132,44 @@ const darkNeutrals: NeutralDefinition = {
   [S.AccentInfoFaded]: C.InfoBlueFaded,
   [S.AccentSuccess]: C.SuccessGreen,
 }
-const lightBrand = (brand: BrandPalette): BrandDefinition => ({
+/** A brand color at some opacity, as an `rgba()` string. */
+const withAlpha = (color: string, alpha: number): string => {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(color.slice(i, i + 2), 16))
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+const lightBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.TextAccent]: brand.primary,
-  [S.SurfaceHighlight]: brand.tintSelected,
+  [S.SurfaceHighlight]: withAlpha(brand.primary, 0.1),
   [S.AccentPrimary]: brand.primary,
-  [S.AccentPrimaryBright]: brand.bright,
   [S.AccentPrimaryDeep]: brand.deep,
   [S.AccentPrimaryStrong]: brand.primary,
   [S.AccentTabActive]: brand.primary,
-  [S.AccentTint]: brand.tint,
-  [S.AccentTintSelected]: brand.tintSelected,
+  [S.AccentTint]: withAlpha(brand.primary, 0.08),
+  [S.AccentTintSelected]: withAlpha(brand.primary, 0.1),
 })
 
-const darkBrand = (brand: BrandPalette): BrandDefinition => ({
+const darkBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.TextAccent]: brand.primaryLight,
   [S.SurfaceHighlight]: C.WhiteWash,
   [S.AccentPrimary]: brand.primaryLight,
-  [S.AccentPrimaryBright]: brand.bright,
   [S.AccentPrimaryDeep]: brand.deep,
   [S.AccentPrimaryStrong]: brand.primary,
   [S.AccentTabActive]: brand.primary,
-  [S.AccentTint]: brand.lightTintStrong,
-  [S.AccentTintSelected]: brand.lightTint,
+  [S.AccentTint]: withAlpha(brand.primaryLight, 0.6),
+  [S.AccentTintSelected]: withAlpha(brand.primaryLight, 0.1),
 })
 
 const modes: Record<
   ThemeMode,
-  {neutrals: NeutralDefinition; brand: (b: BrandPalette) => BrandDefinition}
+  {neutrals: NeutralDefinition; brand: (b: ResolvedBrand) => BrandDefinition}
 > = {
   light: {neutrals: lightNeutrals, brand: lightBrand},
   sepia: {neutrals: sepiaNeutrals, brand: lightBrand},
   dark: {neutrals: darkNeutrals, brand: darkBrand},
 }
 
-const cache = new Map<
+const cache = new WeakMap<
   BrandPalette,
   Partial<Record<ThemeMode, ThemeDefinition>>
 >()
@@ -171,30 +177,19 @@ const cache = new Map<
 /** The full theme for one mode and brand (memoized per brand object). */
 export const buildTheme = (
   mode: ThemeMode,
-  brand: BrandPalette = Brand.Blue,
+  brand: BrandPalette,
 ): ThemeDefinition => {
-  const byMode = cache.get(brand) ?? {}
-  cache.set(brand, byMode)
+  let byMode = cache.get(brand)
+  if (!byMode) cache.set(brand, (byMode = {}))
   return (byMode[mode] ??= {
     ...modes[mode].neutrals,
-    ...modes[mode].brand(brand),
+    ...modes[mode].brand(resolveBrand(brand)),
   })
-}
-
-export const lightTheme = buildTheme('light')
-export const sepiaTheme = buildTheme('sepia')
-export const darkTheme = buildTheme('dark')
-
-/** The default (`Brand.Blue`) themes by mode. */
-export const themes: Record<ThemeMode, ThemeDefinition> = {
-  light: lightTheme,
-  sepia: sepiaTheme,
-  dark: darkTheme,
 }
 
 /** Resolves one semantic token to its concrete color for a mode and brand. */
 export const resolveColor = (
   mode: ThemeMode,
   token: SemanticColor,
-  brand: BrandPalette = Brand.Blue,
+  brand: BrandPalette,
 ): string => buildTheme(mode, brand)[token]

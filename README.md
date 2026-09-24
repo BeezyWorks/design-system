@@ -51,11 +51,11 @@ Then `import {Text, SemanticColor} from '@beezyworks/design'`.
 
 ## Colors: three tiers
 
-| Tier | File | What |
-|---|---|---|
-| 1. Named colors | `colors/named.ts`, `colors/brands.ts` | Every literal value (`Ink`, `BrandGold`, `InkFaded` = ink at 50%). Alpha lives in the named color. A **brand** (`Brand.Blue`, `Brand.Gold`) is a handful of these named colors, one per brand slot. Never used outside tier 3 and build config. |
-| 2. Semantic colors | `colors/semantic.ts` | `Role` + `Qualifier`: `Surface*`, `Text*`, `Border*`, `Overlay*`, `Accent*`. The only vocabulary components and apps use. |
-| 3. Themes | `colors/themes.ts` | `buildTheme(mode, brand)`: `Record<SemanticColor, NamedColor>` — the mode's shared neutrals plus the brand's slots for the brand tokens. A missing token is a compile error. |
+| Tier               | File                 | What                                                                                                                                                                                                              |
+| ------------------ | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Named colors    | `colors/named.ts`    | Every literal value the library owns (`Ink`, `InkFaded` = ink at 50%). Alpha lives in the named color. Never used outside tier 3 and build config. The **brand** is the one exception: it isn't here — see below. |
+| 2. Semantic colors | `colors/semantic.ts` | `Role` + `Qualifier`: `Surface*`, `Text*`, `Border*`, `Overlay*`, `Accent*`. The only vocabulary components and apps use.                                                                                         |
+| 3. Themes          | `colors/themes.ts`   | `buildTheme(mode, brand)`: `Record<SemanticColor, string>` — the mode's shared neutrals plus the app's brand for the brand tokens (the washes are derived from it). A missing token is a compile error.           |
 
 Resolved values for every mode × brand are pinned by a snapshot in
 `colors/__tests__`.
@@ -63,11 +63,32 @@ Resolved values for every mode × brand are pinned by a snapshot in
 ### One family, one hue each
 
 The apps are meant to feel related, so **only the brand hue differs between
-them**. A brand fills the brand-derived tokens (`AccentPrimary*`,
-`AccentTabActive`, `AccentTint*`, `TextAccent`, `SurfaceHighlight`);
-surfaces, text, borders, overlays and status colors are shared (a test
-enforces it). To add an app's hue, add its named colors and a `Brand` entry
-— never per-app surface or text colors.
+them** — and the design system doesn't own it: **each app defines its brand
+and passes it in.** A brand is one `#RRGGBB` color, the "500"
+(`BrandPalette.primary`); the rest of its scale is derived from it
+(`colors/derive.ts`, in OKLCH, hue held steady):
+
+- `primaryLight` — the hue lifted until it reads on dark surfaces (≥ 7:1).
+- `deep` — the hue dropped darker, still holding light text (≥ 5:1).
+- the `AccentTint*` washes — the brand at a fixed opacity.
+
+`primary` carries white `TextOnAccent` in every mode, so it must hold 3:1
+against white; a too-light hue (yellow) throws with a clear message. If a
+hue misbehaves, an app can hand-tune either derived slot by passing
+`primaryLight` and/or `deep` too. The brand fills `AccentPrimary*`,
+`AccentTabActive`, `AccentTint*`, `TextAccent` and `SurfaceHighlight`;
+surfaces, text, borders, overlays and status colors — info blue included —
+are the library's and shared by every app (a test enforces it). Never
+per-app surface or text colors.
+
+```ts
+// in the app, at module scope
+export const brand: BrandPalette = {primary: '#3E7FD1'}
+```
+
+A malformed brand throws when the theme is first built.
+`colors/sampleBrands.ts` holds fixtures for this package's tests and
+Storybook only; it isn't exported.
 
 ### Modes
 
@@ -81,7 +102,7 @@ An app offers whichever modes it wants.
 ```tsx
 <DesignSystemRoot               // or DesignSystemProvider, if you wire the rest yourself
   mode={resolvedMode}            // 'light' | 'sepia' | 'dark' — the app resolves "system"
-  brand={Brand.Gold}             // the app's hue; default Brand.Blue
+  brand={brand}                  // the app's own BrandPalette — one color (required)
   content={{typeface, size, leading, latinTypeface, tracking}}  // the user's reading-text choice
 >
 ```
@@ -95,7 +116,7 @@ An app offers whichever modes it wants.
   third-party APIs (status bar, navigation theme, calendar dots).
 - **Fonts:** call expo-font's `useFonts(DesignFonts)` once at the root.
 - **Bottom sheets:** provide `SheetHostContext` (`{dismissed, dismiss,
-  onClosed}`) from your modal system. `BottomSheetModal` reads it.
+onClosed}`) from your modal system. `BottomSheetModal` reads it.
 - **Tab bar height:** provide `TabBarHeightContext` (a number, or `undefined`
   when not inside tabs) so `Screen` can reserve room for the bar.
 - **Collapsible side rail:** if the app lets users collapse `SideNavRail` to

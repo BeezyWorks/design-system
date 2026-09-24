@@ -2,7 +2,12 @@ import React from 'react'
 import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
 import {NamedColor} from './named'
 import {SemanticColor} from './semantic'
-import {resolveColor, ThemeMode} from './themes'
+import {resolveColor as resolveWithBrand, ThemeMode} from './themes'
+import {testBrand} from './sampleBrands'
+
+// The sample brand stands in for an app's own.
+const resolveColor = (mode: ThemeMode, token: SemanticColor) =>
+  resolveWithBrand(mode, token, testBrand)
 
 // The story chrome itself is styled with semantic tokens — if a token is
 // wrong, this page shows it.

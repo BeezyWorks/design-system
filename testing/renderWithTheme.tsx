@@ -2,6 +2,7 @@ import React from 'react'
 import {act, create, ReactTestRenderer} from 'react-test-renderer'
 import {DesignSystemProvider} from '../theme'
 import type {ThemeMode} from '../colors'
+import {testBrand} from '../colors/sampleBrands'
 
 const mounted = new Set<ReactTestRenderer>()
 
@@ -37,7 +38,9 @@ export const renderWithTheme = (
   let renderer!: ReactTestRenderer
   act(() => {
     renderer = create(
-      <DesignSystemProvider mode={theme}>{ui}</DesignSystemProvider>,
+      <DesignSystemProvider mode={theme} brand={testBrand}>
+        {ui}
+      </DesignSystemProvider>,
     )
   })
   return track(renderer)

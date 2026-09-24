@@ -117,7 +117,7 @@ exports[`more components (dark theme) icons Icon in a few sizes and tones 1`] = 
     meetOrSlice={0}
     minX={0}
     minY={0}
-    stroke="#6FA3E8"
+    stroke="#6DA8F5"
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth={2}
@@ -152,7 +152,7 @@ exports[`more components (dark theme) icons Icon in a few sizes and tones 1`] = 
       }
       stroke={
         {
-          "payload": 4285506536,
+          "payload": 4285376757,
           "type": 0,
         }
       }
@@ -174,7 +174,7 @@ exports[`more components (dark theme) icons Icon in a few sizes and tones 1`] = 
         }
         stroke={
           {
-            "payload": 4285506536,
+            "payload": 4285376757,
             "type": 0,
           }
         }
@@ -1585,13 +1585,13 @@ exports[`more components (dark theme) lists and menus MenuOption selected=true 1
       style={
         [
           {
-            "color": "#6FA3E8",
+            "color": "#6DA8F5",
             "fontFamily": "FrankRuhlLibre_700Bold",
             "fontSize": 16,
             "fontWeight": "600",
           },
           {
-            "color": "#6FA3E8",
+            "color": "#6DA8F5",
           },
           null,
           null,
@@ -3748,7 +3748,7 @@ exports[`more components (dark theme) text MessageCard 1`] = `
     [
       {
         "alignItems": undefined,
-        "backgroundColor": "rgba(111, 163, 232, 0.6)",
+        "backgroundColor": "rgba(109, 168, 245, 0.6)",
         "borderBottomWidth": undefined,
         "borderColor": "rgba(255, 255, 255, 0.12)",
         "borderRadius": 16,
@@ -3800,7 +3800,7 @@ exports[`more components (dark theme) text MessageCard 1`] = `
           "lineHeight": 18,
         },
         {
-          "color": "#6FA3E8",
+          "color": "#6DA8F5",
         },
         {
           "textAlign": "center",

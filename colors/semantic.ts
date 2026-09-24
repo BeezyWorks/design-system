@@ -47,7 +47,6 @@ export const SemanticColor = {
 
   // Accent
   AccentPrimary: 'accentPrimary',
-  AccentPrimaryBright: 'accentPrimaryBright',
   AccentPrimaryDeep: 'accentPrimaryDeep',
   /** The brand fill that carries `TextOnAccent` in every mode (unlike
    * `AccentPrimary`, which lightens in dark mode). */
