@@ -922,7 +922,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 112,
+            "width": "100%",
             "zIndex": undefined,
           },
           null,
@@ -935,6 +935,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
           [
             {
               "alignItems": "center",
+              "aspectRatio": 1,
               "backgroundColor": "rgba(111, 163, 232, 0.1)",
               "borderBottomWidth": undefined,
               "borderColor": "#6FA3E8",
@@ -945,7 +946,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
               "flexGrow": undefined,
               "flexWrap": undefined,
               "gap": undefined,
-              "height": 64,
+              "height": undefined,
               "justifyContent": "center",
               "left": undefined,
               "opacity": undefined,
@@ -1079,7 +1080,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 112,
+            "width": "100%",
             "zIndex": undefined,
           },
           null,
@@ -1092,6 +1093,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
           [
             {
               "alignItems": "center",
+              "aspectRatio": 1,
               "backgroundColor": "#262320",
               "borderBottomWidth": undefined,
               "borderColor": "rgba(255, 255, 255, 0.12)",
@@ -1102,7 +1104,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
               "flexGrow": undefined,
               "flexWrap": undefined,
               "gap": undefined,
-              "height": 64,
+              "height": undefined,
               "justifyContent": "center",
               "left": undefined,
               "opacity": undefined,
@@ -5553,7 +5555,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 112,
+            "width": "100%",
             "zIndex": undefined,
           },
           null,
@@ -5566,6 +5568,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
           [
             {
               "alignItems": "center",
+              "aspectRatio": 1,
               "backgroundColor": "rgba(62, 127, 209, 0.1)",
               "borderBottomWidth": undefined,
               "borderColor": "#3E7FD1",
@@ -5576,7 +5579,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
               "flexGrow": undefined,
               "flexWrap": undefined,
               "gap": undefined,
-              "height": 64,
+              "height": undefined,
               "justifyContent": "center",
               "left": undefined,
               "opacity": undefined,
@@ -5710,7 +5713,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 112,
+            "width": "100%",
             "zIndex": undefined,
           },
           null,
@@ -5723,6 +5726,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
           [
             {
               "alignItems": "center",
+              "aspectRatio": 1,
               "backgroundColor": "#FFFFFF",
               "borderBottomWidth": undefined,
               "borderColor": "rgba(30, 25, 20, 0.10)",
@@ -5733,7 +5737,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
               "flexGrow": undefined,
               "flexWrap": undefined,
               "gap": undefined,
-              "height": 64,
+              "height": undefined,
               "justifyContent": "center",
               "left": undefined,
               "opacity": undefined,
