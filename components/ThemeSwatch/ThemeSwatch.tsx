@@ -5,6 +5,7 @@ import type {ThemeMode} from '../../colors'
 import {ThemeScope} from '../../theme'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
+import {SWATCH_SIZE as SIZE} from '../swatchSize'
 
 export interface ThemeSwatchProps {
   /** The mode to preview, or `system` for a split light/dark tile. */
@@ -15,11 +16,6 @@ export interface ThemeSwatchProps {
   /** The sample glyph drawn in the mode's ink. Default `Aa`. */
   glyph?: string
 }
-
-/** Edge length of a swatch tile — `FontSwatchPicker` reuses it so the two
- * pickers line up in a settings screen. */
-export const SWATCH_SIZE = 56
-const SIZE = SWATCH_SIZE
 
 // Paints its children in `mode` — a real `ThemeScope`, so the preview is the
 // mode's actual background and ink rather than a copy of their values.
