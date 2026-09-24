@@ -66,7 +66,7 @@ exports[`family components (dark theme) Badge in every tone, with an icon 1`] = 
       [
         {
           "alignItems": "center",
-          "backgroundColor": "rgba(111, 163, 232, 0.1)",
+          "backgroundColor": "rgba(109, 168, 245, 0.1)",
           "borderBottomWidth": undefined,
           "borderColor": undefined,
           "borderRadius": 9999,
@@ -108,7 +108,7 @@ exports[`family components (dark theme) Badge in every tone, with an icon 1`] = 
             "fontWeight": "500",
           },
           {
-            "color": "#6FA3E8",
+            "color": "#6DA8F5",
           },
           null,
           null,
@@ -360,9 +360,9 @@ exports[`family components (dark theme) Chip, selected and not 1`] = `
         [
           {
             "alignItems": undefined,
-            "backgroundColor": "#6FA3E8",
+            "backgroundColor": "#6DA8F5",
             "borderBottomWidth": undefined,
-            "borderColor": "#6FA3E8",
+            "borderColor": "#6DA8F5",
             "borderRadius": 9999,
             "borderWidth": 1,
             "bottom": undefined,
@@ -936,9 +936,9 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
             {
               "alignItems": "center",
               "aspectRatio": 1,
-              "backgroundColor": "rgba(111, 163, 232, 0.1)",
+              "backgroundColor": "rgba(109, 168, 245, 0.1)",
               "borderBottomWidth": undefined,
-              "borderColor": "#6FA3E8",
+              "borderColor": "#6DA8F5",
               "borderRadius": 12,
               "borderWidth": 2,
               "bottom": undefined,
@@ -1002,7 +1002,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
               "lineHeight": 18,
             },
             {
-              "color": "#6FA3E8",
+              "color": "#6DA8F5",
             },
             {
               "textAlign": "center",
@@ -1229,7 +1229,7 @@ exports[`family components (dark theme) GradientCard 1`] = `
   <ViewManagerAdapter_ExpoLinearGradient
     colors={
       [
-        4282089396,
+        4280114086,
         4282286033,
       ]
     }
@@ -1327,7 +1327,7 @@ exports[`family components (dark theme) ProgressBar clamps and takes a tone 1`] 
         [
           {
             "alignItems": undefined,
-            "backgroundColor": "#6FA3E8",
+            "backgroundColor": "#6DA8F5",
             "borderBottomWidth": undefined,
             "borderColor": undefined,
             "borderRadius": 9999,
@@ -1476,7 +1476,7 @@ exports[`family components (dark theme) Slider 1`] = `
     <View
       style={
         {
-          "backgroundColor": "#6FA3E8",
+          "backgroundColor": "#6DA8F5",
           "height": "100%",
           "width": "35.714285714285715%",
         }
@@ -1488,7 +1488,7 @@ exports[`family components (dark theme) Slider 1`] = `
     style={
       [
         {
-          "backgroundColor": "#6FA3E8",
+          "backgroundColor": "#6DA8F5",
           "borderRadius": 11,
           "height": 22,
           "left": 0,
@@ -1683,7 +1683,7 @@ exports[`family components (dark theme) StatCard, compact and large, in a Grid 1
                 "fontWeight": "700",
               },
               {
-                "color": "#6FA3E8",
+                "color": "#6DA8F5",
               },
               null,
               null,
@@ -1814,7 +1814,7 @@ exports[`family components (dark theme) StatCard, compact and large, in a Grid 1
                 "fontWeight": "700",
               },
               {
-                "color": "#6FA3E8",
+                "color": "#6DA8F5",
               },
               null,
               null,
@@ -1982,7 +1982,7 @@ exports[`family components (dark theme) StatCard, compact and large, in a Grid 1
                 "fontWeight": "700",
               },
               {
-                "color": "#6FA3E8",
+                "color": "#6DA8F5",
               },
               null,
               null,
@@ -2138,7 +2138,7 @@ exports[`family components (dark theme) ThemeSwatch previews each mode 1`] = `
               "alignItems": undefined,
               "backgroundColor": undefined,
               "borderBottomWidth": undefined,
-              "borderColor": "#6FA3E8",
+              "borderColor": "#6DA8F5",
               "borderRadius": 12,
               "borderWidth": 2,
               "bottom": undefined,
@@ -2238,7 +2238,7 @@ exports[`family components (dark theme) ThemeSwatch previews each mode 1`] = `
               "fontWeight": "500",
             },
             {
-              "color": "#6FA3E8",
+              "color": "#6DA8F5",
             },
             null,
             null,
@@ -3338,7 +3338,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
     style={
       {
         "alignItems": "center",
-        "backgroundColor": "#6FA3E8",
+        "backgroundColor": "#6DA8F5",
         "borderColor": undefined,
         "borderRadius": 12,
         "borderWidth": 0,
@@ -3488,7 +3488,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       {
-        "backgroundColor": "#6FA3E8",
+        "backgroundColor": "#6DA8F5",
         "borderRadius": 9999,
         "opacity": 1,
         "padding": 8,
@@ -4228,7 +4228,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
               [
                 {
                   "alignItems": "center",
-                  "backgroundColor": "rgba(111, 163, 232, 0.1)",
+                  "backgroundColor": "rgba(109, 168, 245, 0.1)",
                   "borderBottomWidth": undefined,
                   "borderColor": undefined,
                   "borderRadius": 9999,
@@ -4270,7 +4270,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
                     "fontWeight": "500",
                   },
                   {
-                    "color": "#6FA3E8",
+                    "color": "#6DA8F5",
                   },
                   null,
                   null,
@@ -4560,7 +4560,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
           onChange={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          onTintColor="#6FA3E8"
+          onTintColor="#6DA8F5"
           style={
             [
               {
@@ -5862,7 +5862,7 @@ exports[`family components (light theme) GradientCard 1`] = `
   <ViewManagerAdapter_ExpoLinearGradient
     colors={
       [
-        4282089396,
+        4280114086,
         4282286033,
       ]
     }

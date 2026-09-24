@@ -3,10 +3,11 @@
 // and build-time config should ever reference these; components and apps
 // speak `SemanticColor` (semantic.ts) instead.
 //
-// Alpha lives *in* the named color (`InkFaded` is Ink at 50%) — a theme never
-// composes opacity on the fly. Values that predate the token refactor keep
-// their own names; near-duplicates such as the four blues are deliberately
-// not merged yet.
+// Alpha lives *in* the named color (`InkFaded` is Ink at 50%). The one
+// exception is a brand's washes (`AccentTint*`), which themes.ts derives from
+// the brand's three colors. The brand itself is *not* here: each app owns its
+// own hue and passes it in (colors/brands.ts). Status hues (`InfoBlue`…) are
+// shared by every app and never brand-derived.
 export const NamedColor = {
   // --- Neutrals: light-mode surfaces
   White: '#FFFFFF',
@@ -62,29 +63,6 @@ export const NamedColor = {
   BlackScrim55: 'rgba(0, 0, 0, 0.55)',
 
   Transparent: 'rgba(255, 255, 255, 0)',
-
-  // --- Brand hues. Each app picks one brand (colors/brands.ts); these are
-  // the only per-app colors — surfaces, text and status are shared.
-
-  // Brand blue and its variants
-  BrandBlue: '#3E7FD1',
-  BrandBlueLight: '#6FA3E8',
-  BrandBlueTint08: 'rgba(62, 127, 209, 0.08)',
-  BrandBlueTint10: 'rgba(62, 127, 209, 0.1)',
-  BrandBlueLightTint10: 'rgba(111, 163, 232, 0.1)',
-  BrandBlueLightTint60: 'rgba(111, 163, 232, 0.6)',
-  SkyBlue: '#6ec6ff',
-  DeepBlue: '#3B7FB4',
-
-  // Brand gold (sefer-leather) and its variants
-  BrandGold: '#9C7A2E',
-  BrandGoldLight: '#D4AF6A',
-  BrandGoldTint08: 'rgba(156, 122, 46, 0.08)',
-  BrandGoldTint10: 'rgba(156, 122, 46, 0.1)',
-  BrandGoldLightTint10: 'rgba(212, 175, 106, 0.1)',
-  BrandGoldLightTint60: 'rgba(212, 175, 106, 0.6)',
-  Honey: '#E0B85C',
-  Oxblood: '#6E2C2C',
 
   // --- Status hues
   DangerRed: '#f44336',
