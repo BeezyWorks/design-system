@@ -6,3 +6,4 @@ export const layout = {
 export * from './chrome'
 export * from './sideNav'
 export * from './breakpoints'
+export * from './tabBarHeight'

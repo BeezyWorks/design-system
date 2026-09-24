@@ -1,12 +1,12 @@
 import React, {createContext, useContext} from 'react'
 import {Platform, StyleSheet, View, useWindowDimensions} from 'react-native'
 import {Edge, SafeAreaView} from 'react-native-safe-area-context'
-import {BottomTabBarHeightContext} from 'expo-router/js-tabs'
 import {
   TAB_BAR_CONTENT_GAP,
   SIDE_NAV_CONTENT_GAP,
   useIsWideWebNav,
   useSideNavWidth,
+  useTabBarHeight,
 } from '../../layout'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
@@ -52,7 +52,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   // Only set when this screen sits inside the tab navigator (bottom pill on
   // native/narrow web, side rail on wide web) — leaves the padding out for
   // screens pushed above the tabs (e.g. the full-screen siddur reader).
-  const tabBarHeight = useContext(BottomTabBarHeightContext)
+  const tabBarHeight = useTabBarHeight()
   const insideTabs = tabBarHeight !== undefined
   const isWideWeb = useIsWideWebNav()
   const sideNavWidth = useSideNavWidth()
