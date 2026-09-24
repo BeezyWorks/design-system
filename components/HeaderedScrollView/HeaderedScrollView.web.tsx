@@ -8,7 +8,7 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native'
-import {Header, HeaderProps} from '../Header'
+import {Header, HeaderProps} from '@components'
 
 interface Props extends ScrollViewProps {
   headerProps: HeaderProps

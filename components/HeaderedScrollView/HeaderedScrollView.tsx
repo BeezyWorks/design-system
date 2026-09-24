@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import {CollapsibleHeaderScrollView} from 'react-native-collapsible-header-views'
 import {layout} from '../../layout'
-import {Header, HeaderProps} from '../Header'
+import {Header, HeaderProps} from '@components'
 
 interface Props extends ScrollViewProps {
   headerProps: HeaderProps

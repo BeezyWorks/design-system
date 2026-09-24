@@ -1,37 +1,38 @@
 import React from 'react'
-import {AgendaRow} from '../AgendaRow'
-import {AgendaSectionHeader} from '../AgendaSectionHeader'
-import {CompassBadge} from '../CompassBadge'
-import {ContentText} from '../ContentText'
+import {
+  AgendaRow,
+  AgendaSectionHeader,
+  CompassBadge,
+  ContentText,
+  DashboardRow,
+  EventRow,
+  NotificationRow,
+  PanelGrid2x2,
+  ReaderParagraph,
+  SpecialNotificationRow,
+  TypefaceChips,
+  UpcomingZmanButton,
+  VersionText,
+  ZmanimSeparator,
+  Menora,
+} from '@components'
 import {Surface} from '../Surface'
-import {DashboardRow} from '../DashboardRow'
-import {EventRow} from '../EventRow'
 import {Icon} from '../Icon'
 import {IconButton} from '../IconButton'
 import {MenuOption} from '../MenuOption'
 import {MenuSection} from '../MenuSection'
 import {MessageCard} from '../MessageCard'
 import {NestedSettingHeader} from '../NestedSettingHeader'
-import {NotificationRow} from '../NotificationRow'
 import {PagerFrame} from '../PagerFrame'
-import {PanelGrid2x2} from '../PanelGrid2x2'
-import {PanelTabRow} from '../PanelTabRow'
-import {ReaderParagraph} from '../ReaderParagraph'
 import {SettingsBox} from '../SettingsBox'
 import {SettingsCard} from '../SettingsCard'
 import {SettingsListRow} from '../SettingsListRow'
 import {SlideIndicator} from '../SlideIndicator'
-import {SpecialNotificationRow} from '../SpecialNotificationRow'
 import {Stack} from '../Stack'
 import {Stepper} from '../Stepper'
 import {TabBarIcon} from '../TabBarIcon'
 import {TextField} from '../TextField'
 import {Text} from '../Text'
-import {TypefaceChips} from '../TypefaceChips'
-import {UpcomingZmanButton} from '../UpcomingZmanButton'
-import {VersionText} from '../VersionText'
-import {ZmanimSeparator} from '../ZmanimSeparator'
-import {Menora} from '../Menora'
 import {Scrim} from '../Scrim'
 import {eventCategoryColors, SemanticColor} from '../../colors'
 import {
@@ -280,20 +281,6 @@ describe.each(themes)('more components (%s theme)', (theme) => {
       )
     })
 
-    it('PanelTabRow', () => {
-      expectSnapshot(
-        <PanelTabRow
-          tabs={[
-            {key: 'zmanim', label: 'זמנים'},
-            {key: 'agenda', label: 'אג׳נדה'},
-          ]}
-          activeKey="zmanim"
-          onSelect={noop}
-        />,
-        theme,
-      )
-    })
-
     it('TypefaceChips', () => {
       expectSnapshot(
         <TypefaceChips
@@ -477,21 +464,5 @@ describe('interaction', () => {
     pressables(r)[1].props.onPress()
     expect(first).not.toHaveBeenCalled()
     expect(second).toHaveBeenCalledTimes(1)
-  })
-
-  it('PanelTabRow reports the selected tab', () => {
-    const onSelect = jest.fn()
-    const r = renderWithTheme(
-      <PanelTabRow
-        tabs={[
-          {key: 'zmanim', label: 'זמנים'},
-          {key: 'agenda', label: 'אג׳נדה'},
-        ]}
-        activeKey="zmanim"
-        onSelect={onSelect}
-      />,
-    )
-    pressables(r)[1].props.onPress()
-    expect(onSelect).toHaveBeenCalledWith('agenda')
   })
 })

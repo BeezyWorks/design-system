@@ -3,7 +3,7 @@ import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
 import {Card} from '../Card'
 import {SegmentedControl} from '../SegmentedControl'
 import {Stepper} from '../Stepper'
-import {TypefaceChips} from '../TypefaceChips'
+import {TypefaceChips} from '@components'
 import {Typeface} from '../../typography'
 import {SettingsRow, SettingsStackedRow} from './SettingsRow'
 
