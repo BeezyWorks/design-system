@@ -5,3 +5,4 @@ export const layout = {
 } as const
 export * from './chrome'
 export * from './sideNav'
+export * from './breakpoints'

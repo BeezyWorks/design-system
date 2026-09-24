@@ -114,5 +114,6 @@ export const useContentTypeStyle = (): TextStyle => {
 export const useTypefaceFontFamily = (typeface: Typeface) =>
   typefaceFontFamily[typeface]
 
+export {DesignFonts} from './fonts'
 export * from './fontFamily'
 export * from './content'

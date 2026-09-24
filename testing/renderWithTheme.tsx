@@ -1,16 +1,13 @@
 import React from 'react'
 import {act, create, ReactTestRenderer} from 'react-test-renderer'
-import {ThemeStyle} from '@models'
-import {ThemeRoot} from 'theme/themeRoot'
-import {useAppStore} from 'state/store'
-import {UserPrefActions} from '@actions'
+import {DesignSystemProvider} from '../theme'
+import type {ThemeMode} from '../colors'
 
 const mounted = new Set<ReactTestRenderer>()
 
 /**
- * Registers a renderer for automatic unmounting after the current test. Trees
- * left mounted stay subscribed to the store, so every later store update would
- * re-render all of them.
+ * Registers a renderer for automatic unmounting after the current test, so
+ * trees left mounted don't accumulate across tests.
  */
 export const track = (renderer: ReactTestRenderer) => {
   mounted.add(renderer)
@@ -26,25 +23,20 @@ if (typeof afterEach === 'function') {
   })
 }
 
-export type ConcreteTheme = Exclude<ThemeStyle, 'system'>
+export type ConcreteTheme = ThemeMode
 
 export const themes: ConcreteTheme[] = ['light', 'dark']
 
-/**
- * Renders `ui` under the real `ThemeRoot`, driven by the real store, so
- * components resolve their colors exactly as they do in the app. Returns the
- * renderer once the theme effect has settled.
- */
+/** Renders `ui` under the design system's provider for one mode. */
 export const renderWithTheme = (
   ui: React.ReactElement,
   theme: ConcreteTheme = 'light',
 ): ReactTestRenderer => {
-  act(() => {
-    useAppStore.getState().dispatch(UserPrefActions.setTheme(theme))
-  })
   let renderer!: ReactTestRenderer
   act(() => {
-    renderer = create(<ThemeRoot>{ui}</ThemeRoot>)
+    renderer = create(
+      <DesignSystemProvider mode={theme}>{ui}</DesignSystemProvider>,
+    )
   })
   return track(renderer)
 }

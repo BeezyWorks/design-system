@@ -2,7 +2,7 @@ import React from 'react'
 import {Text as RNText} from 'react-native'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
 import {act, create} from 'react-test-renderer'
-import {ThemeRoot} from 'theme/themeRoot'
+import {DesignSystemProvider} from '../../theme'
 import {
   pressables,
   renderWithTheme,
@@ -146,8 +146,6 @@ describe.each(themes)('surfaces (%s theme)', (theme) => {
       style = useFloatingTabBarStyle()
       return null
     }
-    // Same theme plumbing as the other tests, plus safe-area insets.
-    renderWithTheme(<RNText>seed theme</RNText>, theme)
     let renderer!: ReturnType<typeof create>
     act(() => {
       renderer = create(
@@ -157,9 +155,9 @@ describe.each(themes)('surfaces (%s theme)', (theme) => {
             insets: {top: 47, left: 0, right: 0, bottom: 34},
           }}
         >
-          <ThemeRoot>
+          <DesignSystemProvider mode={theme}>
             <Probe />
-          </ThemeRoot>
+          </DesignSystemProvider>
         </SafeAreaProvider>,
       )
     })
