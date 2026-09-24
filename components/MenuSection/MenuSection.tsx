@@ -7,6 +7,7 @@ import {MenuItemRow} from '../MenuItemRow'
 export interface MenuItem {
   key: string
   label: string
+  detail?: string
   onPress: () => void
 }
 
@@ -31,6 +32,7 @@ export const MenuSection: React.FunctionComponent<MenuSectionProps> = ({
         <MenuItemRow
           key={item.key}
           label={item.label}
+          detail={item.detail}
           onPress={item.onPress}
           isLast={index === items.length - 1}
         />

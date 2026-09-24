@@ -18,3 +18,6 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 export const SingleItem: Story = {args: {items: items.slice(0, 1)}}
+export const WithDetails: Story = {
+  args: {items: items.map((item, i) => ({...item, detail: `${i + 5} פרקים`}))},
+}

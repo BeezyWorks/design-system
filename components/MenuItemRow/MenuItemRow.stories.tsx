@@ -19,3 +19,4 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 export const LastRowNoDivider: Story = {args: {isLast: true}}
+export const WithDetail: Story = {args: {detail: '9 פרקים'}}
