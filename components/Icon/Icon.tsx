@@ -3,6 +3,8 @@ import {TouchableOpacity} from 'react-native'
 import {
   Calendar,
   Book,
+  BookOpen,
+  ScrollText,
   Library,
   Settings,
   ChevronLeft,
@@ -38,6 +40,8 @@ import {useResolvedColor} from '../../theme'
 export type IconName =
   | 'calendar-today'
   | 'book'
+  | 'book-open'
+  | 'scroll-text'
   | 'bookshelf'
   | 'cog'
   | 'settings'
@@ -72,6 +76,8 @@ export type IconName =
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
   book: Book,
+  'book-open': BookOpen,
+  'scroll-text': ScrollText,
   bookshelf: Library,
   cog: Settings,
   settings: Settings,
