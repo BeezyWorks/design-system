@@ -82,10 +82,16 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   // above a bar that was never covering anything.
   const bottomInset =
     isFloatingTabBar && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0
+  // The web anchor below is the full window height, but a docked bottom bar
+  // (narrow web) takes its own row out of it — without subtracting that, the
+  // screen's bottom is hidden behind the bar and the last item can't scroll
+  // into view. The side rail and the iOS pill don't shorten the screen.
+  const dockedBarHeight =
+    isWeb && insideTabs && !isWideWeb && !isFloatingTabBar ? tabBarHeight! : 0
   const style = styleCreator(resolve, {
     paddingLeft:
       isWideWeb && insideTabs ? sideNavWidth + SIDE_NAV_CONTENT_GAP : 0,
-    height: isWeb ? windowHeight : undefined,
+    height: isWeb ? windowHeight - dockedBarHeight : undefined,
     maxWidth: width === 'reader' ? MAX_READER_WIDTH : MAX_CONTENT_WIDTH,
     capEverywhere: width !== undefined,
     hasAside: aside !== undefined,
