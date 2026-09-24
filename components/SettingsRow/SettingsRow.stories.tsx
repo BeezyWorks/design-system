@@ -3,8 +3,6 @@ import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
 import {Card} from '../Card'
 import {SegmentedControl} from '../SegmentedControl'
 import {Stepper} from '../Stepper'
-import {TypefaceChips} from '@components'
-import {Typeface} from '../../typography'
 import {SettingsRow, SettingsStackedRow} from './SettingsRow'
 
 const Inline = () => {
@@ -21,17 +19,17 @@ const Inline = () => {
 }
 
 const Stacked = () => {
-  const [key, setKey] = useState('frank')
+  const [key, setKey] = useState<'frank' | 'david' | 'ezra'>('frank')
   return (
     <SettingsStackedRow title="Typeface">
-      <TypefaceChips
-        items={[
-          {key: 'frank', label: 'Frank', face: Typeface.Frank},
-          {key: 'david', label: 'David', face: Typeface.David},
-          {key: 'ezra', label: 'Ezra', face: Typeface.Ezra},
+      <SegmentedControl
+        options={[
+          {key: 'frank', label: 'Frank'},
+          {key: 'david', label: 'David'},
+          {key: 'ezra', label: 'Ezra'},
         ]}
-        selectedKey={key}
-        onSelect={setKey}
+        value={key}
+        onChange={setKey}
       />
     </SettingsStackedRow>
   )
