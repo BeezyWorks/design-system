@@ -1,31 +1,49 @@
 import {NamedColor} from './named'
 import {SemanticColor} from './semantic'
+import {Brand, BrandPalette} from './brands'
 
 // Tier 3 — the theme definitions. Each maps every semantic token to a named
-// color for one mode; `Record<SemanticColor, …>` makes a missing or extra
-// token a compile error. Pure data — no React, no Platform.
-export type ThemeMode = 'light' | 'dark'
+// color for one mode and one brand; `Record<SemanticColor, …>` makes a
+// missing or extra token a compile error. A theme is the mode's shared
+// neutrals (surfaces, text, borders, status — the same for every app) plus
+// the brand's slots for the brand-derived tokens. Pure data — no React, no
+// Platform.
+export type ThemeMode = 'light' | 'sepia' | 'dark'
 
-type ThemeDefinition = Record<SemanticColor, NamedColor>
+export type ThemeDefinition = Record<SemanticColor, NamedColor>
 
 const C = NamedColor
 const S = SemanticColor
 
-export const lightTheme: ThemeDefinition = {
+// The tokens a brand decides. Everything else is shared by the family.
+type BrandToken =
+  | typeof S.TextAccent
+  | typeof S.SurfaceHighlight
+  | typeof S.AccentPrimary
+  | typeof S.AccentPrimaryBright
+  | typeof S.AccentPrimaryDeep
+  | typeof S.AccentPrimaryStrong
+  | typeof S.AccentTabActive
+  | typeof S.AccentTint
+  | typeof S.AccentTintSelected
+
+type NeutralDefinition = Omit<ThemeDefinition, BrandToken>
+type BrandDefinition = Record<BrandToken, NamedColor>
+
+const lightNeutrals: NeutralDefinition = {
   [S.TextPrimary]: C.Ink,
   [S.TextSecondary]: C.InkFaded,
   [S.TextTabInactive]: C.InkFaded60,
-  [S.TextAccent]: C.BrandBlue,
   [S.TextOnAccent]: C.White,
   [S.TextOnPhoto]: C.White,
   [S.TextInverse]: C.Cream,
   [S.TextDanger]: C.DangerRed,
+  [S.TextSuccess]: C.SuccessGreenDeep,
 
   [S.SurfaceBackground]: C.Cream,
   [S.SurfaceCard]: C.White,
   [S.SurfaceSelected]: C.Linen,
   [S.SurfaceHover]: C.InkWash,
-  [S.SurfaceHighlight]: C.BrandBlueTint10,
   [S.SurfacePanel]: C.PanelGray,
   [S.SurfaceTrackOff]: C.Sand,
   [S.SurfaceThumb]: C.White,
@@ -34,6 +52,8 @@ export const lightTheme: ThemeDefinition = {
   [S.SurfaceSwatchSystem]: C.Stone,
   [S.SurfaceTransparent]: C.Transparent,
   [S.SurfaceDanger]: C.DangerRed,
+  [S.SurfaceSuccess]: C.SuccessGreenDeepTint,
+  [S.SurfaceOnAccent]: C.WhiteTint18,
 
   [S.BorderDefault]: C.InkHairline,
   [S.BorderStrong]: C.BlackScrim50,
@@ -43,12 +63,6 @@ export const lightTheme: ThemeDefinition = {
   [S.OverlayPhotoScrim]: C.BlackScrim50,
   [S.OverlayShadow]: C.Black,
 
-  [S.AccentPrimary]: C.BrandBlue,
-  [S.AccentPrimaryBright]: C.SkyBlue,
-  [S.AccentPrimaryDeep]: C.DeepBlue,
-  [S.AccentTabActive]: C.BrandBlue,
-  [S.AccentTint]: C.BrandBlueTint08,
-  [S.AccentTintSelected]: C.BrandBlueTint10,
   [S.AccentDanger]: C.DangerRedBright,
   [S.AccentAlert]: C.AlertOrange,
   [S.AccentAlertFaded]: C.AlertOrangeFaded,
@@ -57,22 +71,38 @@ export const lightTheme: ThemeDefinition = {
   [S.AccentInfoFaded]: C.InfoBlueFaded,
   [S.AccentSuccess]: C.SuccessGreen,
 }
+// Warm paper for long reading sessions: the light theme's structure with
+// brown ink on sepia paper. Status hues and overlays match light.
+const sepiaNeutrals: NeutralDefinition = {
+  ...lightNeutrals,
+  [S.TextPrimary]: C.SepiaInk,
+  [S.TextSecondary]: C.SepiaInkFaded,
+  [S.TextTabInactive]: C.SepiaInkFaded60,
+  [S.TextInverse]: C.SepiaCard,
 
-export const darkTheme: ThemeDefinition = {
+  [S.SurfaceBackground]: C.SepiaPaper,
+  [S.SurfaceCard]: C.SepiaCard,
+  [S.SurfaceSelected]: C.SepiaLinen,
+  [S.SurfaceHover]: C.SepiaInkWash,
+  [S.SurfaceTrackOff]: C.SepiaSand,
+
+  [S.BorderDefault]: C.SepiaInkHairline,
+}
+
+const darkNeutrals: NeutralDefinition = {
   [S.TextPrimary]: C.Parchment,
   [S.TextSecondary]: C.ParchmentFaded,
   [S.TextTabInactive]: C.ParchmentFaded60,
-  [S.TextAccent]: C.BrandBlueLight,
   [S.TextOnAccent]: C.White,
   [S.TextOnPhoto]: C.White,
   [S.TextInverse]: C.Coal,
   [S.TextDanger]: C.DangerRed,
+  [S.TextSuccess]: C.SuccessGreenLight,
 
   [S.SurfaceBackground]: C.Coal,
   [S.SurfaceCard]: C.Graphite,
   [S.SurfaceSelected]: C.Smoke,
   [S.SurfaceHover]: C.ParchmentWash,
-  [S.SurfaceHighlight]: C.WhiteWash,
   [S.SurfacePanel]: C.PanelGray,
   [S.SurfaceTrackOff]: C.Taupe,
   [S.SurfaceThumb]: C.White,
@@ -81,6 +111,8 @@ export const darkTheme: ThemeDefinition = {
   [S.SurfaceSwatchSystem]: C.Stone,
   [S.SurfaceTransparent]: C.Transparent,
   [S.SurfaceDanger]: C.DangerRed,
+  [S.SurfaceSuccess]: C.SuccessGreenLightTint,
+  [S.SurfaceOnAccent]: C.WhiteTint18,
 
   [S.BorderDefault]: C.WhiteHairline,
   [S.BorderStrong]: C.BlackScrim55,
@@ -90,12 +122,6 @@ export const darkTheme: ThemeDefinition = {
   [S.OverlayPhotoScrim]: C.BlackScrim50,
   [S.OverlayShadow]: C.Black,
 
-  [S.AccentPrimary]: C.BrandBlueLight,
-  [S.AccentPrimaryBright]: C.SkyBlue,
-  [S.AccentPrimaryDeep]: C.DeepBlue,
-  [S.AccentTabActive]: C.BrandBlue,
-  [S.AccentTint]: C.BrandBlueLightTint60,
-  [S.AccentTintSelected]: C.BrandBlueLightTint10,
   [S.AccentDanger]: C.DangerRedBright,
   [S.AccentAlert]: C.AlertOrange,
   [S.AccentAlertFaded]: C.AlertOrangeFaded,
@@ -104,12 +130,71 @@ export const darkTheme: ThemeDefinition = {
   [S.AccentInfoFaded]: C.InfoBlueFaded,
   [S.AccentSuccess]: C.SuccessGreen,
 }
+const lightBrand = (brand: BrandPalette): BrandDefinition => ({
+  [S.TextAccent]: brand.primary,
+  [S.SurfaceHighlight]: brand.tintSelected,
+  [S.AccentPrimary]: brand.primary,
+  [S.AccentPrimaryBright]: brand.bright,
+  [S.AccentPrimaryDeep]: brand.deep,
+  [S.AccentPrimaryStrong]: brand.primary,
+  [S.AccentTabActive]: brand.primary,
+  [S.AccentTint]: brand.tint,
+  [S.AccentTintSelected]: brand.tintSelected,
+})
 
+const darkBrand = (brand: BrandPalette): BrandDefinition => ({
+  [S.TextAccent]: brand.primaryLight,
+  [S.SurfaceHighlight]: C.WhiteWash,
+  [S.AccentPrimary]: brand.primaryLight,
+  [S.AccentPrimaryBright]: brand.bright,
+  [S.AccentPrimaryDeep]: brand.deep,
+  [S.AccentPrimaryStrong]: brand.primary,
+  [S.AccentTabActive]: brand.primary,
+  [S.AccentTint]: brand.lightTintStrong,
+  [S.AccentTintSelected]: brand.lightTint,
+})
+
+const modes: Record<
+  ThemeMode,
+  {neutrals: NeutralDefinition; brand: (b: BrandPalette) => BrandDefinition}
+> = {
+  light: {neutrals: lightNeutrals, brand: lightBrand},
+  sepia: {neutrals: sepiaNeutrals, brand: lightBrand},
+  dark: {neutrals: darkNeutrals, brand: darkBrand},
+}
+
+const cache = new Map<
+  BrandPalette,
+  Partial<Record<ThemeMode, ThemeDefinition>>
+>()
+
+/** The full theme for one mode and brand (memoized per brand object). */
+export const buildTheme = (
+  mode: ThemeMode,
+  brand: BrandPalette = Brand.Blue,
+): ThemeDefinition => {
+  const byMode = cache.get(brand) ?? {}
+  cache.set(brand, byMode)
+  return (byMode[mode] ??= {
+    ...modes[mode].neutrals,
+    ...modes[mode].brand(brand),
+  })
+}
+
+export const lightTheme = buildTheme('light')
+export const sepiaTheme = buildTheme('sepia')
+export const darkTheme = buildTheme('dark')
+
+/** The default (`Brand.Blue`) themes by mode. */
 export const themes: Record<ThemeMode, ThemeDefinition> = {
   light: lightTheme,
+  sepia: sepiaTheme,
   dark: darkTheme,
 }
 
-/** Resolves one semantic token to its concrete color for a mode. */
-export const resolveColor = (mode: ThemeMode, token: SemanticColor): string =>
-  themes[mode][token]
+/** Resolves one semantic token to its concrete color for a mode and brand. */
+export const resolveColor = (
+  mode: ThemeMode,
+  token: SemanticColor,
+  brand: BrandPalette = Brand.Blue,
+): string => buildTheme(mode, brand)[token]

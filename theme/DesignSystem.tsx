@@ -1,6 +1,7 @@
 import React, {createContext, useCallback, useContext, useMemo} from 'react'
 import {SemanticColor} from '../colors/semantic'
 import {resolveColor, ThemeMode} from '../colors/themes'
+import {Brand, BrandPalette} from '../colors/brands'
 import {
   ContentSelection,
   ResolvedContentText,
@@ -8,13 +9,14 @@ import {
   resolveContentText,
 } from '../typography/content'
 
-// The one piece of state the design system needs from an app: which mode to
-// render in (already resolved — the app accounts for "system" and any
-// per-context rules before passing it down) and the user's reading-text
-// selection. Everything else the DL derives.
+// The state the design system needs from an app: which mode to render in
+// (already resolved — the app accounts for "system" and any per-context
+// rules before passing it down), the app's brand, and the user's
+// reading-text selection. Everything else the DL derives.
 
 interface DesignSystemValue {
   mode: ThemeMode
+  brand: BrandPalette
   content: ResolvedContentText
 }
 
@@ -33,6 +35,8 @@ const useDesignSystem = (): DesignSystemValue => {
 export interface DesignSystemProviderProps {
   /** Concrete mode. The app resolves "system"/night-mode rules before this. */
   mode: ThemeMode
+  /** The app's brand hue; defaults to `Brand.Blue`. */
+  brand?: BrandPalette
   /** The user's reading-text choice; defaults to the DL's defaults. */
   content?: ContentSelection
   children?: React.ReactNode
@@ -41,11 +45,26 @@ export interface DesignSystemProviderProps {
 /** Mount once at the app root. */
 export const DesignSystemProvider: React.FunctionComponent<
   DesignSystemProviderProps
-> = ({mode, content = defaultContentSelection, children}) => {
-  const {typeface, size, leading} = content
+> = ({
+  mode,
+  brand = Brand.Blue,
+  content = defaultContentSelection,
+  children,
+}) => {
+  const {typeface, size, leading, latinTypeface, tracking} = content
   const value = useMemo<DesignSystemValue>(
-    () => ({mode, content: resolveContentText({typeface, size, leading})}),
-    [mode, typeface, size, leading],
+    () => ({
+      mode,
+      brand,
+      content: resolveContentText({
+        typeface,
+        size,
+        leading,
+        latinTypeface,
+        tracking,
+      }),
+    }),
+    [mode, brand, typeface, size, leading, latinTypeface, tracking],
   )
   return (
     <DesignSystemContext.Provider value={value}>
@@ -60,8 +79,9 @@ export interface ThemeScopeProps {
 }
 
 /** Forces a subtree to a mode regardless of the app's — e.g. an always-dark
- * photo panel. Everything inside (semantic colors, resolved colors) follows
- * the scope; reading-text settings pass through unchanged. Scopes nest. */
+ * photo panel, or a preview of another mode in a theme picker. Everything
+ * inside (semantic colors, resolved colors) follows the scope; the brand and
+ * reading-text settings pass through unchanged. Scopes nest. */
 export const ThemeScope: React.FunctionComponent<ThemeScopeProps> = ({
   mode,
   children,
@@ -81,23 +101,32 @@ export const ThemeScope: React.FunctionComponent<ThemeScopeProps> = ({
 /** The mode in effect here (respects the nearest `ThemeScope`). */
 export const useThemeMode = (): ThemeMode => useDesignSystem().mode
 
+/** Light or dark — the mode collapsed to what native APIs understand
+ * (pickers, glass, blur, the status bar). Sepia is a light appearance. */
+export type Appearance = 'light' | 'dark'
+
+export const useAppearance = (): Appearance =>
+  useDesignSystem().mode === 'dark' ? 'dark' : 'light'
+
 export type ColorResolver = (token: SemanticColor) => string
 
 /** A resolver for several tokens at once (third-party APIs that want plain
  * color strings: status bar, calendar themes, navigation theme, …). */
 export const useColorResolver = (): ColorResolver => {
-  const {mode} = useDesignSystem()
+  const {mode, brand} = useDesignSystem()
   return useCallback(
-    (token: SemanticColor) => resolveColor(mode, token),
-    [mode],
+    (token: SemanticColor) => resolveColor(mode, token, brand),
+    [mode, brand],
   )
 }
 
 /** One semantic token as a plain color string for the current mode. Prefer
  * passing the token itself to a DL component; use this only where a raw
  * string is unavoidable. */
-export const useResolvedColor = (token: SemanticColor): string =>
-  resolveColor(useDesignSystem().mode, token)
+export const useResolvedColor = (token: SemanticColor): string => {
+  const {mode, brand} = useDesignSystem()
+  return resolveColor(mode, token, brand)
+}
 
 /** The user's reading-text selection, resolved to concrete values. */
 export const useContentText = (): ResolvedContentText =>

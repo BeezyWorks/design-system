@@ -15,6 +15,7 @@ export const SemanticColor = {
   TextOnPhoto: 'textOnPhoto',
   TextInverse: 'textInverse',
   TextDanger: 'textDanger',
+  TextSuccess: 'textSuccess',
 
   // Surface
   SurfaceBackground: 'surfaceBackground',
@@ -30,6 +31,9 @@ export const SemanticColor = {
   SurfaceSwatchSystem: 'surfaceSwatchSystem',
   SurfaceTransparent: 'surfaceTransparent',
   SurfaceDanger: 'surfaceDanger',
+  SurfaceSuccess: 'surfaceSuccess',
+  /** A translucent chip laid over a brand fill (`AccentPrimaryStrong`). */
+  SurfaceOnAccent: 'surfaceOnAccent',
 
   // Border
   BorderDefault: 'borderDefault',
@@ -45,6 +49,9 @@ export const SemanticColor = {
   AccentPrimary: 'accentPrimary',
   AccentPrimaryBright: 'accentPrimaryBright',
   AccentPrimaryDeep: 'accentPrimaryDeep',
+  /** The brand fill that carries `TextOnAccent` in every mode (unlike
+   * `AccentPrimary`, which lightens in dark mode). */
+  AccentPrimaryStrong: 'accentPrimaryStrong',
   AccentTabActive: 'accentTabActive',
   AccentTint: 'accentTint',
   AccentTintSelected: 'accentTintSelected',

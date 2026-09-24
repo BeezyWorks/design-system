@@ -23,7 +23,9 @@ if (typeof afterEach === 'function') {
   })
 }
 
-export type ConcreteTheme = ThemeMode
+// Component snapshots cover the two structurally different modes; sepia
+// only swaps light's neutrals, and is pinned by the colors snapshot.
+export type ConcreteTheme = Extract<ThemeMode, 'light' | 'dark'>
 
 export const themes: ConcreteTheme[] = ['light', 'dark']
 
