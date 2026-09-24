@@ -20,11 +20,9 @@ export type FontSwatchProps = FontSwatchBaseProps &
     | {script: 'latin'; typeface: LatinTypeface}
   )
 
-const WIDTH = 112
-const SAMPLE_HEIGHT = 64
-
-/** One option in a font picker: a card showing the typeface itself, with its
- * name below. Selected fills with the accent tint. */
+/** One option in a font picker: a square card showing the typeface itself,
+ * with its name below. Fills the width it's given (a `Grid` cell), so the
+ * card scales with its column. Selected fills with the accent tint. */
 export const FontSwatch: React.FunctionComponent<FontSwatchProps> = (props) => {
   const {label, selected, onPress} = props
   const sample = props.sample ?? (props.script === 'hebrew' ? 'אבגד' : 'Aa')
@@ -38,14 +36,14 @@ export const FontSwatch: React.FunctionComponent<FontSwatchProps> = (props) => {
     >
       {({pressed}) => (
         <Stack
-          width={WIDTH}
+          width="100%"
           gap="xs"
           align="center"
           opacity={pressed ? 0.7 : undefined}
         >
           <Stack
             width="100%"
-            height={SAMPLE_HEIGHT}
+            aspectRatio={1}
             radius="md"
             borderWidth={2}
             borderColor={
