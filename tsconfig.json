@@ -1,6 +1,5 @@
 {
   // Typechecks the design system on its own — no path aliases, no app code.
-  // `pnpm typecheck:design` fails if anything here reaches outside this folder.
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
@@ -11,5 +10,6 @@
     "baseUrl": null,
     "paths": {}
   },
-  "include": ["./**/*.ts", "./**/*.tsx"]
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": ["node_modules", "storybook-static"]
 }

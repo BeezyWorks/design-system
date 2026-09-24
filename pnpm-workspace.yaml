@@ -1,0 +1,18 @@
+# Only used when this repo is installed on its own. Inside an app that mounts
+# it as a submodule, the app's workspace file governs the install.
+packages:
+  - '.'
+
+allowBuilds:
+  esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@expo/cli@57.0.23'
+  - '@expo/metro-file-map@57.0.3'
+  - babel-preset-expo@57.0.11
+  - expo-modules-core@57.0.17
+  - expo-modules-jsi@57.1.0
+  - expo@57.0.21
+
+overrides:
+  '@react-native/metro-config': 0.86.3

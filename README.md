@@ -1,9 +1,40 @@
-# Design system
+# @beezyworks/design
 
 React Native components, color tokens, fonts and a Hebrew-date model shared by
-the apps. This folder is self-contained: it imports nothing from the app that
-hosts it (enforced by ESLint and by `pnpm typecheck:design`, which typechecks
-it with no path aliases).
+the apps. It ships as TypeScript source (no build step); the app's Metro and
+Babel compile it.
+
+## Using it in an app
+
+Apps mount this repo as a git submodule and link it through their pnpm
+workspace, so it can be edited in place alongside the app:
+
+```sh
+git submodule add ../design-system.git packages/design   # relative URL: ssh or https, whatever the app's origin uses
+```
+
+```yaml
+# pnpm-workspace.yaml
+packages:
+  - '.'
+  - 'packages/*'
+```
+
+```jsonc
+// package.json
+"dependencies": { "@beezyworks/design": "workspace:*" }
+```
+
+Then `import {Text, SemanticColor} from '@beezyworks/design'`.
+
+- Install every peer dependency (see below) in the app.
+- Jest: the package lives outside `node_modules`, so it is transformed by
+  default; `@hebcal/core` and `lucide-react-native` need the same
+  `moduleNameMapper` entries as `jest.config.js` here.
+- Clones and CI need `git submodule update --init` (`actions/checkout` with
+  `submodules: true` and a token that can read this repo).
+- To bump: commit and push here, then commit the new submodule pointer in the
+  app.
 
 ## Rules
 
@@ -13,7 +44,8 @@ it with no path aliases).
 2. **No styling props.** Components take declarative props (`padding="md"`,
    `background={SemanticColor.SurfaceCard}`), never `style`.
 3. **No app imports.** Relative imports only; the design system never imports
-   itself through an alias. Apps import it through one barrel (`@design`).
+   itself by package name. Apps import it through one barrel
+   (`@beezyworks/design`).
 4. **Idiosyncratic components live in the app.** Every part they are made of
    is exported from here.
 
@@ -67,7 +99,7 @@ dates. Pure (no React).
 
 - `pnpm storybook` — web Storybook (react-native-web + Vite). Native-only
   modules are stubbed in `.storybook/stubs`.
-- `pnpm typecheck:design` — the isolation check.
+- `pnpm typecheck`, `pnpm lint`, `pnpm test` — also run by CI on every push.
 - Tests live in `__tests__` folders next to what they cover; component tests
   are snapshot tests rendered through `testing/renderWithTheme` (this folder's
   helper, using only `DesignSystemProvider`).
