@@ -98,7 +98,8 @@ dates. Pure (no React).
 ## Development
 
 - `pnpm storybook` — web Storybook (react-native-web + Vite). Native-only
-  modules are stubbed in `.storybook/stubs`.
+  modules are stubbed in `.storybook/stubs`. Every push to `main` publishes
+  it to https://beezyworks.github.io/design-system/.
 - `pnpm typecheck`, `pnpm lint`, `pnpm test` — also run by CI on every push.
 - Tests live in `__tests__` folders next to what they cover; component tests
   are snapshot tests rendered through `testing/renderWithTheme` (this folder's
