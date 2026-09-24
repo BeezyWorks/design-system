@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, View} from 'react-native'
-import {useColors} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {ThemeStyle} from '@models'
 
 /** Hairline divider between rows in the Luach Zmanim panel — forced to the

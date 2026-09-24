@@ -2,7 +2,7 @@ import React from 'react'
 import {SectionpickerModalConfig} from '@models'
 import {FlatList, StyleSheet, Text, TouchableOpacity} from 'react-native'
 import {useModal} from '@modal'
-import {useColors, Colors} from '../../colors'
+import {useColors, Colors} from '../../colors/useColors'
 import {BottomSheetModal} from '../BottomSheetModal'
 
 export const SectionPickerPresenter = ({

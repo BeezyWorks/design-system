@@ -58,11 +58,16 @@ export const MizrachCompass: React.FunctionComponent<MizrachCompassProps> = ({
     })
   }, [rotation])
 
-  const style = useAnimatedStyle(() => ({
-    transform: [
-      {rotate: `${animatedRotation.value + ICON_BASELINE_OFFSET_DEG}deg`},
-    ],
-  }))
+  // Explicit deps (only shared values are read): web has no Reanimated Babel
+  // plugin to infer them, and native's plugin leaves an explicit array alone.
+  const style = useAnimatedStyle(
+    () => ({
+      transform: [
+        {rotate: `${animatedRotation.value + ICON_BASELINE_OFFSET_DEG}deg`},
+      ],
+    }),
+    [],
+  )
 
   return (
     <TouchableWithoutFeedback onPress={onPress}>

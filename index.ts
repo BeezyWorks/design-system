@@ -1,4 +1,6 @@
 export * from './colors'
+export {useColors} from './colors/useColors'
+export type {Colors} from './colors/useColors'
 export * from './theme'
 export * from './spacing'
 export * from './radius'

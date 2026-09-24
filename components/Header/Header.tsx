@@ -6,13 +6,8 @@ import {useModal} from '@modal'
 import {isNullOrEmpty, Log} from '@utils'
 import {Zman} from 'siddurCalendar/zmanim/zman.model'
 import {useIsWideReader} from 'widgets/header/readerBreakpoint'
-import {
-  useColors,
-  Colors,
-  ColorPrimary,
-  withOpacity,
-  SemanticColor,
-} from '../../colors'
+import {ColorPrimary, withOpacity, SemanticColor} from '../../colors'
+import {useColors, Colors} from '../../colors/useColors'
 import {layout} from '../../layout'
 import {Icon, IconName} from '../Icon'
 import {AnchoredPopover} from '../AnchoredPopover'

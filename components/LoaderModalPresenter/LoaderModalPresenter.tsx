@@ -1,7 +1,8 @@
 import React from 'react'
 import {ActivityIndicator} from 'react-native'
 import {LoaderModalConfig} from '@models'
-import {useColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {Stack} from '../Stack'
 
 export const LoaderModalPresenter = ({}: LoaderModalConfig) => {

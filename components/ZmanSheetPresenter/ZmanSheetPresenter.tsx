@@ -9,7 +9,7 @@ import {zmanimNames} from 'siddurCalendar/zmanim/zman.model'
 import {formatHebrewDate} from 'siddurCalendar/hebrewDate.class'
 import {useTranslation} from 'translation/translation.hook'
 import {getValuesForZmanim} from 'siddurCalendar/zmanim/zman.calculator'
-import {useColors, Colors} from '../../colors'
+import {useColors, Colors} from '../../colors/useColors'
 import {BottomSheetModal} from '../BottomSheetModal'
 
 export const ZmanSheetPresenter = ({zmanim}: ZmanimModalConfig) => {

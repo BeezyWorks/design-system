@@ -1,7 +1,8 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {Touchable} from '../Touchable'
-import {useColors, NextTefilaPill} from '../../colors'
+import {NextTefilaPill} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {useShadow} from '../../shadows'
 import {getFontFamilyName, ThemeStyle} from '@models'
 

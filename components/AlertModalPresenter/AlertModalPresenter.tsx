@@ -7,7 +7,7 @@ import {
   isActionButton,
 } from '@models'
 import {StyleSheet, Text, View} from 'react-native'
-import {useColors, Colors} from '../../colors'
+import {useColors, Colors} from '../../colors/useColors'
 import {AlertCard} from '../AlertCard'
 
 export const AlertModalPresenter = ({

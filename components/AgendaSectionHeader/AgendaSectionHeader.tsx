@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
-import {useColors} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {spacing} from '../../spacing'
 
 export interface AgendaSectionHeaderProps {

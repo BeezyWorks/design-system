@@ -19,14 +19,13 @@ import {
 import {createTranslationSheet} from 'translation/translation.model'
 import {useTranslation} from 'translation/translation.hook'
 import {
-  useColors,
-  Colors,
   ColorPrimary,
   BackgroundDark,
   BackgroundLight,
   ThemeSwatchSystem,
   withOpacity,
 } from '../../colors'
+import {useColors, Colors} from '../../colors/useColors'
 
 const labelSheet = createTranslationSheet({
   hebrew: {

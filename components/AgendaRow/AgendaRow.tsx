@@ -1,6 +1,7 @@
 import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
-import {useColors, EventCategory} from '../../colors'
+import {EventCategory} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {EventDot} from '../EventDot'
 
 export interface AgendaRowProps {

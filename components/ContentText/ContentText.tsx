@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text as NativeText, TextProps as NativeTextProps} from 'react-native'
 import {useContentTypeStyle} from '../../typography'
-import {useColors} from '../../colors'
+import {useColors} from '../../colors/useColors'
 
 export type ContentTextWeight = 'regular' | 'bold'
 export type ContentTextSize = 'normal' | 'large' | 'small'

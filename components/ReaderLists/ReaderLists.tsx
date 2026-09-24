@@ -7,7 +7,8 @@ import {useTranslation} from 'translation/translation.hook'
 import {getValuesForZmanim} from 'siddurCalendar/zmanim/zman.calculator'
 import {Zman, zmanimNames} from 'siddurCalendar/zmanim/zman.model'
 import moment from 'moment'
-import {useColors, Colors, ColorPrimary, White, withOpacity} from '../../colors'
+import {ColorPrimary, White, withOpacity} from '../../colors'
+import {useColors, Colors} from '../../colors/useColors'
 
 // Shared list content for the reader's wide-layout header popovers — plain
 // React Native, no web-only APIs.

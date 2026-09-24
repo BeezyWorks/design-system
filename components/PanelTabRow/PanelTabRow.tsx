@@ -2,7 +2,8 @@ import React from 'react'
 import {StyleSheet, Text as RNText, View} from 'react-native'
 import {Stack} from '../Stack'
 import {Touchable} from '../Touchable'
-import {useColors, ColorPrimaryLight, BorderColorDark} from '../../colors'
+import {ColorPrimaryLight, BorderColorDark} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {ThemeStyle} from '@models'
 
 export interface PanelTab {

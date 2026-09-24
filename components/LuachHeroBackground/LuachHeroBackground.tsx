@@ -3,7 +3,7 @@ import {ImageBackground, StyleSheet, View} from 'react-native'
 import {kotelImage} from '@images'
 import {Stack} from '../Stack'
 import {RadiusToken} from '../../radius'
-import {useColors} from '../../colors'
+import {useColors} from '../../colors/useColors'
 import {ThemeStyle} from '@models'
 
 export interface LuachHeroBackgroundProps {

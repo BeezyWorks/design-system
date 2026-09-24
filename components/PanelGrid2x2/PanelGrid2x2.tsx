@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, View} from 'react-native'
-import {useColors} from '../../colors'
+import {useColors} from '../../colors/useColors'
 
 export interface PanelGrid2x2Props {
   /** Top-right, top-left, bottom-right, bottom-left — RTL reading order,
