@@ -11,5 +11,7 @@ export const TAB_BAR_CONTENT_GAP = TAB_BAR_MARGIN * 2
 // rail once there's enough room for it — narrow web (a phone browser) and
 // native both keep the floating bottom pill.
 export const SIDE_NAV_WIDTH_EXPANDED = 232
+// Icon-only, when the app lets the user collapse the rail.
+export const SIDE_NAV_WIDTH_COLLAPSED = 76
 export const SIDE_NAV_BREAKPOINT = 860
 export const SIDE_NAV_CONTENT_GAP = 24

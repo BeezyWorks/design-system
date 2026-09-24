@@ -16,6 +16,19 @@ import {
   X,
   Pencil,
   Download,
+  Home,
+  Compass,
+  Bookmark,
+  BarChart2,
+  SlidersHorizontal,
+  ChevronsLeft,
+  ChevronsRight,
+  Minus,
+  AlertCircle,
+  FileText,
+  Mail,
+  ExternalLink,
+  Check,
   LucideIcon,
 } from 'lucide-react-native'
 import {SemanticColor} from '../../colors'
@@ -39,6 +52,20 @@ export type IconName =
   | 'close'
   | 'edit'
   | 'download'
+  | 'home'
+  | 'compass'
+  | 'bookmark'
+  | 'bookmark-outline'
+  | 'stats-chart'
+  | 'sliders'
+  | 'chevrons-left'
+  | 'chevrons-right'
+  | 'remove'
+  | 'alert-circle'
+  | 'document'
+  | 'mail'
+  | 'external-link'
+  | 'check'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -58,7 +85,25 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   close: X,
   edit: Pencil,
   download: Download,
+  home: Home,
+  compass: Compass,
+  bookmark: Bookmark,
+  'bookmark-outline': Bookmark,
+  'stats-chart': BarChart2,
+  sliders: SlidersHorizontal,
+  'chevrons-left': ChevronsLeft,
+  'chevrons-right': ChevronsRight,
+  remove: Minus,
+  'alert-circle': AlertCircle,
+  document: FileText,
+  mail: Mail,
+  'external-link': ExternalLink,
+  check: Check,
 }
+
+// Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
+// same glyph filled with its own color rather than a second glyph.
+const filledIcons: Partial<Record<IconName, true>> = {bookmark: true}
 
 export interface IconProps {
   name: IconName
@@ -79,7 +124,13 @@ export const Icon: React.FunctionComponent<IconProps> = ({
 }) => {
   const resolvedColor = useResolvedColor(color)
   const IconComponent = lucideIconForName[name] ?? Settings
-  const icon = <IconComponent size={size} color={resolvedColor} />
+  const icon = (
+    <IconComponent
+      size={size}
+      color={resolvedColor}
+      fill={filledIcons[name] ? resolvedColor : 'none'}
+    />
+  )
 
   if (!onPress) return icon
   return (

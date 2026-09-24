@@ -26,3 +26,6 @@ jest.mock(
   'react-native-safe-area-context',
   () => require('react-native-safe-area-context/jest/mock').default,
 )
+
+// Gesture handler's own test doubles (`Slider`, `DesignSystemRoot`).
+require('react-native-gesture-handler/jestSetup')

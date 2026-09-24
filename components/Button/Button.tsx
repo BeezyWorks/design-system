@@ -51,8 +51,16 @@ export interface ButtonProps {
   title: string
   variant?: ButtonVariant
   size?: ButtonSize
-  /** A leading icon before the label. */
+  /** An icon beside the label. */
   icon?: IconName
+  /** Where the icon sits in *reading* order — before the label (default)
+   * or after it (a "next" chevron). */
+  iconPosition?: 'start' | 'end'
+  /** A right-to-left (Hebrew) label: lays the row out right to left, so
+   * "start" is the right side. */
+  rtl?: boolean
+  /** Stretch across the parent instead of sizing to the label. */
+  fullWidth?: boolean
   loading?: boolean
   disabled?: boolean
   onPress?: () => void
@@ -65,6 +73,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   icon,
+  iconPosition = 'start',
+  rtl,
+  fullWidth,
   loading,
   disabled,
   onPress,
@@ -91,7 +102,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         borderColor: variantStyle.border
           ? resolve(variantStyle.border)
           : undefined,
-        flexDirection: 'row',
+        flexDirection: rtl ? 'row-reverse' : 'row',
+        ...(fullWidth && {alignSelf: 'stretch' as const}),
         alignItems: 'center',
         justifyContent: 'center',
         gap: spacing.md,
@@ -104,10 +116,15 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         <ActivityIndicator color={resolve(variantStyle.label)} />
       ) : (
         <>
-          {!!icon && <Icon name={icon} size={18} color={variantStyle.label} />}
-          <Text variant="headline" color={variantStyle.label}>
+          {!!icon && iconPosition === 'start' && (
+            <Icon name={icon} size={18} color={variantStyle.label} />
+          )}
+          <Text variant="headline" color={variantStyle.label} rtl={rtl}>
             {title}
           </Text>
+          {!!icon && iconPosition === 'end' && (
+            <Icon name={icon} size={18} color={variantStyle.label} />
+          )}
         </>
       )}
     </Pressable>

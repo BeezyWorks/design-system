@@ -6,10 +6,23 @@ import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
 import {Icon, IconName} from '../Icon'
 
+/** `plain` — just the glyph; `filled` — on a quiet round chip (steppers);
+ * `accent` — on a solid brand circle (a primary inline action). */
+export type IconButtonVariant = 'plain' | 'filled' | 'accent'
+
+const variantBackground: Record<IconButtonVariant, SemanticColor | undefined> =
+  {
+    plain: undefined,
+    filled: SemanticColor.SurfaceSelected,
+    accent: SemanticColor.AccentPrimary,
+  }
+
 export interface IconButtonProps {
   name: IconName
   size?: number
+  /** Default `TextPrimary` (`TextInverse` on the `accent` variant). */
   color?: SemanticColor
+  variant?: IconButtonVariant
   padding?: SpacingToken
   disabled?: boolean
   onPress?: () => void
@@ -22,7 +35,10 @@ export interface IconButtonProps {
 export const IconButton: React.FunctionComponent<IconButtonProps> = ({
   name,
   size = 24,
-  color = SemanticColor.TextPrimary,
+  variant = 'plain',
+  color = variant === 'accent'
+    ? SemanticColor.TextInverse
+    : SemanticColor.TextPrimary,
   padding = 'sm',
   disabled,
   onPress,
@@ -43,9 +59,11 @@ export const IconButton: React.FunctionComponent<IconButtonProps> = ({
         padding: spacing[padding],
         borderRadius: radius.full,
         opacity: disabled ? 0.4 : pressed ? 0.6 : 1,
-        backgroundColor: pressed
-          ? resolve(SemanticColor.SurfaceCard)
-          : 'transparent',
+        backgroundColor: variantBackground[variant]
+          ? resolve(variantBackground[variant])
+          : pressed
+            ? resolve(SemanticColor.SurfaceCard)
+            : 'transparent',
       })}
     >
       <Icon name={name} size={size} color={color} />

@@ -23,6 +23,15 @@ export type Spacing = SpacingToken | number
 const resolveSpacing = (value: Spacing | undefined): number | undefined =>
   typeof value === 'number' ? value : value ? spacing[value] : undefined
 
+const resolveEdge = (
+  value: 'hairline' | 'none' | number | undefined,
+): number | undefined =>
+  typeof value === 'number'
+    ? value
+    : value === 'hairline'
+      ? StyleSheet.hairlineWidth
+      : undefined
+
 const directionMap: Record<Direction, FlexStyle['flexDirection']> = {
   row: 'row',
   rowReverse: 'row-reverse',
@@ -74,6 +83,12 @@ export interface StackProps extends Pick<
   /** Exact flex-basis dimensions — a declarative scalar, not a style object. */
   width?: number | `${number}%`
   height?: number | `${number}%`
+  /** Caps the width — e.g. a readable column centered on a wide screen
+   * (pair with `alignSelf="center"`). */
+  maxWidth?: number
+  minHeight?: number
+  /** Overrides the parent's `align` for this one child. */
+  alignSelf?: Align
   /** Stretch to fill the parent in both axes. */
   fill?: boolean
   background?: SemanticColor
@@ -92,6 +107,8 @@ export interface StackProps extends Pick<
    * bottom edge. */
   borderWidth?: number
   borderBottomWidth?: 'hairline' | 'none' | number
+  /** A divider-only top edge — pairs with `borderColor`. */
+  borderTopWidth?: 'hairline' | 'none' | number
   borderColor?: SemanticColor
 }
 
@@ -115,6 +132,9 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   grow,
   width,
   height,
+  maxWidth,
+  minHeight,
+  alignSelf,
   fill,
   background,
   radius: radiusToken,
@@ -129,6 +149,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   zIndex,
   borderWidth,
   borderBottomWidth,
+  borderTopWidth,
   borderColor,
   ...viewProps
 }) => {
@@ -154,6 +175,10 @@ export const Stack: React.FunctionComponent<StackProps> = ({
       flexGrow: grow ? 1 : undefined,
       width: fill ? '100%' : width,
       height: fill ? '100%' : height,
+      // Only present when set, so existing layouts' styles are unchanged.
+      ...(maxWidth !== undefined && {maxWidth}),
+      ...(minHeight !== undefined && {minHeight}),
+      ...(alignSelf && {alignSelf: alignMap[alignSelf]}),
       backgroundColor,
       borderRadius: radiusToken ? radius[radiusToken] : undefined,
       overflow,
@@ -165,12 +190,10 @@ export const Stack: React.FunctionComponent<StackProps> = ({
       opacity,
       zIndex,
       borderWidth,
-      borderBottomWidth:
-        typeof borderBottomWidth === 'number'
-          ? borderBottomWidth
-          : borderBottomWidth === 'hairline'
-            ? StyleSheet.hairlineWidth
-            : undefined,
+      borderBottomWidth: resolveEdge(borderBottomWidth),
+      ...(borderTopWidth !== undefined && {
+        borderTopWidth: resolveEdge(borderTopWidth),
+      }),
       borderColor: borderColor ? resolve(borderColor) : undefined,
     } as FlexStyle,
     // Must come *after* the object above, not before: RN's style-array
