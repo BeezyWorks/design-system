@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/BeezyWorks/design-system/compare/v0.4.0...v0.5.0) (2026-09-24)
+
+
+### Features
+
+* **components:** add SearchField and a search icon ([6bf2b4f](https://github.com/BeezyWorks/design-system/commit/6bf2b4f17719cafef63e2f60dfc6c95c4fa42d5f))
+
 # [0.4.0](https://github.com/BeezyWorks/design-system/compare/v0.3.0...v0.4.0) (2026-09-24)
 
 
