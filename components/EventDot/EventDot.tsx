@@ -1,26 +1,29 @@
 import React from 'react'
 import {View} from 'react-native'
 import {radius} from '../../radius'
-import {eventCategoryColors, EventCategory} from '../../colors'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 export interface EventDotProps {
-  category: EventCategory
+  color: SemanticColor
   size?: number
 }
 
-/** The small calendar-event color marker — the one place
- * `eventCategoryColors` is read, so a category name is the only thing any
- * screen ever has to pass in. */
+/** A small round color marker — a calendar event, a status. Usually one of
+ * the `Accent*` colors. */
 export const EventDot: React.FunctionComponent<EventDotProps> = ({
-  category,
+  color,
   size = 8,
-}) => (
-  <View
-    style={{
-      width: size,
-      height: size,
-      borderRadius: radius.full,
-      backgroundColor: eventCategoryColors[category],
-    }}
-  />
-)
+}) => {
+  const resolve = useColorResolver()
+  return (
+    <View
+      style={{
+        width: size,
+        height: size,
+        borderRadius: radius.full,
+        backgroundColor: resolve(color),
+      }}
+    />
+  )
+}

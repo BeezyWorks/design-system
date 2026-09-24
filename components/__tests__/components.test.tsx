@@ -13,7 +13,7 @@ import {Spacer} from '../Spacer'
 import {Text} from '../Text'
 import {ToggleSetting} from '../ToggleSetting'
 import {ToggleSwitch} from '../ToggleSwitch'
-import {eventCategoryColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
 import {
   pressables,
   renderWithTheme,
@@ -22,6 +22,19 @@ import {
 
 const expectSnapshot = (ui: React.ReactElement, theme: 'light' | 'dark') =>
   expect(renderWithTheme(ui, theme).toJSON()).toMatchSnapshot()
+
+// The accent each (formerly named) event category maps to — test names are
+// kept so the recorded snapshots still line up.
+const categoryAccents = {
+  fastDay: SemanticColor.AccentDanger,
+  erevMinorHoliday: SemanticColor.AccentAlertFaded,
+  minorHoliday: SemanticColor.AccentAlert,
+  roshChodesh: SemanticColor.AccentAlert,
+  unspecified: SemanticColor.AccentWarning,
+  yomTov: SemanticColor.AccentInfo,
+  erevYomTov: SemanticColor.AccentInfoFaded,
+  userEvent: SemanticColor.AccentSuccess,
+} as const
 
 describe.each(themes)('components (%s theme)', (theme) => {
   describe('Button', () => {
@@ -216,11 +229,12 @@ describe.each(themes)('components (%s theme)', (theme) => {
     })
   })
 
-  it.each(
-    Object.keys(eventCategoryColors) as Array<keyof typeof eventCategoryColors>,
-  )('EventDot %s', (category) => {
-    expectSnapshot(<EventDot category={category} />, theme)
-  })
+  it.each(Object.keys(categoryAccents) as Array<keyof typeof categoryAccents>)(
+    'EventDot %s',
+    (category) => {
+      expectSnapshot(<EventDot color={categoryAccents[category]} />, theme)
+    },
+  )
 
   describe('MenuItemRow', () => {
     it('with a divider', () => {

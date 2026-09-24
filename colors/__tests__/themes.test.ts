@@ -84,6 +84,8 @@ describe('mode-independent colors match the legacy fixed exports', () => {
     expect(theme[S.SurfaceSwatchSystem]).toBe(legacy.ThemeSwatchSystem)
     expect(theme[S.OverlayShadow]).toBe(legacy.Black)
     expect(theme[S.OverlayScrimSoft]).toBe(withOpacity(legacy.Black, 0.15))
+    // The Luach hero scrim always used the light theme's scrim.
+    expect(theme[S.OverlayPhotoScrim]).toBe(legacy.LightTheme.scrimColor)
   })
 
   it('toggle tracks', () => {

@@ -38,6 +38,7 @@ export const SemanticColor = {
   // Overlay
   OverlayScrim: 'overlayScrim',
   OverlayScrimSoft: 'overlayScrimSoft',
+  OverlayPhotoScrim: 'overlayPhotoScrim',
   OverlayShadow: 'overlayShadow',
 
   // Accent

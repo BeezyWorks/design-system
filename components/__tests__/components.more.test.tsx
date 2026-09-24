@@ -34,7 +34,7 @@ import {TabBarIcon} from '../TabBarIcon'
 import {TextField} from '../TextField'
 import {Text} from '../Text'
 import {Scrim} from '../Scrim'
-import {eventCategoryColors, SemanticColor} from '../../colors'
+import {SemanticColor} from '../../colors'
 import {
   pressables,
   renderWithTheme,
@@ -46,14 +46,28 @@ const expectSnapshot = (ui: React.ReactElement, theme: 'light' | 'dark') =>
 
 const noop = () => {}
 
+// The accent each (formerly named) event category maps to — test names are
+// kept so the recorded snapshots still line up.
+const categoryAccents = {
+  fastDay: SemanticColor.AccentDanger,
+  erevMinorHoliday: SemanticColor.AccentAlertFaded,
+  minorHoliday: SemanticColor.AccentAlert,
+  roshChodesh: SemanticColor.AccentAlert,
+  unspecified: SemanticColor.AccentWarning,
+  yomTov: SemanticColor.AccentInfo,
+  erevYomTov: SemanticColor.AccentInfoFaded,
+  userEvent: SemanticColor.AccentSuccess,
+} as const
+
 describe.each(themes)('more components (%s theme)', (theme) => {
   describe('calendar / agenda', () => {
     it.each(
-      Object.keys(eventCategoryColors) as Array<
-        keyof typeof eventCategoryColors
-      >,
+      Object.keys(categoryAccents) as Array<keyof typeof categoryAccents>,
     )('AgendaRow %s', (category) => {
-      expectSnapshot(<AgendaRow name="Yahrzeit" category={category} />, theme)
+      expectSnapshot(
+        <AgendaRow name="Yahrzeit" accent={categoryAccents[category]} />,
+        theme,
+      )
     })
 
     it('AgendaSectionHeader', () => {

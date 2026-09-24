@@ -40,6 +40,7 @@ export const lightTheme: ThemeDefinition = {
 
   [S.OverlayScrim]: C.BlackScrim50,
   [S.OverlayScrimSoft]: C.BlackScrim15,
+  [S.OverlayPhotoScrim]: C.BlackScrim50,
   [S.OverlayShadow]: C.Black,
 
   [S.AccentPrimary]: C.SiddurBlue,
@@ -86,6 +87,7 @@ export const darkTheme: ThemeDefinition = {
 
   [S.OverlayScrim]: C.BlackScrim55,
   [S.OverlayScrimSoft]: C.BlackScrim15,
+  [S.OverlayPhotoScrim]: C.BlackScrim50,
   [S.OverlayShadow]: C.Black,
 
   [S.AccentPrimary]: C.SiddurBlueLight,
