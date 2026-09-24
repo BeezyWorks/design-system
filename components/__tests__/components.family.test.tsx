@@ -6,6 +6,7 @@ import {Card} from '../Card'
 import {Chip} from '../Chip'
 import {DetailOverlay} from '../DetailOverlay'
 import {EmptyState} from '../EmptyState'
+import {FontSwatch} from '../FontSwatch'
 import {GradientCard} from '../GradientCard'
 import {Grid} from '../Grid'
 import {IconButton} from '../IconButton'
@@ -17,6 +18,7 @@ import {Text} from '../Text'
 import {TextField} from '../TextField'
 import {ThemeSwatch} from '../ThemeSwatch'
 import {ToggleSetting} from '../ToggleSetting'
+import {LatinTypeface, Typeface} from '../../typography'
 import {
   pressables,
   renderWithTheme,
@@ -90,6 +92,28 @@ describe.each(themes)('family components (%s theme)', (theme) => {
         <ThemeSwatch
           mode="system"
           label="System"
+          selected={false}
+          onPress={noop}
+        />
+      </>,
+      theme,
+    )
+  })
+
+  it('FontSwatch previews each typeface', () => {
+    expectSnapshot(
+      <>
+        <FontSwatch
+          script="hebrew"
+          typeface={Typeface.FrankRuhlLibre}
+          label="Frank Ruhl Libre"
+          selected
+          onPress={noop}
+        />
+        <FontSwatch
+          script="latin"
+          typeface={LatinTypeface.Inter}
+          label="Inter"
           selected={false}
           onPress={noop}
         />
