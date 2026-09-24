@@ -26,11 +26,16 @@ export const type = {
     fontSize: 30,
     fontWeight: '700',
   },
+  // A card/section title. Frank Ruhl Libre draws its Latin and Hebrew as a
+  // pair, so an English and a Hebrew title carry the same weight and size —
+  // the old 12px uppercase system-font style made Latin caps look far larger
+  // than Hebrew, which has no case. Bold face stands in for "600", as in
+  // `itemHeader`.
   sectionHeader: {
-    fontSize: 12,
+    fontFamily: FontFamily.FrankRuhlLibreBold,
+    fontSize: 15,
     fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: 0.72, // 0.06em @ 12px — RN has no em unit, so pre-multiplied
+    letterSpacing: 0.3, // 0.02em @ 15px, pre-multiplied
   },
   item: {
     fontFamily: FontFamily.FrankRuhlLibre,

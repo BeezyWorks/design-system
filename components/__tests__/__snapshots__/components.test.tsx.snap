@@ -1,6 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-
 exports[`components (dark theme) Button destructive variant 1`] = `
 <View
   accessibilityLabel="Save"
@@ -1422,27 +1421,68 @@ exports[`components (dark theme) MenuItemRow last in a section has no divider 1`
       ]
     }
   >
-    <Text
+    <View
       style={
         [
           {
-            "color": "#F0ECE4",
-            "fontFamily": "FrankRuhlLibre_400Regular",
-            "fontSize": 17,
-            "fontWeight": "400",
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
           },
-          {
-            "color": "#F0ECE4",
-          },
-          null,
-          null,
           null,
           null,
         ]
       }
     >
-      מעריב
-    </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#F0ECE4",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            {
+              "color": "#F0ECE4",
+              "textAlign": "right",
+              "writingDirection": "rtl",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        מעריב
+      </Text>
+    </View>
     <View
       style={
         [
@@ -1635,27 +1675,68 @@ exports[`components (dark theme) MenuItemRow with a divider 1`] = `
       ]
     }
   >
-    <Text
+    <View
       style={
         [
           {
-            "color": "#F0ECE4",
-            "fontFamily": "FrankRuhlLibre_400Regular",
-            "fontSize": 17,
-            "fontWeight": "400",
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
           },
-          {
-            "color": "#F0ECE4",
-          },
-          null,
-          null,
           null,
           null,
         ]
       }
     >
-      שחרית
-    </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#F0ECE4",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            {
+              "color": "#F0ECE4",
+              "textAlign": "right",
+              "writingDirection": "rtl",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        שחרית
+      </Text>
+    </View>
     <View
       style={
         [
@@ -2431,10 +2512,10 @@ exports[`components (dark theme) Text sectionHeader variant 1`] = `
     [
       {
         "color": "rgba(240, 236, 228, 0.5)",
-        "fontSize": 12,
+        "fontFamily": "FrankRuhlLibre_700Bold",
+        "fontSize": 15,
         "fontWeight": "600",
-        "letterSpacing": 0.72,
-        "textTransform": "uppercase",
+        "letterSpacing": 0.3,
       },
       {
         "color": "rgba(240, 236, 228, 0.5)",
@@ -4465,27 +4546,68 @@ exports[`components (light theme) MenuItemRow last in a section has no divider 1
       ]
     }
   >
-    <Text
+    <View
       style={
         [
           {
-            "color": "#2A2521",
-            "fontFamily": "FrankRuhlLibre_400Regular",
-            "fontSize": 17,
-            "fontWeight": "400",
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
           },
-          {
-            "color": "#2A2521",
-          },
-          null,
-          null,
           null,
           null,
         ]
       }
     >
-      מעריב
-    </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#2A2521",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            {
+              "color": "#2A2521",
+              "textAlign": "right",
+              "writingDirection": "rtl",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        מעריב
+      </Text>
+    </View>
     <View
       style={
         [
@@ -4678,27 +4800,68 @@ exports[`components (light theme) MenuItemRow with a divider 1`] = `
       ]
     }
   >
-    <Text
+    <View
       style={
         [
           {
-            "color": "#2A2521",
-            "fontFamily": "FrankRuhlLibre_400Regular",
-            "fontSize": 17,
-            "fontWeight": "400",
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": 4,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
           },
-          {
-            "color": "#2A2521",
-          },
-          null,
-          null,
           null,
           null,
         ]
       }
     >
-      שחרית
-    </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#2A2521",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            {
+              "color": "#2A2521",
+              "textAlign": "right",
+              "writingDirection": "rtl",
+            },
+            null,
+            null,
+            null,
+            null,
+          ]
+        }
+      >
+        שחרית
+      </Text>
+    </View>
     <View
       style={
         [
@@ -5474,10 +5637,10 @@ exports[`components (light theme) Text sectionHeader variant 1`] = `
     [
       {
         "color": "rgba(42, 37, 33, 0.5)",
-        "fontSize": 12,
+        "fontFamily": "FrankRuhlLibre_700Bold",
+        "fontSize": 15,
         "fontWeight": "600",
-        "letterSpacing": 0.72,
-        "textTransform": "uppercase",
+        "letterSpacing": 0.3,
       },
       {
         "color": "rgba(42, 37, 33, 0.5)",
