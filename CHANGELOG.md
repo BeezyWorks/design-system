@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/BeezyWorks/design-system/compare/v0.3.0...v0.4.0) (2026-09-24)
+
+
+### Features
+
+* **components:** add an optional detail line to MenuItemRow ([1b59fc7](https://github.com/BeezyWorks/design-system/commit/1b59fc73b396620f56f00197f7a8e43c972b5fe6))
+
 # [0.3.0](https://github.com/BeezyWorks/design-system/compare/v0.2.0...v0.3.0) (2026-09-24)
 
 
