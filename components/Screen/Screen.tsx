@@ -5,8 +5,9 @@ import {BottomTabBarHeightContext} from 'expo-router/js-tabs'
 import {
   TAB_BAR_CONTENT_GAP,
   SIDE_NAV_CONTENT_GAP,
-} from 'navigation/tabBar.constants'
-import {useIsWideWebNav, useSideNavWidth} from 'navigation/sideNav.hook'
+  useIsWideWebNav,
+  useSideNavWidth,
+} from '../../layout'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {isFloatingTabBar} from '../TabBarBackground'

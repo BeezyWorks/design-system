@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import {PanResponder, StyleSheet, Text, View} from 'react-native'
-import {BottomSheetHeaderProps} from 'modal/components/bottomSheet.props'
+import {BottomSheetHeaderProps} from '../BottomSheet/bottomSheet.props'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {SlideIndicator} from '../SlideIndicator'

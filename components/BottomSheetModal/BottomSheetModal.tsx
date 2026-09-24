@@ -1,9 +1,8 @@
 import React, {useRef, useEffect} from 'react'
-import {StyleSheet, View} from 'react-native'
+import {StyleSheet, View, useWindowDimensions} from 'react-native'
 import {useSpring, animated} from '@react-spring/native'
-import {useDimensions} from '@hooks'
-import {useModalContext} from 'modal/context/modal-context'
-import {BottomSheetProps} from 'modal/components/bottomSheet.props'
+import {useSheetHost} from './SheetHost'
+import {BottomSheetProps} from '../BottomSheet/bottomSheet.props'
 import {AnimatedScrim} from '../Scrim'
 import {BottomSheet} from '../BottomSheet'
 
@@ -16,15 +15,15 @@ export const BottomSheetModal = ({
   headerRight,
   children,
 }: BottomSheetProps) => {
-  const {height: screenHeight} = useDimensions()
+  const {height: screenHeight} = useWindowDimensions()
   const contentHeight = useRef(0)
-  const {setModal, dismissed, dismiss} = useModalContext()
+  const {onClosed, dismissed, dismiss} = useSheetHost()
   // `dismissed` as read at the moment the close animation actually
   // *finishes* — not as captured in the effect's closure below. Without
   // this, a `showModal()` call for a brand-new sheet that lands while a
   // previous sheet's close animation is still resolving gets clobbered:
   // the stale `onResolve` still fires and clears the config that was just
-  // set for the *new* sheet, since it unconditionally calls `setModal()`
+  // set for the *new* sheet, since it unconditionally calls `onClosed()`
   // with no argument. Guarding on the current (not closed-over) value
   // means a reopen that happens mid-close leaves the newer config alone.
   const dismissedRef = useRef(dismissed)
@@ -42,7 +41,7 @@ export const BottomSheetModal = ({
       api.start({
         to: {translateY: screenHeight},
         onResolve: () => {
-          if (dismissedRef.current) setModal()
+          if (dismissedRef.current) onClosed()
         },
       })
     } else {
@@ -54,7 +53,7 @@ export const BottomSheetModal = ({
       // on first mount, where it's already headed here regardless.
       api.start({to: {translateY: 0}})
     }
-  }, [dismissed, api, screenHeight, setModal])
+  }, [dismissed, api, screenHeight, onClosed])
 
   const onPan = (dy: number) => {
     api.start({immediate: true, translateY: Math.max(dy, 0)})

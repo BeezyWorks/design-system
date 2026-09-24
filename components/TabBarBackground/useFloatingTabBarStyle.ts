@@ -4,7 +4,7 @@ import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
 import {radius} from '../../radius'
 import {useShadow} from '../../shadows'
-import {TAB_BAR_HEIGHT, TAB_BAR_MARGIN} from 'navigation/tabBar.constants'
+import {TAB_BAR_HEIGHT, TAB_BAR_MARGIN} from '../../layout'
 
 /** The floating, glass tab-bar pill is an iOS design (Liquid Glass has no
  * equivalent on Android/web) — this is the one place that decides the tab

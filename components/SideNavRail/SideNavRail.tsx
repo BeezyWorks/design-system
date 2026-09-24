@@ -6,7 +6,7 @@ import {Stack} from '../Stack'
 
 export interface SideNavRailProps {
   children?: React.ReactNode
-  /** Fixed rail width — a layout constant owned by `navigation/tabBar.constants.ts`,
+  /** Fixed rail width — a layout constant owned by `layout/chrome.ts`,
    * not part of the spacing scale (see that file's own comment). */
   width: number
   blurTint: 'systemChromeMaterialDark' | 'systemChromeMaterialLight'

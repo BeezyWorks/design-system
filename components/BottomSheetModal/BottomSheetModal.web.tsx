@@ -7,9 +7,9 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native'
-import {useModalContext} from 'modal/context/modal-context'
-import {BottomSheetProps} from 'modal/components/bottomSheet.props'
-import {SIDE_NAV_BREAKPOINT} from 'navigation/tabBar.constants'
+import {useSheetHost} from './SheetHost'
+import {BottomSheetProps} from '../BottomSheet/bottomSheet.props'
+import {SIDE_NAV_BREAKPOINT} from '../../layout'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {Icon} from '../Icon'
@@ -25,7 +25,7 @@ const PANEL_WIDTH = 380
 // almost always a touch device in portrait, where a sheet rising from the
 // bottom is the familiar mobile-web pattern — a right-edge panel there
 // would have nowhere to dock but nearly the whole screen anyway. Same
-// setModal/dismiss/dismissed contract as the native version, and the same
+// onClosed/dismiss/dismissed contract as the native version, and the same
 // enter/exit slide, just driven by RN's Animated (web has no pan gesture
 // to drive a spring off of, and no drag handle — dismiss is tap-X or
 // tap-scrim, so the header carries an explicit close icon native omits).
@@ -36,7 +36,7 @@ export const BottomSheetModal = ({
   headerRight,
   children,
 }: BottomSheetProps) => {
-  const {dismiss, dismissed, setModal} = useModalContext()
+  const {dismiss, dismissed, onClosed} = useSheetHost()
   // See the native `BottomSheetModal`'s identical comment: guards against
   // a stale close-animation callback clearing a sheet that was reopened
   // while the previous one was still animating out.
@@ -81,9 +81,9 @@ export const BottomSheetModal = ({
       duration: 160,
       useNativeDriver: true,
     }).start(({finished}) => {
-      if (finished && dismissedRef.current) setModal()
+      if (finished && dismissedRef.current) onClosed()
     })
-  }, [dismissed, progress, setModal])
+  }, [dismissed, progress, onClosed])
 
   const translate = progress.interpolate({
     inputRange: [0, 1],

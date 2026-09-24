@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  BottomSheetHeaderProps,
-  BottomSheetProps,
-} from 'modal/components/bottomSheet.props'
+import {BottomSheetHeaderProps, BottomSheetProps} from './bottomSheet.props'
 import {LayoutChangeEvent, StyleSheet, View} from 'react-native'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
