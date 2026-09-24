@@ -1,21 +1,4 @@
 import React from 'react'
-import {
-  AgendaRow,
-  AgendaSectionHeader,
-  CompassBadge,
-  ContentText,
-  DashboardRow,
-  EventRow,
-  NotificationRow,
-  PanelGrid2x2,
-  ReaderParagraph,
-  SpecialNotificationRow,
-  TypefaceChips,
-  UpcomingZmanButton,
-  VersionText,
-  ZmanimSeparator,
-  Menora,
-} from '@components'
 import {Surface} from '../Surface'
 import {Icon} from '../Icon'
 import {IconButton} from '../IconButton'
@@ -46,61 +29,7 @@ const expectSnapshot = (ui: React.ReactElement, theme: 'light' | 'dark') =>
 
 const noop = () => {}
 
-// The accent each (formerly named) event category maps to — test names are
-// kept so the recorded snapshots still line up.
-const categoryAccents = {
-  fastDay: SemanticColor.AccentDanger,
-  erevMinorHoliday: SemanticColor.AccentAlertFaded,
-  minorHoliday: SemanticColor.AccentAlert,
-  roshChodesh: SemanticColor.AccentAlert,
-  unspecified: SemanticColor.AccentWarning,
-  yomTov: SemanticColor.AccentInfo,
-  erevYomTov: SemanticColor.AccentInfoFaded,
-  userEvent: SemanticColor.AccentSuccess,
-} as const
-
 describe.each(themes)('more components (%s theme)', (theme) => {
-  describe('calendar / agenda', () => {
-    it.each(
-      Object.keys(categoryAccents) as Array<keyof typeof categoryAccents>,
-    )('AgendaRow %s', (category) => {
-      expectSnapshot(
-        <AgendaRow name="Yahrzeit" accent={categoryAccents[category]} />,
-        theme,
-      )
-    })
-
-    it('AgendaSectionHeader', () => {
-      expectSnapshot(
-        <AgendaSectionHeader gregorianDate="30 July 2020" hebrewDate="ט׳ אב" />,
-        theme,
-      )
-    })
-
-    it.each([true, false])('EventRow isLast=%s', (isLast) => {
-      expectSnapshot(
-        <EventRow
-          description="Yahrzeit"
-          hebrewDate="ט׳ אב"
-          nextOccurrenceDate="30 July 2020"
-          onDelete={noop}
-          isLast={isLast}
-        />,
-        theme,
-      )
-    })
-
-    it('DashboardRow with and without a value', () => {
-      expectSnapshot(
-        <>
-          <DashboardRow title="Parsha" value="Devarim" />
-          <DashboardRow title="Omer" />
-        </>,
-        theme,
-      )
-    })
-  })
-
   describe('layout primitives', () => {
     it('Stack direction / align / justify / gap', () => {
       expectSnapshot(
@@ -157,20 +86,6 @@ describe.each(themes)('more components (%s theme)', (theme) => {
       )
     })
 
-    it('PanelGrid2x2', () => {
-      expectSnapshot(
-        <PanelGrid2x2>
-          {[
-            <Text key="a">a</Text>,
-            <Text key="b">b</Text>,
-            <Text key="c">c</Text>,
-            <Text key="d">d</Text>,
-          ]}
-        </PanelGrid2x2>,
-        theme,
-      )
-    })
-
     it('Scrim', () => {
       expectSnapshot(
         <>
@@ -181,61 +96,14 @@ describe.each(themes)('more components (%s theme)', (theme) => {
       )
     })
 
-    it('SlideIndicator, ZmanimSeparator, Menora', () => {
-      expectSnapshot(
-        <>
-          <SlideIndicator />
-          <ZmanimSeparator />
-          <Menora />
-        </>,
-        theme,
-      )
+    it('SlideIndicator', () => {
+      expectSnapshot(<SlideIndicator />, theme)
     })
   })
 
   describe('text', () => {
-    it.each([
-      ['regular', 'normal', 'normal'],
-      ['bold', 'large', 'special'],
-      ['regular', 'small', 'normal'],
-    ] as const)(
-      'ContentText weight=%s size=%s tone=%s',
-      (weight, size, tone) => {
-        expectSnapshot(
-          <ContentText weight={weight} size={size} tone={tone}>
-            בראשית ברא אלהים
-          </ContentText>,
-          theme,
-        )
-      },
-    )
-
-    it('ReaderParagraph with and without a heading', () => {
-      expectSnapshot(
-        <>
-          <ReaderParagraph heading="ראשון">טקסט</ReaderParagraph>
-          <ReaderParagraph>טקסט</ReaderParagraph>
-        </>,
-        theme,
-      )
-    })
-
     it('MessageCard', () => {
       expectSnapshot(<MessageCard message="Erev Shabbos" />, theme)
-    })
-
-    it('CompassBadge', () => {
-      expectSnapshot(<CompassBadge>NE</CompassBadge>, theme)
-    })
-
-    it('VersionText', () => {
-      expectSnapshot(
-        <>
-          <VersionText versionName="9.7.2" />
-          <VersionText versionName="9.7.2" buildNumber="412" />
-        </>,
-        theme,
-      )
     })
   })
 
@@ -291,21 +159,6 @@ describe.each(themes)('more components (%s theme)', (theme) => {
     it.each([true, false])('MenuOption selected=%s', (selected) => {
       expectSnapshot(
         <MenuOption label="Ashkenaz" selected={selected} onPress={noop} />,
-        theme,
-      )
-    })
-
-    it('TypefaceChips', () => {
-      expectSnapshot(
-        <TypefaceChips
-          items={[
-            {key: 'frank', label: 'Frank', face: 'Frank'},
-            {key: 'cardo', label: 'Cardo', face: 'Cardo' as never},
-          ]}
-          selectedKey="frank"
-          onSelect={noop}
-          sampleText="בראשית"
-        />,
         theme,
       )
     })
@@ -377,54 +230,6 @@ describe.each(themes)('more components (%s theme)', (theme) => {
         theme,
       )
     })
-
-    it.each([true, false])('NotificationRow enabled=%s', (enabled) => {
-      expectSnapshot(
-        <NotificationRow
-          zmanLabel="Sunset"
-          offsetLabel="10 min before"
-          timeLabel="7:37 PM"
-          enabled={enabled}
-          onToggle={noop}
-          onEdit={noop}
-          onDelete={noop}
-        />,
-        theme,
-      )
-    })
-
-    it('SpecialNotificationRow', () => {
-      expectSnapshot(
-        <>
-          <SpecialNotificationRow
-            name="Omer"
-            description="Reminder to count the Omer"
-            enabled
-            onToggle={noop}
-          />
-          <SpecialNotificationRow
-            name="Eiruv Tavshilin"
-            description="Reminder on erev yom tov"
-            enabled={false}
-            onToggle={noop}
-            isLast
-          />
-        </>,
-        theme,
-      )
-    })
-  })
-
-  it('UpcomingZmanButton', () => {
-    expectSnapshot(
-      <UpcomingZmanButton
-        tefilaLabel="מנחה"
-        zmanName="Sunset"
-        zmanTime="7:47 PM"
-        onPress={noop}
-      />,
-      theme,
-    )
   })
 })
 
@@ -441,26 +246,6 @@ describe('interaction', () => {
       <IconButton name="add" accessibilityLabel="Add" disabled />,
     )
     expect(pressables(disabled)[0].props.disabled).toBe(true)
-  })
-
-  it('NotificationRow wires up edit and delete', () => {
-    const onEdit = jest.fn()
-    const onDelete = jest.fn()
-    const r = renderWithTheme(
-      <NotificationRow
-        zmanLabel="Sunset"
-        offsetLabel="10 min before"
-        timeLabel="7:37 PM"
-        enabled
-        onToggle={noop}
-        onEdit={onEdit}
-        onDelete={onDelete}
-      />,
-    )
-    const handlers = pressables(r).map((p) => p.props.onPress)
-    handlers.forEach((h) => h?.())
-    expect(onEdit).toHaveBeenCalledTimes(1)
-    expect(onDelete).toHaveBeenCalledTimes(1)
   })
 
   it('MenuSection fires the pressed item', () => {

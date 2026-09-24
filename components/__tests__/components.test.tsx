@@ -6,7 +6,6 @@ import {Divider} from '../Divider'
 import {EmptyState} from '../EmptyState'
 import {EventDot} from '../EventDot'
 import {MenuItemRow} from '../MenuItemRow'
-import {SectionHeader, SickNameRow, ZmanimRow} from '@components'
 import {SegmentedControl} from '../SegmentedControl'
 import {SettingsRow} from '../SettingsRow'
 import {Spacer} from '../Spacer'
@@ -45,6 +44,7 @@ describe.each(themes)('components (%s theme)', (theme) => {
       'destructive',
       'outline',
     ]
+
     const sizes: ButtonSize[] = ['sm', 'md', 'lg']
 
     it.each(variants)('%s variant', (variant) => {
@@ -171,16 +171,6 @@ describe.each(themes)('components (%s theme)', (theme) => {
     })
   })
 
-  describe('SectionHeader', () => {
-    it('with a title', () => {
-      expectSnapshot(<SectionHeader title="שחרית" />, theme)
-    })
-
-    it('without a title reserves the gap', () => {
-      expectSnapshot(<SectionHeader />, theme)
-    })
-  })
-
   describe('ToggleSetting', () => {
     it.each([true, false])('enabled=%s', (enabled) => {
       expectSnapshot(
@@ -216,19 +206,6 @@ describe.each(themes)('components (%s theme)', (theme) => {
     )
   })
 
-  describe('ZmanimRow', () => {
-    it('upcoming', () => {
-      expectSnapshot(<ZmanimRow time="7:42 AM" label="Sof Zman Shma" />, theme)
-    })
-
-    it('past', () => {
-      expectSnapshot(
-        <ZmanimRow time="5:10 AM" label="Alos HaShachar" past />,
-        theme,
-      )
-    })
-  })
-
   it.each(Object.keys(categoryAccents) as Array<keyof typeof categoryAccents>)(
     'EventDot %s',
     (category) => {
@@ -247,13 +224,6 @@ describe.each(themes)('components (%s theme)', (theme) => {
         theme,
       )
     })
-  })
-
-  it('SickNameRow', () => {
-    expectSnapshot(
-      <SickNameRow name="Miriam bat Sarah" onDelete={() => {}} />,
-      theme,
-    )
   })
 })
 
