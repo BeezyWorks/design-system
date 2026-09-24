@@ -105,6 +105,21 @@ dates. Pure (no React).
   are snapshot tests rendered through `testing/renderWithTheme` (this folder's
   helper, using only `DesignSystemProvider`).
 
+## Versioning
+
+Releases are cut by semantic-release on every push to `main`, from
+conventional commits (enforced by a commitlint hook): `fix:` → patch,
+`feat:` → minor. While the version is `0.x`, a breaking change
+(`feat!:` or a `BREAKING CHANGE:` footer) also bumps the minor; drop the
+`releaseRules` override in `.releaserc.json` to go to 1.0.
+
+Breaking means an app has to change code: renaming or removing a
+`SemanticColor` token, a component, a prop or an exported value, or changing
+what a persisted value (`Typeface`, `ContentSize`, `Leading`) means.
+
+Apps pin the submodule to a release tag and bump it deliberately
+(`git -C packages/design checkout vX.Y.Z`), reading `CHANGELOG.md` first.
+
 ## Peer dependencies
 
 Declared in `package.json`. The barrel is `export *`, so an app must install
