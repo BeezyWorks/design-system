@@ -7,6 +7,7 @@ import {Chip} from '../Chip'
 import {DetailOverlay} from '../DetailOverlay'
 import {EmptyState} from '../EmptyState'
 import {FontSwatch} from '../FontSwatch'
+import {FontSwatchPicker} from '../FontSwatchPicker'
 import {GradientCard} from '../GradientCard'
 import {Grid} from '../Grid'
 import {IconButton} from '../IconButton'
@@ -17,6 +18,7 @@ import {StatCard} from '../StatCard'
 import {Text} from '../Text'
 import {TextField} from '../TextField'
 import {ThemeSwatch} from '../ThemeSwatch'
+import {ThemeSwatchPicker} from '../ThemeSwatchPicker'
 import {ToggleSetting} from '../ToggleSetting'
 import {LatinTypeface, Typeface} from '../../typography'
 import {
@@ -120,6 +122,46 @@ describe.each(themes)('family components (%s theme)', (theme) => {
       </>,
       theme,
     )
+  })
+
+  it('ThemeSwatchPicker relabels and reports the pressed mode', () => {
+    const onChange = jest.fn()
+    const tree = renderWithTheme(
+      <ThemeSwatchPicker
+        value="sepia"
+        onChange={onChange}
+        labels={{light: 'White', dark: 'Black'}}
+        rtl
+      />,
+      'light',
+    )
+    const white = tree.root.findAll(
+      (n) => n.props.accessibilityLabel === 'White' && !!n.props.onPress,
+    )[0]
+    act(() => white.props.onPress())
+    expect(onChange).toHaveBeenCalledWith('light')
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
+
+  it('FontSwatchPicker reports the pressed key', () => {
+    const onSelect = jest.fn()
+    const tree = renderWithTheme(
+      <FontSwatchPicker
+        script="hebrew"
+        selectedKey="a"
+        onSelect={onSelect}
+        options={[
+          {key: 'a', label: 'Frank Ruhl Libre', typeface: Typeface.FrankRuhlLibre},
+          {key: 'b', label: 'David', typeface: Typeface.David},
+        ]}
+      />,
+      'light',
+    )
+    const david = tree.root.findAll(
+      (n) => n.props.accessibilityLabel === 'David' && !!n.props.onPress,
+    )[0]
+    act(() => david.props.onPress())
+    expect(onSelect).toHaveBeenCalledWith('b')
   })
 
   it('Slider', () => {
