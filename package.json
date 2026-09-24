@@ -1,6 +1,6 @@
 {
   "name": "@beezyworks/design",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Three-tier color tokens (named -> semantic -> theme), a provider and ThemeScope, React Native components, fonts and the Hebrew-date model shared by the apps.",
   "repository": "github:BeezyWorks/design-system",
