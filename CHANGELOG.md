@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/BeezyWorks/design-system/compare/v0.5.0...v0.6.0) (2026-09-24)
+
+
+### Features
+
+* **typography:** set sectionHeader in Frank Ruhl Libre so Hebrew and English titles match ([5b34dd4](https://github.com/BeezyWorks/design-system/commit/5b34dd40f4cac7738ffadaaa4e617f18db08cd5b))
+
 # [0.5.0](https://github.com/BeezyWorks/design-system/compare/v0.4.0...v0.5.0) (2026-09-24)
 
 
