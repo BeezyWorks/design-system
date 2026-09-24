@@ -16,13 +16,14 @@ export interface TextFieldProps extends Pick<
   | 'autoFocus'
   | 'returnKeyType'
   | 'clearButtonMode'
+  | 'multiline'
   | 'testID'
 > {
   /** Default `left`. */
   align?: TextFieldAlign
 }
 
-/** A single-line text input with an underline affordance — the design
+/** A text input (single-line unless `multiline`) with an underline affordance — the design
  * system replacement for `react-native-elements`' `Input`. */
 export const TextField = React.forwardRef<TextInput, TextFieldProps>(
   ({align = 'left', ...inputProps}, ref) => {

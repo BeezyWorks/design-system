@@ -16,6 +16,13 @@ import {
   X,
   Pencil,
   Download,
+  House,
+  Bookmark,
+  BookmarkCheck,
+  NotebookPen,
+  ScrollText,
+  SlidersHorizontal,
+  Heart,
   LucideIcon,
 } from 'lucide-react-native'
 import {SemanticColor} from '../../colors'
@@ -39,6 +46,13 @@ export type IconName =
   | 'close'
   | 'edit'
   | 'download'
+  | 'home'
+  | 'bookmark'
+  | 'bookmark-filled'
+  | 'note'
+  | 'scroll'
+  | 'sliders'
+  | 'heart'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -58,6 +72,13 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   close: X,
   edit: Pencil,
   download: Download,
+  home: House,
+  bookmark: Bookmark,
+  'bookmark-filled': BookmarkCheck,
+  note: NotebookPen,
+  scroll: ScrollText,
+  sliders: SlidersHorizontal,
+  heart: Heart,
 }
 
 export interface IconProps {
