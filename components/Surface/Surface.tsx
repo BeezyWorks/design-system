@@ -5,8 +5,10 @@ import {useShadow, ShadowToken} from '../../shadows'
 import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
 
-export interface DarkSurfaceProps {
+export interface SurfaceProps {
   children?: React.ReactNode
+  /** Default `SurfaceCard`. */
+  background?: SemanticColor
   height?: number
   radius?: RadiusToken
   shadow?: ShadowToken
@@ -15,16 +17,14 @@ export interface DarkSurfaceProps {
   grow?: boolean
 }
 
-/** A rounded, clipped surface that's always dark, regardless of the app's
- * light/dark setting — the Luach iPad-grid panels and the desktop-web
- * tabbed content card both intentionally keep their light-on-dark panel
- * content (dashboard stats, zmanim, agenda, calendar) on a fixed-dark
- * background rather than following the theme toggle. Split into an outer
- * view (carries the shadow) and an inner one (clips to the rounded
- * corners) since a shadow and `overflow: hidden` can't both apply to the
- * same view. */
-export const DarkSurface: React.FunctionComponent<DarkSurfaceProps> = ({
+/** A rounded, clipped surface with a shadow — a panel that holds content on
+ * a colored background. Split into an outer view (carries the shadow) and an
+ * inner one (clips to the rounded corners) since a shadow and
+ * `overflow: hidden` can't both apply to the same view. For an always-dark or
+ * always-light panel, wrap it (and its content) in a `ThemeScope`. */
+export const Surface: React.FunctionComponent<SurfaceProps> = ({
   children,
+  background = SemanticColor.SurfaceCard,
   height,
   radius = 'lg',
   shadow = 'none',
@@ -39,7 +39,7 @@ export const DarkSurface: React.FunctionComponent<DarkSurfaceProps> = ({
           height,
           flexGrow: grow ? 1 : undefined,
           borderRadius: radiusTokens[radius],
-          backgroundColor: resolve(SemanticColor.SurfacePanel),
+          backgroundColor: resolve(background),
         },
         shadowStyle,
       ]}

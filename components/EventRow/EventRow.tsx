@@ -1,8 +1,5 @@
 import React from 'react'
-import {SemanticColor} from '../../colors'
-import {Stack} from '../Stack'
-import {Text} from '../Text'
-import {IconButton} from '../IconButton'
+import {ListRow} from '../ListRow'
 
 export interface EventRowProps {
   description: string
@@ -26,36 +23,16 @@ export const EventRow: React.FunctionComponent<EventRowProps> = ({
   onDelete,
   isLast,
 }) => (
-  <Stack
-    direction="row"
-    align="center"
-    gap="sm"
-    paddingVertical="sm"
-    borderBottomWidth={isLast ? 'none' : 1}
-    borderColor={SemanticColor.BorderDefault}
-  >
-    <Stack grow width={0} gap="xs">
-      <Text variant="itemHeader">{description}</Text>
-      {/* `hebrewDate` is pure Hebrew script (gematriya + month name) — RN's
-          default "natural" text alignment reads that as RTL and floats it
-          to the right edge of this column even though the layout itself is
-          LTR, so it needs to be pinned `left` to actually sit under
-          `description` instead of drifting away from it. */}
-      <Text variant="detail" align="left">
-        {hebrewDate}
-      </Text>
-    </Stack>
-    <Text variant="supplemental" align="right">
-      {nextOccurrenceDate}
-    </Text>
-    <Stack direction="row">
-      <IconButton
-        name="delete"
-        size={20}
-        color={SemanticColor.TextSecondary}
-        onPress={onDelete}
-        accessibilityLabel="Delete event"
-      />
-    </Stack>
-  </Stack>
+  // `hebrewDate` is pure Hebrew script (gematriya + month name) — RN's
+  // default "natural" text alignment reads that as RTL and floats it to the
+  // right edge of the text column even though the layout itself is LTR, so
+  // it is pinned `left` to actually sit under `description`.
+  <ListRow
+    title={description}
+    subtitle={hebrewDate}
+    subtitleAlign="left"
+    value={nextOccurrenceDate}
+    actions={[{icon: 'delete', label: 'Delete event', onPress: onDelete}]}
+    isLast={isLast}
+  />
 )

@@ -60,7 +60,7 @@ export const BackgroundLightDirty = '#efefef'
 
 // Fixed dark — NOT part of this palette. The Luach home screen's kotel-photo
 // panels (Dashboard/Zmanim/Agenda/Calendar) are intentionally always dark
-// regardless of the light/dark toggle; `DarkSurface`/`PanelGrid2x2` import
+// regardless of the light/dark toggle; `Surface`/`PanelGrid2x2` import
 // these directly rather than through `LightTheme`/`DarkTheme`.
 export const BackgroundDark = '#313131'
 export const BackgroundDarkDirty = '#515151'

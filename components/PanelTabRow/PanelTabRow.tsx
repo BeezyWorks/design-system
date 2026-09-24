@@ -17,7 +17,7 @@ export interface PanelTabRowProps {
   onSelect: (key: string) => void
 }
 
-// The tab strip always sits on the always-dark content card (`DarkSurface`),
+// The tab strip always sits on the always-dark content card (`Surface`),
 // so its hairline divider is the fixed dark-mode border rather than the
 // theme-reactive one.
 const DIVIDER_COLOR = BorderColorDark

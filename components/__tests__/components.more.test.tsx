@@ -3,7 +3,7 @@ import {AgendaRow} from '../AgendaRow'
 import {AgendaSectionHeader} from '../AgendaSectionHeader'
 import {CompassBadge} from '../CompassBadge'
 import {ContentText} from '../ContentText'
-import {DarkSurface} from '../DarkSurface'
+import {Surface} from '../Surface'
 import {DashboardRow} from '../DashboardRow'
 import {EventRow} from '../EventRow'
 import {Icon} from '../Icon'
@@ -120,9 +120,15 @@ describe.each(themes)('more components (%s theme)', (theme) => {
 
     it('DarkSurface', () => {
       expectSnapshot(
-        <DarkSurface height={120} radius="lg" shadow="card" grow>
+        <Surface
+          background={SemanticColor.SurfacePanel}
+          height={120}
+          radius="lg"
+          shadow="card"
+          grow
+        >
           <Text>on dark</Text>
-        </DarkSurface>,
+        </Surface>,
         theme,
       )
     })

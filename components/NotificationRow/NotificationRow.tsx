@@ -1,8 +1,5 @@
 import React from 'react'
-import {SemanticColor} from '../../colors'
-import {Stack} from '../Stack'
-import {Text} from '../Text'
-import {IconButton} from '../IconButton'
+import {ListRow} from '../ListRow'
 import {ToggleSwitch} from '../ToggleSwitch'
 
 export interface NotificationRowProps {
@@ -30,41 +27,16 @@ export const NotificationRow: React.FunctionComponent<NotificationRowProps> = ({
   onDelete,
   isLast,
 }) => (
-  <Stack
-    direction="row"
-    align="center"
-    gap="sm"
-    paddingVertical="sm"
-    borderBottomWidth={isLast ? 'none' : 1}
-    borderColor={SemanticColor.BorderDefault}
-    opacity={enabled ? 1 : 0.5}
-  >
-    <ToggleSwitch value={enabled} onValueChange={onToggle} />
-    {/* `width={0}` alongside `grow` — see SpecialNotificationRow for why:
-        without it this column doesn't shrink/wrap, it just overflows the
-        row past the trailing time/icons. */}
-    <Stack grow width={0} gap="xs">
-      <Text variant="itemHeader">{zmanLabel}</Text>
-      <Text variant="detail">{offsetLabel}</Text>
-    </Stack>
-    <Text variant="supplemental" align="right">
-      {timeLabel}
-    </Text>
-    <Stack direction="row">
-      <IconButton
-        name="edit"
-        size={20}
-        color={SemanticColor.TextSecondary}
-        onPress={onEdit}
-        accessibilityLabel="Edit notification"
-      />
-      <IconButton
-        name="delete"
-        size={20}
-        color={SemanticColor.TextSecondary}
-        onPress={onDelete}
-        accessibilityLabel="Delete notification"
-      />
-    </Stack>
-  </Stack>
+  <ListRow
+    leading={<ToggleSwitch value={enabled} onValueChange={onToggle} />}
+    title={zmanLabel}
+    subtitle={offsetLabel}
+    value={timeLabel}
+    actions={[
+      {icon: 'edit', label: 'Edit notification', onPress: onEdit},
+      {icon: 'delete', label: 'Delete notification', onPress: onDelete},
+    ]}
+    dimmed={!enabled}
+    isLast={isLast}
+  />
 )

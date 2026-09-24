@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     // *background* runs edge to edge like a real section divider, while
     // the extra padding keeps the text itself sitting where the old inset
     // put it instead of also sliding out to the edge. In the wide/grid
-    // layouts, where the panel has no such gutter, `DarkSurface`'s own
+    // layouts, where the panel has no such gutter, `Surface`'s own
     // clipped `overflow: hidden` absorbs the negative margin with no
     // visual difference.
     paddingHorizontal: 8 + spacing.md,
