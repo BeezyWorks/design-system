@@ -34,6 +34,7 @@ export const BottomSheetModal = ({
   titleNode,
   headerLeft,
   headerRight,
+  fullScreen,
   children,
 }: BottomSheetProps) => {
   const {dismiss, dismissed, onClosed} = useSheetHost()
@@ -47,6 +48,7 @@ export const BottomSheetModal = ({
   const resolve = useColorResolver()
   const {width: windowWidth, height: windowHeight} = useWindowDimensions()
   const isWide = windowWidth >= SIDE_NAV_BREAKPOINT
+  const isFull = !!fullScreen && !isWide
   const sheetMaxHeight = windowHeight * 0.85
   const panelWidth = Math.min(PANEL_WIDTH, windowWidth * 0.92)
   const styles = styleCreator(resolve, panelWidth, sheetMaxHeight)
@@ -87,7 +89,7 @@ export const BottomSheetModal = ({
 
   const translate = progress.interpolate({
     inputRange: [0, 1],
-    outputRange: [isWide ? panelWidth : sheetMaxHeight, 0],
+    outputRange: [isWide ? panelWidth : isFull ? windowHeight : sheetMaxHeight, 0],
   })
 
   return (
@@ -99,7 +101,7 @@ export const BottomSheetModal = ({
       </Animated.View>
       <Animated.View
         style={[
-          isWide ? styles.panel : styles.sheet,
+          isWide ? styles.panel : isFull ? styles.fullScreen : styles.sheet,
           {
             transform: [
               isWide ? {translateX: translate} : {translateY: translate},
@@ -108,7 +110,32 @@ export const BottomSheetModal = ({
         ]}
       >
         <View style={styles.header}>
-          {headerLeft || headerRight ? (
+          {isFull ? (
+            // Full-screen header: the close X is always present, on the
+            // visual left (last in JSX, since `header` is `row-reverse`),
+            // with the title centered and any `headerRight` opposite it.
+            <>
+              {headerRight ?? <View style={styles.closeSlot} />}
+              <View style={styles.titleCentered}>
+                {titleNode ?? (
+                  <Text
+                    style={[styles.title, styles.titleCenteredText]}
+                    numberOfLines={1}
+                  >
+                    {title}
+                  </Text>
+                )}
+              </View>
+              <View style={styles.closeSlot}>
+                <Icon
+                  name="close"
+                  size={26}
+                  color={SemanticColor.TextPrimary}
+                  onPress={dismiss}
+                />
+              </View>
+            </>
+          ) : headerLeft || headerRight ? (
             // `header`'s `flexDirection` is `row-reverse` (below) — visual
             // left-to-right order is the *reverse* of JSX order, so
             // headerRight has to come first in JSX to land on the visual
@@ -189,6 +216,20 @@ const styleCreator = (
       shadowOffset: {width: 0, height: -2},
       shadowOpacity: 0.15,
       shadowRadius: 12,
+    },
+    fullScreen: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: resolve(SemanticColor.SurfaceBackground),
+    },
+    closeSlot: {
+      width: 44,
+      height: 44,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     header: {
       flexDirection: 'row-reverse',
