@@ -11,6 +11,10 @@ export interface BottomSheetProps {
    * existing sheet, which keeps the plain centered-title-only look. */
   headerLeft?: React.ReactNode
   headerRight?: React.ReactNode
+  /** Cover the whole screen instead of rising as a partial sheet, with an
+   * explicit close (X) in the header. Only affects phone-width layouts —
+   * wide web keeps the right-docked panel. */
+  fullScreen?: boolean
   children: React.ReactNode
 }
 

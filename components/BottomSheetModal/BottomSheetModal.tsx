@@ -1,10 +1,14 @@
 import React, {useRef, useEffect} from 'react'
-import {StyleSheet, View, useWindowDimensions} from 'react-native'
+import {StyleSheet, Text, View, useWindowDimensions} from 'react-native'
+import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {useSpring, animated} from '@react-spring/native'
 import {useSheetHost} from './SheetHost'
 import {BottomSheetProps} from '../BottomSheet/bottomSheet.props'
 import {AnimatedScrim} from '../Scrim'
 import {BottomSheet} from '../BottomSheet'
+import {Icon} from '../Icon'
+import {SemanticColor} from '../../colors'
+import {useColorResolver} from '../../theme'
 
 const AnimatedBottomSheet = animated(BottomSheet)
 
@@ -13,8 +17,11 @@ export const BottomSheetModal = ({
   titleNode,
   headerLeft,
   headerRight,
+  fullScreen,
   children,
 }: BottomSheetProps) => {
+  const insets = useSafeAreaInsets()
+  const resolve = useColorResolver()
   const {height: screenHeight} = useWindowDimensions()
   const contentHeight = useRef(0)
   const {onClosed, dismissed, dismiss} = useSheetHost()
@@ -72,6 +79,52 @@ export const BottomSheetModal = ({
     contentHeight.current = layoutHeight
   }
 
+  if (fullScreen) {
+    // No pan-to-dismiss here: a full-screen surface has no drag handle, and
+    // the explicit X is the way out.
+    return (
+      <View style={styles.base}>
+        <animated.View
+          style={[
+            styles.full,
+            {
+              backgroundColor: resolve(SemanticColor.SurfaceBackground),
+              paddingTop: insets.top,
+              paddingBottom: insets.bottom,
+              transform: [{translateY: animation.translateY}],
+            },
+          ]}
+        >
+          <View style={styles.fullHeader}>
+            <View style={styles.fullSide}>
+              <Icon
+                name="close"
+                size={26}
+                color={SemanticColor.TextPrimary}
+                onPress={dismiss}
+              />
+            </View>
+            {titleNode ?? (
+              <Text
+                numberOfLines={1}
+                style={[
+                  styles.fullTitle,
+                  {color: resolve(SemanticColor.TextPrimary)},
+                ]}
+              >
+                {title}
+              </Text>
+            )}
+            <View style={[styles.fullSide, styles.fullSideEnd]}>
+              {headerRight}
+            </View>
+          </View>
+          <View style={styles.fullContent}>{children}</View>
+        </animated.View>
+      </View>
+    )
+  }
+
   return (
     <View style={styles.base}>
       <AnimatedScrim onPress={dismiss} reverse={dismissed} />
@@ -97,5 +150,33 @@ const styles = StyleSheet.create({
   base: {
     ...StyleSheet.absoluteFill,
     justifyContent: 'flex-end',
+  },
+  full: {
+    ...StyleSheet.absoluteFill,
+  },
+  fullHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 56,
+    paddingHorizontal: 8,
+  },
+  fullSide: {
+    width: 44,
+    height: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  fullSideEnd: {
+    width: undefined,
+    minWidth: 44,
+  },
+  fullTitle: {
+    flex: 1,
+    fontSize: 20,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  fullContent: {
+    flex: 1,
   },
 })
