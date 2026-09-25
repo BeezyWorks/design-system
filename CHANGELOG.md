@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/BeezyWorks/design-system/compare/v0.9.0...v0.10.0) (2026-09-25)
+
+
+### Features
+
+* **bottom-sheet-modal:** add opt-in fullScreen mode with close button ([956add6](https://github.com/BeezyWorks/design-system/commit/956add66d6b4b3bd9bb3a5077f2d9484e8af46c5))
+
 # [0.9.0](https://github.com/BeezyWorks/design-system/compare/v0.8.0...v0.9.0) (2026-09-25)
 
 
