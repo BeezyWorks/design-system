@@ -5,6 +5,7 @@ import {Stack} from '../Stack'
 import {Text, TextAlign} from '../Text'
 import {IconButton} from '../IconButton'
 import {Icon, IconName} from '../Icon'
+import {useRtl} from '../../layout'
 
 export interface ListRowAction {
   icon: IconName
@@ -32,7 +33,8 @@ export interface ListRowProps {
   onPress?: () => void
   /** A disclosure chevron at the far end — for rows that navigate. */
   showChevron?: boolean
-  /** A right-to-left (Hebrew) row: mirrors the layout and the chevron. */
+  /** A right-to-left (Hebrew) row: mirrors the layout and the chevron.
+   * Defaults to the enclosing `RtlScope`. */
   rtl?: boolean
   /** Fades the whole row to 50% while every control stays tappable. */
   dimmed?: boolean
@@ -58,10 +60,11 @@ export const ListRow: React.FunctionComponent<ListRowProps> = ({
   trailing,
   onPress,
   showChevron,
-  rtl,
+  rtl: rtlProp,
   dimmed,
   isLast,
 }) => {
+  const rtl = useRtl(rtlProp)
   const direction = rtl ? 'rowReverse' : 'row'
   const content = (
     <>
@@ -72,11 +75,11 @@ export const ListRow: React.FunctionComponent<ListRowProps> = ({
           wrapping. Starting the flex-basis at 0 forces it to size purely from
           its grow share, so the text wraps within that instead. */}
       <Stack grow width={0} gap="xs">
-        <Text variant="itemHeader" rtl={rtl}>
+        <Text variant="itemHeader" rtl={rtlProp}>
           {title}
         </Text>
         {subtitle !== undefined && (
-          <Text variant="detail" rtl={rtl} align={subtitleAlign}>
+          <Text variant="detail" rtl={rtlProp} align={subtitleAlign}>
             {subtitle}
           </Text>
         )}

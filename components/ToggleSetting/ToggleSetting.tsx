@@ -3,6 +3,7 @@ import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
 import {ToggleSwitch} from '../ToggleSwitch'
+import {useRtl} from '../../layout'
 
 export interface ToggleSettingProps {
   title: string
@@ -11,7 +12,8 @@ export interface ToggleSettingProps {
   titleOn?: string
   titleOff?: string
   disabled?: boolean
-  /** A right-to-left (Hebrew) title: the switch moves to the left. */
+  /** A right-to-left (Hebrew) title: the switch moves to the left.
+   * Defaults to the enclosing `RtlScope`. */
   rtl?: boolean
 }
 
@@ -25,8 +27,9 @@ export const ToggleSetting: React.FunctionComponent<ToggleSettingProps> = ({
   titleOn = '',
   titleOff = '',
   disabled,
-  rtl,
+  rtl: rtlProp,
 }) => {
+  const rtl = useRtl(rtlProp)
   return (
     <Touchable disabled={disabled} onPress={() => onSwitch(!enabled)}>
       <Stack
@@ -36,7 +39,7 @@ export const ToggleSetting: React.FunctionComponent<ToggleSettingProps> = ({
         paddingVertical="sm"
         opacity={disabled ? 0.5 : undefined}
       >
-        <Text variant="bodyStrong" rtl={rtl}>
+        <Text variant="rowLabel" rtl={rtlProp}>
           {title + (enabled ? titleOn : titleOff)}
         </Text>
         <Stack pointerEvents="none">

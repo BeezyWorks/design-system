@@ -8,6 +8,7 @@ import {
 } from '../../typography'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, useContentText} from '../../theme'
+import {useRtl} from '../../layout'
 import {
   FontFamily,
   LatinTypeface,
@@ -45,7 +46,10 @@ export interface TextProps extends Pick<
   bold?: boolean
   italic?: boolean
   /** Right-to-left text (Hebrew in an otherwise LTR layout): sets the
-   * writing direction, and right-aligns unless `align` says otherwise. */
+   * writing direction, and right-aligns unless `align` says otherwise.
+   * Inside an `RtlScope` text right-aligns by default but keeps its own
+   * writing direction, so an English-first mixed title ("Names of חולים")
+   * still reads in order. */
   rtl?: boolean
   /** Decorative font family override (e.g. the Hebrew display faces),
    * independent of the content/user-settings typeface. */
@@ -80,6 +84,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
   const contentStyle = useContentTypeStyle(script, secondary)
   const {latinTypeface: selectedLatin} = useContentText()
   const resolve = useColorResolver()
+  const scopedRtl = useRtl()
 
   const base = content ? contentStyle : chromeStyle
   const resolvedColor = color ? resolve(color) : base.color
@@ -102,6 +107,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
         base,
         {
           color: resolvedColor,
+          ...(scopedRtl && {textAlign: 'right'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
           ...(italic && {fontStyle: 'italic'}),
         },

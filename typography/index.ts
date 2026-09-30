@@ -12,7 +12,6 @@ export const type = {
   label: {fontSize: 13, fontWeight: '500'},
   body: {fontSize: 14, fontWeight: '400'},
   bodyStrong: {fontSize: 14, fontWeight: '600'},
-  subheader: {fontSize: 15, fontWeight: '400'},
   headline: {fontSize: 16, fontWeight: '600'},
   title: {fontSize: 18, fontWeight: '700'},
   titleLarge: {fontSize: 20, fontWeight: '700'},
@@ -26,20 +25,26 @@ export const type = {
     fontSize: 30,
     fontWeight: '700',
   },
-  // A card/section title. Frank Ruhl Libre draws its Latin and Hebrew as a
-  // pair, so an English and a Hebrew title carry the same weight and size —
-  // the old 12px uppercase system-font style made Latin caps look far larger
-  // than Hebrew, which has no case. Bold face stands in for "600", as in
-  // `itemHeader`.
+  // A card/section title: the top of the card type scale (title FRL Bold 16
+  // ink > label FRL Regular 16 ink > value/detail sans 13 secondary).
+  // Frank Ruhl Libre draws its Latin and Hebrew as a pair, so an English and
+  // a Hebrew title carry the same weight and size. Bold face stands in for
+  // "600", as in `itemHeader`.
   sectionHeader: {
     fontFamily: FontFamily.FrankRuhlLibreBold,
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: '600',
-    letterSpacing: 0.3, // 0.02em @ 15px, pre-multiplied
+  },
+  // A settings/menu row label. Frank Ruhl Libre draws Hebrew and Latin at
+  // matched weight, so mixed-script labels ('Names of חולים') read evenly.
+  rowLabel: {
+    fontFamily: FontFamily.FrankRuhlLibre,
+    fontSize: 16,
+    fontWeight: '400',
   },
   item: {
     fontFamily: FontFamily.FrankRuhlLibre,
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: '400',
   },
   // A list row's title — same family as `item`, but the
@@ -67,7 +72,7 @@ export const type = {
   menuOption: {
     fontFamily: FontFamily.FrankRuhlLibre,
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
   },
   menuOptionSelected: {
     fontFamily: FontFamily.FrankRuhlLibreBold,
@@ -82,7 +87,8 @@ export type TypeVariant = keyof typeof type
 // variants fall back to that.
 const variantColor: Partial<Record<TypeVariant, SemanticColor>> = {
   pageHeader: SemanticColor.TextAccent,
-  sectionHeader: SemanticColor.TextSecondary,
+  sectionHeader: SemanticColor.TextPrimary,
+  rowLabel: SemanticColor.TextPrimary,
   item: SemanticColor.TextPrimary,
   itemHeader: SemanticColor.TextPrimary,
   detail: SemanticColor.TextSecondary,

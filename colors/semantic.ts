@@ -24,6 +24,9 @@ export const SemanticColor = {
   SurfaceHover: 'surfaceHover',
   SurfaceHighlight: 'surfaceHighlight',
   SurfacePanel: 'surfacePanel',
+  /** The recessed well of a segmented control; the selected thumb is
+   * `SurfaceCard`. */
+  SurfaceTrack: 'surfaceTrack',
   SurfaceTrackOff: 'surfaceTrackOff',
   SurfaceThumb: 'surfaceThumb',
   SurfaceSwatchLight: 'surfaceSwatchLight',

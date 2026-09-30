@@ -1,7 +1,7 @@
 import React from 'react'
-import {SemanticColor} from '../../colors'
 import {Card} from '../Card'
 import {Text} from '../Text'
+import {RtlScope} from '../../layout'
 
 export interface SettingsCardProps {
   title?: string
@@ -14,18 +14,23 @@ export interface SettingsCardProps {
 /** A titled settings section — just `Card` with its own title row, so it
  * stays visually identical to every other card (the menu
  * sections included) by construction. Doesn't override `Card`'s own
- * padding/radius/border/background defaults — that's the point. */
+ * padding/radius/border/background defaults — that's the point.
+ *
+ * Always right-to-left (an `RtlScope`): titles are a mix of Hebrew and
+ * English, and each script aligning to its own side left the cards
+ * ragged, so every card lays out RTL whatever the title's script. The
+ * title uses `sectionHeader` (like `MenuSection`), whose Frank Ruhl Libre
+ * draws Hebrew and Latin at a matched weight — the system font's Hebrew
+ * fallback rendered noticeably lighter than its Latin. */
 export const SettingsCard: React.FunctionComponent<SettingsCardProps> = ({
   title,
   children,
   grow,
 }) => (
-  <Card grow={grow} gap="sm">
-    {title && (
-      <Text variant="label" color={SemanticColor.TextSecondary}>
-        {title}
-      </Text>
-    )}
-    {children}
-  </Card>
+  <RtlScope>
+    <Card grow={grow} gap="sm">
+      {title && <Text variant="sectionHeader">{title}</Text>}
+      {children}
+    </Card>
+  </RtlScope>
 )

@@ -17,7 +17,7 @@ export const SettingsBox: React.FunctionComponent<SettingsBoxProps> = ({
 }) => (
   <Stack gap="xs">
     {title && (
-      <Text variant="label" color={SemanticColor.TextSecondary}>
+      <Text variant="sectionHeader">
         {title}
       </Text>
     )}
