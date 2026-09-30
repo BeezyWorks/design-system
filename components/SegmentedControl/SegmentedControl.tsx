@@ -43,7 +43,9 @@ const PRESSED_OPACITY = 0.6
 // Entirely Hebrew script (letters, niqqud, presentation forms) and spaces.
 const HEBREW_ONLY = /^[\s֐-׿יִ-ﭏ]+$/
 
-const springConfig = {tension: 300, friction: 20}
+// Critically damped (friction ≈ 2·√tension): a quick glide that settles
+// without overshoot, like UISegmentedControl, rather than a bouncy wobble.
+const springConfig = {tension: 500, friction: 45}
 
 const useReduceMotion = () => {
   const [reduce, setReduce] = useState(false)
