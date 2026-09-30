@@ -3,7 +3,7 @@ import {SemanticColor as S} from '../semantic'
 import {NamedColor} from '../named'
 import {sampleBrands as Brand} from '../sampleBrands'
 import type {BrandPalette} from '../brands'
-import {resolveBrand} from '../derive'
+import {contrastRatio, resolveBrand} from '../derive'
 
 const modes = ['light', 'sepia', 'dark'] as const
 const brands = Object.entries(Brand)
@@ -111,5 +111,14 @@ describe('resolved themes', () => {
       ]),
     )
     expect(resolved).toMatchSnapshot()
+  })
+})
+
+describe('segmented control contrast', () => {
+  it.each(modes)('selected label reads on the thumb in %s', (mode) => {
+    const theme = buildTheme(mode, Brand.Blue)
+    expect(
+      contrastRatio(theme[S.TextPrimary], theme[S.SurfaceCard]),
+    ).toBeGreaterThanOrEqual(4.5)
   })
 })

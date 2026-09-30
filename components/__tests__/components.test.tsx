@@ -295,6 +295,39 @@ describe('interaction', () => {
       touchables[1].props.onPress()
       expect(onChange).toHaveBeenCalledWith('light')
     })
+
+    it('ignores a tap on the selected segment', () => {
+      const onChange = jest.fn()
+      const r = renderWithTheme(
+        <SegmentedControl
+          options={options}
+          value="system"
+          onChange={onChange}
+        />,
+      )
+      pressables(r)[0].props.onPress()
+      expect(onChange).not.toHaveBeenCalled()
+    })
+
+    it('exposes radio semantics', () => {
+      const r = renderWithTheme(
+        <SegmentedControl
+          options={options}
+          value="light"
+          onChange={() => {}}
+          accessibilityLabel="Theme"
+        />,
+      )
+      const [system, light] = pressables(r)
+      expect(system.props.accessibilityRole).toBe('radio')
+      expect(system.props.accessibilityLabel).toBe('System')
+      expect(system.props.accessibilityState).toEqual({selected: false})
+      expect(light.props.accessibilityState).toEqual({selected: true})
+      expect(
+        r.root.findByProps({accessibilityRole: 'radiogroup'}).props
+          .accessibilityLabel,
+      ).toBe('Theme')
+    })
   })
 
   describe('EmptyState', () => {

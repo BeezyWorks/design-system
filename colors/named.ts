@@ -38,6 +38,7 @@ export const NamedColor = {
   InkFaded60: 'rgba(42, 37, 33, 0.6)',
   InkWash: 'rgba(42, 37, 33, 0.04)',
   InkHairline: 'rgba(30, 25, 20, 0.10)',
+  InkTrack: 'rgba(42, 37, 33, 0.07)',
 
   // --- Sepia ink (brown, sepia-mode text) and its alpha steps
   SepiaInk: '#4A3826',
@@ -45,6 +46,7 @@ export const NamedColor = {
   SepiaInkFaded60: 'rgba(74, 56, 38, 0.6)',
   SepiaInkWash: 'rgba(74, 56, 38, 0.04)',
   SepiaInkHairline: 'rgba(74, 56, 38, 0.12)',
+  SepiaInkTrack: 'rgba(74, 56, 38, 0.08)',
 
   // --- Parchment (warm off-white, dark-mode text) and its alpha steps
   Parchment: '#F0ECE4',

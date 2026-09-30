@@ -15,7 +15,7 @@ export const SettingsRow: React.FunctionComponent<SettingsRowProps> = ({
 }) => (
   <Stack direction="row" align="center" gap="sm" paddingVertical="sm">
     <Stack grow>
-      <Text variant="subheader">{title}</Text>
+      <Text variant="bodyStrong">{title}</Text>
     </Stack>
     {children}
   </Stack>
@@ -29,7 +29,7 @@ export const SettingsStackedRow: React.FunctionComponent<SettingsRowProps> = ({
   children,
 }) => (
   <Stack gap="sm" paddingVertical="sm">
-    <Text variant="subheader">{title}</Text>
+    <Text variant="bodyStrong">{title}</Text>
     {children}
   </Stack>
 )

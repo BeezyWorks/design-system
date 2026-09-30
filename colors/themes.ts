@@ -47,6 +47,7 @@ const lightNeutrals: NeutralDefinition = {
   [S.SurfaceSelected]: C.Linen,
   [S.SurfaceHover]: C.InkWash,
   [S.SurfacePanel]: C.PanelGray,
+  [S.SurfaceTrack]: C.InkTrack,
   [S.SurfaceTrackOff]: C.Sand,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,
@@ -86,6 +87,7 @@ const sepiaNeutrals: NeutralDefinition = {
   [S.SurfaceCard]: C.SepiaCard,
   [S.SurfaceSelected]: C.SepiaLinen,
   [S.SurfaceHover]: C.SepiaInkWash,
+  [S.SurfaceTrack]: C.SepiaInkTrack,
   [S.SurfaceTrackOff]: C.SepiaSand,
 
   [S.BorderDefault]: C.SepiaInkHairline,
@@ -106,6 +108,7 @@ const darkNeutrals: NeutralDefinition = {
   [S.SurfaceSelected]: C.Smoke,
   [S.SurfaceHover]: C.ParchmentWash,
   [S.SurfacePanel]: C.PanelGray,
+  [S.SurfaceTrack]: C.WhiteWash,
   [S.SurfaceTrackOff]: C.Taupe,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,

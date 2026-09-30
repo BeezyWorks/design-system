@@ -17,6 +17,8 @@ interface ShadowLevel {
 const levels = {
   none: null,
   card: {offsetHeight: 2, opacity: 0.25, blurRadius: 3.84, elevation: 6},
+  /** A small lift for a selected thumb inside a recessed track. */
+  thumb: {offsetHeight: 2, opacity: 0.12, blurRadius: 4, elevation: 2},
   raised: {offsetHeight: 3, opacity: 0.3, blurRadius: 8, elevation: 6},
   /** Soft, wide shadow for chrome that floats over content — e.g. the
    * bottom tab bar pill. */
