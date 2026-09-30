@@ -1,4 +1,4 @@
-import {TextStyle} from 'react-native'
+import {Platform, TextStyle} from 'react-native'
 import {SemanticColor} from '../colors/semantic'
 import {useContentText, useResolvedColor} from '../theme'
 import {FontFamily} from './fontFamily'
@@ -124,7 +124,14 @@ export const useContentTypeStyle = (
     color,
     fontSize: Math.round(fontSize * scale),
     lineHeight: Math.round(lineHeight * scale),
-    ...(letterSpacing !== 0 && {letterSpacing: letterSpacing * scale}),
+    // iOS's CoreText mis-lays-out kerned (NSKern) right-to-left Hebrew with
+    // niqqud: past a few lines, rows overlap and later rows render mirrored.
+    // Hebrew on iOS keeps the face's own spacing; Latin and other platforms
+    // honor the setting.
+    ...(letterSpacing !== 0 &&
+      !(script === 'hebrew' && Platform.OS === 'ios') && {
+        letterSpacing: letterSpacing * scale,
+      }),
     fontFamily:
       script === 'latin'
         ? latinTypefaceFontFamily[latinTypeface].regular
