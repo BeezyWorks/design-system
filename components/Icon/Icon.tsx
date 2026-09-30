@@ -32,6 +32,7 @@ import {
   ExternalLink,
   Check,
   Search,
+  EllipsisVertical,
   LucideIcon,
 } from 'lucide-react-native'
 import {SemanticColor} from '../../colors'
@@ -72,6 +73,7 @@ export type IconName =
   | 'external-link'
   | 'check'
   | 'search'
+  | 'more-vertical'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -108,6 +110,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   'external-link': ExternalLink,
   check: Check,
   search: Search,
+  'more-vertical': EllipsisVertical,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
