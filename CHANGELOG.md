@@ -1,3 +1,27 @@
+# [0.12.0](https://github.com/BeezyWorks/design-system/compare/v0.11.0...v0.12.0) (2026-09-30)
+
+
+### Bug Fixes
+
+* **segmented-control:** critically damped thumb spring, no overshoot ([79062fa](https://github.com/BeezyWorks/design-system/commit/79062fa07c77e32a39d27f1a2d2c314d687bca1b))
+* **segmented-control:** measure labels unconstrained so segments fit the widest bold label ([23a03d8](https://github.com/BeezyWorks/design-system/commit/23a03d836dc57d0aa0101500df5f3fa1584ba8dd))
+* **segmented-control:** primary ink for unselected labels to meet contrast ([b28bf4f](https://github.com/BeezyWorks/design-system/commit/b28bf4fc0619c3a26feb10feea5621dfe27331b3))
+* **typography:** skip letter spacing for Hebrew reading text on iOS ([02e75f1](https://github.com/BeezyWorks/design-system/commit/02e75f1eac0be655bf75de4575e11ff1dccf2238))
+
+
+### Features
+
+* **cards:** right-to-left settings/menu cards with one type scale ([145b1d0](https://github.com/BeezyWorks/design-system/commit/145b1d090df0145d895669271c7a80ac1909cd06))
+* **segmented-control:** redesign as a recessed iOS-style track with sliding thumb ([65ee174](https://github.com/BeezyWorks/design-system/commit/65ee1749d84997efdddb9b8d1c66e83f7d69d705))
+
+
+### BREAKING CHANGES
+
+* **cards:** the `subheader` type variant is removed; use
+`supplemental`.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
 # [0.11.0](https://github.com/BeezyWorks/design-system/compare/v0.10.0...v0.11.0) (2026-09-30)
 
 
