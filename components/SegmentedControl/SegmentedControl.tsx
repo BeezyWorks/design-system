@@ -110,10 +110,14 @@ export const SegmentedControl = <T extends string>({
 
   const onTrackLayout = (e: LayoutChangeEvent) =>
     setTrackWidth(e.nativeEvent.layout.width)
-  // Every label reports its natural width; the widest sets every segment's
-  // minimum, so all segments are equal and fit the longest label.
+  // Every label is measured unconstrained, in its (wider) selected style, in
+  // a hidden row; the widest sets every segment's minimum, so all segments
+  // are equal and fit the longest label. Measuring the visible labels
+  // instead is circular: on web they report their already-truncated width.
   const onLabelLayout = (e: LayoutChangeEvent) => {
-    const w = Math.ceil(e.nativeEvent.layout.width)
+    // +1: layout reports whole px (37) while text renders at 37.1, and that
+    // sub-pixel overflow is enough to trigger the ellipsis.
+    const w = Math.ceil(e.nativeEvent.layout.width) + 1
     setLabelWidth((prev) => (w > prev ? w : prev))
   }
 
@@ -148,15 +152,6 @@ export const SegmentedControl = <T extends string>({
         </animated.View>
         {options.map((option) => {
           const selected = option.key === value
-          const hebrew = HEBREW_ONLY.test(option.label)
-          const labelStyle: TextStyle = hebrew
-            ? {
-                fontFamily: selected
-                  ? FontFamily.FrankRuhlLibreBold
-                  : FontFamily.FrankRuhlLibre,
-                fontSize: 16,
-              }
-            : {fontSize: 15}
           return (
             <Pressable
               key={option.key}
@@ -178,13 +173,11 @@ export const SegmentedControl = <T extends string>({
                   adjustsFontSizeToFit
                   minimumFontScale={0.8}
                   maxFontSizeMultiplier={1.6}
-                  onLayout={onLabelLayout}
                   style={[
                     styles.label,
-                    labelStyle,
+                    labelStyle(option.label, selected),
                     {
                       color: labelColor,
-                      fontWeight: selected ? '600' : '500',
                       opacity: pressed ? PRESSED_OPACITY : 1,
                     },
                   ]}
@@ -196,9 +189,38 @@ export const SegmentedControl = <T extends string>({
           )
         })}
       </View>
+      <View
+        style={styles.measureClip}
+        pointerEvents="none"
+        aria-hidden
+        importantForAccessibility="no-hide-descendants"
+      >
+        <View style={styles.measureRow}>
+          {options.map((option) => (
+            <RNText
+              key={option.key}
+              maxFontSizeMultiplier={1.6}
+              onLayout={onLabelLayout}
+              style={[styles.label, labelStyle(option.label, true)]}
+            >
+              {option.label}
+            </RNText>
+          ))}
+        </View>
+      </View>
     </View>
   )
 }
+
+const labelStyle = (label: string, selected: boolean): TextStyle =>
+  HEBREW_ONLY.test(label)
+    ? {
+        fontFamily: selected
+          ? FontFamily.FrankRuhlLibreBold
+          : FontFamily.FrankRuhlLibre,
+        fontSize: 16,
+      }
+    : {fontSize: 15, fontWeight: selected ? '600' : '500'}
 
 const styles = StyleSheet.create({
   // On web the parent card can be very wide; keep the track compact (sized
@@ -230,4 +252,18 @@ const styles = StyleSheet.create({
     borderRadius: THUMB_RADIUS,
   },
   label: {textAlign: 'center'},
+  // Zero-size clip so the wide measuring row never affects layout/scroll.
+  measureClip: {
+    position: 'absolute',
+    width: 0,
+    height: 0,
+    overflow: 'hidden',
+    opacity: 0,
+  },
+  measureRow: {
+    position: 'absolute',
+    width: 10000,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
 })

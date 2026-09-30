@@ -1982,7 +1982,6 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         maxFontSizeMultiplier={1.6}
         minimumFontScale={0.8}
         numberOfLines={1}
-        onLayout={[Function]}
         style={
           [
             {
@@ -1990,10 +1989,10 @@ exports[`components (dark theme) SegmentedControl 1`] = `
             },
             {
               "fontSize": 15,
+              "fontWeight": "500",
             },
             {
               "color": "#F0ECE4",
-              "fontWeight": "500",
               "opacity": 1,
             },
           ]
@@ -2059,7 +2058,6 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         maxFontSizeMultiplier={1.6}
         minimumFontScale={0.8}
         numberOfLines={1}
-        onLayout={[Function]}
         style={
           [
             {
@@ -2067,10 +2065,10 @@ exports[`components (dark theme) SegmentedControl 1`] = `
             },
             {
               "fontSize": 15,
+              "fontWeight": "600",
             },
             {
               "color": "#F0ECE4",
-              "fontWeight": "600",
               "opacity": 1,
             },
           ]
@@ -2136,6 +2134,52 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         maxFontSizeMultiplier={1.6}
         minimumFontScale={0.8}
         numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "500",
+            },
+            {
+              "color": "#F0ECE4",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        Dark
+      </Text>
+    </View>
+  </View>
+  <View
+    aria-hidden={true}
+    importantForAccessibility="no-hide-descendants"
+    pointerEvents="none"
+    style={
+      {
+        "height": 0,
+        "opacity": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "flexDirection": "row",
+          "position": "absolute",
+          "width": 10000,
+        }
+      }
+    >
+      <Text
+        maxFontSizeMultiplier={1.6}
         onLayout={[Function]}
         style={
           [
@@ -2144,11 +2188,41 @@ exports[`components (dark theme) SegmentedControl 1`] = `
             },
             {
               "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        System
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
             },
             {
-              "color": "#F0ECE4",
-              "fontWeight": "500",
-              "opacity": 1,
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        Light
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
             },
           ]
         }
@@ -5053,7 +5127,6 @@ exports[`components (light theme) SegmentedControl 1`] = `
         maxFontSizeMultiplier={1.6}
         minimumFontScale={0.8}
         numberOfLines={1}
-        onLayout={[Function]}
         style={
           [
             {
@@ -5061,10 +5134,10 @@ exports[`components (light theme) SegmentedControl 1`] = `
             },
             {
               "fontSize": 15,
+              "fontWeight": "500",
             },
             {
               "color": "#2A2521",
-              "fontWeight": "500",
               "opacity": 1,
             },
           ]
@@ -5130,7 +5203,6 @@ exports[`components (light theme) SegmentedControl 1`] = `
         maxFontSizeMultiplier={1.6}
         minimumFontScale={0.8}
         numberOfLines={1}
-        onLayout={[Function]}
         style={
           [
             {
@@ -5138,10 +5210,10 @@ exports[`components (light theme) SegmentedControl 1`] = `
             },
             {
               "fontSize": 15,
+              "fontWeight": "600",
             },
             {
               "color": "#2A2521",
-              "fontWeight": "600",
               "opacity": 1,
             },
           ]
@@ -5207,6 +5279,52 @@ exports[`components (light theme) SegmentedControl 1`] = `
         maxFontSizeMultiplier={1.6}
         minimumFontScale={0.8}
         numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "500",
+            },
+            {
+              "color": "#2A2521",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        Dark
+      </Text>
+    </View>
+  </View>
+  <View
+    aria-hidden={true}
+    importantForAccessibility="no-hide-descendants"
+    pointerEvents="none"
+    style={
+      {
+        "height": 0,
+        "opacity": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "flexDirection": "row",
+          "position": "absolute",
+          "width": 10000,
+        }
+      }
+    >
+      <Text
+        maxFontSizeMultiplier={1.6}
         onLayout={[Function]}
         style={
           [
@@ -5215,11 +5333,41 @@ exports[`components (light theme) SegmentedControl 1`] = `
             },
             {
               "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        System
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
             },
             {
-              "color": "#2A2521",
-              "fontWeight": "500",
-              "opacity": 1,
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        Light
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
             },
           ]
         }
