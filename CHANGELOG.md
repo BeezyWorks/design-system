@@ -1,3 +1,10 @@
+# [0.11.0](https://github.com/BeezyWorks/design-system/compare/v0.10.0...v0.11.0) (2026-09-30)
+
+
+### Features
+
+* **icon:** add more-vertical icon ([b623f79](https://github.com/BeezyWorks/design-system/commit/b623f79f28fd09cca1d836b1bb517786d962f52f))
+
 # [0.10.0](https://github.com/BeezyWorks/design-system/compare/v0.9.0...v0.10.0) (2026-09-25)
 
 
