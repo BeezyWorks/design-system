@@ -4,6 +4,7 @@ import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {layout} from '../../layout'
 import {Icon, IconName} from '../Icon'
+import {useHeaderFontFamily} from '../../typography'
 
 export interface HeaderAction {
   icon: IconName
@@ -76,6 +77,8 @@ export const Header = ({
 }: HeaderProps) => {
   const resolve = useColorResolver()
   const styles = styleCreator(resolve)
+  const fontFamily = useHeaderFontFamily()
+  const titleFont = fontFamily ? {fontFamily} : null
 
   const backIconName: IconName =
     Platform.OS === 'ios' ? 'chevron-back' : 'arrow-back'
@@ -98,7 +101,9 @@ export const Header = ({
               pressed && styles.pressedTint,
             ]}
           >
-            <Text style={[styles.title, styles.titleWide]}>{title ?? ''}</Text>
+            <Text style={[styles.title, styles.titleWide, titleFont]}>
+              {title ?? ''}
+            </Text>
             {!!onTitlePress && subtitle && (
               <Text style={[styles.subtitle, styles.subtitleWide]}>
                 {subtitle ?? ''}
@@ -118,7 +123,7 @@ export const Header = ({
       ) : (
         <Pressable onPress={onTitlePress} style={styles.titleBox}>
           <View>
-            <Text style={styles.title}>{title ?? ''}</Text>
+            <Text style={[styles.title, titleFont]}>{title ?? ''}</Text>
             {!!onTitlePress && subtitle && (
               <Text style={styles.subtitle}>{subtitle ?? ''}</Text>
             )}

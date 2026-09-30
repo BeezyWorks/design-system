@@ -6,6 +6,7 @@ export {
   useColorResolver,
   useResolvedColor,
   useContentText,
+  useHeaderTypeface,
 } from './DesignSystem'
 export type {
   Appearance,
