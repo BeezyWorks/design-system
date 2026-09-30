@@ -2,6 +2,7 @@ import React from 'react'
 import type {LatinTypeface, Typeface} from '../../typography'
 import {FontSwatch} from '../FontSwatch'
 import {Stack} from '../Stack'
+import {useRtl} from '../../layout'
 
 export interface FontOption<T> {
   /** Stable id handed back through `onSelect`. */
@@ -13,7 +14,8 @@ export interface FontOption<T> {
 export type FontSwatchPickerProps = {
   selectedKey: string
   onSelect: (key: string) => void
-  /** Fill right to left (first option top-right). */
+  /** Fill right to left (first option top-right). Defaults to the
+   * enclosing `RtlScope`. */
   rtl?: boolean
 } & (
   | {script: 'hebrew'; options: FontOption<Typeface>[]}
@@ -26,7 +28,8 @@ export type FontSwatchPickerProps = {
 export const FontSwatchPicker: React.FunctionComponent<
   FontSwatchPickerProps
 > = (props) => {
-  const {selectedKey, onSelect, rtl} = props
+  const {selectedKey, onSelect} = props
+  const rtl = useRtl(props.rtl)
   const swatches =
     props.script === 'hebrew'
       ? props.options.map((option) => (

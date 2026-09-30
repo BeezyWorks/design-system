@@ -1492,7 +1492,7 @@ exports[`more components (dark theme) lists and menus MenuOption selected=false 
             "color": "#F0ECE4",
             "fontFamily": "FrankRuhlLibre_400Regular",
             "fontSize": 16,
-            "fontWeight": "500",
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -1621,7 +1621,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
         "flexDirection": "column",
         "flexGrow": undefined,
         "flexWrap": undefined,
-        "gap": 4,
+        "gap": 8,
         "height": undefined,
         "justifyContent": undefined,
         "left": undefined,
@@ -1658,18 +1658,16 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
     style={
       [
         {
-          "color": "rgba(240, 236, 228, 0.5)",
+          "color": "#F0ECE4",
           "fontFamily": "FrankRuhlLibre_700Bold",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "600",
-          "letterSpacing": 0.3,
         },
         {
-          "color": "rgba(240, 236, 228, 0.5)",
-        },
-        {
+          "color": "#F0ECE4",
           "textAlign": "right",
         },
+        null,
         null,
         null,
         null,
@@ -1829,7 +1827,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
                 {
                   "color": "#F0ECE4",
                   "fontFamily": "FrankRuhlLibre_400Regular",
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontWeight": "400",
                 },
                 {
@@ -2080,7 +2078,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
                 {
                   "color": "#F0ECE4",
                   "fontFamily": "FrankRuhlLibre_400Regular",
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontWeight": "400",
                 },
                 {
@@ -2331,7 +2329,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
                 {
                   "color": "#F0ECE4",
                   "fontFamily": "FrankRuhlLibre_400Regular",
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontWeight": "400",
                 },
                 {
@@ -2548,8 +2546,9 @@ exports[`more components (dark theme) settings NestedSettingHeader 1`] = `
         [
           {
             "color": "#F0ECE4",
+            "fontFamily": "FrankRuhlLibre_400Regular",
             "fontSize": 16,
-            "fontWeight": "600",
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -2563,63 +2562,79 @@ exports[`more components (dark theme) settings NestedSettingHeader 1`] = `
     >
       Display
     </Text>
-    <RNSVGSvgView
-      align="xMidYMid"
-      aria-hidden="true"
-      bbHeight={22}
-      bbWidth={22}
-      className="lucide lucide-chevron-right"
-      fill="none"
-      focusable={false}
-      height={22}
-      meetOrSlice={0}
-      minX={0}
-      minY={0}
-      stroke="#F0ECE4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
+    <View
       style={
         [
           {
-            "backgroundColor": "transparent",
-            "borderWidth": 0,
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": 0.35,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
           },
-          {
-            "flex": 0,
-            "height": 22,
-            "width": 22,
-          },
+          null,
+          null,
         ]
       }
-      vbHeight={24}
-      vbWidth={24}
-      width={22}
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <RNSVGGroup
-        fill={null}
-        propList={
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={14}
+        bbWidth={14}
+        className="lucide lucide-chevron-right"
+        fill="none"
+        focusable={false}
+        height={14}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
           [
-            "fill",
-            "stroke",
-            "strokeWidth",
-            "strokeLinecap",
-            "strokeLinejoin",
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 14,
+              "width": 14,
+            },
           ]
         }
-        stroke={
-          {
-            "payload": 4293979364,
-            "type": 0,
-          }
-        }
-        strokeLinecap={1}
-        strokeLinejoin={1}
-        strokeWidth={2}
+        vbHeight={24}
+        vbWidth={24}
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <RNSVGPath
-          d="m9 18 6-6-6-6"
+        <RNSVGGroup
           fill={null}
           propList={
             [
@@ -2639,9 +2654,32 @@ exports[`more components (dark theme) settings NestedSettingHeader 1`] = `
           strokeLinecap={1}
           strokeLinejoin={1}
           strokeWidth={2}
-        />
-      </RNSVGGroup>
-    </RNSVGSvgView>
+        >
+          <RNSVGPath
+            d="m9 18 6-6-6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
   </View>
 </View>
 `;
@@ -2700,11 +2738,13 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 13,
-            "fontWeight": "500",
+            "fontFamily": "FrankRuhlLibre_700Bold",
+            "fontSize": 16,
+            "fontWeight": "600",
           },
           {
-            "color": "rgba(240, 236, 228, 0.5)",
+            "color": "#F0ECE4",
+            "textAlign": "right",
           },
           null,
           null,
@@ -2725,6 +2765,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           },
           {
             "color": "#F0ECE4",
+            "textAlign": "right",
           },
           null,
           null,
@@ -2793,6 +2834,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           },
           {
             "color": "#F0ECE4",
+            "textAlign": "right",
           },
           null,
           null,
@@ -2847,11 +2889,12 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 13,
-            "fontWeight": "500",
+            "fontFamily": "FrankRuhlLibre_700Bold",
+            "fontSize": 16,
+            "fontWeight": "600",
           },
           {
-            "color": "rgba(240, 236, 228, 0.5)",
+            "color": "#F0ECE4",
           },
           null,
           null,
@@ -3000,8 +3043,9 @@ exports[`more components (dark theme) settings SettingsListRow disabled=false 1`
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -3114,8 +3158,9 @@ exports[`more components (dark theme) settings SettingsListRow disabled=true 1`]
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -3752,7 +3797,7 @@ exports[`more components (dark theme) text MessageCard 1`] = `
         "borderBottomWidth": undefined,
         "borderColor": "rgba(255, 255, 255, 0.12)",
         "borderRadius": 16,
-        "borderWidth": 1,
+        "borderWidth": 0,
         "bottom": undefined,
         "flexDirection": "column",
         "flexGrow": undefined,
@@ -3777,16 +3822,7 @@ exports[`more components (dark theme) text MessageCard 1`] = `
         "zIndex": undefined,
       },
       null,
-      {
-        "elevation": 6,
-        "shadowColor": "#000000",
-        "shadowOffset": {
-          "height": 2,
-          "width": 0,
-        },
-        "shadowOpacity": 0.25,
-        "shadowRadius": 3.84,
-      },
+      {},
     ]
   }
 >
@@ -3800,7 +3836,7 @@ exports[`more components (dark theme) text MessageCard 1`] = `
           "lineHeight": 18,
         },
         {
-          "color": "#6DA8F5",
+          "color": "#F0ECE4",
         },
         {
           "textAlign": "center",
@@ -5308,7 +5344,7 @@ exports[`more components (light theme) lists and menus MenuOption selected=false
             "color": "#2A2521",
             "fontFamily": "FrankRuhlLibre_400Regular",
             "fontSize": 16,
-            "fontWeight": "500",
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -5437,7 +5473,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
         "flexDirection": "column",
         "flexGrow": undefined,
         "flexWrap": undefined,
-        "gap": 4,
+        "gap": 8,
         "height": undefined,
         "justifyContent": undefined,
         "left": undefined,
@@ -5474,18 +5510,16 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
     style={
       [
         {
-          "color": "rgba(42, 37, 33, 0.5)",
+          "color": "#2A2521",
           "fontFamily": "FrankRuhlLibre_700Bold",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "600",
-          "letterSpacing": 0.3,
         },
         {
-          "color": "rgba(42, 37, 33, 0.5)",
-        },
-        {
+          "color": "#2A2521",
           "textAlign": "right",
         },
+        null,
         null,
         null,
         null,
@@ -5645,7 +5679,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
                 {
                   "color": "#2A2521",
                   "fontFamily": "FrankRuhlLibre_400Regular",
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontWeight": "400",
                 },
                 {
@@ -5896,7 +5930,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
                 {
                   "color": "#2A2521",
                   "fontFamily": "FrankRuhlLibre_400Regular",
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontWeight": "400",
                 },
                 {
@@ -6147,7 +6181,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
                 {
                   "color": "#2A2521",
                   "fontFamily": "FrankRuhlLibre_400Regular",
-                  "fontSize": 17,
+                  "fontSize": 16,
                   "fontWeight": "400",
                 },
                 {
@@ -6364,8 +6398,9 @@ exports[`more components (light theme) settings NestedSettingHeader 1`] = `
         [
           {
             "color": "#2A2521",
+            "fontFamily": "FrankRuhlLibre_400Regular",
             "fontSize": 16,
-            "fontWeight": "600",
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -6379,63 +6414,79 @@ exports[`more components (light theme) settings NestedSettingHeader 1`] = `
     >
       Display
     </Text>
-    <RNSVGSvgView
-      align="xMidYMid"
-      aria-hidden="true"
-      bbHeight={22}
-      bbWidth={22}
-      className="lucide lucide-chevron-right"
-      fill="none"
-      focusable={false}
-      height={22}
-      meetOrSlice={0}
-      minX={0}
-      minY={0}
-      stroke="#2A2521"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
+    <View
       style={
         [
           {
-            "backgroundColor": "transparent",
-            "borderWidth": 0,
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": 0.35,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": undefined,
+            "zIndex": undefined,
           },
-          {
-            "flex": 0,
-            "height": 22,
-            "width": 22,
-          },
+          null,
+          null,
         ]
       }
-      vbHeight={24}
-      vbWidth={24}
-      width={22}
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <RNSVGGroup
-        fill={null}
-        propList={
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={14}
+        bbWidth={14}
+        className="lucide lucide-chevron-right"
+        fill="none"
+        focusable={false}
+        height={14}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
           [
-            "fill",
-            "stroke",
-            "strokeWidth",
-            "strokeLinecap",
-            "strokeLinejoin",
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 14,
+              "width": 14,
+            },
           ]
         }
-        stroke={
-          {
-            "payload": 4280952097,
-            "type": 0,
-          }
-        }
-        strokeLinecap={1}
-        strokeLinejoin={1}
-        strokeWidth={2}
+        vbHeight={24}
+        vbWidth={24}
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <RNSVGPath
-          d="m9 18 6-6-6-6"
+        <RNSVGGroup
           fill={null}
           propList={
             [
@@ -6455,9 +6506,32 @@ exports[`more components (light theme) settings NestedSettingHeader 1`] = `
           strokeLinecap={1}
           strokeLinejoin={1}
           strokeWidth={2}
-        />
-      </RNSVGGroup>
-    </RNSVGSvgView>
+        >
+          <RNSVGPath
+            d="m9 18 6-6-6-6"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
   </View>
 </View>
 `;
@@ -6516,11 +6590,13 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
         [
           {
             "color": "#2A2521",
-            "fontSize": 13,
-            "fontWeight": "500",
+            "fontFamily": "FrankRuhlLibre_700Bold",
+            "fontSize": 16,
+            "fontWeight": "600",
           },
           {
-            "color": "rgba(42, 37, 33, 0.5)",
+            "color": "#2A2521",
+            "textAlign": "right",
           },
           null,
           null,
@@ -6541,6 +6617,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           },
           {
             "color": "#2A2521",
+            "textAlign": "right",
           },
           null,
           null,
@@ -6609,6 +6686,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           },
           {
             "color": "#2A2521",
+            "textAlign": "right",
           },
           null,
           null,
@@ -6663,11 +6741,12 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
         [
           {
             "color": "#2A2521",
-            "fontSize": 13,
-            "fontWeight": "500",
+            "fontFamily": "FrankRuhlLibre_700Bold",
+            "fontSize": 16,
+            "fontWeight": "600",
           },
           {
-            "color": "rgba(42, 37, 33, 0.5)",
+            "color": "#2A2521",
           },
           null,
           null,
@@ -6816,8 +6895,9 @@ exports[`more components (light theme) settings SettingsListRow disabled=false 1
         [
           {
             "color": "#2A2521",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -6930,8 +7010,9 @@ exports[`more components (light theme) settings SettingsListRow disabled=true 1`
         [
           {
             "color": "#2A2521",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -7568,7 +7649,7 @@ exports[`more components (light theme) text MessageCard 1`] = `
         "borderBottomWidth": undefined,
         "borderColor": "rgba(30, 25, 20, 0.10)",
         "borderRadius": 16,
-        "borderWidth": 1,
+        "borderWidth": 0,
         "bottom": undefined,
         "flexDirection": "column",
         "flexGrow": undefined,
@@ -7593,16 +7674,7 @@ exports[`more components (light theme) text MessageCard 1`] = `
         "zIndex": undefined,
       },
       null,
-      {
-        "elevation": 6,
-        "shadowColor": "#000000",
-        "shadowOffset": {
-          "height": 2,
-          "width": 0,
-        },
-        "shadowOpacity": 0.25,
-        "shadowRadius": 3.84,
-      },
+      {},
     ]
   }
 >
@@ -7616,7 +7688,7 @@ exports[`more components (light theme) text MessageCard 1`] = `
           "lineHeight": 18,
         },
         {
-          "color": "#3E7FD1",
+          "color": "#2A2521",
         },
         {
           "textAlign": "center",

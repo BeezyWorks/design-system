@@ -3,6 +3,7 @@ import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
 import {Touchable} from '../Touchable'
+import {useRtl} from '../../layout'
 
 export interface SettingsListRowProps {
   title: string
@@ -23,13 +24,13 @@ export const SettingsListRow: React.FunctionComponent<SettingsListRowProps> = ({
 }) => (
   <Touchable onPress={onPress} disabled={disabled}>
     <Stack
-      direction="row"
+      direction={useRtl() ? 'rowReverse' : 'row'}
       justify="spaceBetween"
       align="center"
       paddingVertical="sm"
       opacity={disabled ? 0.5 : undefined}
     >
-      <Text variant="bodyStrong">{title}</Text>
+      <Text variant="rowLabel">{title}</Text>
       <Text color={SemanticColor.TextSecondary}>{value}</Text>
     </Stack>
   </Touchable>

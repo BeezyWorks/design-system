@@ -16,6 +16,7 @@ import {radius} from '../../radius'
 import {useShadow} from '../../shadows'
 import {useResolvedColor} from '../../theme'
 import {FontFamily} from '../../typography'
+import {useRtl} from '../../layout'
 
 export interface SegmentOption<T extends string> {
   key: T
@@ -40,8 +41,8 @@ const SEGMENT_MIN_HEIGHT = 32
 const HIT_SLOP = {top: 6, bottom: 6}
 const PRESSED_OPACITY = 0.6
 
-// Entirely Hebrew script (letters, niqqud, presentation forms) and spaces.
-const HEBREW_ONLY = /^[\s֐-׿יִ-ﭏ]+$/
+// Any Hebrew script (letters, niqqud, presentation forms).
+const HAS_HEBREW = /[֐-׿יִ-ﭏ]/
 
 // Critically damped (friction ≈ 2·√tension): a quick glide that settles
 // without overshoot, like UISegmentedControl, rather than a bouncy wobble.
@@ -74,14 +75,20 @@ const useReduceMotion = () => {
  * Use 2-4 options (5 at most) with short labels; segments are equal width and
  * the control is sized to fit the longest label, which shrinks
  * (down to 0.8x) rather than wrapping when space runs out.
+ *
+ * In an `RtlScope` the first option sits on the right.
  */
 export const SegmentedControl = <T extends string>({
-  options,
+  options: optionsProp,
   value,
   onChange,
   accessibilityLabel,
 }: SegmentedControlProps<T>) => {
   const isRTL = I18nManager.isRTL
+  // Reversing the order (rather than the flex direction) keeps the thumb's
+  // left-anchored translate math unchanged.
+  const scopedRtl = useRtl()
+  const options = scopedRtl ? [...optionsProp].reverse() : optionsProp
   const reduceMotion = useReduceMotion()
   const trackColor = useResolvedColor(SemanticColor.SurfaceTrack)
   const thumbColor = useResolvedColor(SemanticColor.SurfaceCard)
@@ -93,6 +100,9 @@ export const SegmentedControl = <T extends string>({
   const [trackWidth, setTrackWidth] = useState(0)
   const [labelWidth, setLabelWidth] = useState(0)
   const count = options.length
+  // One style for the whole control: a mixed set must not mix fonts in one
+  // track.
+  const hebrew = options.some((o) => HAS_HEBREW.test(o.label))
   const index = Math.max(
     0,
     options.findIndex((o) => o.key === value),
@@ -125,7 +135,7 @@ export const SegmentedControl = <T extends string>({
 
   return (
     <View
-      style={styles.wrapper}
+      style={[styles.wrapper, scopedRtl && styles.wrapperRtl]}
       accessibilityRole="radiogroup"
       accessibilityLabel={accessibilityLabel}
     >
@@ -177,7 +187,7 @@ export const SegmentedControl = <T extends string>({
                   maxFontSizeMultiplier={1.6}
                   style={[
                     styles.label,
-                    labelStyle(option.label, selected),
+                    labelStyle(hebrew, selected),
                     {
                       color: labelColor,
                       opacity: pressed ? PRESSED_OPACITY : 1,
@@ -203,7 +213,7 @@ export const SegmentedControl = <T extends string>({
               key={option.key}
               maxFontSizeMultiplier={1.6}
               onLayout={onLabelLayout}
-              style={[styles.label, labelStyle(option.label, true)]}
+              style={[styles.label, labelStyle(hebrew, true)]}
             >
               {option.label}
             </RNText>
@@ -214,8 +224,8 @@ export const SegmentedControl = <T extends string>({
   )
 }
 
-const labelStyle = (label: string, selected: boolean): TextStyle =>
-  HEBREW_ONLY.test(label)
+const labelStyle = (hebrew: boolean, selected: boolean): TextStyle =>
+  hebrew
     ? {
         fontFamily: selected
           ? FontFamily.FrankRuhlLibreBold
@@ -231,6 +241,7 @@ const styles = StyleSheet.create({
     ...(Platform.OS === 'web' ? {alignSelf: 'flex-start' as const} : null),
     maxWidth: '100%',
   },
+  wrapperRtl: Platform.OS === 'web' ? {alignSelf: 'flex-end'} : {},
   track: {
     flexDirection: 'row',
     padding: PADDING,

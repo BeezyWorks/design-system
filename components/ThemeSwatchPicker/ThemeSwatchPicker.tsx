@@ -3,6 +3,7 @@ import type {ThemeMode} from '../../colors'
 import {ScrollStack} from '../ScrollStack'
 import {Stack} from '../Stack'
 import {ThemeSwatch} from '../ThemeSwatch'
+import {useRtl} from '../../layout'
 
 export type ThemeSwatchValue = ThemeMode | 'system'
 
@@ -16,7 +17,8 @@ export interface ThemeSwatchPickerProps {
   labels?: Partial<Record<ThemeSwatchValue, string>>
   /** The sample glyph on each swatch. Default `Aa`. */
   glyph?: string
-  /** Lay the row out right to left, opening at the right edge. */
+  /** Lay the row out right to left, opening at the right edge. Defaults to
+   * the enclosing `RtlScope`. */
   rtl?: boolean
 }
 
@@ -32,29 +34,32 @@ const DEFAULT_LABELS: Record<ThemeSwatchValue, string> = {
  * screen. Controlled: pass the current mode and handle `onChange`. */
 export const ThemeSwatchPicker: React.FunctionComponent<
   ThemeSwatchPickerProps
-> = ({value, onChange, modes = DEFAULT_MODES, labels, glyph, rtl}) => (
-  <ScrollStack
-    horizontal
-    rtl={rtl}
-    grow
-    showsHorizontalScrollIndicator={false}
-  >
-    <Stack
-      direction={rtl ? 'rowReverse' : 'row'}
+> = ({value, onChange, modes = DEFAULT_MODES, labels, glyph, rtl: rtlProp}) => {
+  const rtl = useRtl(rtlProp)
+  return (
+    <ScrollStack
+      horizontal
+      rtl={rtl}
       grow
-      gap="md"
-      paddingVertical="xs"
+      showsHorizontalScrollIndicator={false}
     >
-      {modes.map((mode) => (
-        <ThemeSwatch
-          key={mode}
-          mode={mode}
-          glyph={glyph}
-          label={labels?.[mode] ?? DEFAULT_LABELS[mode]}
-          selected={value === mode}
-          onPress={() => onChange(mode)}
-        />
-      ))}
-    </Stack>
-  </ScrollStack>
-)
+      <Stack
+        direction={rtl ? 'rowReverse' : 'row'}
+        grow
+        gap="md"
+        paddingVertical="xs"
+      >
+        {modes.map((mode) => (
+          <ThemeSwatch
+            key={mode}
+            mode={mode}
+            glyph={glyph}
+            label={labels?.[mode] ?? DEFAULT_LABELS[mode]}
+            selected={value === mode}
+            onPress={() => onChange(mode)}
+          />
+        ))}
+      </Stack>
+    </ScrollStack>
+  )
+}

@@ -1465,7 +1465,7 @@ exports[`components (dark theme) MenuItemRow last in a section has no divider 1`
             {
               "color": "#F0ECE4",
               "fontFamily": "FrankRuhlLibre_400Regular",
-              "fontSize": 17,
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -1719,7 +1719,7 @@ exports[`components (dark theme) MenuItemRow with a divider 1`] = `
             {
               "color": "#F0ECE4",
               "fontFamily": "FrankRuhlLibre_400Regular",
-              "fontSize": 17,
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -1863,9 +1863,12 @@ exports[`components (dark theme) SegmentedControl 1`] = `
 <View
   accessibilityRole="radiogroup"
   style={
-    {
-      "maxWidth": "100%",
-    }
+    [
+      {
+        "maxWidth": "100%",
+      },
+      false,
+    ]
   }
 >
   <View
@@ -2316,8 +2319,9 @@ exports[`components (dark theme) SettingsRow 1`] = `
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -2531,14 +2535,13 @@ exports[`components (dark theme) Text sectionHeader variant 1`] = `
   style={
     [
       {
-        "color": "rgba(240, 236, 228, 0.5)",
+        "color": "#F0ECE4",
         "fontFamily": "FrankRuhlLibre_700Bold",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "600",
-        "letterSpacing": 0.3,
       },
       {
-        "color": "rgba(240, 236, 228, 0.5)",
+        "color": "#F0ECE4",
       },
       null,
       null,
@@ -2676,8 +2679,9 @@ exports[`components (dark theme) ToggleSetting enabled=false 1`] = `
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -2832,8 +2836,9 @@ exports[`components (dark theme) ToggleSetting enabled=true 1`] = `
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -2988,8 +2993,9 @@ exports[`components (dark theme) ToggleSetting with on/off titles 1`] = `
         [
           {
             "color": "#F0ECE4",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#F0ECE4",
@@ -4610,7 +4616,7 @@ exports[`components (light theme) MenuItemRow last in a section has no divider 1
             {
               "color": "#2A2521",
               "fontFamily": "FrankRuhlLibre_400Regular",
-              "fontSize": 17,
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -4864,7 +4870,7 @@ exports[`components (light theme) MenuItemRow with a divider 1`] = `
             {
               "color": "#2A2521",
               "fontFamily": "FrankRuhlLibre_400Regular",
-              "fontSize": 17,
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -5008,9 +5014,12 @@ exports[`components (light theme) SegmentedControl 1`] = `
 <View
   accessibilityRole="radiogroup"
   style={
-    {
-      "maxWidth": "100%",
-    }
+    [
+      {
+        "maxWidth": "100%",
+      },
+      false,
+    ]
   }
 >
   <View
@@ -5461,8 +5470,9 @@ exports[`components (light theme) SettingsRow 1`] = `
         [
           {
             "color": "#2A2521",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -5676,14 +5686,13 @@ exports[`components (light theme) Text sectionHeader variant 1`] = `
   style={
     [
       {
-        "color": "rgba(42, 37, 33, 0.5)",
+        "color": "#2A2521",
         "fontFamily": "FrankRuhlLibre_700Bold",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "600",
-        "letterSpacing": 0.3,
       },
       {
-        "color": "rgba(42, 37, 33, 0.5)",
+        "color": "#2A2521",
       },
       null,
       null,
@@ -5821,8 +5830,9 @@ exports[`components (light theme) ToggleSetting enabled=false 1`] = `
         [
           {
             "color": "#2A2521",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -5977,8 +5987,9 @@ exports[`components (light theme) ToggleSetting enabled=true 1`] = `
         [
           {
             "color": "#2A2521",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",
@@ -6133,8 +6144,9 @@ exports[`components (light theme) ToggleSetting with on/off titles 1`] = `
         [
           {
             "color": "#2A2521",
-            "fontSize": 14,
-            "fontWeight": "600",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 16,
+            "fontWeight": "400",
           },
           {
             "color": "#2A2521",

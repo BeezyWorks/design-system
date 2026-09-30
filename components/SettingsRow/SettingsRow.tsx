@@ -1,6 +1,7 @@
 import React from 'react'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
+import {useRtl} from '../../layout'
 
 export interface SettingsRowProps {
   title: string
@@ -13,9 +14,14 @@ export const SettingsRow: React.FunctionComponent<SettingsRowProps> = ({
   title,
   children,
 }) => (
-  <Stack direction="row" align="center" gap="sm" paddingVertical="sm">
+  <Stack
+    direction={useRtl() ? 'rowReverse' : 'row'}
+    align="center"
+    gap="sm"
+    paddingVertical="sm"
+  >
     <Stack grow>
-      <Text variant="bodyStrong">{title}</Text>
+      <Text variant="rowLabel">{title}</Text>
     </Stack>
     {children}
   </Stack>
@@ -29,7 +35,7 @@ export const SettingsStackedRow: React.FunctionComponent<SettingsRowProps> = ({
   children,
 }) => (
   <Stack gap="sm" paddingVertical="sm">
-    <Text variant="bodyStrong">{title}</Text>
+    <Text variant="rowLabel">{title}</Text>
     {children}
   </Stack>
 )

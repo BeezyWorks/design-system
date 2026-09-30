@@ -3,6 +3,7 @@ import {Card} from '../Card'
 import {Text} from '../Text'
 import {Stack} from '../Stack'
 import {MenuItemRow} from '../MenuItemRow'
+import {RtlScope} from '../../layout'
 
 export interface MenuItem {
   key: string
@@ -23,20 +24,20 @@ export const MenuSection: React.FunctionComponent<MenuSectionProps> = ({
   title,
   items,
 }) => (
-  <Card gap="xs">
-    <Text variant="sectionHeader" align="right">
-      {title}
-    </Text>
-    <Stack>
-      {items.map((item, index) => (
-        <MenuItemRow
-          key={item.key}
-          label={item.label}
-          detail={item.detail}
-          onPress={item.onPress}
-          isLast={index === items.length - 1}
-        />
-      ))}
-    </Stack>
-  </Card>
+  <RtlScope>
+    <Card gap="sm">
+      <Text variant="sectionHeader">{title}</Text>
+      <Stack>
+        {items.map((item, index) => (
+          <MenuItemRow
+            key={item.key}
+            label={item.label}
+            detail={item.detail}
+            onPress={item.onPress}
+            isLast={index === items.length - 1}
+          />
+        ))}
+      </Stack>
+    </Card>
+  </RtlScope>
 )

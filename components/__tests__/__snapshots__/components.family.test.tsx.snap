@@ -4496,8 +4496,9 @@ exports[`family components (dark theme) new props on existing components 1`] = `
           [
             {
               "color": "#F0ECE4",
-              "fontSize": 14,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
+              "fontWeight": "400",
             },
             {
               "color": "#F0ECE4",
@@ -9127,8 +9128,9 @@ exports[`family components (light theme) new props on existing components 1`] = 
           [
             {
               "color": "#2A2521",
-              "fontSize": 14,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
+              "fontWeight": "400",
             },
             {
               "color": "#2A2521",
