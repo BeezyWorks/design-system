@@ -11,6 +11,7 @@ const brands = Object.entries(Brand)
 // The tokens a brand decides; every other token is shared by the family.
 const brandTokens = new Set<string>([
   S.TextAccent,
+  S.TextMarker,
   S.SurfaceHighlight,
   S.AccentPrimary,
   S.AccentPrimaryDeep,

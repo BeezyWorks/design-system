@@ -19,6 +19,14 @@ export interface BrandPalette {
   /** A darker companion of the same hue (the far end of the brand gradient,
    * deep fills). Derived (holds `TextPrimary` at ≥ 5:1) unless hand-tuned. */
   deep?: HexColor
+  /** The hue at mid lightness for light and sepia surfaces — small marks
+   * among body text (verse numbers) that must stand apart from
+   * `TextPrimary`. Derived (the lightest that still holds 4.5:1 on sepia
+   * paper) unless hand-tuned. */
+  marker?: HexColor
+  /** `marker` for dark surfaces. Derived (the darkest that still holds
+   * 4.5:1 on the dark background) unless hand-tuned. */
+  markerLight?: HexColor
 }
 
 /** A brand with every slot filled in — what the themes are built from. */
