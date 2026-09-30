@@ -83,8 +83,9 @@ export const SegmentedControl = <T extends string>({
   const reduceMotion = useReduceMotion()
   const trackColor = useResolvedColor(SemanticColor.SurfaceTrack)
   const thumbColor = useResolvedColor(SemanticColor.SurfaceCard)
-  const selectedColor = useResolvedColor(SemanticColor.TextPrimary)
-  const unselectedColor = useResolvedColor(SemanticColor.TextSecondary)
+  // Like UISegmentedControl, every label is primary ink; weight marks the
+  // selection. TextSecondary over the tinted track falls below 4.5:1.
+  const labelColor = useResolvedColor(SemanticColor.TextPrimary)
   const thumbShadow = useShadow('thumb')
 
   const [trackWidth, setTrackWidth] = useState(0)
@@ -182,7 +183,7 @@ export const SegmentedControl = <T extends string>({
                     styles.label,
                     labelStyle,
                     {
-                      color: selected ? selectedColor : unselectedColor,
+                      color: labelColor,
                       fontWeight: selected ? '600' : '500',
                       opacity: pressed ? PRESSED_OPACITY : 1,
                     },

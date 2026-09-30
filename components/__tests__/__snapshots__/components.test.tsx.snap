@@ -1992,7 +1992,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "fontSize": 15,
             },
             {
-              "color": "rgba(240, 236, 228, 0.5)",
+              "color": "#F0ECE4",
               "fontWeight": "500",
               "opacity": 1,
             },
@@ -2146,7 +2146,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "fontSize": 15,
             },
             {
-              "color": "rgba(240, 236, 228, 0.5)",
+              "color": "#F0ECE4",
               "fontWeight": "500",
               "opacity": 1,
             },
@@ -5063,7 +5063,7 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "fontSize": 15,
             },
             {
-              "color": "rgba(42, 37, 33, 0.5)",
+              "color": "#2A2521",
               "fontWeight": "500",
               "opacity": 1,
             },
@@ -5217,7 +5217,7 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "fontSize": 15,
             },
             {
-              "color": "rgba(42, 37, 33, 0.5)",
+              "color": "#2A2521",
               "fontWeight": "500",
               "opacity": 1,
             },
