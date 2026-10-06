@@ -1,3 +1,18 @@
+# [0.14.0](https://github.com/BeezyWorks/design-system/compare/v0.13.0...v0.14.0) (2026-10-06)
+
+
+### Bug Fixes
+
+* **glass-surface:** size to content unless sized, web-safe text shadow ([d825aab](https://github.com/BeezyWorks/design-system/commit/d825aab913f46cceded4390309a73295d676a567))
+
+
+### Features
+
+* glass surface and page dots ([bf531a9](https://github.com/BeezyWorks/design-system/commit/bf531a9deda4243a4cfffa7a47f3893a4ac66791))
+* **theme:** glass tokens for frosted panels ([2da3907](https://github.com/BeezyWorks/design-system/commit/2da390708ed662dd7ad5c68210afee09185c3a81))
+* **typography:** display ramp, frank ruhl libre black, and text over photos ([5377d63](https://github.com/BeezyWorks/design-system/commit/5377d63320f81895af5f501efbe448346dbc441c))
+* **view-pager:** controlled page, page callback, and rtl paging ([3d42461](https://github.com/BeezyWorks/design-system/commit/3d42461e6f4c9a00169be6dd8f25f0aa74b063bc))
+
 # [0.13.0](https://github.com/BeezyWorks/design-system/compare/v0.12.0...v0.13.0) (2026-10-06)
 
 
