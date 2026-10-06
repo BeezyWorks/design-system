@@ -1,3 +1,20 @@
+# [0.13.0](https://github.com/BeezyWorks/design-system/compare/v0.12.0...v0.13.0) (2026-10-06)
+
+
+### Bug Fixes
+
+* **text:** lay out latin-containing labels ltr inside an rtl scope ([d3c1886](https://github.com/BeezyWorks/design-system/commit/d3c1886899f3d787a78f5041c57acebe96044e48))
+* **theme:** soften the dark accent tint ([1433439](https://github.com/BeezyWorks/design-system/commit/1433439ad4e8b0d85819d121dd2a53e6a02df376))
+
+
+### Features
+
+* **header:** build titles from text variants and show a section chevron ([776f761](https://github.com/BeezyWorks/design-system/commit/776f761a546b2583b3062411e479163fd880d5da))
+* **icon:** add text-size ([30c462e](https://github.com/BeezyWorks/design-system/commit/30c462e96ae83c8108358c865674b7e8f469f51a))
+* **segmented-control:** use frank ruhl libre for every label ([e75f50e](https://github.com/BeezyWorks/design-system/commit/e75f50e9ef575648c5a528d07efa5c7fabbf9ff7))
+* **stepper:** match the round slider steppers ([ef8a6ae](https://github.com/BeezyWorks/design-system/commit/ef8a6ae6640462eb0d0c9688138bdf5b07e786f4))
+* **typography:** tighten the line spacing presets to 1.5x-2x ([1704011](https://github.com/BeezyWorks/design-system/commit/17040118b324d806588197f950551a2c44459fc0))
+
 # [0.12.0](https://github.com/BeezyWorks/design-system/compare/v0.11.0...v0.12.0) (2026-09-30)
 
 
