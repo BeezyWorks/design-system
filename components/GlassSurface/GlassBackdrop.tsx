@@ -76,7 +76,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    // @ts-expect-error: a web-only style react-native-web passes through.
-    backdropFilter: 'blur(36px) saturate(170%) brightness(1.04)',
+    // A web-only style react-native-web passes through. Spread from a plain
+    // object: some react-native versions type `backdropFilter`, some don't,
+    // so neither a bare key nor `@ts-expect-error` typechecks in both.
+    ...({backdropFilter: 'blur(36px) saturate(170%) brightness(1.04)'} as {}),
   },
 })
