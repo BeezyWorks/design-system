@@ -1,3 +1,10 @@
+## [0.15.1](https://github.com/BeezyWorks/design-system/compare/v0.15.0...v0.15.1) (2026-10-06)
+
+
+### Bug Fixes
+
+* **glass:** typecheck the web backdrop filter under any react-native version ([0e247ac](https://github.com/BeezyWorks/design-system/commit/0e247ac4e140e723220aec84c7715ddb3ee927d1))
+
 # [0.15.0](https://github.com/BeezyWorks/design-system/compare/v0.14.0...v0.15.0) (2026-10-06)
 
 
