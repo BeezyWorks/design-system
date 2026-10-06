@@ -4,6 +4,7 @@ import {Pressable, StyleSheet} from 'react-native'
 import {BlurView} from 'expo-blur'
 import {Stack} from '../Stack'
 import {Icon} from '../Icon'
+import {GlassBackdrop} from '../GlassSurface/GlassBackdrop'
 
 export interface SideNavRailProps {
   children?: React.ReactNode
@@ -11,7 +12,12 @@ export interface SideNavRailProps {
    * not part of the spacing scale (see that file's own comment). Use
    * `useSideNavWidth()` so it tracks the collapsed state. */
   width: number
-  blurTint: 'systemChromeMaterialDark' | 'systemChromeMaterialLight'
+  /** Chrome material for the default (non-glass) rail. */
+  blurTint?: 'systemChromeMaterialDark' | 'systemChromeMaterialLight'
+  /** Frosts whatever runs under the rail (a photo) with `GlassSurface`'s
+   * glass — its blur, tint, sheen and bright edge — instead of the opaque
+   * chrome material. The screen must draw its backdrop under the rail. */
+  glass?: boolean
   /** With `onToggleCollapsed`, shows a collapse/expand control at the
    * bottom of the rail. Pass the same state to `SideNavItem`s and provide it
    * through `SideNavCollapsedContext`. */
@@ -27,7 +33,8 @@ export interface SideNavRailProps {
 export const SideNavRail: React.FunctionComponent<SideNavRailProps> = ({
   children,
   width,
-  blurTint,
+  blurTint = 'systemChromeMaterialLight',
+  glass,
   collapsed,
   onToggleCollapsed,
 }) => (
@@ -39,14 +46,24 @@ export const SideNavRail: React.FunctionComponent<SideNavRailProps> = ({
     width={width}
     zIndex={10}
   >
-    <BlurView tint={blurTint} intensity={80} style={StyleSheet.absoluteFill} />
+    {glass ? (
+      <GlassBackdrop />
+    ) : (
+      <BlurView
+        tint={blurTint}
+        intensity={80}
+        style={StyleSheet.absoluteFill}
+      />
+    )}
     <Stack
       position="absolute"
       top="none"
       bottom="none"
       right="none"
-      width={StyleSheet.hairlineWidth}
-      background={SemanticColor.BorderDefault}
+      width={glass ? 1 : StyleSheet.hairlineWidth}
+      background={
+        glass ? SemanticColor.BorderGlass : SemanticColor.BorderDefault
+      }
     />
     <Stack
       grow
