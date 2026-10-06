@@ -37,10 +37,18 @@ export const SemanticColor = {
   SurfaceSuccess: 'surfaceSuccess',
   /** A translucent chip laid over a brand fill (`AccentPrimaryStrong`). */
   SurfaceOnAccent: 'surfaceOnAccent',
+  /** The tint of a frosted-glass panel (laid over a backdrop blur). */
+  SurfaceGlass: 'surfaceGlass',
+  /** `SurfaceGlass` where the platform can't blur. */
+  SurfaceGlassOpaque: 'surfaceGlassOpaque',
+  /** The light catching the top of a glass panel (fades out downward). */
+  SurfaceGlassSheen: 'surfaceGlassSheen',
 
   // Border
   BorderDefault: 'borderDefault',
   BorderStrong: 'borderStrong',
+  /** A glass panel's bright edge. */
+  BorderGlass: 'borderGlass',
 
   // Overlay
   OverlayScrim: 'overlayScrim',
