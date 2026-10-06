@@ -5,6 +5,8 @@ import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
+import {Icon, IconName} from '../Icon'
+import {spacing} from '../../spacing'
 
 export interface StepperProps {
   label: string
@@ -14,9 +16,10 @@ export interface StepperProps {
   incrementDisabled?: boolean
 }
 
-// 44px — the spec's minimum touch target, not `spacing.xl` (32px), which
-// was too small a hit target for a control tapped repeatedly.
-const buttonSize = 44
+// The same round chip as the slider's −/+ (`IconButton` `filled`, 16pt
+// glyph): a 32pt circle whose `hitSlop` brings the target to 48pt.
+const iconSize = 16
+const valueWidth = 40
 const holdDelayMs = 400
 // One tick per 400ms is slow enough to stop on an exact minute; after
 // holding for a full second and a half (the point where you're clearly
@@ -75,7 +78,7 @@ const useHoldToRepeat = (onTick: () => void) => {
   }
 }
 
-/** A −/value/+ control for stepping through a numeric range or a fixed,
+/** A −/value/+ control, styled like the −/+ flanking a `Slider`, for stepping through a numeric range or a fixed,
  * ordered list of values. Tap steps once; press-and-hold repeats. */
 export const Stepper: React.FunctionComponent<StepperProps> = ({
   label,
@@ -88,54 +91,37 @@ export const Stepper: React.FunctionComponent<StepperProps> = ({
   const decrementHold = useHoldToRepeat(onDecrement)
   const incrementHold = useHoldToRepeat(onIncrement)
 
+  const button = (
+    icon: IconName,
+    hold: ReturnType<typeof useHoldToRepeat>,
+    disabled: boolean | undefined,
+  ) => (
+    <Pressable
+      {...hold}
+      accessibilityRole="button"
+      accessibilityState={{disabled: !!disabled}}
+      disabled={disabled}
+      hitSlop={spacing.sm}
+      style={({pressed}) => ({
+        padding: spacing.sm,
+        borderRadius: radius.full,
+        backgroundColor: resolve(SemanticColor.SurfaceSelected),
+        opacity: disabled ? 0.4 : pressed ? 0.6 : 1,
+      })}
+    >
+      <Icon name={icon} size={iconSize} color={SemanticColor.TextPrimary} />
+    </Pressable>
+  )
+
   return (
-    <Stack direction="row" align="center">
-      <Pressable
-        {...decrementHold}
-        disabled={decrementDisabled}
-        style={({pressed}) => ({
-          width: buttonSize,
-          height: buttonSize,
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderWidth: 1.5,
-          borderColor: resolve(SemanticColor.BorderDefault),
-          borderTopLeftRadius: radius.sm,
-          borderBottomLeftRadius: radius.sm,
-          opacity: decrementDisabled ? 0.4 : 1,
-          backgroundColor:
-            pressed && !decrementDisabled
-              ? resolve(SemanticColor.SurfaceCard)
-              : undefined,
-        })}
-      >
-        <Text variant="headline">−</Text>
-      </Pressable>
-      <Stack width={56} align="center" justify="center">
-        <Text align="center">{label}</Text>
+    <Stack direction="row" align="center" gap="sm">
+      {button('remove', decrementHold, decrementDisabled)}
+      <Stack width={valueWidth} align="center" justify="center">
+        <Text variant="rowLabel" align="center">
+          {label}
+        </Text>
       </Stack>
-      <Pressable
-        {...incrementHold}
-        disabled={incrementDisabled}
-        style={({pressed}) => ({
-          width: buttonSize,
-          height: buttonSize,
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderWidth: 1.5,
-          borderColor: resolve(SemanticColor.BorderDefault),
-          borderTopRightRadius: radius.sm,
-          borderBottomRightRadius: radius.sm,
-          marginStart: -1.5,
-          opacity: incrementDisabled ? 0.4 : 1,
-          backgroundColor:
-            pressed && !incrementDisabled
-              ? resolve(SemanticColor.SurfaceCard)
-              : undefined,
-        })}
-      >
-        <Text variant="headline">+</Text>
-      </Pressable>
+      {button('add', incrementHold, incrementDisabled)}
     </Stack>
   )
 }
