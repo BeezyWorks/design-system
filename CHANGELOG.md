@@ -1,3 +1,15 @@
+# [0.15.0](https://github.com/BeezyWorks/design-system/compare/v0.14.0...v0.15.0) (2026-10-06)
+
+
+### Bug Fixes
+
+* **header:** keep the section subtitle centered beside its chevron ([d9b080e](https://github.com/BeezyWorks/design-system/commit/d9b080ecb059801a906a99f7bf98981049c5dc79))
+
+
+### Features
+
+* **glass:** frosted side rail, and a real backdrop blur on web ([0fcf53e](https://github.com/BeezyWorks/design-system/commit/0fcf53e789cd0b0444589891da5455f2d2ec64d5))
+
 # [0.14.0](https://github.com/BeezyWorks/design-system/compare/v0.13.0...v0.14.0) (2026-10-06)
 
 
