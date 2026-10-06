@@ -159,7 +159,7 @@ const darkBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.AccentPrimaryDeep]: brand.deep,
   [S.AccentPrimaryStrong]: brand.primary,
   [S.AccentTabActive]: brand.primary,
-  [S.AccentTint]: withAlpha(brand.primaryLight, 0.6),
+  [S.AccentTint]: withAlpha(brand.primaryLight, 0.16),
   [S.AccentTintSelected]: withAlpha(brand.primaryLight, 0.1),
 })
 

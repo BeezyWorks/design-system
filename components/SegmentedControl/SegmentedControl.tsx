@@ -41,9 +41,6 @@ const SEGMENT_MIN_HEIGHT = 32
 const HIT_SLOP = {top: 6, bottom: 6}
 const PRESSED_OPACITY = 0.6
 
-// Any Hebrew script (letters, niqqud, presentation forms).
-const HAS_HEBREW = /[֐-׿יִ-ﭏ]/
-
 // Critically damped (friction ≈ 2·√tension): a quick glide that settles
 // without overshoot, like UISegmentedControl, rather than a bouncy wobble.
 const springConfig = {tension: 500, friction: 45}
@@ -100,9 +97,6 @@ export const SegmentedControl = <T extends string>({
   const [trackWidth, setTrackWidth] = useState(0)
   const [labelWidth, setLabelWidth] = useState(0)
   const count = options.length
-  // One style for the whole control: a mixed set must not mix fonts in one
-  // track.
-  const hebrew = options.some((o) => HAS_HEBREW.test(o.label))
   const index = Math.max(
     0,
     options.findIndex((o) => o.key === value),
@@ -187,7 +181,7 @@ export const SegmentedControl = <T extends string>({
                   maxFontSizeMultiplier={1.6}
                   style={[
                     styles.label,
-                    labelStyle(hebrew, selected),
+                    labelStyle(selected),
                     {
                       color: labelColor,
                       opacity: pressed ? PRESSED_OPACITY : 1,
@@ -213,7 +207,7 @@ export const SegmentedControl = <T extends string>({
               key={option.key}
               maxFontSizeMultiplier={1.6}
               onLayout={onLabelLayout}
-              style={[styles.label, labelStyle(hebrew, true)]}
+              style={[styles.label, labelStyle(true)]}
             >
               {option.label}
             </RNText>
@@ -224,15 +218,13 @@ export const SegmentedControl = <T extends string>({
   )
 }
 
-const labelStyle = (hebrew: boolean, selected: boolean): TextStyle =>
-  hebrew
-    ? {
-        fontFamily: selected
-          ? FontFamily.FrankRuhlLibreBold
-          : FontFamily.FrankRuhlLibre,
-        fontSize: 16,
-      }
-    : {fontSize: 15, fontWeight: selected ? '600' : '500'}
+// Frank Ruhl Libre for every label, like the settings row labels around it:
+// it draws Hebrew and Latin at a matched weight, so 'After הלל' and
+// 'Fast Days' look like one family.
+const labelStyle = (selected: boolean): TextStyle => ({
+  fontFamily: selected ? FontFamily.FrankRuhlLibreBold : FontFamily.FrankRuhlLibre,
+  fontSize: 16,
+})
 
 const styles = StyleSheet.create({
   // On web the parent card can be very wide; keep the track compact (sized

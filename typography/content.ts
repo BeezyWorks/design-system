@@ -95,11 +95,13 @@ export const Leading = {
 export type Leading = (typeof Leading)[keyof typeof Leading]
 
 // A multiplier on font size added to the size itself:
-// lineHeight = fontSize + fontSize * leadingValue.
+// lineHeight = fontSize + fontSize * leadingValue. Pointed Hebrew needs room
+// for niqqud and trop but reads as double-spaced past ~2x, so the presets
+// span 1.5x-2x (whole pixels at every ContentSize).
 export const leadingValue: Record<Leading, number> = {
-  [Leading.Single]: 1,
-  [Leading.OneAndAHalf]: 1.5,
-  [Leading.Double]: 1.8,
+  [Leading.Single]: 0.5,
+  [Leading.OneAndAHalf]: 0.75,
+  [Leading.Double]: 1,
 }
 
 /** What the user picked — the app's preference, in the DL's vocabulary.

@@ -73,7 +73,7 @@ describe('DesignSystemProvider', () => {
       typeface: 'Cardo',
       fontFamily: 'Cardo_400Regular',
       fontSize: 28,
-      lineHeight: 28 + 28 * 1.8,
+      lineHeight: 28 + 28 * 1,
       latinTypeface: 'Source Serif 4',
       letterSpacing: 0,
     })
@@ -176,7 +176,7 @@ describe('ThemeScope', () => {
     ))
     expect(text.typeface).toBe('Ezra')
     expect(text.fontSize).toBe(20)
-    expect(text.lineHeight).toBe(40)
+    expect(text.lineHeight).toBe(30)
   })
 
   it('requires an enclosing provider', () => {

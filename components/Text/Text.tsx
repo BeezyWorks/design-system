@@ -19,6 +19,11 @@ import {
 
 export type TextAlign = 'auto' | 'left' | 'right' | 'center' | 'justify'
 
+const HAS_LATIN = /[A-Za-z]/
+// Left-to-right mark: sets the paragraph direction of a mixed label from its
+// first strong character on every platform (`writingDirection` is iOS-only).
+const LRM = '\u200E'
+
 export interface TextProps extends Pick<
   NativeTextProps,
   | 'numberOfLines'
@@ -47,9 +52,10 @@ export interface TextProps extends Pick<
   italic?: boolean
   /** Right-to-left text (Hebrew in an otherwise LTR layout): sets the
    * writing direction, and right-aligns unless `align` says otherwise.
-   * Inside an `RtlScope` text right-aligns by default but keeps its own
-   * writing direction, so an English-first mixed title ("Names of חולים")
-   * still reads in order. */
+   * Inside an `RtlScope` text right-aligns by default; a label containing
+   * any Latin is an English sentence with Hebrew terms in it, so it's laid
+   * out left-to-right — "מזרח Calculation" reads in order instead of
+   * flipping to "Calculation מזרח". */
   rtl?: boolean
   /** Decorative font family override (e.g. the Hebrew display faces),
    * independent of the content/user-settings typeface. */
@@ -86,6 +92,15 @@ export const Text: React.FunctionComponent<TextProps> = ({
   const resolve = useColorResolver()
   const scopedRtl = useRtl()
 
+  // Only plain-string labels: content text and nested runs keep the
+  // platform's own bidi handling.
+  const latinLabel =
+    scopedRtl &&
+    !rtl &&
+    !content &&
+    typeof children === 'string' &&
+    HAS_LATIN.test(children)
+
   const base = content ? contentStyle : chromeStyle
   const resolvedColor = color ? resolve(color) : base.color
 
@@ -108,6 +123,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
         {
           color: resolvedColor,
           ...(scopedRtl && {textAlign: 'right'}),
+          ...(latinLabel && {writingDirection: 'ltr'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
           ...(italic && {fontStyle: 'italic'}),
         },
@@ -127,7 +143,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
           : null,
       ]}
     >
-      {children}
+      {latinLabel ? LRM + children : children}
     </NativeText>
   )
 }

@@ -4585,7 +4585,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
           "color": "#F0ECE4",
           "fontFamily": "SourceSerif4_400Regular",
           "fontSize": 24,
-          "lineHeight": 60,
+          "lineHeight": 42,
           "textAlign": "left",
         },
         {
@@ -4610,7 +4610,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
           "color": "#F0ECE4",
           "fontFamily": "Taamey Frank CLM",
           "fontSize": 19,
-          "lineHeight": 48,
+          "lineHeight": 34,
           "textAlign": "right",
         },
         {
@@ -9217,7 +9217,7 @@ exports[`family components (light theme) new props on existing components 1`] = 
           "color": "#2A2521",
           "fontFamily": "SourceSerif4_400Regular",
           "fontSize": 24,
-          "lineHeight": 60,
+          "lineHeight": 42,
           "textAlign": "left",
         },
         {
@@ -9242,7 +9242,7 @@ exports[`family components (light theme) new props on existing components 1`] = 
           "color": "#2A2521",
           "fontFamily": "Taamey Frank CLM",
           "fontSize": 19,
-          "lineHeight": 48,
+          "lineHeight": 34,
           "textAlign": "right",
         },
         {

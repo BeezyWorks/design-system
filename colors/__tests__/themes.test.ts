@@ -49,7 +49,7 @@ describe('theme definitions', () => {
         `rgba(${rgb(brand.primary)}, 0.08)`,
       )
       expect(buildTheme('dark', brand)[S.AccentTint]).toBe(
-        `rgba(${rgb(resolveBrand(brand).primaryLight)}, 0.6)`,
+        `rgba(${rgb(resolveBrand(brand).primaryLight)}, 0.16)`,
       )
     }
   })

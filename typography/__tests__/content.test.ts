@@ -21,7 +21,7 @@ describe('resolveContentText', () => {
       typeface: 'Frank',
       fontFamily: FontFamily.TaameyFrank,
       fontSize: 24,
-      lineHeight: 60, // 24 + 24 * 1.5
+      lineHeight: 42, // 24 + 24 * 0.75
       latinTypeface: 'Source Serif 4',
       letterSpacing: 0,
     })

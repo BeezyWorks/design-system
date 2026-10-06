@@ -1,14 +1,17 @@
 import React from 'react'
-import {Platform, Pressable, StyleSheet, Text, View} from 'react-native'
+import {Platform, Pressable, StyleSheet, View} from 'react-native'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {layout} from '../../layout'
 import {Icon, IconName} from '../Icon'
+import {Text} from '../Text'
 
 export interface HeaderAction {
   icon: IconName
   onPress: () => void
 }
+
+const HAS_LATIN = /[A-Za-z]/
 
 export interface HeaderProps {
   title?: string
@@ -98,9 +101,11 @@ export const Header = ({
               pressed && styles.pressedTint,
             ]}
           >
-            <Text style={[styles.title, styles.titleWide]}>{title ?? ''}</Text>
+            <Text variant="headerTitleWide" align="center">
+              {title ?? ''}
+            </Text>
             {!!onTitlePress && subtitle && (
-              <Text style={[styles.subtitle, styles.subtitleWide]}>
+              <Text variant="detail" align="center">
                 {subtitle ?? ''}
               </Text>
             )}
@@ -116,11 +121,37 @@ export const Header = ({
           </Pressable>
         </View>
       ) : (
-        <Pressable onPress={onTitlePress} style={styles.titleBox}>
+        <Pressable
+          onPress={onTitlePress}
+          disabled={!onTitlePress}
+          accessibilityRole={onTitlePress ? 'button' : undefined}
+          style={({pressed}) => [styles.titleBox, pressed && styles.pressed]}
+        >
           <View>
-            <Text style={styles.title}>{title ?? ''}</Text>
-            {!!onTitlePress && subtitle && (
-              <Text style={styles.subtitle}>{subtitle ?? ''}</Text>
+            <Text variant="headerTitle" align="center">
+              {title ?? ''}
+            </Text>
+            {!!onTitlePress && (
+              // The chevron trails the subtitle in its own reading
+              // direction: left of a Hebrew section name, right of a Latin
+              // one — the cue that the title opens a section picker.
+              <View
+                style={[
+                  styles.subtitleRow,
+                  !HAS_LATIN.test(subtitle ?? '') && styles.subtitleRowRtl,
+                ]}
+              >
+                {!!subtitle && (
+                  <Text variant="headerSubtitle" align="center">
+                    {subtitle}
+                  </Text>
+                )}
+                <Icon
+                  name="chevron-down"
+                  size={14}
+                  color={SemanticColor.TextAccent}
+                />
+              </View>
             )}
           </View>
         </Pressable>
@@ -214,27 +245,20 @@ const styleCreator = (resolve: ColorResolver) =>
     pressedTint: {
       backgroundColor: resolve(SemanticColor.SurfaceCard),
     },
-    title: {
-      fontSize: 22,
-      fontWeight: '700',
-      color: resolve(SemanticColor.TextAccent),
-      textAlign: 'center',
-    },
-    titleWide: {
-      fontSize: 26,
-      color: resolve(SemanticColor.AccentPrimary),
-    },
-    subtitle: {
-      fontSize: 16,
-      textAlign: 'center',
-      color: resolve(SemanticColor.TextAccent),
-    },
-    subtitleWide: {
-      fontSize: 13,
-      color: resolve(SemanticColor.TextSecondary),
-    },
     titleChevron: {
       marginTop: 2,
+    },
+    subtitleRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 4,
+    },
+    subtitleRowRtl: {
+      flexDirection: 'row-reverse',
+    },
+    pressed: {
+      opacity: 0.6,
     },
     buttonBox: {
       flexDirection: 'row',

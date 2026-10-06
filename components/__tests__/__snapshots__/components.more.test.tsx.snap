@@ -2745,6 +2745,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           {
             "color": "#F0ECE4",
             "textAlign": "right",
+            "writingDirection": "ltr",
           },
           null,
           null,
@@ -2753,7 +2754,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
         ]
       }
     >
-      Display
+      ‎Display
     </Text>
     <Text
       style={
@@ -2766,6 +2767,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           {
             "color": "#F0ECE4",
             "textAlign": "right",
+            "writingDirection": "ltr",
           },
           null,
           null,
@@ -2774,7 +2776,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
         ]
       }
     >
-      child
+      ‎child
     </Text>
   </View>,
   <View
@@ -2835,6 +2837,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           {
             "color": "#F0ECE4",
             "textAlign": "right",
+            "writingDirection": "ltr",
           },
           null,
           null,
@@ -2843,7 +2846,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
         ]
       }
     >
-      untitled
+      ‎untitled
     </Text>
   </View>,
   <View
@@ -3214,7 +3217,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
           "flexDirection": "row",
           "flexGrow": undefined,
           "flexWrap": undefined,
-          "gap": undefined,
+          "gap": 8,
           "height": undefined,
           "justifyContent": undefined,
           "left": undefined,
@@ -3239,11 +3242,12 @@ exports[`more components (dark theme) settings Stepper 1`] = `
     }
   >
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
           "checked": undefined,
-          "disabled": undefined,
+          "disabled": false,
           "expanded": undefined,
           "selected": undefined,
         }
@@ -3259,6 +3263,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -3270,39 +3275,92 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomLeftRadius": 8,
-          "borderColor": "rgba(255, 255, 255, 0.12)",
-          "borderTopLeftRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
+          "backgroundColor": "#34302A",
+          "borderRadius": 9999,
           "opacity": 1,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-minus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#F0ECE4",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#F0ECE4",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        −
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4293979364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
     <View
       style={
@@ -3334,7 +3392,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 56,
+            "width": 40,
             "zIndex": undefined,
           },
           null,
@@ -3347,7 +3405,8 @@ exports[`more components (dark theme) settings Stepper 1`] = `
           [
             {
               "color": "#F0ECE4",
-              "fontSize": 14,
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -3366,11 +3425,12 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       </Text>
     </View>
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
           "checked": undefined,
-          "disabled": undefined,
+          "disabled": false,
           "expanded": undefined,
           "selected": undefined,
         }
@@ -3386,6 +3446,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -3397,40 +3458,114 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomRightRadius": 8,
-          "borderColor": "rgba(255, 255, 255, 0.12)",
-          "borderTopRightRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
-          "marginStart": -1.5,
+          "backgroundColor": "#34302A",
+          "borderRadius": 9999,
           "opacity": 1,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-plus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#F0ECE4",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#F0ECE4",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        +
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4293979364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+          <RNSVGPath
+            d="M12 5v14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
   </View>,
   <View
@@ -3447,7 +3582,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
           "flexDirection": "row",
           "flexGrow": undefined,
           "flexWrap": undefined,
-          "gap": undefined,
+          "gap": 8,
           "height": undefined,
           "justifyContent": undefined,
           "left": undefined,
@@ -3472,6 +3607,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
     }
   >
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
@@ -3492,6 +3628,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -3503,39 +3640,92 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomLeftRadius": 8,
-          "borderColor": "rgba(255, 255, 255, 0.12)",
-          "borderTopLeftRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
+          "backgroundColor": "#34302A",
+          "borderRadius": 9999,
           "opacity": 0.4,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-minus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#F0ECE4",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#F0ECE4",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        −
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4293979364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
     <View
       style={
@@ -3567,7 +3757,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 56,
+            "width": 40,
             "zIndex": undefined,
           },
           null,
@@ -3580,7 +3770,8 @@ exports[`more components (dark theme) settings Stepper 1`] = `
           [
             {
               "color": "#F0ECE4",
-              "fontSize": 14,
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -3599,6 +3790,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       </Text>
     </View>
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
@@ -3619,6 +3811,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -3630,40 +3823,114 @@ exports[`more components (dark theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomRightRadius": 8,
-          "borderColor": "rgba(255, 255, 255, 0.12)",
-          "borderTopRightRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
-          "marginStart": -1.5,
+          "backgroundColor": "#34302A",
+          "borderRadius": 9999,
           "opacity": 0.4,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-plus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#F0ECE4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#F0ECE4",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#F0ECE4",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        +
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4293979364,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+          <RNSVGPath
+            d="M12 5v14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4293979364,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
   </View>,
 ]
@@ -3793,7 +4060,7 @@ exports[`more components (dark theme) text MessageCard 1`] = `
     [
       {
         "alignItems": undefined,
-        "backgroundColor": "rgba(109, 168, 245, 0.6)",
+        "backgroundColor": "rgba(109, 168, 245, 0.16)",
         "borderBottomWidth": undefined,
         "borderColor": "rgba(255, 255, 255, 0.12)",
         "borderRadius": 16,
@@ -6597,6 +6864,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           {
             "color": "#2A2521",
             "textAlign": "right",
+            "writingDirection": "ltr",
           },
           null,
           null,
@@ -6605,7 +6873,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
         ]
       }
     >
-      Display
+      ‎Display
     </Text>
     <Text
       style={
@@ -6618,6 +6886,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           {
             "color": "#2A2521",
             "textAlign": "right",
+            "writingDirection": "ltr",
           },
           null,
           null,
@@ -6626,7 +6895,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
         ]
       }
     >
-      child
+      ‎child
     </Text>
   </View>,
   <View
@@ -6687,6 +6956,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           {
             "color": "#2A2521",
             "textAlign": "right",
+            "writingDirection": "ltr",
           },
           null,
           null,
@@ -6695,7 +6965,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
         ]
       }
     >
-      untitled
+      ‎untitled
     </Text>
   </View>,
   <View
@@ -7066,7 +7336,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
           "flexDirection": "row",
           "flexGrow": undefined,
           "flexWrap": undefined,
-          "gap": undefined,
+          "gap": 8,
           "height": undefined,
           "justifyContent": undefined,
           "left": undefined,
@@ -7091,11 +7361,12 @@ exports[`more components (light theme) settings Stepper 1`] = `
     }
   >
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
           "checked": undefined,
-          "disabled": undefined,
+          "disabled": false,
           "expanded": undefined,
           "selected": undefined,
         }
@@ -7111,6 +7382,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -7122,39 +7394,92 @@ exports[`more components (light theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomLeftRadius": 8,
-          "borderColor": "rgba(30, 25, 20, 0.10)",
-          "borderTopLeftRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
+          "backgroundColor": "#F2EDE2",
+          "borderRadius": 9999,
           "opacity": 1,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-minus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#2A2521",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#2A2521",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        −
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280952097,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
     <View
       style={
@@ -7186,7 +7511,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 56,
+            "width": 40,
             "zIndex": undefined,
           },
           null,
@@ -7199,7 +7524,8 @@ exports[`more components (light theme) settings Stepper 1`] = `
           [
             {
               "color": "#2A2521",
-              "fontSize": 14,
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -7218,11 +7544,12 @@ exports[`more components (light theme) settings Stepper 1`] = `
       </Text>
     </View>
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
           "checked": undefined,
-          "disabled": undefined,
+          "disabled": false,
           "expanded": undefined,
           "selected": undefined,
         }
@@ -7238,6 +7565,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -7249,40 +7577,114 @@ exports[`more components (light theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomRightRadius": 8,
-          "borderColor": "rgba(30, 25, 20, 0.10)",
-          "borderTopRightRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
-          "marginStart": -1.5,
+          "backgroundColor": "#F2EDE2",
+          "borderRadius": 9999,
           "opacity": 1,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-plus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#2A2521",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#2A2521",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        +
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280952097,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+          <RNSVGPath
+            d="M12 5v14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
   </View>,
   <View
@@ -7299,7 +7701,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
           "flexDirection": "row",
           "flexGrow": undefined,
           "flexWrap": undefined,
-          "gap": undefined,
+          "gap": 8,
           "height": undefined,
           "justifyContent": undefined,
           "left": undefined,
@@ -7324,6 +7726,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
     }
   >
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
@@ -7344,6 +7747,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -7355,39 +7759,92 @@ exports[`more components (light theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomLeftRadius": 8,
-          "borderColor": "rgba(30, 25, 20, 0.10)",
-          "borderTopLeftRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
+          "backgroundColor": "#F2EDE2",
+          "borderRadius": 9999,
           "opacity": 0.4,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-minus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#2A2521",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#2A2521",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        −
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280952097,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
     <View
       style={
@@ -7419,7 +7876,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
             "position": undefined,
             "right": undefined,
             "top": undefined,
-            "width": 56,
+            "width": 40,
             "zIndex": undefined,
           },
           null,
@@ -7432,7 +7889,8 @@ exports[`more components (light theme) settings Stepper 1`] = `
           [
             {
               "color": "#2A2521",
-              "fontSize": 14,
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
               "fontWeight": "400",
             },
             {
@@ -7451,6 +7909,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
       </Text>
     </View>
     <View
+      accessibilityRole="button"
       accessibilityState={
         {
           "busy": undefined,
@@ -7471,6 +7930,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      hitSlop={8}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -7482,40 +7942,114 @@ exports[`more components (light theme) settings Stepper 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
-          "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderBottomRightRadius": 8,
-          "borderColor": "rgba(30, 25, 20, 0.10)",
-          "borderTopRightRadius": 8,
-          "borderWidth": 1.5,
-          "height": 44,
-          "justifyContent": "center",
-          "marginStart": -1.5,
+          "backgroundColor": "#F2EDE2",
+          "borderRadius": 9999,
           "opacity": 0.4,
-          "width": 44,
+          "padding": 8,
         }
       }
     >
-      <Text
+      <RNSVGSvgView
+        align="xMidYMid"
+        aria-hidden="true"
+        bbHeight={16}
+        bbWidth={16}
+        className="lucide lucide-plus"
+        fill="none"
+        focusable={false}
+        height={16}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#2A2521"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         style={
           [
             {
-              "color": "#2A2521",
-              "fontSize": 16,
-              "fontWeight": "600",
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             {
-              "color": "#2A2521",
+              "flex": 0,
+              "height": 16,
+              "width": 16,
             },
-            null,
-            null,
-            null,
-            null,
           ]
         }
+        vbHeight={24}
+        vbWidth={24}
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        +
-      </Text>
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280952097,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGPath
+            d="M5 12h14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+          <RNSVGPath
+            d="M12 5v14"
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4280952097,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
     </View>
   </View>,
 ]

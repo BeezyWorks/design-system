@@ -63,6 +63,11 @@ export const type = {
   // Chrome "Supplemental" role — a value trailing a list row (a time, a
   // date).
   supplemental: {fontSize: 15, fontWeight: '600'},
+  // The screen header's centered title and the section subtitle under it;
+  // the wide (iPad/desktop) header sets a larger title.
+  headerTitle: {fontSize: 22, fontWeight: '700'},
+  headerTitleWide: {fontSize: 26, fontWeight: '700'},
+  headerSubtitle: {fontSize: 16, fontWeight: '400'},
   // Sheet title (Cancel/title/Save header row) — distinct from the plain
   // `BottomSheetHeader` title style.
   sheetTitle: {fontSize: 17, fontWeight: '600'},
@@ -93,6 +98,9 @@ const variantColor: Partial<Record<TypeVariant, SemanticColor>> = {
   itemHeader: SemanticColor.TextPrimary,
   detail: SemanticColor.TextSecondary,
   supplemental: SemanticColor.TextAccent,
+  headerTitle: SemanticColor.TextAccent,
+  headerTitleWide: SemanticColor.AccentPrimary,
+  headerSubtitle: SemanticColor.TextAccent,
   menuOption: SemanticColor.TextPrimary,
   menuOptionSelected: SemanticColor.TextAccent,
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import {TouchableOpacity} from 'react-native'
 import {
+  ALargeSmall,
   Calendar,
   Book,
   BookOpen,
@@ -74,6 +75,7 @@ export type IconName =
   | 'check'
   | 'search'
   | 'more-vertical'
+  | 'text-size'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -111,6 +113,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   check: Check,
   search: Search,
   'more-vertical': EllipsisVertical,
+  'text-size': ALargeSmall,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the

@@ -1991,8 +1991,8 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "500",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
             },
             {
               "color": "#F0ECE4",
@@ -2067,8 +2067,8 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
             {
               "color": "#F0ECE4",
@@ -2143,8 +2143,8 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "500",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
             },
             {
               "color": "#F0ECE4",
@@ -2190,8 +2190,8 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
           ]
         }
@@ -2207,8 +2207,8 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
           ]
         }
@@ -2224,8 +2224,8 @@ exports[`components (dark theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
           ]
         }
@@ -2395,7 +2395,7 @@ exports[`components (dark theme) Text as reading content 1`] = `
         "color": "#F0ECE4",
         "fontFamily": "Taamey Frank CLM",
         "fontSize": 24,
-        "lineHeight": 60,
+        "lineHeight": 42,
         "textAlign": "right",
       },
       {
@@ -5142,8 +5142,8 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "500",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
             },
             {
               "color": "#2A2521",
@@ -5218,8 +5218,8 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
             {
               "color": "#2A2521",
@@ -5294,8 +5294,8 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "500",
+              "fontFamily": "FrankRuhlLibre_400Regular",
+              "fontSize": 16,
             },
             {
               "color": "#2A2521",
@@ -5341,8 +5341,8 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
           ]
         }
@@ -5358,8 +5358,8 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
           ]
         }
@@ -5375,8 +5375,8 @@ exports[`components (light theme) SegmentedControl 1`] = `
               "textAlign": "center",
             },
             {
-              "fontSize": 15,
-              "fontWeight": "600",
+              "fontFamily": "FrankRuhlLibre_700Bold",
+              "fontSize": 16,
             },
           ]
         }
@@ -5546,7 +5546,7 @@ exports[`components (light theme) Text as reading content 1`] = `
         "color": "#2A2521",
         "fontFamily": "Taamey Frank CLM",
         "fontSize": 24,
-        "lineHeight": 60,
+        "lineHeight": 42,
         "textAlign": "right",
       },
       {
