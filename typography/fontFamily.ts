@@ -18,6 +18,8 @@ export const FontFamily = {
   // Editorial serif for the Latin/Hebrew chrome ramp (`pageHeader`, `item`).
   FrankRuhlLibre: 'FrankRuhlLibre_400Regular',
   FrankRuhlLibreBold: 'FrankRuhlLibre_700Bold',
+  // Display weight for one-word headlines over a photo (`displayLarge`).
+  FrankRuhlLibreBlack: 'FrankRuhlLibre_900Black',
   // Ktav Rashi (semi-cursive) script for commentary text.
   NotoRashiHebrew: 'NotoRashiHebrew_400Regular',
   NotoRashiHebrewBold: 'NotoRashiHebrew_700Bold',
