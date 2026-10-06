@@ -1,5 +1,9 @@
 import React from 'react'
-import {Text as NativeText, TextProps as NativeTextProps} from 'react-native'
+import {
+  Platform,
+  Text as NativeText,
+  TextProps as NativeTextProps,
+} from 'react-native'
 import {
   ContentScript,
   TypeVariant,
@@ -20,6 +24,16 @@ import {
 export type TextAlign = 'auto' | 'left' | 'right' | 'center' | 'justify'
 
 const HAS_LATIN = /[A-Za-z]/
+
+// react-native-web wants the CSS shorthand; native the separate props.
+const photoShadow = (color: string) =>
+  Platform.OS === 'web'
+    ? {textShadow: `0px 1px 10px ${color}`}
+    : {
+        textShadowColor: color,
+        textShadowOffset: {width: 0, height: 1},
+        textShadowRadius: 10,
+      }
 // Left-to-right mark: sets the paragraph direction of a mixed label from its
 // first strong character on every platform (`writingDirection` is iOS-only).
 const LRM = '\u200E'
@@ -47,6 +61,10 @@ export interface TextProps extends Pick<
   secondary?: boolean
   /** Overrides the variant's default color with a semantic token. */
   color?: SemanticColor
+  /** Text laid directly over a photo: `TextOnPhoto` (unless `color` says
+   * otherwise) with a soft dark halo so it stays legible over light parts
+   * of the image. */
+  onPhoto?: boolean
   align?: TextAlign
   bold?: boolean
   italic?: boolean
@@ -76,6 +94,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
   content,
   secondary,
   color,
+  onPhoto,
   align,
   bold,
   italic,
@@ -102,7 +121,11 @@ export const Text: React.FunctionComponent<TextProps> = ({
     HAS_LATIN.test(children)
 
   const base = content ? contentStyle : chromeStyle
-  const resolvedColor = color ? resolve(color) : base.color
+  const resolvedColor = color
+    ? resolve(color)
+    : onPhoto
+      ? resolve(SemanticColor.TextOnPhoto)
+      : base.color
 
   // Latin faces ship real bold/italic cuts — switch family rather than
   // asking the platform to synthesize them (which custom fonts on iOS
@@ -126,6 +149,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
           ...(latinLabel && {writingDirection: 'ltr'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
           ...(italic && {fontStyle: 'italic'}),
+          ...(onPhoto && photoShadow(resolve(SemanticColor.OverlayPhotoScrim))),
         },
         align ? {textAlign: align} : null,
         bold ? {fontWeight: '700'} : null,

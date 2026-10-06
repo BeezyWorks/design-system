@@ -57,9 +57,13 @@ const lightNeutrals: NeutralDefinition = {
   [S.SurfaceDanger]: C.DangerRed,
   [S.SurfaceSuccess]: C.SuccessGreenDeepTint,
   [S.SurfaceOnAccent]: C.WhiteTint18,
+  [S.SurfaceGlass]: C.GlassFrost,
+  [S.SurfaceGlassOpaque]: C.GlassFrostOpaque,
+  [S.SurfaceGlassSheen]: C.GlassSheenLight,
 
   [S.BorderDefault]: C.InkHairline,
   [S.BorderStrong]: C.BlackScrim50,
+  [S.BorderGlass]: C.GlassEdgeLight,
 
   [S.OverlayScrim]: C.BlackScrim50,
   [S.OverlayScrimSoft]: C.BlackScrim15,
@@ -89,6 +93,8 @@ const sepiaNeutrals: NeutralDefinition = {
   [S.SurfaceHover]: C.SepiaInkWash,
   [S.SurfaceTrack]: C.SepiaInkTrack,
   [S.SurfaceTrackOff]: C.SepiaSand,
+  [S.SurfaceGlass]: C.GlassSepia,
+  [S.SurfaceGlassOpaque]: C.GlassSepiaOpaque,
 
   [S.BorderDefault]: C.SepiaInkHairline,
 }
@@ -118,9 +124,13 @@ const darkNeutrals: NeutralDefinition = {
   [S.SurfaceDanger]: C.DangerRed,
   [S.SurfaceSuccess]: C.SuccessGreenLightTint,
   [S.SurfaceOnAccent]: C.WhiteTint18,
+  [S.SurfaceGlass]: C.GlassSmoke,
+  [S.SurfaceGlassOpaque]: C.GlassSmokeOpaque,
+  [S.SurfaceGlassSheen]: C.GlassSheenDark,
 
   [S.BorderDefault]: C.WhiteHairline,
   [S.BorderStrong]: C.BlackScrim55,
+  [S.BorderGlass]: C.GlassEdgeDark,
 
   [S.OverlayScrim]: C.BlackScrim55,
   [S.OverlayScrimSoft]: C.BlackScrim15,

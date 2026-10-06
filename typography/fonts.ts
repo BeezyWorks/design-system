@@ -1,6 +1,7 @@
 import {
   FrankRuhlLibre_400Regular,
   FrankRuhlLibre_700Bold,
+  FrankRuhlLibre_900Black,
 } from '@expo-google-fonts/frank-ruhl-libre'
 import {Cardo_400Regular, Cardo_700Bold} from '@expo-google-fonts/cardo'
 import {
@@ -49,6 +50,7 @@ export const DesignFonts = {
   [FontFamily.SiddurIcons]: require('../assets/fonts/SiddurIcons.ttf'),
   [FontFamily.FrankRuhlLibre]: FrankRuhlLibre_400Regular,
   [FontFamily.FrankRuhlLibreBold]: FrankRuhlLibre_700Bold,
+  [FontFamily.FrankRuhlLibreBlack]: FrankRuhlLibre_900Black,
   [FontFamily.Cardo]: Cardo_400Regular,
   [FontFamily.CardoBold]: Cardo_700Bold,
   [FontFamily.NotoSerifHebrew]: NotoSerifHebrew_400Regular,

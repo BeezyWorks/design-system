@@ -58,6 +58,20 @@ export const NamedColor = {
   // A translucent white chip laid over a brand fill — reads on any hue.
   WhiteTint18: 'rgba(255, 255, 255, 0.18)',
 
+  // --- Glass: the tint over a backdrop blur, per mode. The *Opaque steps
+  // stand in where the platform can't blur (Android), so text stays legible
+  // over a photo without it.
+  GlassFrost: 'rgba(250, 247, 240, 0.5)',
+  GlassFrostOpaque: 'rgba(250, 247, 240, 0.88)',
+  GlassSepia: 'rgba(239, 225, 196, 0.55)',
+  GlassSepiaOpaque: 'rgba(239, 225, 196, 0.9)',
+  GlassSmoke: 'rgba(24, 20, 17, 0.34)',
+  GlassSmokeOpaque: 'rgba(24, 20, 17, 0.8)',
+  GlassEdgeLight: 'rgba(255, 255, 255, 0.65)',
+  GlassEdgeDark: 'rgba(255, 255, 255, 0.18)',
+  GlassSheenLight: 'rgba(255, 255, 255, 0.35)',
+  GlassSheenDark: 'rgba(255, 255, 255, 0.08)',
+
   // --- Black and its alpha steps (scrims, shadows)
   Black: '#000000',
   BlackScrim15: 'rgba(0, 0, 0, 0.15)',

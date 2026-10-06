@@ -68,6 +68,33 @@ export const type = {
   headerTitle: {fontSize: 22, fontWeight: '700'},
   headerTitleWide: {fontSize: 26, fontWeight: '700'},
   headerSubtitle: {fontSize: 16, fontWeight: '400'},
+  // Display ramp (Frank Ruhl Libre): a one- or two-word headline and the
+  // serif lines around it, for hero areas — usually over a photo, with
+  // `Text`'s `onPhoto`.
+  displayLarge: {
+    fontFamily: FontFamily.FrankRuhlLibreBlack,
+    fontSize: 64,
+    lineHeight: 72,
+    fontWeight: '900',
+  },
+  displayMedium: {
+    fontFamily: FontFamily.FrankRuhlLibreBold,
+    fontSize: 40,
+    lineHeight: 46,
+    fontWeight: '700',
+  },
+  bodySerifLarge: {
+    fontFamily: FontFamily.FrankRuhlLibre,
+    fontSize: 18,
+    lineHeight: 26,
+    fontWeight: '400',
+  },
+  bodySerif: {
+    fontFamily: FontFamily.FrankRuhlLibre,
+    fontSize: 16,
+    lineHeight: 23,
+    fontWeight: '400',
+  },
   // Sheet title (Cancel/title/Save header row) — distinct from the plain
   // `BottomSheetHeader` title style.
   sheetTitle: {fontSize: 17, fontWeight: '600'},
