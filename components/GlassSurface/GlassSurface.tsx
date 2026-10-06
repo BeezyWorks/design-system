@@ -1,11 +1,8 @@
 import React from 'react'
-import {Platform, StyleSheet} from 'react-native'
-import {BlurView} from 'expo-blur'
-import {LinearGradient} from 'expo-linear-gradient'
 import {SemanticColor} from '../../colors'
 import {RadiusToken} from '../../radius'
-import {useAppearance, useColorResolver} from '../../theme'
 import {Stack, StackProps} from '../Stack'
+import {GlassBackdrop} from './GlassBackdrop'
 
 export interface GlassSurfaceProps extends Pick<
   StackProps,
@@ -33,28 +30,16 @@ export interface GlassSurfaceProps extends Pick<
   raised?: boolean
 }
 
-// Android only blurs with a separately-mounted blur target (expo-blur's
-// `blurTarget`), which a generic panel can't assume — it gets the opaque
-// tint instead, so text over a photo stays legible.
-const canBlur = Platform.OS !== 'android'
-const BLUR_INTENSITY = 60
-// Where the sheen has faded out, as a fraction of the panel's height.
-const SHEEN_END = 0.45
-
 /** A frosted-glass panel: a backdrop blur, the mode's glass tint, light
  * catching its top edge and a bright hairline border. It follows the mode
  * (frosted in light/sepia, smoky in dark); wrap it in a dark `ThemeScope`
- * for always-smoky glass over a photo. `BlurView`'s and `LinearGradient`'s
- * `style`/`colors` are those libraries' own contracts, derived from tokens
- * here — not a style escape hatch. */
+ * for always-smoky glass over a photo. The fill is `GlassBackdrop`. */
 export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
   children,
   radius = 'xl',
   raised = true,
   ...layout
 }) => {
-  const resolve = useColorResolver()
-  const appearance = useAppearance()
   // The clipped panel fills the outer box only when that box is sized (a
   // `height`, or growing in its parent); otherwise both size to the
   // content. (A `fill` here would resolve 100% against whatever ancestor
@@ -80,33 +65,7 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
         borderWidth={1}
         borderColor={SemanticColor.BorderGlass}
       >
-        {canBlur && (
-          <BlurView
-            tint={
-              appearance === 'dark'
-                ? 'systemUltraThinMaterialDark'
-                : 'systemUltraThinMaterialLight'
-            }
-            intensity={BLUR_INTENSITY}
-            style={StyleSheet.absoluteFill}
-          />
-        )}
-        <Stack
-          position="absoluteFill"
-          background={
-            canBlur
-              ? SemanticColor.SurfaceGlass
-              : SemanticColor.SurfaceGlassOpaque
-          }
-        />
-        <LinearGradient
-          colors={[
-            resolve(SemanticColor.SurfaceGlassSheen),
-            resolve(SemanticColor.SurfaceTransparent),
-          ]}
-          locations={[0, SHEEN_END]}
-          style={styles.overlay}
-        />
+        <GlassBackdrop />
         <Stack
           grow={sized}
           direction={layout.direction}
@@ -127,14 +86,3 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
     </Stack>
   )
 }
-
-const styles = StyleSheet.create({
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    pointerEvents: 'none',
-  },
-})
