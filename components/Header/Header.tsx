@@ -134,23 +134,37 @@ export const Header = ({
             {!!onTitlePress && (
               // The chevron trails the subtitle in its own reading
               // direction: left of a Hebrew section name, right of a Latin
-              // one — the cue that the title opens a section picker.
-              <View
-                style={[
-                  styles.subtitleRow,
-                  !HAS_LATIN.test(subtitle ?? '') && styles.subtitleRowRtl,
-                ]}
-              >
-                {!!subtitle && (
-                  <Text variant="headerSubtitle" align="center">
-                    {subtitle}
-                  </Text>
+              // one — the cue that the title opens a section picker. It is
+              // absolutely positioned beside the subtitle so only the text
+              // is centered; an in-flow caret would shove it off-center.
+              <View style={styles.subtitleRow}>
+                {subtitle ? (
+                  <View>
+                    <Text variant="headerSubtitle" align="center">
+                      {subtitle}
+                    </Text>
+                    <View
+                      style={[
+                        styles.chevronBeside,
+                        HAS_LATIN.test(subtitle)
+                          ? styles.chevronAfter
+                          : styles.chevronBefore,
+                      ]}
+                    >
+                      <Icon
+                        name="chevron-down"
+                        size={14}
+                        color={SemanticColor.TextAccent}
+                      />
+                    </View>
+                  </View>
+                ) : (
+                  <Icon
+                    name="chevron-down"
+                    size={14}
+                    color={SemanticColor.TextAccent}
+                  />
                 )}
-                <Icon
-                  name="chevron-down"
-                  size={14}
-                  color={SemanticColor.TextAccent}
-                />
               </View>
             )}
           </View>
@@ -252,11 +266,16 @@ const styleCreator = (resolve: ColorResolver) =>
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 4,
     },
-    subtitleRowRtl: {
-      flexDirection: 'row-reverse',
+    chevronBeside: {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      justifyContent: 'center',
     },
+    // Logical edges, so the caret flips with the layout direction.
+    chevronAfter: {start: '100%', marginStart: 4},
+    chevronBefore: {end: '100%', marginEnd: 4},
     pressed: {
       opacity: 0.6,
     },
