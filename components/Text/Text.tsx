@@ -1,5 +1,9 @@
 import React from 'react'
-import {Text as NativeText, TextProps as NativeTextProps} from 'react-native'
+import {
+  Platform,
+  Text as NativeText,
+  TextProps as NativeTextProps,
+} from 'react-native'
 import {
   ContentScript,
   TypeVariant,
@@ -21,10 +25,15 @@ export type TextAlign = 'auto' | 'left' | 'right' | 'center' | 'justify'
 
 const HAS_LATIN = /[A-Za-z]/
 
-const photoShadow = {
-  textShadowOffset: {width: 0, height: 1},
-  textShadowRadius: 10,
-}
+// react-native-web wants the CSS shorthand; native the separate props.
+const photoShadow = (color: string) =>
+  Platform.OS === 'web'
+    ? {textShadow: `0px 1px 10px ${color}`}
+    : {
+        textShadowColor: color,
+        textShadowOffset: {width: 0, height: 1},
+        textShadowRadius: 10,
+      }
 // Left-to-right mark: sets the paragraph direction of a mixed label from its
 // first strong character on every platform (`writingDirection` is iOS-only).
 const LRM = '\u200E'
@@ -140,10 +149,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
           ...(latinLabel && {writingDirection: 'ltr'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
           ...(italic && {fontStyle: 'italic'}),
-          ...(onPhoto && {
-            ...photoShadow,
-            textShadowColor: resolve(SemanticColor.OverlayPhotoScrim),
-          }),
+          ...(onPhoto && photoShadow(resolve(SemanticColor.OverlayPhotoScrim))),
         },
         align ? {textAlign: align} : null,
         bold ? {fontWeight: '700'} : null,

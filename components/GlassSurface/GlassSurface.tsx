@@ -55,6 +55,14 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
 }) => {
   const resolve = useColorResolver()
   const appearance = useAppearance()
+  // The clipped panel fills the outer box only when that box is sized (a
+  // `height`, or growing in its parent); otherwise both size to the
+  // content. (A `fill` here would resolve 100% against whatever ancestor
+  // has a height and swallow the screen.)
+  const sized =
+    !!layout.grow ||
+    layout.height !== undefined ||
+    layout.minHeight !== undefined
   return (
     <Stack
       radius={radius}
@@ -66,7 +74,7 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
       alignSelf={layout.alignSelf}
     >
       <Stack
-        fill
+        grow={sized}
         radius={radius}
         overflow="hidden"
         borderWidth={1}
@@ -97,11 +105,10 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
             resolve(SemanticColor.SurfaceTransparent),
           ]}
           locations={[0, SHEEN_END]}
-          style={StyleSheet.absoluteFill}
-          pointerEvents="none"
+          style={styles.overlay}
         />
         <Stack
-          grow
+          grow={sized}
           direction={layout.direction}
           align={layout.align}
           justify={layout.justify}
@@ -120,3 +127,14 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
     </Stack>
   )
 }
+
+const styles = StyleSheet.create({
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    pointerEvents: 'none',
+  },
+})
