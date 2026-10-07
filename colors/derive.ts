@@ -7,8 +7,11 @@ import type {BrandPalette, HexColor, ResolvedBrand} from './brands'
 //
 //  - `primaryLight` is the hue lifted until it reads on dark surfaces.
 //  - `deep` is the hue dropped darker, still able to carry light text.
+//  - `marker` / `markerLight` are the hue at mid lightness, for small marks
+//    set among body text (pasuk numbers): as far from `TextPrimary` as the
+//    background allows, while still AA on it.
 //
-// Both are anchored on contrast rather than a fixed lightness step, so they
+// All are anchored on contrast rather than a fixed lightness step, so they
 // hold up for any primary, not just the ones we happened to test.
 
 const HEX = /^#[0-9a-fA-F]{6}$/
@@ -18,11 +21,15 @@ const HEX = /^#[0-9a-fA-F]{6}$/
 const ON_DARK_SURFACE = NamedColor.Coal
 const TEXT_ON_DARK = NamedColor.Parchment
 const TEXT_ON_ACCENT = NamedColor.White
+// The darkest light-mode surface (sepia paper), so `marker` holds on all of them.
+const ON_LIGHT_SURFACE = NamedColor.SepiaPaper
 
 /** `primaryLight` against dark surfaces: WCAG AAA for text. */
 const LIGHT_MIN_CONTRAST = 7
 /** `deep` against `TextPrimary` in dark mode. */
 const DEEP_MIN_CONTRAST = 5
+/** `marker`/`markerLight` against their surfaces: WCAG AA for text. */
+const MARKER_MIN_CONTRAST = 4.5
 /** `primary` against `TextOnAccent`: the WCAG floor for UI components. */
 const PRIMARY_MIN_CONTRAST = 3
 
@@ -135,6 +142,30 @@ const deriveDeep = (primary: Oklch): HexColor => {
   return toHex({L, C, H: primary.H})
 }
 
+// Walks lightness from `from` toward `surface` (`step`'s sign) for as long
+// as the color still holds `MARKER_MIN_CONTRAST` against it, and returns the
+// last one that did. A `from` that already fails is first walked away until
+// it passes.
+const deriveMarker = (from: Oklch, surface: string, step: number): HexColor => {
+  let L = from.L
+  const at = (l: number) => toHex({L: l, C: from.C, H: from.H})
+  while (
+    L - step > 0 &&
+    L - step < 1 &&
+    contrastRatio(at(L), surface) < MARKER_MIN_CONTRAST
+  ) {
+    L -= step
+  }
+  while (
+    L + step > 0 &&
+    L + step < 1 &&
+    contrastRatio(at(L + step), surface) >= MARKER_MIN_CONTRAST
+  ) {
+    L += step
+  }
+  return at(L)
+}
+
 const cache = new WeakMap<BrandPalette, ResolvedBrand>()
 
 /** A brand's full scale: what the app passed, plus the rest derived from
@@ -158,11 +189,21 @@ export const resolveBrand = (brand: BrandPalette): ResolvedBrand => {
     )
   }
 
+  if (brand.marker !== undefined) assertHex('marker', brand.marker)
+  if (brand.markerLight !== undefined) {
+    assertHex('markerLight', brand.markerLight)
+  }
+
   const primary = toOklch(brand.primary)
+  const primaryLight = brand.primaryLight ?? deriveLight(primary)
   const resolved: ResolvedBrand = {
     primary: brand.primary,
-    primaryLight: brand.primaryLight ?? deriveLight(primary),
+    primaryLight,
     deep: brand.deep ?? deriveDeep(primary),
+    marker: brand.marker ?? deriveMarker(primary, ON_LIGHT_SURFACE, STEP),
+    markerLight:
+      brand.markerLight ??
+      deriveMarker(toOklch(primaryLight), ON_DARK_SURFACE, -STEP),
   }
   cache.set(brand, resolved)
   return resolved

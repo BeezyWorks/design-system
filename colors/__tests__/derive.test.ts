@@ -42,6 +42,25 @@ describe('resolveBrand', () => {
     expect(lightness(deep)).toBeLessThan(lightness(primary))
   })
 
+  it.each(primaries)(
+    'derives AA markers set apart from text for %s',
+    (primary) => {
+      const {marker, markerLight} = resolveBrand({primary})
+      expect(
+        contrastRatio(marker, NamedColor.SepiaPaper),
+      ).toBeGreaterThanOrEqual(4.5)
+      expect(
+        contrastRatio(markerLight, NamedColor.Coal),
+      ).toBeGreaterThanOrEqual(4.5)
+      // The lightest (dark mode: darkest) AA color sits ~2.5:1 from the body
+      // text — the most separation the surface allows.
+      expect(contrastRatio(marker, NamedColor.Ink)).toBeGreaterThanOrEqual(2.4)
+      expect(
+        contrastRatio(markerLight, NamedColor.Parchment),
+      ).toBeGreaterThanOrEqual(2.4)
+    },
+  )
+
   it.each(primaries)('keeps the hue of %s', (primary) => {
     const {primaryLight, deep} = resolveBrand({primary})
     for (const derived of [primaryLight, deep]) {

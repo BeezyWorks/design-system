@@ -4,6 +4,7 @@ import {resolveColor, ThemeMode} from '../colors/themes'
 import {BrandPalette} from '../colors/brands'
 import {
   ContentSelection,
+  HeaderTypeface,
   ResolvedContentText,
   defaultContentSelection,
   resolveContentText,
@@ -18,6 +19,7 @@ interface DesignSystemValue {
   mode: ThemeMode
   brand: BrandPalette
   content: ResolvedContentText
+  headerTypeface?: HeaderTypeface
 }
 
 const DesignSystemContext = createContext<DesignSystemValue | null>(null)
@@ -40,13 +42,24 @@ export interface DesignSystemProviderProps {
   brand: BrandPalette
   /** The user's reading-text choice; defaults to the DL's defaults. */
   content?: ContentSelection
+  /** The app's header face: the header roles of the type ramp
+   * (`pageHeader`, `sectionHeader`, `itemHeader`) plus the `Header` and
+   * full-screen sheet titles. Unset, the ramp keeps Frank Ruhl Libre and
+   * those titles the system font. */
+  headerTypeface?: HeaderTypeface
   children?: React.ReactNode
 }
 
 /** Mount once at the app root. */
 export const DesignSystemProvider: React.FunctionComponent<
   DesignSystemProviderProps
-> = ({mode, brand, content = defaultContentSelection, children}) => {
+> = ({
+  mode,
+  brand,
+  content = defaultContentSelection,
+  headerTypeface,
+  children,
+}) => {
   const {typeface, size, leading, latinTypeface, tracking} = content
   const value = useMemo<DesignSystemValue>(
     () => ({
@@ -59,8 +72,18 @@ export const DesignSystemProvider: React.FunctionComponent<
         latinTypeface,
         tracking,
       }),
+      headerTypeface,
     }),
-    [mode, brand, typeface, size, leading, latinTypeface, tracking],
+    [
+      mode,
+      brand,
+      typeface,
+      size,
+      leading,
+      latinTypeface,
+      tracking,
+      headerTypeface,
+    ],
   )
   return (
     <DesignSystemContext.Provider value={value}>
@@ -127,3 +150,8 @@ export const useResolvedColor = (token: SemanticColor): string => {
 /** The user's reading-text selection, resolved to concrete values. */
 export const useContentText = (): ResolvedContentText =>
   useDesignSystem().content
+
+/** The app's header face, if it set one (see
+ * `DesignSystemProviderProps.headerTypeface`). */
+export const useHeaderTypeface = (): HeaderTypeface | undefined =>
+  useDesignSystem().headerTypeface
