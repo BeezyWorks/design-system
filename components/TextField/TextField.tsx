@@ -13,6 +13,8 @@ export interface TextFieldProps extends Pick<
   | 'value'
   | 'onChangeText'
   | 'onEndEditing'
+  | 'onSubmitEditing'
+  | 'onBlur'
   | 'autoFocus'
   | 'returnKeyType'
   | 'clearButtonMode'
