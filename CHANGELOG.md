@@ -1,3 +1,10 @@
+## [0.15.2](https://github.com/BeezyWorks/design-system/compare/v0.15.1...v0.15.2) (2026-10-07)
+
+
+### Bug Fixes
+
+* **TextField:** expose onSubmitEditing and onBlur ([4d9a0a1](https://github.com/BeezyWorks/design-system/commit/4d9a0a10392c976502f6697e5320d6523febc188))
+
 ## [0.15.1](https://github.com/BeezyWorks/design-system/compare/v0.15.0...v0.15.1) (2026-10-06)
 
 
