@@ -1,3 +1,10 @@
+# [0.16.0](https://github.com/BeezyWorks/design-system/compare/v0.15.2...v0.16.0) (2026-10-12)
+
+
+### Features
+
+* **Icon:** add share icon ([9303a2f](https://github.com/BeezyWorks/design-system/commit/9303a2ff6da331acdf688c22aff5185e1006d252))
+
 ## [0.15.2](https://github.com/BeezyWorks/design-system/compare/v0.15.1...v0.15.2) (2026-10-07)
 
 
