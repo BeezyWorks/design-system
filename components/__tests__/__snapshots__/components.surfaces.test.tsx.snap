@@ -471,12 +471,15 @@ exports[`surfaces (dark theme) BottomSheet with header 1`] = `
       <Text
         numberOfLines={1}
         style={
-          {
-            "color": "rgba(240, 236, 228, 0.5)",
-            "fontSize": 22,
-            "fontWeight": "600",
-            "textAlign": "center",
-          }
+          [
+            {
+              "color": "rgba(240, 236, 228, 0.5)",
+              "fontSize": 22,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+            null,
+          ]
         }
       >
         Sheet
@@ -562,12 +565,15 @@ exports[`surfaces (dark theme) BottomSheetHeader with actions 1`] = `
     <Text
       numberOfLines={1}
       style={
-        {
-          "color": "rgba(240, 236, 228, 0.5)",
-          "fontSize": 22,
-          "fontWeight": "600",
-          "textAlign": "center",
-        }
+        [
+          {
+            "color": "rgba(240, 236, 228, 0.5)",
+            "fontSize": 22,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+          null,
+        ]
       }
     >
       Header
@@ -706,14 +712,17 @@ exports[`surfaces (dark theme) BottomSheetModal (web) 1`] = `
       <Text
         numberOfLines={1}
         style={
-          {
-            "color": "#F0ECE4",
-            "flex": 1,
-            "fontSize": 18,
-            "fontWeight": "700",
-            "marginLeft": 12,
-            "textAlign": "right",
-          }
+          [
+            {
+              "color": "#F0ECE4",
+              "flex": 1,
+              "fontSize": 18,
+              "fontWeight": "700",
+              "marginLeft": 12,
+              "textAlign": "right",
+            },
+            null,
+          ]
         }
       >
         Web sheet
@@ -1621,12 +1630,15 @@ exports[`surfaces (light theme) BottomSheet with header 1`] = `
       <Text
         numberOfLines={1}
         style={
-          {
-            "color": "rgba(42, 37, 33, 0.5)",
-            "fontSize": 22,
-            "fontWeight": "600",
-            "textAlign": "center",
-          }
+          [
+            {
+              "color": "rgba(42, 37, 33, 0.5)",
+              "fontSize": 22,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+            null,
+          ]
         }
       >
         Sheet
@@ -1712,12 +1724,15 @@ exports[`surfaces (light theme) BottomSheetHeader with actions 1`] = `
     <Text
       numberOfLines={1}
       style={
-        {
-          "color": "rgba(42, 37, 33, 0.5)",
-          "fontSize": 22,
-          "fontWeight": "600",
-          "textAlign": "center",
-        }
+        [
+          {
+            "color": "rgba(42, 37, 33, 0.5)",
+            "fontSize": 22,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+          null,
+        ]
       }
     >
       Header
@@ -1856,14 +1871,17 @@ exports[`surfaces (light theme) BottomSheetModal (web) 1`] = `
       <Text
         numberOfLines={1}
         style={
-          {
-            "color": "#2A2521",
-            "flex": 1,
-            "fontSize": 18,
-            "fontWeight": "700",
-            "marginLeft": 12,
-            "textAlign": "right",
-          }
+          [
+            {
+              "color": "#2A2521",
+              "flex": 1,
+              "fontSize": 18,
+              "fontWeight": "700",
+              "marginLeft": 12,
+              "textAlign": "right",
+            },
+            null,
+          ]
         }
       >
         Web sheet

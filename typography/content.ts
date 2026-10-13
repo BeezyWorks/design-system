@@ -72,6 +72,30 @@ export const latinTypefaceFontFamily: Record<
   },
 }
 
+/** The serif for header roles in the editorial ramp (`pageHeader`,
+ * `sectionHeader`, `itemHeader`). Both draw Latin and Hebrew as a pair. */
+export const HeaderTypeface = {
+  FrankRuhlLibre: 'Frank Ruhl Libre',
+  Cardo: 'Cardo',
+} as const
+export type HeaderTypeface =
+  (typeof HeaderTypeface)[keyof typeof HeaderTypeface]
+
+/** Header roles are bold; `regular` is there for completeness. */
+export const headerTypefaceFontFamily: Record<
+  HeaderTypeface,
+  {regular: FontFamily; bold: FontFamily}
+> = {
+  [HeaderTypeface.FrankRuhlLibre]: {
+    regular: FontFamily.FrankRuhlLibre,
+    bold: FontFamily.FrankRuhlLibreBold,
+  },
+  [HeaderTypeface.Cardo]: {
+    regular: FontFamily.Cardo,
+    bold: FontFamily.CardoBold,
+  },
+}
+
 export const ContentSize = {
   Small: 'Small',
   Normal: 'Normal',

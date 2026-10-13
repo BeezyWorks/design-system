@@ -13,6 +13,7 @@ import {SIDE_NAV_BREAKPOINT} from '../../layout'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {Icon} from '../Icon'
+import {useHeaderFontFamily} from '../../typography'
 
 const PANEL_WIDTH = 380
 
@@ -46,6 +47,8 @@ export const BottomSheetModal = ({
     dismissedRef.current = dismissed
   }, [dismissed])
   const resolve = useColorResolver()
+  const headerFontFamily = useHeaderFontFamily()
+  const titleFont = headerFontFamily ? {fontFamily: headerFontFamily} : null
   const {width: windowWidth, height: windowHeight} = useWindowDimensions()
   const isWide = windowWidth >= SIDE_NAV_BREAKPOINT
   const isFull = !!fullScreen && !isWide
@@ -119,7 +122,7 @@ export const BottomSheetModal = ({
               <View style={styles.titleCentered}>
                 {titleNode ?? (
                   <Text
-                    style={[styles.title, styles.titleCenteredText]}
+                    style={[styles.title, styles.titleCenteredText, titleFont]}
                     numberOfLines={1}
                   >
                     {title}
@@ -145,7 +148,7 @@ export const BottomSheetModal = ({
               <View style={styles.titleCentered}>
                 {titleNode ?? (
                   <Text
-                    style={[styles.title, styles.titleCenteredText]}
+                    style={[styles.title, styles.titleCenteredText, titleFont]}
                     numberOfLines={1}
                   >
                     {title}
@@ -157,7 +160,7 @@ export const BottomSheetModal = ({
           ) : (
             <>
               {titleNode ?? (
-                <Text style={styles.title} numberOfLines={1}>
+                <Text style={[styles.title, titleFont]} numberOfLines={1}>
                   {title}
                 </Text>
               )}

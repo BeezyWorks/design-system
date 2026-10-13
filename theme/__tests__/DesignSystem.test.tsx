@@ -3,7 +3,13 @@ import {act, create} from 'react-test-renderer'
 import {SemanticColor as S} from '../../colors/semantic'
 import {buildTheme} from '../../colors/themes'
 import {testBrand} from '../../colors/sampleBrands'
-import {ContentSize, Leading, Typeface} from '../../typography/content'
+import {
+  ContentSize,
+  HeaderTypeface,
+  Leading,
+  Typeface,
+} from '../../typography/content'
+import {FontFamily, useTypeStyle} from '../../typography'
 import {
   DesignSystemProvider,
   ThemeScope,
@@ -190,5 +196,36 @@ describe('ThemeScope', () => {
     } finally {
       spy.mockRestore()
     }
+  })
+
+  it('sets header roles, and only those, in the header typeface', () => {
+    const useProbe = () => ({
+      page: useTypeStyle('pageHeader').fontFamily,
+      section: useTypeStyle('sectionHeader').fontFamily,
+      item: useTypeStyle('item').fontFamily,
+      title: useTypeStyle('headerTitle').fontFamily,
+    })
+    const byDefault = run(useProbe, (p) => (
+      <DesignSystemProvider mode="light" brand={testBrand}>
+        {p}
+      </DesignSystemProvider>
+    ))
+    expect(byDefault.page).toBe(FontFamily.FrankRuhlLibreBold)
+    expect(byDefault.title).toBeUndefined()
+    const cardo = run(useProbe, (p) => (
+      <DesignSystemProvider
+        mode="light"
+        brand={testBrand}
+        headerTypeface={HeaderTypeface.Cardo}
+      >
+        {p}
+      </DesignSystemProvider>
+    ))
+    expect(cardo).toEqual({
+      page: FontFamily.CardoBold,
+      section: FontFamily.CardoBold,
+      item: FontFamily.FrankRuhlLibre,
+      title: FontFamily.CardoBold,
+    })
   })
 })

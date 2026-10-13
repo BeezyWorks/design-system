@@ -11,6 +11,9 @@ export const SemanticColor = {
   TextSecondary: 'textSecondary',
   TextTabInactive: 'textTabInactive',
   TextAccent: 'textAccent',
+  /** Small marks set among body text (verse numbers): the brand hue at mid
+   * lightness, so it separates from `TextPrimary` in every mode. */
+  TextMarker: 'textMarker',
   TextOnAccent: 'textOnAccent',
   TextOnPhoto: 'textOnPhoto',
   TextInverse: 'textInverse',

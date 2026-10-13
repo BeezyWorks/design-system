@@ -21,6 +21,7 @@ const S = SemanticColor
 // The tokens a brand decides. Everything else is shared by the family.
 type BrandToken =
   | typeof S.TextAccent
+  | typeof S.TextMarker
   | typeof S.SurfaceHighlight
   | typeof S.AccentPrimary
   | typeof S.AccentPrimaryDeep
@@ -153,6 +154,7 @@ const withAlpha = (color: string, alpha: number): string => {
 
 const lightBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.TextAccent]: brand.primary,
+  [S.TextMarker]: brand.marker,
   [S.SurfaceHighlight]: withAlpha(brand.primary, 0.1),
   [S.AccentPrimary]: brand.primary,
   [S.AccentPrimaryDeep]: brand.deep,
@@ -164,6 +166,7 @@ const lightBrand = (brand: ResolvedBrand): BrandDefinition => ({
 
 const darkBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.TextAccent]: brand.primaryLight,
+  [S.TextMarker]: brand.markerLight,
   [S.SurfaceHighlight]: C.WhiteWash,
   [S.AccentPrimary]: brand.primaryLight,
   [S.AccentPrimaryDeep]: brand.deep,

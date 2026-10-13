@@ -1,8 +1,14 @@
 import {Platform, TextStyle} from 'react-native'
 import {SemanticColor} from '../colors/semantic'
-import {useContentText, useResolvedColor} from '../theme'
+import {useContentText, useHeaderTypeface, useResolvedColor} from '../theme'
 import {FontFamily} from './fontFamily'
-import {Typeface, latinTypefaceFontFamily, typefaceFontFamily} from './content'
+import {
+  HeaderTypeface,
+  Typeface,
+  headerTypefaceFontFamily,
+  latinTypefaceFontFamily,
+  typefaceFontFamily,
+} from './content'
 
 // Chrome (UI-label) type ramp — every raw `fontSize`/`fontWeight` the app
 // used to spell out ad hoc, named by role and snapped to the sizes already
@@ -132,6 +138,20 @@ const variantColor: Partial<Record<TypeVariant, SemanticColor>> = {
   menuOptionSelected: SemanticColor.TextAccent,
 }
 
+// The header roles, set in the app's `headerTypeface` (bold cut).
+const headerVariants: ReadonlySet<TypeVariant> = new Set<TypeVariant>([
+  'pageHeader',
+  'sectionHeader',
+  'itemHeader',
+])
+
+// The screen header's title, set in the header face only when the app opted
+// in to one (otherwise it keeps the system font).
+const optInHeaderVariants: ReadonlySet<TypeVariant> = new Set<TypeVariant>([
+  'headerTitle',
+  'headerTitleWide',
+])
+
 // Resolves a chrome type-ramp step to a concrete style, with its default
 // semantic text color mixed in (callers may still override color via the
 // `color` prop on `Text`, never via a raw style object).
@@ -139,7 +159,27 @@ export const useTypeStyle = (variant: TypeVariant): TextStyle => {
   const color = useResolvedColor(
     variantColor[variant] ?? SemanticColor.TextPrimary,
   )
-  return {...type[variant], color}
+  const appTypeface = useHeaderTypeface()
+  const headerTypeface = headerVariants.has(variant)
+    ? (appTypeface ?? HeaderTypeface.FrankRuhlLibre)
+    : optInHeaderVariants.has(variant)
+      ? appTypeface
+      : undefined
+  return headerTypeface
+    ? {
+        ...type[variant],
+        fontFamily: headerTypefaceFontFamily[headerTypeface].bold,
+        color,
+      }
+    : {...type[variant], color}
+}
+
+/** The bold family of the app's header face, or `undefined` when it set
+ * none — for titles drawn with raw RN `Text` (`Header`, the full-screen
+ * sheet), which keep the system font by default. */
+export const useHeaderFontFamily = (): FontFamily | undefined => {
+  const headerTypeface = useHeaderTypeface()
+  return headerTypeface && headerTypefaceFontFamily[headerTypeface].bold
 }
 
 /** Which reading ramp a `content` text uses: the Hebrew reading typeface

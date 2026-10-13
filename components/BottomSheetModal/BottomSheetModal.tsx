@@ -9,6 +9,7 @@ import {BottomSheet} from '../BottomSheet'
 import {Icon} from '../Icon'
 import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
+import {useHeaderFontFamily} from '../../typography'
 
 const AnimatedBottomSheet = animated(BottomSheet)
 
@@ -22,6 +23,7 @@ export const BottomSheetModal = ({
 }: BottomSheetProps) => {
   const insets = useSafeAreaInsets()
   const resolve = useColorResolver()
+  const titleFontFamily = useHeaderFontFamily()
   const {height: screenHeight} = useWindowDimensions()
   const contentHeight = useRef(0)
   const {onClosed, dismissed, dismiss} = useSheetHost()
@@ -109,7 +111,10 @@ export const BottomSheetModal = ({
                 numberOfLines={1}
                 style={[
                   styles.fullTitle,
-                  {color: resolve(SemanticColor.TextPrimary)},
+                  {
+                    color: resolve(SemanticColor.TextPrimary),
+                    ...(titleFontFamily && {fontFamily: titleFontFamily}),
+                  },
                 ]}
               >
                 {title}

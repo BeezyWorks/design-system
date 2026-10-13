@@ -4,6 +4,7 @@ import {BottomSheetHeaderProps} from '../BottomSheet/bottomSheet.props'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {SlideIndicator} from '../SlideIndicator'
+import {useHeaderFontFamily} from '../../typography'
 
 // Raw RN `Text` rather than `@design`'s `Text`: the title uses a legacy
 // 600-weight 22px style with no equivalent step on the chrome type ramp.
@@ -17,6 +18,7 @@ export const BottomSheetHeader = ({
 }: BottomSheetHeaderProps) => {
   const resolve = useColorResolver()
   const styles = styleCreator(resolve)
+  const fontFamily = useHeaderFontFamily()
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
@@ -43,7 +45,10 @@ export const BottomSheetHeader = ({
         <View style={styles.base}>
           <View style={styles.sideLeft}>{left}</View>
           {titleNode ?? (
-            <Text numberOfLines={1} style={styles.text}>
+            <Text
+              numberOfLines={1}
+              style={[styles.text, fontFamily ? {fontFamily} : null]}
+            >
               {title}
             </Text>
           )}
