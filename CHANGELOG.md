@@ -1,3 +1,14 @@
+# [0.17.0](https://github.com/BeezyWorks/design-system/compare/v0.16.0...v0.17.0) (2026-10-13)
+
+
+### Features
+
+* **colors:** add TextMarker brand token for marks among body text ([e8123b8](https://github.com/BeezyWorks/design-system/commit/e8123b8c30791d5e59b11b853c2a2583f81b0e25))
+* **DetailOverlay:** add scroll prop for children that manage their own scrolling ([61bfecd](https://github.com/BeezyWorks/design-system/commit/61bfecd3755b52059bd6d717707cc90c25d06fc5))
+* **photo-background:** full-bleed photo under the hero scrim ([5fc4f02](https://github.com/BeezyWorks/design-system/commit/5fc4f0283579c702c82d8ea31926466008eaf385))
+* **SplitPane:** resizable pinned pane over a main pane ([9cdd58a](https://github.com/BeezyWorks/design-system/commit/9cdd58aa6d385eca8841f3b308d3af8b0307de84))
+* **typography:** add opt-in header typeface ([8e2ce7a](https://github.com/BeezyWorks/design-system/commit/8e2ce7a584c1fe42eb66dcf7f2ce8d7a2e156cb4))
+
 # [0.16.0](https://github.com/BeezyWorks/design-system/compare/v0.15.2...v0.16.0) (2026-10-12)
 
 
