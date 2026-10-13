@@ -22,6 +22,9 @@ export interface DetailOverlayProps {
   children?: React.ReactNode
   /** Docked width on wide layouts. */
   panelWidth?: number
+  /** Wrap the children in a scroller (default). Pass false when the
+   * children manage their own scrolling, e.g. a `SplitPane`. */
+  scroll?: boolean
 }
 
 /** A detail view for one item of a list: a panel docked beside the list on
@@ -36,6 +39,7 @@ export const DetailOverlay: React.FunctionComponent<DetailOverlayProps> = ({
   headerActions,
   children,
   panelWidth = 420,
+  scroll = true,
 }) => {
   const isWide = useIsWideLayout()
   const insets = useSafeAreaInsets()
@@ -61,15 +65,19 @@ export const DetailOverlay: React.FunctionComponent<DetailOverlayProps> = ({
         <IconButton name="close" accessibilityLabel="Close" onPress={onClose} />
       </Stack>
       <Divider />
-      <ScrollView
-        style={styles.scroll}
-        contentContainerStyle={[
-          styles.content,
-          {paddingBottom: spacing.lg + insets.bottom},
-        ]}
-      >
-        {children}
-      </ScrollView>
+      {scroll ? (
+        <ScrollView
+          style={styles.scroll}
+          contentContainerStyle={[
+            styles.content,
+            {paddingBottom: spacing.lg + insets.bottom},
+          ]}
+        >
+          {children}
+        </ScrollView>
+      ) : (
+        <View style={styles.scroll}>{children}</View>
+      )}
     </>
   )
 
