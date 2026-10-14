@@ -1,3 +1,10 @@
+## [0.18.1](https://github.com/BeezyWorks/design-system/compare/v0.18.0...v0.18.1) (2026-10-14)
+
+
+### Bug Fixes
+
+* **tabs:** keep the docked tab bar above Android system navigation ([#26](https://github.com/BeezyWorks/design-system/issues/26)) ([886f709](https://github.com/BeezyWorks/design-system/commit/886f7098cea20a4a9b89805c6731d08a4175c65e))
+
 # [0.18.0](https://github.com/BeezyWorks/design-system/compare/v0.17.0...v0.18.0) (2026-10-14)
 
 
