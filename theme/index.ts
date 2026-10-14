@@ -6,6 +6,7 @@ export {
   useColorResolver,
   useResolvedColor,
   useContentText,
+  useQRLogo,
   useHeaderTypeface,
 } from './DesignSystem'
 export type {

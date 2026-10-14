@@ -1,4 +1,5 @@
 import React, {createContext, useCallback, useContext, useMemo} from 'react'
+import {ImageSourcePropType} from 'react-native'
 import {SemanticColor} from '../colors/semantic'
 import {resolveColor, ThemeMode} from '../colors/themes'
 import {BrandPalette} from '../colors/brands'
@@ -20,6 +21,7 @@ interface DesignSystemValue {
   brand: BrandPalette
   content: ResolvedContentText
   headerTypeface?: HeaderTypeface
+  qrLogo?: ImageSourcePropType
 }
 
 const DesignSystemContext = createContext<DesignSystemValue | null>(null)
@@ -47,6 +49,10 @@ export interface DesignSystemProviderProps {
    * full-screen sheet titles. Unset, the ramp keeps Frank Ruhl Libre and
    * those titles the system font. */
   headerTypeface?: HeaderTypeface
+  /** The logo `QRCode` draws in the middle of its codes (a `require()`d
+   * asset or `{uri}`). Optional — codes are plain without it. Define it at
+   * module scope. */
+  qrLogo?: ImageSourcePropType
   children?: React.ReactNode
 }
 
@@ -58,6 +64,7 @@ export const DesignSystemProvider: React.FunctionComponent<
   brand,
   content = defaultContentSelection,
   headerTypeface,
+  qrLogo,
   children,
 }) => {
   const {typeface, size, leading, latinTypeface, tracking} = content
@@ -73,6 +80,7 @@ export const DesignSystemProvider: React.FunctionComponent<
         tracking,
       }),
       headerTypeface,
+      qrLogo,
     }),
     [
       mode,
@@ -83,6 +91,7 @@ export const DesignSystemProvider: React.FunctionComponent<
       latinTypeface,
       tracking,
       headerTypeface,
+      qrLogo,
     ],
   )
   return (
@@ -155,3 +164,7 @@ export const useContentText = (): ResolvedContentText =>
  * `DesignSystemProviderProps.headerTypeface`). */
 export const useHeaderTypeface = (): HeaderTypeface | undefined =>
   useDesignSystem().headerTypeface
+
+/** The app's QR logo from `DesignSystemProvider`, if it gave one. */
+export const useQRLogo = (): ImageSourcePropType | undefined =>
+  useDesignSystem().qrLogo
