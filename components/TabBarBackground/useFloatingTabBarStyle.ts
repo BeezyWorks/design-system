@@ -44,3 +44,10 @@ export const useFloatingTabBarStyle = (): ViewStyle => {
  * to decide whether to mount `TabBarBackground` (`tabBarBackground`) too,
  * since a non-iOS docked bar has no backdrop of its own. */
 export const isFloatingTabBar = Platform.OS === 'ios'
+
+/** The `safeAreaInsets` to hand the navigator's tab bar. The iOS pill
+ * positions itself above the home indicator (`useFloatingTabBarStyle`), so
+ * the bar must not add the inset again; the docked bar elsewhere relies on
+ * the navigator to pad itself above the system navigation buttons, so it
+ * gets the real insets (`undefined`). */
+export const tabBarSafeAreaInsets = isFloatingTabBar ? {bottom: 0} : undefined
