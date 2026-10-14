@@ -40,7 +40,8 @@
     "react-native-collapsible-header-views": "^1.1.2",
     "react-native-gesture-handler": "~2.32.0",
     "react-native-pager-view": "^8.0.2",
-    "react-native-safe-area-context": "~5.7.0"
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-svg": "^15.15.4"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -85,6 +86,7 @@
     "react-native-gesture-handler": "~2.32.0",
     "react-native-pager-view": "8.0.2",
     "react-native-safe-area-context": "~5.7.0",
+    "react-native-svg": "^15.15.4",
     "react-native-web": "^0.21.2",
     "react-test-renderer": "19.2.3",
     "storybook": "^10.6.0",
