@@ -105,6 +105,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@react-native/metro-config': 0.86.3
+
 importers:
 
   .:
