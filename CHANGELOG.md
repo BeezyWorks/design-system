@@ -1,3 +1,17 @@
+# [0.18.0](https://github.com/BeezyWorks/design-system/compare/v0.17.0...v0.18.0) (2026-10-14)
+
+
+### Bug Fixes
+
+* declare react-native-svg as a peer and dev dependency ([87b4f78](https://github.com/BeezyWorks/design-system/commit/87b4f78f0efa173b08b5809ad0946bfb67f83e9f))
+* keep the metro-config override in the lockfile ([1d3f855](https://github.com/BeezyWorks/design-system/commit/1d3f855d5de738f237d2e480cd89fccda02ec2e2))
+* pin react-native-svg dev dependency to 15.15.4 ([390f643](https://github.com/BeezyWorks/design-system/commit/390f643978cda50d597fedac4b3523bdfbdebf1d))
+
+
+### Features
+
+* **QRCode:** branded QR code with optional app logo and PNG export ([e68f0fc](https://github.com/BeezyWorks/design-system/commit/e68f0fc2f3009fdc15e66bd983a5c3b06fa66783))
+
 # [0.17.0](https://github.com/BeezyWorks/design-system/compare/v0.16.0...v0.17.0) (2026-10-13)
 
 
