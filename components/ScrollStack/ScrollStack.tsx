@@ -24,6 +24,8 @@ export interface ScrollStackProps extends Pick<
    * `direction="rowReverse"` Stack): opens scrolled to the right edge, where
    * the first item is, instead of the left, where the last one is. */
   rtl?: boolean
+  /** The underlying ScrollView, for `scrollTo` (jump to a section). */
+  scrollRef?: React.Ref<ScrollView>
 }
 
 /** The scrollable-column primitive — replaces `ScrollView
@@ -37,9 +39,10 @@ export const ScrollStack: React.FunctionComponent<ScrollStackProps> = ({
   gap,
   grow,
   rtl,
+  scrollRef: externalRef,
   ...scrollProps
 }) => {
-  const scrollRef = useRef<ScrollView>(null)
+  const scrollRef = useRef<ScrollView | null>(null)
   const didStartAtEnd = useRef(false)
   // A horizontal strip sits inside the page; only the page's own vertical
   // scroller needs to clear the tab bar.
@@ -49,7 +52,13 @@ export const ScrollStack: React.FunctionComponent<ScrollStackProps> = ({
 
   return (
     <ScrollView
-      ref={scrollRef}
+      ref={(node) => {
+        scrollRef.current = node
+        if (typeof externalRef === 'function') externalRef(node)
+        else if (externalRef)
+          (externalRef as React.MutableRefObject<ScrollView | null>).current =
+            node
+      }}
       {...scrollProps}
       onContentSizeChange={
         rtl && scrollProps.horizontal
