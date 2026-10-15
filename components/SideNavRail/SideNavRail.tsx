@@ -5,6 +5,7 @@ import {BlurView} from 'expo-blur'
 import {Stack} from '../Stack'
 import {Icon} from '../Icon'
 import {GlassBackdrop} from '../GlassSurface/GlassBackdrop'
+import {SideNavGlassContext} from './SideNavGlassContext'
 
 export interface SideNavRailProps {
   children?: React.ReactNode
@@ -72,7 +73,9 @@ export const SideNavRail: React.FunctionComponent<SideNavRailProps> = ({
       paddingHorizontal="sm"
       gap="xs"
     >
-      {children}
+      <SideNavGlassContext.Provider value={!!glass}>
+        {children}
+      </SideNavGlassContext.Provider>
       {!!onToggleCollapsed && (
         <>
           <Stack grow />

@@ -790,7 +790,7 @@ exports[`more components (dark theme) icons TabBarIcon focused=true 1`] = `
   meetOrSlice={0}
   minX={0}
   minY={0}
-  stroke="#3E7FD1"
+  stroke="#6DA8F5"
   strokeLinecap="round"
   strokeLinejoin="round"
   strokeWidth={2}
@@ -825,7 +825,7 @@ exports[`more components (dark theme) icons TabBarIcon focused=true 1`] = `
     }
     stroke={
       {
-        "payload": 4282286033,
+        "payload": 4285376757,
         "type": 0,
       }
     }
@@ -847,7 +847,7 @@ exports[`more components (dark theme) icons TabBarIcon focused=true 1`] = `
       }
       stroke={
         {
-          "payload": 4282286033,
+          "payload": 4285376757,
           "type": 0,
         }
       }
@@ -869,7 +869,7 @@ exports[`more components (dark theme) icons TabBarIcon focused=true 1`] = `
       }
       stroke={
         {
-          "payload": 4282286033,
+          "payload": 4285376757,
           "type": 0,
         }
       }
@@ -892,7 +892,7 @@ exports[`more components (dark theme) icons TabBarIcon focused=true 1`] = `
       rx="2"
       stroke={
         {
-          "payload": 4282286033,
+          "payload": 4285376757,
           "type": 0,
         }
       }
@@ -917,7 +917,7 @@ exports[`more components (dark theme) icons TabBarIcon focused=true 1`] = `
       }
       stroke={
         {
-          "payload": 4282286033,
+          "payload": 4285376757,
           "type": 0,
         }
       }

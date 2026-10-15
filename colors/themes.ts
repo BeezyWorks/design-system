@@ -171,7 +171,9 @@ const darkBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.AccentPrimary]: brand.primaryLight,
   [S.AccentPrimaryDeep]: brand.deep,
   [S.AccentPrimaryStrong]: brand.primary,
-  [S.AccentTabActive]: brand.primary,
+  // Lifted like the active label (`TextAccent`): the base brand hue sinks
+  // into a dark bar or a photo behind the glass.
+  [S.AccentTabActive]: brand.primaryLight,
   [S.AccentTint]: withAlpha(brand.primaryLight, 0.16),
   [S.AccentTintSelected]: withAlpha(brand.primaryLight, 0.1),
 })
