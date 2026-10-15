@@ -8,7 +8,12 @@ import {Text} from '../Text'
 import {Icon, IconName} from '../Icon'
 
 export type ButtonVariant =
-  'primary' | 'secondary' | 'ghost' | 'destructive' | 'outline'
+  | 'primary'
+  | 'secondary'
+  | 'ghost'
+  | 'destructive'
+  | 'destructiveGhost'
+  | 'outline'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 const variantColors: Record<
@@ -30,6 +35,12 @@ const variantColors: Record<
   destructive: {
     background: SemanticColor.SurfaceDanger,
     label: SemanticColor.TextInverse,
+  },
+  // A quiet destructive action ("Delete account" under "Sign out"): the
+  // ghost shape with a danger label, so it reads as red without a red slab.
+  destructiveGhost: {
+    background: SemanticColor.SurfaceBackground,
+    label: SemanticColor.TextDanger,
   },
   // Outline: no fill, just a border — distinct from `secondary`, which is
   // a solid (if muted) filled button.
