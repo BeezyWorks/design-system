@@ -94,6 +94,19 @@ export const NamedColor = {
   SuccessGreenDeepTint: 'rgba(63, 125, 79, 0.14)',
   SuccessGreenLight: '#7FBE8E',
   SuccessGreenLightTint: 'rgba(127, 190, 142, 0.16)',
+
+  // --- Sign-in providers. Third-party marks: Google's and Apple's button
+  // guidelines fix these values, so they are never brand- or mode-derived
+  // beyond the light/dark variants each guideline specifies.
+  GoogleBlue: '#4285F4',
+  GoogleGreen: '#34A853',
+  GoogleYellow: '#FBBC05',
+  GoogleRed: '#EA4335',
+  GoogleButtonStroke: '#747775',
+  GoogleButtonInk: '#1F1F1F',
+  GoogleButtonDark: '#131314',
+  GoogleButtonStrokeDark: '#8E918F',
+  GoogleButtonInkDark: '#E3E3E3',
 } as const
 
 export type NamedColor = (typeof NamedColor)[keyof typeof NamedColor]

@@ -19,6 +19,13 @@ export interface TextFieldProps extends Pick<
   | 'returnKeyType'
   | 'clearButtonMode'
   | 'multiline'
+  | 'secureTextEntry'
+  | 'autoComplete'
+  | 'textContentType'
+  | 'keyboardType'
+  | 'autoCapitalize'
+  | 'autoCorrect'
+  | 'editable'
   | 'accessibilityLabel'
   | 'testID'
 > {
@@ -27,13 +34,19 @@ export interface TextFieldProps extends Pick<
   /** `underline` (default) — a single line on a hairline; `boxed` — a
    * bordered field on a quiet fill, for multi-line notes. */
   variant?: 'underline' | 'boxed'
+  /** `boxed` only: `lg` is a 48pt-tall field for forms, matching a `lg`
+   * `Button`. Default `md`. */
+  size?: 'md' | 'lg'
 }
 
 /** A text input: by default a single line with an underline affordance
  * (the replacement for `react-native-elements`' `Input`); `boxed` for
  * free-form, multi-line text. */
 export const TextField = React.forwardRef<TextInput, TextFieldProps>(
-  ({align = 'left', variant = 'underline', ...inputProps}, ref) => {
+  (
+    {align = 'left', variant = 'underline', size = 'md', ...inputProps},
+    ref,
+  ) => {
     const type = useTypeStyle('body')
     const resolve = useColorResolver()
     if (variant === 'boxed') {
@@ -45,7 +58,8 @@ export const TextField = React.forwardRef<TextInput, TextFieldProps>(
           radius="sm"
           paddingHorizontal="sm"
           paddingVertical="xs"
-          minHeight={inputProps.multiline ? 72 : undefined}
+          minHeight={inputProps.multiline ? 72 : size === 'lg' ? 48 : undefined}
+          justify={size === 'lg' ? 'center' : undefined}
         >
           <TextInput
             ref={ref}

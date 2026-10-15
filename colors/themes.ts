@@ -78,6 +78,16 @@ const lightNeutrals: NeutralDefinition = {
   [S.AccentInfo]: C.InfoBlue,
   [S.AccentInfoFaded]: C.InfoBlueFaded,
   [S.AccentSuccess]: C.SuccessGreen,
+
+  [S.SurfaceProviderGoogle]: C.White,
+  [S.BorderProviderGoogle]: C.GoogleButtonStroke,
+  [S.TextProviderGoogle]: C.GoogleButtonInk,
+  [S.SurfaceProviderApple]: C.Black,
+  [S.TextProviderApple]: C.White,
+  [S.MarkGoogleBlue]: C.GoogleBlue,
+  [S.MarkGoogleGreen]: C.GoogleGreen,
+  [S.MarkGoogleYellow]: C.GoogleYellow,
+  [S.MarkGoogleRed]: C.GoogleRed,
 }
 // Warm paper for long reading sessions: the light theme's structure with
 // brown ink on sepia paper. Status hues and overlays match light.
@@ -145,6 +155,16 @@ const darkNeutrals: NeutralDefinition = {
   [S.AccentInfo]: C.InfoBlue,
   [S.AccentInfoFaded]: C.InfoBlueFaded,
   [S.AccentSuccess]: C.SuccessGreen,
+
+  [S.SurfaceProviderGoogle]: C.GoogleButtonDark,
+  [S.BorderProviderGoogle]: C.GoogleButtonStrokeDark,
+  [S.TextProviderGoogle]: C.GoogleButtonInkDark,
+  [S.SurfaceProviderApple]: C.White,
+  [S.TextProviderApple]: C.Black,
+  [S.MarkGoogleBlue]: C.GoogleBlue,
+  [S.MarkGoogleGreen]: C.GoogleGreen,
+  [S.MarkGoogleYellow]: C.GoogleYellow,
+  [S.MarkGoogleRed]: C.GoogleRed,
 }
 /** A brand color at some opacity, as an `rgba()` string. */
 const withAlpha = (color: string, alpha: number): string => {

@@ -53,6 +53,19 @@ export const SemanticColor = {
   /** A glass panel's bright edge. */
   BorderGlass: 'borderGlass',
 
+  // Provider — sign-in buttons for third-party identity providers, whose
+  // guidelines dictate their colors (see `ProviderButton`).
+  SurfaceProviderGoogle: 'surfaceProviderGoogle',
+  BorderProviderGoogle: 'borderProviderGoogle',
+  TextProviderGoogle: 'textProviderGoogle',
+  SurfaceProviderApple: 'surfaceProviderApple',
+  TextProviderApple: 'textProviderApple',
+  /** The four colors of Google's "G" — the same in every mode. */
+  MarkGoogleBlue: 'markGoogleBlue',
+  MarkGoogleGreen: 'markGoogleGreen',
+  MarkGoogleYellow: 'markGoogleYellow',
+  MarkGoogleRed: 'markGoogleRed',
+
   // Overlay
   OverlayScrim: 'overlayScrim',
   OverlayScrimSoft: 'overlayScrimSoft',
