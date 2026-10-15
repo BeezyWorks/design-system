@@ -1,3 +1,10 @@
+# [0.22.0](https://github.com/BeezyWorks/design-system/compare/v0.21.0...v0.22.0) (2026-10-15)
+
+
+### Features
+
+* **scroll-stack:** expose the ScrollView through a scrollRef prop ([cc3ae59](https://github.com/BeezyWorks/design-system/commit/cc3ae595a91151f642076e7049e8e07680fdb7a4))
+
 # [0.21.0](https://github.com/BeezyWorks/design-system/compare/v0.20.0...v0.21.0) (2026-10-15)
 
 
