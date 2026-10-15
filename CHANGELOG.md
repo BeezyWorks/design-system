@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/BeezyWorks/design-system/compare/v0.18.1...v0.19.0) (2026-10-15)
+
+
+### Features
+
+* **auth:** add sign-in, account and confirmation components ([401fe73](https://github.com/BeezyWorks/design-system/commit/401fe730fc6942a9f242136f01e77f42d7f4e704))
+
 ## [0.18.1](https://github.com/BeezyWorks/design-system/compare/v0.18.0...v0.18.1) (2026-10-14)
 
 
