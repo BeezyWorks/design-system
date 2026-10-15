@@ -9,7 +9,7 @@ const actions = (
     <Button title="Sign out" variant="outline" fullWidth onPress={() => {}} />
     <Button
       title="Delete account"
-      variant="ghost"
+      variant="destructiveGhost"
       fullWidth
       onPress={() => {}}
     />
