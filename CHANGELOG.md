@@ -1,3 +1,11 @@
+# [0.21.0](https://github.com/BeezyWorks/design-system/compare/v0.20.0...v0.21.0) (2026-10-15)
+
+
+### Features
+
+* **colors:** add categorical palette of 18 hues with light and dark values ([6d2af39](https://github.com/BeezyWorks/design-system/commit/6d2af39ccb8fef83a4b637a0909cc8ca2cb945ac))
+* **text:** add underline, highlight and superscript props ([617ea6b](https://github.com/BeezyWorks/design-system/commit/617ea6bddff680c11f35ab70917bfa59c4ffc74b))
+
 # [0.20.0](https://github.com/BeezyWorks/design-system/compare/v0.19.0...v0.20.0) (2026-10-15)
 
 
