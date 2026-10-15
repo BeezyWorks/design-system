@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/BeezyWorks/design-system/compare/v0.19.0...v0.20.0) (2026-10-15)
+
+
+### Features
+
+* **button:** add destructiveGhost variant ([83cf1bf](https://github.com/BeezyWorks/design-system/commit/83cf1bfb044fe5f01f751b35fc3dc3be08354724))
+
 # [0.19.0](https://github.com/BeezyWorks/design-system/compare/v0.18.1...v0.19.0) (2026-10-15)
 
 
