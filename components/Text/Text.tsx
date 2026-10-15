@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Platform,
   Text as NativeText,
+  TextStyle,
   TextProps as NativeTextProps,
 } from 'react-native'
 import {
@@ -86,6 +87,14 @@ export interface TextProps extends Pick<
    * commentary) when the user has ktav Rashi enabled — independent of
    * `typeface` since it's a script choice, not a Hebrew display face. */
   rashiScript?: boolean
+  /** Underlines the text, in this color (default: the text color). */
+  underline?: boolean | SemanticColor
+  /** A wash behind the text — a tinted span among running text. */
+  highlight?: SemanticColor
+  /** A small raised mark beside text (a footnote label). Lift is real on
+   * the web; on native the mark is just smaller, as RN has no baseline
+   * shift. */
+  superscript?: boolean
 }
 
 export const Text: React.FunctionComponent<TextProps> = ({
@@ -102,6 +111,9 @@ export const Text: React.FunctionComponent<TextProps> = ({
   typeface,
   latinTypeface,
   rashiScript,
+  underline,
+  highlight,
+  superscript,
   ...textProps
 }) => {
   const script: ContentScript = content === 'latin' ? 'latin' : 'hebrew'
@@ -149,6 +161,24 @@ export const Text: React.FunctionComponent<TextProps> = ({
           ...(latinLabel && {writingDirection: 'ltr'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
           ...(italic && {fontStyle: 'italic'}),
+          ...(underline && {
+            textDecorationLine: 'underline',
+            ...(typeof underline === 'string' && {
+              textDecorationColor: resolve(underline),
+            }),
+          }),
+          ...(highlight && {backgroundColor: resolve(highlight)}),
+          ...(superscript && {
+            fontSize: Math.round((base.fontSize ?? 16) * 0.6),
+            // react-native-web passes this CSS value through; RN's own type
+            // only knows the vertical-align values native supports.
+            ...(Platform.OS === 'web'
+              ? ({
+                  verticalAlign: 'super',
+                  lineHeight: 0,
+                } as unknown as TextStyle)
+              : null),
+          }),
           ...(onPhoto && photoShadow(resolve(SemanticColor.OverlayPhotoScrim))),
         },
         align ? {textAlign: align} : null,
