@@ -80,6 +80,48 @@ export const NamedColor = {
 
   Transparent: 'rgba(255, 255, 255, 0)',
 
+  // --- Categorical hues: 18 distinguishable hues for telling items apart
+  // (commentaries, series). `CategoryN` carries text on every light surface
+  // (>= 4.5:1 on sepia paper); `CategoryNLight` carries it on dark surfaces
+  // (>= 7:1 on the dark card). Consecutive steps are a golden angle apart in
+  // hue, so neighbours in a list never look alike.
+  Category1: '#0267B1',
+  Category1Light: '#6AB3FD',
+  Category2: '#AF3D35',
+  Category2Light: '#FA9184',
+  Category3: '#047252',
+  Category3Light: '#45C395',
+  Category4: '#7A4FAF',
+  Category4Light: '#C39EF7',
+  Category5: '#855E00',
+  Category5Light: '#DAA542',
+  Category6: '#036D83',
+  Category6Light: '#15BEE0',
+  Category7: '#A73B6D',
+  Category7Light: '#F590B8',
+  Category8: '#417101',
+  Category8Light: '#8BBC63',
+  Category9: '#475EBC',
+  Category9Light: '#91ABFE',
+  Category10: '#A74901',
+  Category10Light: '#F59867',
+  Category11: '#057168',
+  Category11Light: '#0EC3B4',
+  Category12: '#90469A',
+  Category12Light: '#DA96E3',
+  Category13: '#736503',
+  Category13Light: '#C1AF41',
+  Category14: '#016B9A',
+  Category14Light: '#50B9F6',
+  Category15: '#AE3B4C',
+  Category15Light: '#FC9099',
+  Category16: '#03743B',
+  Category16Light: '#62C181',
+  Category17: '#6A55B8',
+  Category17Light: '#B0A2FE',
+  Category18: '#8F5701',
+  Category18Light: '#E7A04D',
+
   // --- Status hues
   DangerRed: '#f44336',
   DangerRedBright: '#EF4444',

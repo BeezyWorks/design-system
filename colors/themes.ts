@@ -1,5 +1,5 @@
 import {NamedColor} from './named'
-import {SemanticColor} from './semantic'
+import {SemanticColor, categoryColors} from './semantic'
 import type {BrandPalette, ResolvedBrand} from './brands'
 import {resolveBrand} from './derive'
 
@@ -30,7 +30,13 @@ type BrandToken =
   | typeof S.AccentTint
   | typeof S.AccentTintSelected
 
-type NeutralDefinition = Omit<ThemeDefinition, BrandToken>
+// The categorical tokens: per-mode, but not per-brand.
+type CategoryToken = Extract<
+  SemanticColor,
+  `category${number}` | `categoryTint${number}`
+>
+
+type NeutralDefinition = Omit<ThemeDefinition, BrandToken | CategoryToken>
 type BrandDefinition = Record<BrandToken, string>
 
 const lightNeutrals: NeutralDefinition = {
@@ -196,13 +202,38 @@ const darkBrand = (brand: ResolvedBrand): BrandDefinition => ({
   [S.AccentTintSelected]: withAlpha(brand.primaryLight, 0.1),
 })
 
+/** The categorical hues for one mode: text colors, and washes derived from them. */
+const categories = (light: boolean): Record<CategoryToken, string> => {
+  const theme: Partial<Record<CategoryToken, string>> = {}
+  categoryColors.forEach(({text, tint}, i) => {
+    const color = C[`Category${i + 1}${light ? '' : 'Light'}` as keyof typeof C]
+    theme[text as CategoryToken] = color
+    theme[tint as CategoryToken] = withAlpha(color, light ? 0.14 : 0.2)
+  })
+  return theme as Record<CategoryToken, string>
+}
+const lightCategories = categories(true)
+const darkCategories = categories(false)
+
 const modes: Record<
   ThemeMode,
-  {neutrals: NeutralDefinition; brand: (b: ResolvedBrand) => BrandDefinition}
+  {
+    neutrals: NeutralDefinition
+    categories: Record<CategoryToken, string>
+    brand: (b: ResolvedBrand) => BrandDefinition
+  }
 > = {
-  light: {neutrals: lightNeutrals, brand: lightBrand},
-  sepia: {neutrals: sepiaNeutrals, brand: lightBrand},
-  dark: {neutrals: darkNeutrals, brand: darkBrand},
+  light: {
+    neutrals: lightNeutrals,
+    categories: lightCategories,
+    brand: lightBrand,
+  },
+  sepia: {
+    neutrals: sepiaNeutrals,
+    categories: lightCategories,
+    brand: lightBrand,
+  },
+  dark: {neutrals: darkNeutrals, categories: darkCategories, brand: darkBrand},
 }
 
 const cache = new WeakMap<
@@ -219,6 +250,7 @@ export const buildTheme = (
   if (!byMode) cache.set(brand, (byMode = {}))
   return (byMode[mode] ??= {
     ...modes[mode].neutrals,
+    ...modes[mode].categories,
     ...modes[mode].brand(resolveBrand(brand)),
   })
 }

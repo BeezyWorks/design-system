@@ -20,6 +20,45 @@ export const SemanticColor = {
   TextDanger: 'textDanger',
   TextSuccess: 'textSuccess',
 
+  // Categorical: the text color of item N (see `categoryColor`), and a
+  // quiet wash of it to lay behind that item's text.
+  Category1: 'category1',
+  Category2: 'category2',
+  Category3: 'category3',
+  Category4: 'category4',
+  Category5: 'category5',
+  Category6: 'category6',
+  Category7: 'category7',
+  Category8: 'category8',
+  Category9: 'category9',
+  Category10: 'category10',
+  Category11: 'category11',
+  Category12: 'category12',
+  Category13: 'category13',
+  Category14: 'category14',
+  Category15: 'category15',
+  Category16: 'category16',
+  Category17: 'category17',
+  Category18: 'category18',
+  CategoryTint1: 'categoryTint1',
+  CategoryTint2: 'categoryTint2',
+  CategoryTint3: 'categoryTint3',
+  CategoryTint4: 'categoryTint4',
+  CategoryTint5: 'categoryTint5',
+  CategoryTint6: 'categoryTint6',
+  CategoryTint7: 'categoryTint7',
+  CategoryTint8: 'categoryTint8',
+  CategoryTint9: 'categoryTint9',
+  CategoryTint10: 'categoryTint10',
+  CategoryTint11: 'categoryTint11',
+  CategoryTint12: 'categoryTint12',
+  CategoryTint13: 'categoryTint13',
+  CategoryTint14: 'categoryTint14',
+  CategoryTint15: 'categoryTint15',
+  CategoryTint16: 'categoryTint16',
+  CategoryTint17: 'categoryTint17',
+  CategoryTint18: 'categoryTint18',
+
   // Surface
   SurfaceBackground: 'surfaceBackground',
   SurfaceCard: 'surfaceCard',
@@ -91,3 +130,35 @@ export const SemanticColor = {
 } as const
 
 export type SemanticColor = (typeof SemanticColor)[keyof typeof SemanticColor]
+
+/** A categorical color: the text color of one item and a wash to lay behind it. */
+export interface CategoryColor {
+  text: SemanticColor
+  tint: SemanticColor
+}
+
+/** Every categorical color, in the order they should be assigned. */
+export const categoryColors: readonly CategoryColor[] = [
+  {text: SemanticColor.Category1, tint: SemanticColor.CategoryTint1},
+  {text: SemanticColor.Category2, tint: SemanticColor.CategoryTint2},
+  {text: SemanticColor.Category3, tint: SemanticColor.CategoryTint3},
+  {text: SemanticColor.Category4, tint: SemanticColor.CategoryTint4},
+  {text: SemanticColor.Category5, tint: SemanticColor.CategoryTint5},
+  {text: SemanticColor.Category6, tint: SemanticColor.CategoryTint6},
+  {text: SemanticColor.Category7, tint: SemanticColor.CategoryTint7},
+  {text: SemanticColor.Category8, tint: SemanticColor.CategoryTint8},
+  {text: SemanticColor.Category9, tint: SemanticColor.CategoryTint9},
+  {text: SemanticColor.Category10, tint: SemanticColor.CategoryTint10},
+  {text: SemanticColor.Category11, tint: SemanticColor.CategoryTint11},
+  {text: SemanticColor.Category12, tint: SemanticColor.CategoryTint12},
+  {text: SemanticColor.Category13, tint: SemanticColor.CategoryTint13},
+  {text: SemanticColor.Category14, tint: SemanticColor.CategoryTint14},
+  {text: SemanticColor.Category15, tint: SemanticColor.CategoryTint15},
+  {text: SemanticColor.Category16, tint: SemanticColor.CategoryTint16},
+  {text: SemanticColor.Category17, tint: SemanticColor.CategoryTint17},
+  {text: SemanticColor.Category18, tint: SemanticColor.CategoryTint18},
+]
+
+/** The categorical color for the item at `index` (wraps past the last one). */
+export const categoryColor = (index: number): CategoryColor =>
+  categoryColors[((index % categoryColors.length) + categoryColors.length) % categoryColors.length]

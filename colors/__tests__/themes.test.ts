@@ -1,5 +1,5 @@
 import {buildTheme, resolveColor} from '../themes'
-import {SemanticColor as S} from '../semantic'
+import {SemanticColor as S, categoryColor, categoryColors} from '../semantic'
 import {NamedColor} from '../named'
 import {sampleBrands as Brand} from '../sampleBrands'
 import type {BrandPalette} from '../brands'
@@ -20,6 +20,11 @@ const brandTokens = new Set<string>([
   S.AccentTint,
   S.AccentTintSelected,
 ])
+// Categorical washes are derived from a named hue, so they are not named.
+const derivedTokens = new Set<string>([
+  ...brandTokens,
+  ...categoryColors.map((c) => c.tint),
+])
 
 describe('theme definitions', () => {
   it('define every token, and only those, in every mode and brand', () => {
@@ -36,7 +41,7 @@ describe('theme definitions', () => {
     for (const [, brand] of brands) {
       for (const mode of modes) {
         for (const [token, value] of Object.entries(buildTheme(mode, brand))) {
-          if (!brandTokens.has(token)) expect(named.has(value)).toBe(true)
+          if (!derivedTokens.has(token)) expect(named.has(value)).toBe(true)
         }
       }
     }
@@ -112,6 +117,38 @@ describe('resolved themes', () => {
       ]),
     )
     expect(resolved).toMatchSnapshot()
+  })
+})
+
+describe('categorical colors', () => {
+  it('assign by index and wrap', () => {
+    expect(categoryColor(0)).toBe(categoryColors[0])
+    expect(categoryColor(categoryColors.length)).toBe(categoryColors[0])
+    expect(categoryColor(-1)).toBe(categoryColors[categoryColors.length - 1])
+  })
+
+  it('are all distinct in every mode', () => {
+    for (const mode of modes) {
+      const theme = buildTheme(mode, Brand.Blue)
+      const texts = categoryColors.map((c) => theme[c.text])
+      expect(new Set(texts).size).toBe(texts.length)
+    }
+  })
+
+  it.each([
+    ['light', 4.5],
+    ['sepia', 4.5],
+    ['dark', 7],
+  ] as const)('read as text on %s surfaces', (mode, min) => {
+    const theme = buildTheme(mode, Brand.Blue)
+    for (const { text } of categoryColors) {
+      expect(
+        contrastRatio(theme[text], theme[S.SurfaceBackground]),
+      ).toBeGreaterThanOrEqual(min)
+      expect(
+        contrastRatio(theme[text], theme[S.SurfaceCard]),
+      ).toBeGreaterThanOrEqual(min)
+    }
   })
 })
 
