@@ -1,3 +1,10 @@
+# [0.23.0](https://github.com/BeezyWorks/design-system/compare/v0.22.0...v0.23.0) (2026-10-16)
+
+
+### Features
+
+* **icon:** add print icon ([4cfc5da](https://github.com/BeezyWorks/design-system/commit/4cfc5daa3f3650559edd62c86c64d063c682dafc))
+
 # [0.22.0](https://github.com/BeezyWorks/design-system/compare/v0.21.0...v0.22.0) (2026-10-15)
 
 
