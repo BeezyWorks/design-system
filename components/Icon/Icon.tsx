@@ -19,6 +19,7 @@ import {
   X,
   Pencil,
   Download,
+  Printer,
   Home,
   Compass,
   Bookmark,
@@ -60,6 +61,7 @@ export type IconName =
   | 'close'
   | 'edit'
   | 'download'
+  | 'print'
   | 'home'
   | 'compass'
   | 'bookmark'
@@ -99,6 +101,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   close: X,
   edit: Pencil,
   download: Download,
+  print: Printer,
   home: Home,
   compass: Compass,
   bookmark: Bookmark,
