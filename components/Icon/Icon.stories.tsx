@@ -23,6 +23,7 @@ const names: IconName[] = [
   'close',
   'edit',
   'download',
+  'print',
   'share',
 ]
 
