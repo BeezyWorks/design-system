@@ -38,6 +38,7 @@ import {
   EllipsisVertical,
   LucideIcon,
 } from 'lucide-react-native'
+import {Tefillin} from './customIcons'
 import {SemanticColor} from '../../colors'
 import {useResolvedColor} from '../../theme'
 
@@ -80,6 +81,7 @@ export type IconName =
   | 'search'
   | 'more-vertical'
   | 'text-size'
+  | 'tefillin'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -120,6 +122,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   search: Search,
   'more-vertical': EllipsisVertical,
   'text-size': ALargeSmall,
+  tefillin: Tefillin,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
