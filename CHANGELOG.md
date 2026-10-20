@@ -1,3 +1,10 @@
+# [0.25.0](https://github.com/BeezyWorks/design-system/compare/v0.24.0...v0.25.0) (2026-10-20)
+
+
+### Features
+
+* **icon:** add a custom tefillin icon drawn in Lucide's style ([51090d8](https://github.com/BeezyWorks/design-system/commit/51090d808702643863acaae66f9919bf91adf39d))
+
 # [0.24.0](https://github.com/BeezyWorks/design-system/compare/v0.23.0...v0.24.0) (2026-10-20)
 
 
