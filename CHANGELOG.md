@@ -1,3 +1,15 @@
+# [0.24.0](https://github.com/BeezyWorks/design-system/compare/v0.23.0...v0.24.0) (2026-10-20)
+
+
+### Bug Fixes
+
+* **side-nav:** set the focused rail row apart over a glass rail ([4f0de46](https://github.com/BeezyWorks/design-system/commit/4f0de468df03072ffc008fd5cadad3ba5571ca34))
+
+
+### Features
+
+* **pill-button:** add PillButton, a rounded-pill action with a forward chevron ([b7bf059](https://github.com/BeezyWorks/design-system/commit/b7bf059d52510a33304108998dcf7881d69a7126))
+
 # [0.23.0](https://github.com/BeezyWorks/design-system/compare/v0.22.0...v0.23.0) (2026-10-16)
 
 
