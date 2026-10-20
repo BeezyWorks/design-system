@@ -1,6 +1,7 @@
 import React from 'react'
 import {Switch} from 'react-native'
 import {Button, ButtonSize, ButtonVariant} from '../Button'
+import {PillButton} from '../PillButton'
 import {Card} from '../Card'
 import {Divider} from '../Divider'
 import {EmptyState} from '../EmptyState'
@@ -65,6 +66,20 @@ describe.each(themes)('components (%s theme)', (theme) => {
 
     it('loading', () => {
       expectSnapshot(<Button title="Save" loading />, theme)
+    })
+  })
+
+  describe('PillButton', () => {
+    it.each(['primary', 'outline'] as const)('%s variant', (variant) => {
+      expectSnapshot(<PillButton title="Open" variant={variant} />, theme)
+    })
+
+    it('rtl, with the chevron pointing left', () => {
+      expectSnapshot(<PillButton title="ברכת המזון" rtl />, theme)
+    })
+
+    it('without a chevron', () => {
+      expectSnapshot(<PillButton title="Open" chevron={false} />, theme)
     })
   })
 
