@@ -1,3 +1,10 @@
+## [0.25.1](https://github.com/BeezyWorks/design-system/compare/v0.25.0...v0.25.1) (2026-10-21)
+
+
+### Bug Fixes
+
+* **text:** use a font's real bold cut so Android bold keeps the chosen font ([#33](https://github.com/BeezyWorks/design-system/issues/33)) ([f739998](https://github.com/BeezyWorks/design-system/commit/f739998d1c932925894e911efde51d7442ce06b8))
+
 # [0.25.0](https://github.com/BeezyWorks/design-system/compare/v0.24.0...v0.25.0) (2026-10-20)
 
 
