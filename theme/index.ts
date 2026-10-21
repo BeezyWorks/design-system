@@ -10,7 +10,6 @@ export {
   useHeaderTypeface,
 } from './DesignSystem'
 export type {
-  Appearance,
   ColorResolver,
   DesignSystemProviderProps,
   ThemeScopeProps,

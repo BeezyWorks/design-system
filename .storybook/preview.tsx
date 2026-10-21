@@ -24,6 +24,7 @@ const preview: Preview = {
           {value: 'light', title: 'Light'},
           {value: 'sepia', title: 'Sepia'},
           {value: 'dark', title: 'Dark'},
+          {value: 'black', title: 'Black'},
         ],
         dynamicTitle: true,
       },

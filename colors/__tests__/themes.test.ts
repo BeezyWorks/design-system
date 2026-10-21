@@ -5,7 +5,7 @@ import {sampleBrands as Brand} from '../sampleBrands'
 import type {BrandPalette} from '../brands'
 import {contrastRatio, resolveBrand} from '../derive'
 
-const modes = ['light', 'sepia', 'dark'] as const
+const modes = ['light', 'sepia', 'dark', 'black'] as const
 const brands = Object.entries(Brand)
 
 // The tokens a brand decides; every other token is shared by the family.
@@ -139,6 +139,7 @@ describe('categorical colors', () => {
     ['light', 4.5],
     ['sepia', 4.5],
     ['dark', 7],
+    ['black', 7],
   ] as const)('read as text on %s surfaces', (mode, min) => {
     const theme = buildTheme(mode, Brand.Blue)
     for (const { text } of categoryColors) {
