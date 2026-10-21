@@ -1,3 +1,10 @@
+# [0.26.0](https://github.com/BeezyWorks/design-system/compare/v0.25.1...v0.26.0) (2026-10-21)
+
+
+### Features
+
+* **theme:** add a black (OLED) mode and system-pair swatches ([#32](https://github.com/BeezyWorks/design-system/issues/32)) ([1bf862d](https://github.com/BeezyWorks/design-system/commit/1bf862de752283377522706e559fce2f9dd63be7))
+
 ## [0.25.1](https://github.com/BeezyWorks/design-system/compare/v0.25.0...v0.25.1) (2026-10-21)
 
 
