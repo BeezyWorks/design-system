@@ -18,6 +18,7 @@ import {
   FontFamily,
   LatinTypeface,
   Typeface,
+  boldFontFamily,
   latinTypefaceFontFamily,
   typefaceFontFamily,
 } from '../../typography'
@@ -150,6 +151,17 @@ export const Text: React.FunctionComponent<TextProps> = ({
       ]
     : undefined
 
+  // A family with a real bold cut switches to it; asking Android for
+  // `fontWeight: bold` on a custom family falls back to the system font.
+  const boldFace =
+    bold && !latin
+      ? boldFontFamily(
+          (typeface
+            ? typefaceFontFamily[typeface]
+            : base.fontFamily) as FontFamily,
+        )
+      : undefined
+
   return (
     <NativeText
       {...textProps}
@@ -182,10 +194,12 @@ export const Text: React.FunctionComponent<TextProps> = ({
           ...(onPhoto && photoShadow(resolve(SemanticColor.OverlayPhotoScrim))),
         },
         align ? {textAlign: align} : null,
-        bold ? {fontWeight: '700'} : null,
+        bold ? (boldFace ? {fontFamily: boldFace} : {fontWeight: '700'}) : null,
         typeface || latinFamily
           ? {
-              fontFamily: typeface ? typefaceFontFamily[typeface] : latinFamily,
+              fontFamily:
+                boldFace ??
+                (typeface ? typefaceFontFamily[typeface] : latinFamily),
             }
           : null,
         rashiScript

@@ -33,6 +33,22 @@ export const typefaceFontFamily: Record<Typeface, FontFamily> = {
   [Typeface.Rubik]: FontFamily.Rubik,
 }
 
+// Families that ship a real bold cut. Android resolves `fontWeight: 'bold'`
+// on a custom family with no registered bold face to the *system* font, so
+// bold text must switch family instead. The rest (David, Ezra, Hadasim,
+// Mekorot Vilna, Rubik) ship a single weight.
+const boldFamilies: Partial<Record<FontFamily, FontFamily>> = {
+  [FontFamily.TaameyFrank]: FontFamily.TaameyFrankBold,
+  [FontFamily.Cardo]: FontFamily.CardoBold,
+  [FontFamily.FrankRuhlLibre]: FontFamily.FrankRuhlLibreBold,
+  [FontFamily.NotoSerifHebrew]: FontFamily.NotoSerifHebrewBold,
+  [FontFamily.NotoRashiHebrew]: FontFamily.NotoRashiHebrewBold,
+}
+
+/** The bold cut of a family, or `undefined` when it ships only one weight. */
+export const boldFontFamily = (family: FontFamily): FontFamily | undefined =>
+  boldFamilies[family]
+
 /** Latin reading faces — for translations and other long-form English set
  * beside Hebrew content. Persisted by value, like `Typeface`. */
 export const LatinTypeface = {
@@ -96,22 +112,48 @@ export const headerTypefaceFontFamily: Record<
   },
 }
 
+// 16-44px in 2px steps. The four original names are kept (at their original
+// sizes) because they are persisted in user prefs and settings backups; the
+// rest are named by their px size. Order here is the order of the stepper.
 export const ContentSize = {
+  Size16: 'Size16',
+  Size18: 'Size18',
   Small: 'Small',
+  Size22: 'Size22',
   Normal: 'Normal',
+  Size26: 'Size26',
   Large: 'Large',
+  Size30: 'Size30',
   XLarge: 'XLarge',
+  Size34: 'Size34',
+  Size36: 'Size36',
+  Size38: 'Size38',
+  Size40: 'Size40',
+  Size42: 'Size42',
+  Size44: 'Size44',
 } as const
 export type ContentSize = (typeof ContentSize)[keyof typeof ContentSize]
 
 export const contentSizeValue: Record<ContentSize, number> = {
+  [ContentSize.Size16]: 16,
+  [ContentSize.Size18]: 18,
   [ContentSize.Small]: 20,
+  [ContentSize.Size22]: 22,
   [ContentSize.Normal]: 24,
+  [ContentSize.Size26]: 26,
   [ContentSize.Large]: 28,
+  [ContentSize.Size30]: 30,
   [ContentSize.XLarge]: 32,
+  [ContentSize.Size34]: 34,
+  [ContentSize.Size36]: 36,
+  [ContentSize.Size38]: 38,
+  [ContentSize.Size40]: 40,
+  [ContentSize.Size42]: 42,
+  [ContentSize.Size44]: 44,
 }
 
 export const Leading = {
+  Tight: 'Tight',
   Single: 'Single',
   OneAndAHalf: 'OneAndAHalf',
   Double: 'Double',
@@ -121,8 +163,9 @@ export type Leading = (typeof Leading)[keyof typeof Leading]
 // A multiplier on font size added to the size itself:
 // lineHeight = fontSize + fontSize * leadingValue. Pointed Hebrew needs room
 // for niqqud and trop but reads as double-spaced past ~2x, so the presets
-// span 1.5x-2x (whole pixels at every ContentSize).
+// top out at 2x. `Tight` (1.25x) is for unpointed text.
 export const leadingValue: Record<Leading, number> = {
+  [Leading.Tight]: 0.25,
   [Leading.Single]: 0.5,
   [Leading.OneAndAHalf]: 0.75,
   [Leading.Double]: 1,

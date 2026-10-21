@@ -4620,7 +4620,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
         },
         null,
         {
-          "fontWeight": "700",
+          "fontFamily": "TaameyFrankCLM-Bold",
         },
         null,
         null,
@@ -9252,7 +9252,7 @@ exports[`family components (light theme) new props on existing components 1`] = 
         },
         null,
         {
-          "fontWeight": "700",
+          "fontFamily": "TaameyFrankCLM-Bold",
         },
         null,
         null,
