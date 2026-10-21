@@ -1,7 +1,12 @@
 import React, {createContext, useCallback, useContext, useMemo} from 'react'
 import {ImageSourcePropType} from 'react-native'
 import {SemanticColor} from '../colors/semantic'
-import {resolveColor, ThemeMode} from '../colors/themes'
+import {
+  Appearance,
+  appearanceOf,
+  resolveColor,
+  ThemeMode,
+} from '../colors/themes'
 import {BrandPalette} from '../colors/brands'
 import {
   ContentSelection,
@@ -129,12 +134,9 @@ export const ThemeScope: React.FunctionComponent<ThemeScopeProps> = ({
 /** The mode in effect here (respects the nearest `ThemeScope`). */
 export const useThemeMode = (): ThemeMode => useDesignSystem().mode
 
-/** Light or dark — the mode collapsed to what native APIs understand
- * (pickers, glass, blur, the status bar). Sepia is a light appearance. */
-export type Appearance = 'light' | 'dark'
-
+/** The mode in effect here as light or dark (see `appearanceOf`). */
 export const useAppearance = (): Appearance =>
-  useDesignSystem().mode === 'dark' ? 'dark' : 'light'
+  appearanceOf(useDesignSystem().mode)
 
 export type ColorResolver = (token: SemanticColor) => string
 

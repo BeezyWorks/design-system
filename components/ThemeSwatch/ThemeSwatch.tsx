@@ -15,7 +15,17 @@ export interface ThemeSwatchProps {
   onPress: () => void
   /** The sample glyph drawn in the mode's ink. Default `Aa`. */
   glyph?: string
+  /** The modes a `system` tile splits between. Default light and dark. */
+  systemModes?: SystemModes
 }
+
+/** What "system" means: the mode used under each OS appearance. */
+export interface SystemModes {
+  light: ThemeMode
+  dark: ThemeMode
+}
+
+const DEFAULT_SYSTEM_MODES: SystemModes = {light: 'light', dark: 'dark'}
 
 // Paints its children in `mode` — a real `ThemeScope`, so the preview is the
 // mode's actual background and ink rather than a copy of their values.
@@ -53,6 +63,7 @@ export const ThemeSwatch: React.FunctionComponent<ThemeSwatchProps> = ({
   selected,
   onPress,
   glyph = 'Aa',
+  systemModes = DEFAULT_SYSTEM_MODES,
 }) => (
   <Pressable
     onPress={onPress}
@@ -75,8 +86,8 @@ export const ThemeSwatch: React.FunctionComponent<ThemeSwatchProps> = ({
         >
           {mode === 'system' ? (
             <>
-              <ModeTile mode="light" width={SIZE / 2} />
-              <ModeTile mode="dark" width={SIZE / 2} />
+              <ModeTile mode={systemModes.light} width={SIZE / 2} />
+              <ModeTile mode={systemModes.dark} width={SIZE / 2} />
             </>
           ) : (
             <ModeTile mode={mode} glyph={glyph} width={SIZE} />

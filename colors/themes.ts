@@ -9,7 +9,15 @@ import {resolveBrand} from './derive'
 // neutrals (surfaces, text, borders, status — the same for every app) plus
 // the brand's slots for the brand-derived tokens. Pure data — no React, no
 // Platform.
-export type ThemeMode = 'light' | 'sepia' | 'dark'
+export type ThemeMode = 'light' | 'sepia' | 'dark' | 'black'
+
+/** Light or dark — a mode collapsed to what native APIs understand
+ * (pickers, glass, blur, the status bar). Sepia is a light appearance,
+ * black a dark one. */
+export type Appearance = 'light' | 'dark'
+
+export const appearanceOf = (mode: ThemeMode): Appearance =>
+  mode === 'dark' || mode === 'black' ? 'dark' : 'light'
 
 // Values are named colors, except a brand's washes, which are derived from
 // the brand's named colors (see `withAlpha`).
@@ -172,6 +180,19 @@ const darkNeutrals: NeutralDefinition = {
   [S.MarkGoogleYellow]: C.GoogleYellow,
   [S.MarkGoogleRed]: C.GoogleRed,
 }
+// Lights out for OLED screens: the dark theme with every surface black, so
+// only the text (and the hairlines that outline cards) light pixels.
+const blackNeutrals: NeutralDefinition = {
+  ...darkNeutrals,
+  [S.TextInverse]: C.Black,
+
+  [S.SurfaceBackground]: C.Black,
+  [S.SurfaceCard]: C.Black,
+  [S.SurfaceSelected]: C.Onyx,
+  [S.SurfaceGlass]: C.GlassBlack,
+  [S.SurfaceGlassOpaque]: C.GlassBlackOpaque,
+}
+
 /** A brand color at some opacity, as an `rgba()` string. */
 const withAlpha = (color: string, alpha: number): string => {
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(color.slice(i, i + 2), 16))
@@ -236,6 +257,11 @@ const modes: Record<
     brand: lightBrand,
   },
   dark: {neutrals: darkNeutrals, categories: darkCategories, brand: darkBrand},
+  black: {
+    neutrals: blackNeutrals,
+    categories: darkCategories,
+    brand: darkBrand,
+  },
 }
 
 const cache = new WeakMap<

@@ -32,6 +32,10 @@ export const NamedColor = {
   // browns, kept as its own color on purpose.
   PanelGray: '#313131',
 
+  // --- Neutrals: black-mode surfaces (OLED: pixels off except the text).
+  // Surfaces are `Black`; the one lit step marks a selection.
+  Onyx: '#151413',
+
   // --- Ink (warm near-black, light-mode text) and its alpha steps
   Ink: '#2A2521',
   InkFaded: 'rgba(42, 37, 33, 0.5)',
@@ -67,6 +71,8 @@ export const NamedColor = {
   GlassSepiaOpaque: 'rgba(239, 225, 196, 0.9)',
   GlassSmoke: 'rgba(24, 20, 17, 0.34)',
   GlassSmokeOpaque: 'rgba(24, 20, 17, 0.8)',
+  GlassBlack: 'rgba(0, 0, 0, 0.5)',
+  GlassBlackOpaque: 'rgba(0, 0, 0, 0.88)',
   GlassEdgeLight: 'rgba(255, 255, 255, 0.65)',
   GlassEdgeDark: 'rgba(255, 255, 255, 0.18)',
   GlassSheenLight: 'rgba(255, 255, 255, 0.35)',

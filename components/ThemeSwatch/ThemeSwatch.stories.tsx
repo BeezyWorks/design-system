@@ -7,6 +7,7 @@ const options: {mode: ThemeSwatchProps['mode']; label: string}[] = [
   {mode: 'light', label: 'Light'},
   {mode: 'sepia', label: 'Sepia'},
   {mode: 'dark', label: 'Dark'},
+  {mode: 'black', label: 'Black'},
   {mode: 'system', label: 'System'},
 ]
 
