@@ -3,6 +3,7 @@ import {
   LatinTypeface,
   Leading,
   Typeface,
+  contentSizeValue,
   latinTypefaceFontFamily,
   resolveContentText,
   typefaceFontFamily,
@@ -81,12 +82,21 @@ describe('resolveContentText', () => {
       'Libre Baskerville',
       'Inter',
     ])
-    expect(Object.values(ContentSize)).toEqual([
-      'Small',
-      'Normal',
-      'Large',
-      'XLarge',
+    expect(Object.values(ContentSize).map(size => contentSizeValue[size])).toEqual(
+      [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],
+    )
+    // The original names are persisted, so they must keep their sizes.
+    expect(contentSizeValue).toMatchObject({
+      Small: 20,
+      Normal: 24,
+      Large: 28,
+      XLarge: 32,
+    })
+    expect(Object.values(Leading)).toEqual([
+      'Tight',
+      'Single',
+      'OneAndAHalf',
+      'Double',
     ])
-    expect(Object.values(Leading)).toEqual(['Single', 'OneAndAHalf', 'Double'])
   })
 })
