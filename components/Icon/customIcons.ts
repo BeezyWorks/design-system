@@ -11,3 +11,10 @@ export const Tefillin = createLucideIcon('tefillin', [
   ['path', {d: 'M12 5v6', key: 'shin-middle'}],
   ['path', {d: 'M21 16a3 3 0 0 1 0 6H5', key: 'retzua'}],
 ])
+
+/** A shul: a gabled house with a Magen David filling its front. */
+export const Shul = createLucideIcon('shul', [
+  ['path', {d: 'M3 21V10l9-8 9 8v11z', key: 'house'}],
+  ['path', {d: 'M12 9l4.76 8.25H7.24z', key: 'star-up'}],
+  ['path', {d: 'M12 20l-4.76-8.25h9.52z', key: 'star-down'}],
+])

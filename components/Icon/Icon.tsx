@@ -38,10 +38,9 @@ import {
   EllipsisVertical,
   Star,
   ScanQrCode,
-  Landmark,
   LucideIcon,
 } from 'lucide-react-native'
-import {Tefillin} from './customIcons'
+import {Shul, Tefillin} from './customIcons'
 import {SemanticColor} from '../../colors'
 import {useResolvedColor} from '../../theme'
 
@@ -133,7 +132,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   star: Star,
   'star-outline': Star,
   'scan-qr': ScanQrCode,
-  shul: Landmark,
+  shul: Shul,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
