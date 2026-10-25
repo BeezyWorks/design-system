@@ -36,6 +36,9 @@ import {
   Check,
   Search,
   EllipsisVertical,
+  Star,
+  ScanQrCode,
+  Landmark,
   LucideIcon,
 } from 'lucide-react-native'
 import {Tefillin} from './customIcons'
@@ -82,6 +85,10 @@ export type IconName =
   | 'more-vertical'
   | 'text-size'
   | 'tefillin'
+  | 'star'
+  | 'star-outline'
+  | 'scan-qr'
+  | 'shul'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -123,11 +130,18 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   'more-vertical': EllipsisVertical,
   'text-size': ALargeSmall,
   tefillin: Tefillin,
+  star: Star,
+  'star-outline': Star,
+  'scan-qr': ScanQrCode,
+  shul: Landmark,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
 // same glyph filled with its own color rather than a second glyph.
-const filledIcons: Partial<Record<IconName, true>> = {bookmark: true}
+const filledIcons: Partial<Record<IconName, true>> = {
+  bookmark: true,
+  star: true,
+}
 
 export interface IconProps {
   name: IconName

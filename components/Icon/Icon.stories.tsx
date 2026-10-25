@@ -25,6 +25,10 @@ const names: IconName[] = [
   'download',
   'print',
   'tefillin',
+  'star',
+  'star-outline',
+  'scan-qr',
+  'shul',
   'share',
 ]
 
