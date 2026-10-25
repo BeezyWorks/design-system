@@ -1,3 +1,10 @@
+# [0.27.0](https://github.com/BeezyWorks/design-system/compare/v0.26.0...v0.27.0) (2026-10-25)
+
+
+### Features
+
+* **icon:** add star, scan-qr and shul icons ([5d91b8c](https://github.com/BeezyWorks/design-system/commit/5d91b8ca82d041b1cfb30e3c8354a73fb01acef2))
+
 # [0.26.0](https://github.com/BeezyWorks/design-system/compare/v0.25.1...v0.26.0) (2026-10-21)
 
 
