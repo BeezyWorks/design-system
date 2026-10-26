@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Platform, Pressable, PressableProps} from 'react-native'
 import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
@@ -32,9 +32,13 @@ export const Touchable: React.FunctionComponent<TouchableProps> = ({
   ...props
 }) => {
   const resolve = useColorResolver()
+  // A web (or iPad) pointer over it gets the same wash as a press.
+  const [hovered, setHovered] = useState(false)
   return (
     <Pressable
       {...props}
+      onHoverIn={() => setHovered(true)}
+      onHoverOut={() => setHovered(false)}
       android_ripple={{color: resolve(SemanticColor.SurfaceHover)}}
       style={({pressed}) =>
         // Android shows its own native ripple via `android_ripple` above —
@@ -44,7 +48,9 @@ export const Touchable: React.FunctionComponent<TouchableProps> = ({
         // visible no matter what the row's own background already is — a
         // solid fill disappears entirely on a row that's already
         // `backgroundColorDirty` itself, e.g. a card row on `surfaceCard`.
-        pressed && Platform.OS !== 'android'
+        // A wash only shows on a row with no background of its own — a
+        // filled tile wants `usePressFeedback`'s `StateLayer` instead.
+        (pressed && Platform.OS !== 'android') || hovered
           ? {backgroundColor: resolve(SemanticColor.SurfaceHover)}
           : undefined
       }
