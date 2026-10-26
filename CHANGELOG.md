@@ -1,3 +1,10 @@
+## [0.27.4](https://github.com/BeezyWorks/design-system/compare/v0.27.3...v0.27.4) (2026-10-26)
+
+
+### Bug Fixes
+
+* **button:** smaller label and icon on the sm size ([b757a6d](https://github.com/BeezyWorks/design-system/commit/b757a6db8edace7cba4f14423ab660579def1240))
+
 ## [0.27.3](https://github.com/BeezyWorks/design-system/compare/v0.27.2...v0.27.3) (2026-10-26)
 
 
