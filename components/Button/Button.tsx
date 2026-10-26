@@ -58,6 +58,11 @@ const sizePadding: Record<ButtonSize, {vertical: number; horizontal: number}> =
     lg: {vertical: spacing.md, horizontal: spacing.lg},
   }
 
+// A small button also steps its label and icon down, so it sits in a
+// card row without its label wrapping.
+const sizeLabel = {sm: 'bodyStrong', md: 'headline', lg: 'headline'} as const
+const sizeIcon: Record<ButtonSize, number> = {sm: 16, md: 18, lg: 18}
+
 export interface ButtonProps {
   title: string
   variant?: ButtonVariant
@@ -128,13 +133,17 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       ) : (
         <>
           {!!icon && iconPosition === 'start' && (
-            <Icon name={icon} size={18} color={variantStyle.label} />
+            <Icon name={icon} size={sizeIcon[size]} color={variantStyle.label} />
           )}
-          <Text variant="headline" color={variantStyle.label} rtl={rtl}>
+          <Text
+            variant={sizeLabel[size]}
+            color={variantStyle.label}
+            rtl={rtl}
+          >
             {title}
           </Text>
           {!!icon && iconPosition === 'end' && (
-            <Icon name={icon} size={18} color={variantStyle.label} />
+            <Icon name={icon} size={sizeIcon[size]} color={variantStyle.label} />
           )}
         </>
       )}

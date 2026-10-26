@@ -685,7 +685,7 @@ exports[`components (dark theme) Button sm size 1`] = `
       [
         {
           "color": "#F0ECE4",
-          "fontSize": 16,
+          "fontSize": 14,
           "fontWeight": "600",
         },
         {
@@ -4460,7 +4460,7 @@ exports[`components (light theme) Button sm size 1`] = `
       [
         {
           "color": "#2A2521",
-          "fontSize": 16,
+          "fontSize": 14,
           "fontWeight": "600",
         },
         {
