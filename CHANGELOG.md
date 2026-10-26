@@ -1,3 +1,10 @@
+## [0.27.5](https://github.com/BeezyWorks/design-system/compare/v0.27.4...v0.27.5) (2026-10-26)
+
+
+### Bug Fixes
+
+* **button:** every variant the same height ([eacdf9d](https://github.com/BeezyWorks/design-system/commit/eacdf9da8b444258d93b9810e96e4b950a98f429))
+
 ## [0.27.4](https://github.com/BeezyWorks/design-system/compare/v0.27.3...v0.27.4) (2026-10-26)
 
 
