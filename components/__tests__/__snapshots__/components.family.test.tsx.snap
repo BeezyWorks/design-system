@@ -3604,9 +3604,9 @@ exports[`family components (dark theme) new props on existing components 1`] = `
       {
         "alignItems": "center",
         "backgroundColor": "#6DA8F5",
-        "borderColor": undefined,
+        "borderColor": "transparent",
         "borderRadius": 12,
-        "borderWidth": 0,
+        "borderWidth": 1,
         "flexDirection": "row-reverse",
         "gap": 16,
         "justifyContent": "center",
@@ -8503,9 +8503,9 @@ exports[`family components (light theme) new props on existing components 1`] = 
       {
         "alignItems": "center",
         "backgroundColor": "#3E7FD1",
-        "borderColor": undefined,
+        "borderColor": "transparent",
         "borderRadius": 12,
-        "borderWidth": 0,
+        "borderWidth": 1,
         "flexDirection": "row-reverse",
         "gap": 16,
         "justifyContent": "center",

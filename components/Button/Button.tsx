@@ -114,10 +114,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       style={({pressed}) => ({
         backgroundColor: resolve(variantStyle.background),
         borderRadius: radius.md,
-        borderWidth: variantStyle.border ? 1 : 0,
+        // Every variant takes the border's 1px, transparent when it has no
+        // outline, so a ghost beside an outline button is the same height.
+        borderWidth: 1,
         borderColor: variantStyle.border
           ? resolve(variantStyle.border)
-          : undefined,
+          : 'transparent',
         flexDirection: rtl ? 'row-reverse' : 'row',
         ...(fullWidth && {alignSelf: 'stretch' as const}),
         alignItems: 'center',
