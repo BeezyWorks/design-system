@@ -1,3 +1,11 @@
+## [0.27.2](https://github.com/BeezyWorks/design-system/compare/v0.27.1...v0.27.2) (2026-10-26)
+
+
+### Bug Fixes
+
+* **screen:** no bottom safe-area gap above the docked Android tab bar ([850ffa8](https://github.com/BeezyWorks/design-system/commit/850ffa80973e3a0adcd8dc890914cb898a73a6f8))
+* **segmented-control:** make the selected segment stand out on Android ([bfdbae4](https://github.com/BeezyWorks/design-system/commit/bfdbae4e752f659dac4ed27912eb8feb82e13902))
+
 ## [0.27.1](https://github.com/BeezyWorks/design-system/compare/v0.27.0...v0.27.1) (2026-10-26)
 
 
