@@ -1,6 +1,7 @@
 import React from 'react'
-import {Pressable} from 'react-native'
+import {Pressable, PressableProps} from 'react-native'
 import {Stack, StackProps} from '../Stack'
+import {StateLayer, usePressFeedback} from '../Touchable/pressFeedback'
 import {SemanticColor} from '../../colors'
 
 export interface CardProps extends Omit<
@@ -13,10 +14,12 @@ export interface CardProps extends Omit<
   shadow?: StackProps['shadow']
   borderWidth?: StackProps['borderWidth']
   borderColor?: StackProps['borderColor']
-  /** Makes the whole card one tap target (dims while pressed). */
+  /** Makes the whole card one tap target — washed under a pointer and
+   * while pressed, when it also dips. */
   onPress?: () => void
   /** Read by screen readers for a tappable card. */
   accessibilityLabel?: string
+  accessibilityState?: PressableProps['accessibilityState']
 }
 
 /** The one raised-surface primitive every card in the app is built from —
@@ -34,8 +37,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
   borderColor = SemanticColor.BorderDefault,
   onPress,
   accessibilityLabel,
+  accessibilityState,
+  children,
   ...stackProps
 }) => {
+  const {hovered, pressableProps} = usePressFeedback()
   const card = (pressed = false) => (
     <Stack
       padding={padding}
@@ -47,8 +53,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
       borderWidth={borderWidth}
       borderColor={borderColor}
       {...stackProps}
-      opacity={pressed ? 0.7 : stackProps.opacity}
-    />
+    >
+      <StateLayer visible={hovered || pressed} radius={radius} />
+      {children}
+    </Stack>
   )
   if (!onPress) return card()
   return (
@@ -56,6 +64,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel}
+      accessibilityState={accessibilityState}
+      {...pressableProps}
     >
       {({pressed}) => card(pressed)}
     </Pressable>
