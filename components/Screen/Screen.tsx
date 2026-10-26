@@ -49,8 +49,12 @@ const MAX_READER_WIDTH = 860
 /** The standard screen chrome: safe-area handling, the room the bottom tab
  * pill / side rail needs, and the web reading-width cap. Every top-level
  * screen renders this once as its outermost element. */
-const allEdges: Edge[] = ['top', 'right', 'bottom', 'left']
-const edgesWithoutTop: Edge[] = ['right', 'bottom', 'left']
+const edges = (top: boolean, bottom: boolean): Edge[] => [
+  ...(top ? (['top'] as const) : []),
+  'right',
+  ...(bottom ? (['bottom'] as const) : []),
+  'left',
+]
 
 export const Screen: React.FunctionComponent<ScreenProps> = ({
   children,
@@ -82,6 +86,10 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   // above a bar that was never covering anything.
   const bottomInset =
     isFloatingTabBar && insideTabs ? tabBarHeight! + TAB_BAR_CONTENT_GAP : 0
+  // A docked bar (Android) already pads itself above the system navigation,
+  // so a screen above it taking that inset too leaves a dead strip between
+  // its content and the bar.
+  const aboveDockedBar = insideTabs && !isFloatingTabBar
   // The web anchor below is the full window height, but a docked bottom bar
   // (narrow web) takes its own row out of it — without subtracting that, the
   // screen's bottom is hidden behind the bar and the last item can't scroll
@@ -102,7 +110,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
   return (
     <Container
       style={style.base}
-      edges={isWeb ? undefined : hasNativeHeader ? edgesWithoutTop : allEdges}
+      edges={isWeb ? undefined : edges(!hasNativeHeader, !aboveDockedBar)}
     >
       <View style={style.wrapper}>
         <View style={style.content}>

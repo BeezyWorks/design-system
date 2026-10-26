@@ -40,6 +40,7 @@ const SEGMENT_MIN_HEIGHT = 32
 // 32pt segment + 2 * 6 = the 44pt minimum touch target.
 const HIT_SLOP = {top: 6, bottom: 6}
 const PRESSED_OPACITY = 0.6
+const isAndroid = Platform.OS === 'android'
 
 // Critically damped (friction ≈ 2·√tension): a quick glide that settles
 // without overshoot, like UISegmentedControl, rather than a bouncy wobble.
@@ -93,6 +94,11 @@ export const SegmentedControl = <T extends string>({
   // selection. TextSecondary over the tinted track falls below 4.5:1.
   const labelColor = useResolvedColor(SemanticColor.TextPrimary)
   const thumbShadow = useShadow('thumb')
+  // Android's elevation shadow is too faint to lift the thumb (and gone in
+  // dark mode), so there the thumb gets a hairline edge and the selected
+  // label takes the accent.
+  const thumbBorderColor = useResolvedColor(SemanticColor.BorderDefault)
+  const selectedLabelColor = useResolvedColor(SemanticColor.AccentPrimary)
 
   const [trackWidth, setTrackWidth] = useState(0)
   const [labelWidth, setLabelWidth] = useState(0)
@@ -153,6 +159,10 @@ export const SegmentedControl = <T extends string>({
               styles.thumbFill,
               thumbShadow,
               {backgroundColor: thumbColor},
+              isAndroid && {
+                borderWidth: StyleSheet.hairlineWidth * 2,
+                borderColor: thumbBorderColor,
+              },
             ]}
           />
         </animated.View>
@@ -183,7 +193,8 @@ export const SegmentedControl = <T extends string>({
                     styles.label,
                     labelStyle(selected),
                     {
-                      color: labelColor,
+                      color:
+                        isAndroid && selected ? selectedLabelColor : labelColor,
                       opacity: pressed ? PRESSED_OPACITY : 1,
                     },
                   ]}
