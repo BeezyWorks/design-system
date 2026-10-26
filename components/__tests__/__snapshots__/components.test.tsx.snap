@@ -2547,6 +2547,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
             {
               "backgroundColor": "#262320",
             },
+            false,
           ]
         }
       />
@@ -6321,6 +6322,7 @@ exports[`components (light theme) SegmentedControl 1`] = `
             {
               "backgroundColor": "#FFFFFF",
             },
+            false,
           ]
         }
       />
