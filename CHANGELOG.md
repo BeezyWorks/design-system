@@ -1,3 +1,10 @@
+## [0.27.3](https://github.com/BeezyWorks/design-system/compare/v0.27.2...v0.27.3) (2026-10-26)
+
+
+### Bug Fixes
+
+* **press:** hover and press wash on cards, chips and touchables ([35d770a](https://github.com/BeezyWorks/design-system/commit/35d770a95753b5e527c4bddcba8e6588091f8834))
+
 ## [0.27.2](https://github.com/BeezyWorks/design-system/compare/v0.27.1...v0.27.2) (2026-10-26)
 
 
