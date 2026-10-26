@@ -1,3 +1,10 @@
+## [0.27.1](https://github.com/BeezyWorks/design-system/compare/v0.27.0...v0.27.1) (2026-10-26)
+
+
+### Bug Fixes
+
+* **icon:** draw the shul icon as a house with a Magen David ([0dc43eb](https://github.com/BeezyWorks/design-system/commit/0dc43ebc5f5ab82b41f8c48f6975093b0f1499cf))
+
 # [0.27.0](https://github.com/BeezyWorks/design-system/compare/v0.26.0...v0.27.0) (2026-10-25)
 
 
