@@ -1,9 +1,10 @@
 import React from 'react'
-import {Platform, Pressable, StyleSheet, View} from 'react-native'
+import {Pressable, StyleSheet, View} from 'react-native'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {layout} from '../../layout'
 import {Icon, IconName} from '../Icon'
+import {GlassBackButton} from '../GlassIconButton'
 import {Text} from '../Text'
 
 export interface HeaderAction {
@@ -21,6 +22,8 @@ export interface HeaderProps {
   onTitlePress?: () => void
   /** Shows a back button. */
   onBack?: () => void
+  /** The back button's accessibility label. */
+  backLabel?: string
   /** Trailing icon buttons, in order. */
   actions?: HeaderAction[]
   /** The roomier layout for wide windows (iPad, desktop): the title becomes
@@ -40,22 +43,17 @@ const WideIconButton = ({
   onPress,
   color,
   size = 21,
-  variant = 'trailing',
   styles,
 }: {
   name: IconName
   onPress: () => void
   color: SemanticColor
   size?: number
-  variant?: 'back' | 'trailing'
   styles: ReturnType<typeof styleCreator>
 }) => (
   <Pressable
     onPress={onPress}
-    style={({pressed}) => [
-      variant === 'back' ? styles.wideBackButton : styles.wideIconButton,
-      pressed && styles.pressedTint,
-    ]}
+    style={({pressed}) => [styles.wideIconButton, pressed && styles.pressedTint]}
   >
     <Icon name={name} size={size} color={color} />
   </Pressable>
@@ -72,6 +70,7 @@ export const Header = ({
   subtitle,
   onTitlePress,
   onBack,
+  backLabel = 'Back',
   actions = [],
   wide = false,
   translateY = 0,
@@ -79,9 +78,6 @@ export const Header = ({
 }: HeaderProps) => {
   const resolve = useColorResolver()
   const styles = styleCreator(resolve)
-
-  const backIconName: IconName =
-    Platform.OS === 'ios' ? 'chevron-back' : 'arrow-back'
 
   return (
     <View
@@ -170,21 +166,12 @@ export const Header = ({
           </View>
         </Pressable>
       )}
-      {onBack &&
-        (wide ? (
-          <WideIconButton
-            name={backIconName}
-            onPress={onBack}
-            color={SemanticColor.TextPrimary}
-            size={20}
-            variant="back"
-            styles={styles}
-          />
-        ) : (
-          <Pressable style={styles.icon} onPress={onBack}>
-            <Icon name={backIconName} color={SemanticColor.TextAccent} />
-          </Pressable>
-        ))}
+      {onBack && (
+        // The same glass back button as the app's native nav bars.
+        <View style={!wide && styles.backSlot}>
+          <GlassBackButton inline onPress={onBack} accessibilityLabel={backLabel} />
+        </View>
+      )}
       <View style={[styles.buttonBox, wide && styles.buttonBoxWide]}>
         {actions.map(({icon, onPress}, index) =>
           wide ? (
@@ -292,8 +279,8 @@ const styleCreator = (resolve: ColorResolver) =>
       padding: 9,
       borderRadius: 9,
     },
-    wideBackButton: {
-      padding: 8,
-      borderRadius: 8,
+    // Keeps the 56px slot the bare back icon had, so titles don't shift.
+    backSlot: {
+      marginHorizontal: 8,
     },
   })

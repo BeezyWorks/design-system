@@ -108,10 +108,23 @@ describe.each(themes)('surfaces (%s theme)', (theme) => {
 
   it('GlassIconButton (solid fallback)', () => {
     const r = renderWithTheme(
-      <GlassIconButton name="add" onPress={noop} accessibilityLabel="add" />,
+      <GlassIconButton
+        name="add"
+        onPress={noop}
+        accessibilityLabel="add"
+        inline
+      />,
       theme,
     )
     expect(r.toJSON()).toMatchSnapshot()
+  })
+
+  it('GlassIconButton in a Liquid Glass nav bar draws no glass of its own', () => {
+    const r = renderWithTheme(
+      <GlassIconButton name="add" onPress={noop} accessibilityLabel="add" />,
+      theme,
+    )
+    expect(JSON.stringify(r.toJSON())).not.toContain('glassEffectStyle')
   })
 
   it('IconButton at rest and pressed', () => {
