@@ -162,6 +162,12 @@ export const Text: React.FunctionComponent<TextProps> = ({
         )
       : undefined
 
+  // An explicit face carries its own weight. Android can't find a bold
+  // weight of a single-cut custom family and drops to the system font, so a
+  // bold variant (e.g. `titleLarge` in `FontSwatch`) must not leak through.
+  const androidPlainWeight =
+    Platform.OS === 'android' ? {fontWeight: 'normal' as const} : null
+
   return (
     <NativeText
       {...textProps}
@@ -200,6 +206,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
               fontFamily:
                 boldFace ??
                 (typeface ? typefaceFontFamily[typeface] : latinFamily),
+              ...androidPlainWeight,
             }
           : null,
         rashiScript
@@ -207,6 +214,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
               fontFamily: bold
                 ? FontFamily.NotoRashiHebrewBold
                 : FontFamily.NotoRashiHebrew,
+              ...androidPlainWeight,
             }
           : null,
       ]}
