@@ -10,6 +10,9 @@ export interface GlassIconButtonProps {
   name: IconName
   onPress: () => void
   accessibilityLabel: string
+  /** Drawn inside a JS layout (e.g. `Header`) rather than as a native nav
+   * bar item: it always draws its own glass and adds no edge margin. */
+  inline?: boolean
 }
 
 const buttonSize = 40
@@ -17,15 +20,18 @@ const iconSize = 20
 
 /** A circular icon-only button — real interactive iOS Liquid Glass via
  * `expo-glass-effect` where the OS/device actually supports it, a plain
- * solid circular button everywhere else (Android, web, older iOS). Used
- * for the Notifications nav bar's back/add buttons. */
+ * solid circular button everywhere else (Android, web, older iOS). By
+ * default it's a native nav bar item (`headerLeft`/`headerRight`); pass
+ * `inline` to place it in a JS layout. */
 export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
   name,
   onPress,
   accessibilityLabel,
+  inline = false,
 }) => {
   const resolve = useColorResolver()
   const cardShadow = useShadow('card')
+  const liquidGlass = isLiquidGlassAvailable()
 
   const button = (
     <Pressable
@@ -39,7 +45,11 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
     </Pressable>
   )
 
-  const content = isLiquidGlassAvailable() ? (
+  // The iOS 26 nav bar already wraps each bar item in its own glass, so a
+  // second glass here would show as a bubble inside a bubble.
+  if (!inline && liquidGlass) return button
+
+  const content = liquidGlass ? (
     <GlassView glassEffectStyle="regular" isInteractive style={styles.circle}>
       {button}
     </GlassView>
@@ -47,7 +57,6 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
     <View
       style={[
         styles.circle,
-        styles.fallback,
         cardShadow,
         {backgroundColor: resolve(SemanticColor.SurfaceCard)},
       ]}
@@ -60,12 +69,25 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
   // own layout (UIKit/the Android toolbar reserve it around header items).
   // Expo Router's web header is plain JS layout with no such built-in
   // inset, so without this the button sits flush against the screen edge.
-  return Platform.OS === 'web' ? (
+  return Platform.OS === 'web' && !inline ? (
     <View style={styles.webMargin}>{content}</View>
   ) : (
     content
   )
 }
+
+export type GlassBackButtonProps = Omit<GlassIconButtonProps, 'name'>
+
+/** The app-wide back button: a `GlassIconButton` with the platform's back
+ * glyph — a chevron on iOS, an arrow elsewhere. */
+export const GlassBackButton: React.FunctionComponent<GlassBackButtonProps> = (
+  props,
+) => (
+  <GlassIconButton
+    name={Platform.OS === 'ios' ? 'chevron-back' : 'arrow-back'}
+    {...props}
+  />
+)
 
 const styles = StyleSheet.create({
   circle: {
@@ -74,7 +96,6 @@ const styles = StyleSheet.create({
     borderRadius: buttonSize / 2,
     overflow: 'hidden',
   },
-  fallback: {},
   pressable: {
     width: buttonSize,
     height: buttonSize,
