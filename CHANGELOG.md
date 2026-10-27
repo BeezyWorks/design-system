@@ -1,3 +1,10 @@
+## [0.27.6](https://github.com/BeezyWorks/design-system/compare/v0.27.5...v0.27.6) (2026-10-27)
+
+
+### Bug Fixes
+
+* **glass-icon-button:** no double glass in iOS 26 nav bars, shared glass back button ([4a1c3f4](https://github.com/BeezyWorks/design-system/commit/4a1c3f4cff3cc4fb065d2bfdf0344139842c2f81))
+
 ## [0.27.5](https://github.com/BeezyWorks/design-system/compare/v0.27.4...v0.27.5) (2026-10-26)
 
 
