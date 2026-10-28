@@ -1,3 +1,15 @@
+# [0.30.0](https://github.com/BeezyWorks/design-system/compare/v0.29.1...v0.30.0) (2026-10-28)
+
+
+### Bug Fixes
+
+* **month-grid:** let a roomy day's names wrap to a second line ([fff6af1](https://github.com/BeezyWorks/design-system/commit/fff6af1c1b717f083116704f64843ad53f269ed3))
+
+
+### Features
+
+* **month-grid:** roomy size with each day's events written in ([317f908](https://github.com/BeezyWorks/design-system/commit/317f9082656879f7373af1718a35018c55918645))
+
 ## [0.29.1](https://github.com/BeezyWorks/design-system/compare/v0.29.0...v0.29.1) (2026-10-28)
 
 
