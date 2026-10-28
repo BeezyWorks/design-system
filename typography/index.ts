@@ -101,6 +101,26 @@ export const type = {
     lineHeight: 23,
     fontWeight: '400',
   },
+  // A day's name on its card (a holiday, the omer count): the serif title
+  // a step above `itemHeader`.
+  titleSerif: {
+    fontFamily: FontFamily.FrankRuhlLibreBold,
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: '700',
+  },
+  // A small serif label over a value (the name of a zman over its time).
+  labelSerif: {
+    fontFamily: FontFamily.FrankRuhlLibre,
+    fontSize: 13,
+    fontWeight: '400',
+  },
+  // A time or count that leads its tile, in figures that line up.
+  timeLarge: {
+    fontSize: 20,
+    fontWeight: '600',
+    fontVariant: ['tabular-nums'],
+  },
   // Sheet title (Cancel/title/Save header row) — distinct from the plain
   // `BottomSheetHeader` title style.
   sheetTitle: {fontSize: 17, fontWeight: '600'},
@@ -136,6 +156,7 @@ const variantColor: Partial<Record<TypeVariant, SemanticColor>> = {
   headerSubtitle: SemanticColor.TextAccent,
   menuOption: SemanticColor.TextPrimary,
   menuOptionSelected: SemanticColor.TextAccent,
+  labelSerif: SemanticColor.TextSecondary,
 }
 
 // The header roles, set in the app's `headerTypeface` (bold cut).
