@@ -1,3 +1,10 @@
+## [0.27.7](https://github.com/BeezyWorks/design-system/compare/v0.27.6...v0.27.7) (2026-10-28)
+
+
+### Bug Fixes
+
+* **text:** keep explicit typefaces on Android under bold variants ([65ba062](https://github.com/BeezyWorks/design-system/commit/65ba06275a0eff1027266ff061a5acaef8b5cc45))
+
 ## [0.27.6](https://github.com/BeezyWorks/design-system/compare/v0.27.5...v0.27.6) (2026-10-27)
 
 
