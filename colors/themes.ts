@@ -1,5 +1,6 @@
 import {NamedColor} from './named'
-import {SemanticColor, categoryColors} from './semantic'
+import {SemanticColor, categoryColors, eventTones} from './semantic'
+import type {EventKind} from './semantic'
 import type {BrandPalette, ResolvedBrand} from './brands'
 import {resolveBrand} from './derive'
 
@@ -44,7 +45,13 @@ type CategoryToken = Extract<
   `category${number}` | `categoryTint${number}`
 >
 
-type NeutralDefinition = Omit<ThemeDefinition, BrandToken | CategoryToken>
+// The calendar event tokens: per-mode, like the categories.
+type EventToken = Extract<SemanticColor, `event${string}`>
+
+type NeutralDefinition = Omit<
+  ThemeDefinition,
+  BrandToken | CategoryToken | EventToken
+>
 type BrandDefinition = Record<BrandToken, string>
 
 const lightNeutrals: NeutralDefinition = {
@@ -238,28 +245,60 @@ const categories = (light: boolean): Record<CategoryToken, string> => {
 const lightCategories = categories(true)
 const darkCategories = categories(false)
 
+const eventHues: Record<EventKind, string> = {
+  holiday: 'EventSlate',
+  minor: 'EventOchre',
+  fast: 'EventOxblood',
+  personal: 'EventSage',
+}
+
+/** The event hues for one mode: text colors, washes and their outlines. */
+const events = (light: boolean): Record<EventToken, string> => {
+  const theme: Partial<Record<EventToken, string>> = {}
+  ;(Object.keys(eventTones) as EventKind[]).forEach((kind) => {
+    const {text, tint, border} = eventTones[kind]
+    const color =
+      C[`${eventHues[kind]}${light ? '' : 'Light'}` as keyof typeof C]
+    theme[text as EventToken] = color
+    theme[tint as EventToken] = withAlpha(color, light ? 0.12 : 0.16)
+    theme[border as EventToken] = withAlpha(color, light ? 0.35 : 0.4)
+  })
+  return theme as Record<EventToken, string>
+}
+const lightEvents = events(true)
+const darkEvents = events(false)
+
 const modes: Record<
   ThemeMode,
   {
     neutrals: NeutralDefinition
     categories: Record<CategoryToken, string>
+    events: Record<EventToken, string>
     brand: (b: ResolvedBrand) => BrandDefinition
   }
 > = {
   light: {
     neutrals: lightNeutrals,
     categories: lightCategories,
+    events: lightEvents,
     brand: lightBrand,
   },
   sepia: {
     neutrals: sepiaNeutrals,
     categories: lightCategories,
+    events: lightEvents,
     brand: lightBrand,
   },
-  dark: {neutrals: darkNeutrals, categories: darkCategories, brand: darkBrand},
+  dark: {
+    neutrals: darkNeutrals,
+    categories: darkCategories,
+    events: darkEvents,
+    brand: darkBrand,
+  },
   black: {
     neutrals: blackNeutrals,
     categories: darkCategories,
+    events: darkEvents,
     brand: darkBrand,
   },
 }
@@ -279,6 +318,7 @@ export const buildTheme = (
   return (byMode[mode] ??= {
     ...modes[mode].neutrals,
     ...modes[mode].categories,
+    ...modes[mode].events,
     ...modes[mode].brand(resolveBrand(brand)),
   })
 }

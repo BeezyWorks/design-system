@@ -1,5 +1,10 @@
 import {buildTheme, resolveColor} from '../themes'
-import {SemanticColor as S, categoryColor, categoryColors} from '../semantic'
+import {
+  SemanticColor as S,
+  categoryColor,
+  categoryColors,
+  eventTones,
+} from '../semantic'
 import {NamedColor} from '../named'
 import {sampleBrands as Brand} from '../sampleBrands'
 import type {BrandPalette} from '../brands'
@@ -20,10 +25,12 @@ const brandTokens = new Set<string>([
   S.AccentTint,
   S.AccentTintSelected,
 ])
-// Categorical washes are derived from a named hue, so they are not named.
+// Categorical and event washes are derived from a named hue, so they are
+// not named.
 const derivedTokens = new Set<string>([
   ...brandTokens,
   ...categoryColors.map((c) => c.tint),
+  ...Object.values(eventTones).flatMap((tone) => [tone.tint, tone.border]),
 ])
 
 describe('theme definitions', () => {
@@ -142,7 +149,7 @@ describe('categorical colors', () => {
     ['black', 7],
   ] as const)('read as text on %s surfaces', (mode, min) => {
     const theme = buildTheme(mode, Brand.Blue)
-    for (const { text } of categoryColors) {
+    for (const {text} of categoryColors) {
       expect(
         contrastRatio(theme[text], theme[S.SurfaceBackground]),
       ).toBeGreaterThanOrEqual(min)

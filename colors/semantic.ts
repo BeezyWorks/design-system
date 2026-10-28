@@ -59,6 +59,21 @@ export const SemanticColor = {
   CategoryTint17: 'categoryTint17',
   CategoryTint18: 'categoryTint18',
 
+  // Calendar events by kind (see `eventTones`): the marker and text color,
+  // a wash to lay behind the event, and that wash's outline.
+  EventHoliday: 'eventHoliday',
+  EventHolidayTint: 'eventHolidayTint',
+  EventHolidayBorder: 'eventHolidayBorder',
+  EventMinor: 'eventMinor',
+  EventMinorTint: 'eventMinorTint',
+  EventMinorBorder: 'eventMinorBorder',
+  EventFast: 'eventFast',
+  EventFastTint: 'eventFastTint',
+  EventFastBorder: 'eventFastBorder',
+  EventPersonal: 'eventPersonal',
+  EventPersonalTint: 'eventPersonalTint',
+  EventPersonalBorder: 'eventPersonalBorder',
+
   // Surface
   SurfaceBackground: 'surfaceBackground',
   SurfaceCard: 'surfaceCard',
@@ -159,6 +174,44 @@ export const categoryColors: readonly CategoryColor[] = [
   {text: SemanticColor.Category18, tint: SemanticColor.CategoryTint18},
 ]
 
+/** A kind of calendar day: a festival, a lesser day (a new month, a minor
+ * holiday), a fast, or one of the user's own events. */
+export type EventKind = 'holiday' | 'minor' | 'fast' | 'personal'
+
+/** One kind of event's colors: its marker/text color, a wash to lay behind
+ * it, and the wash's outline. */
+export interface EventTone {
+  text: SemanticColor
+  tint: SemanticColor
+  border: SemanticColor
+}
+
+export const eventTones: Record<EventKind, EventTone> = {
+  holiday: {
+    text: SemanticColor.EventHoliday,
+    tint: SemanticColor.EventHolidayTint,
+    border: SemanticColor.EventHolidayBorder,
+  },
+  minor: {
+    text: SemanticColor.EventMinor,
+    tint: SemanticColor.EventMinorTint,
+    border: SemanticColor.EventMinorBorder,
+  },
+  fast: {
+    text: SemanticColor.EventFast,
+    tint: SemanticColor.EventFastTint,
+    border: SemanticColor.EventFastBorder,
+  },
+  personal: {
+    text: SemanticColor.EventPersonal,
+    tint: SemanticColor.EventPersonalTint,
+    border: SemanticColor.EventPersonalBorder,
+  },
+}
+
 /** The categorical color for the item at `index` (wraps past the last one). */
 export const categoryColor = (index: number): CategoryColor =>
-  categoryColors[((index % categoryColors.length) + categoryColors.length) % categoryColors.length]
+  categoryColors[
+    ((index % categoryColors.length) + categoryColors.length) %
+      categoryColors.length
+  ]
