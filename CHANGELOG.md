@@ -1,3 +1,10 @@
+# [0.29.0](https://github.com/BeezyWorks/design-system/compare/v0.28.0...v0.29.0) (2026-10-28)
+
+
+### Features
+
+* large, full-width segmented control ([e80401c](https://github.com/BeezyWorks/design-system/commit/e80401cb6cd7b58b0252fabdd41469247d118d92))
+
 # [0.28.0](https://github.com/BeezyWorks/design-system/compare/v0.27.7...v0.28.0) (2026-10-28)
 
 
