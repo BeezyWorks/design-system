@@ -1,3 +1,10 @@
+# [0.28.0](https://github.com/BeezyWorks/design-system/compare/v0.27.7...v0.28.0) (2026-10-28)
+
+
+### Features
+
+* calendar event tones and the luach's day pieces ([b395281](https://github.com/BeezyWorks/design-system/commit/b395281db48febe8fd070cd385e3c3aef66d836e))
+
 ## [0.27.7](https://github.com/BeezyWorks/design-system/compare/v0.27.6...v0.27.7) (2026-10-28)
 
 
