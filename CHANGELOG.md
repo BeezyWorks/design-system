@@ -1,3 +1,11 @@
+## [0.29.1](https://github.com/BeezyWorks/design-system/compare/v0.29.0...v0.29.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* **segmented-control:** lift the thumb above the track in the black theme ([65bd915](https://github.com/BeezyWorks/design-system/commit/65bd91544cc4d82636e0eb782e03ffed5c9988db))
+* **segmented-control:** sink the dark track so the thumb stands out ([3b665c1](https://github.com/BeezyWorks/design-system/commit/3b665c1515ca8c52a6c4fd6279ec06bd39a3c1cf))
+
 # [0.29.0](https://github.com/BeezyWorks/design-system/compare/v0.28.0...v0.29.0) (2026-10-28)
 
 
