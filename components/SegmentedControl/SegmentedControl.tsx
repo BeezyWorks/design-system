@@ -29,14 +29,20 @@ export interface SegmentedControlProps<T extends string> {
   onChange: (key: T) => void
   /** Accessible name for the whole group (e.g. "Theme"). */
   accessibilityLabel?: string
+  /** Stretch across the parent, segments sharing it evenly, instead of
+   * sizing to the longest label. */
+  fullWidth?: boolean
+  /** `large`: a taller track with labels in the UI face — a screen's own
+   * top-level switch rather than a setting's options. Default `medium`. */
+  size?: 'medium' | 'large'
 }
 
 // Track padding and the thumb/track radii are concentric:
 // track radius = thumb radius + padding.
-const PADDING = 2
-const THUMB_RADIUS = radius.sm
-const TRACK_RADIUS = THUMB_RADIUS + PADDING
-const SEGMENT_MIN_HEIGHT = 32
+const metrics = {
+  medium: {padding: 2, thumbRadius: radius.sm, segmentHeight: 32},
+  large: {padding: 3, thumbRadius: 9, segmentHeight: 36},
+}
 // 32pt segment + 2 * 6 = the 44pt minimum touch target.
 const HIT_SLOP = {top: 6, bottom: 6}
 const PRESSED_OPACITY = 0.6
@@ -81,7 +87,12 @@ export const SegmentedControl = <T extends string>({
   value,
   onChange,
   accessibilityLabel,
+  fullWidth,
+  size = 'medium',
 }: SegmentedControlProps<T>) => {
+  const {padding, thumbRadius, segmentHeight} = metrics[size]
+  const trackRadius = thumbRadius + padding
+  const labelStyle = size === 'large' ? uiLabelStyle : serifLabelStyle
   const isRTL = I18nManager.isRTL
   // Reversing the order (rather than the flex direction) keeps the thumb's
   // left-anchored translate math unchanged.
@@ -107,7 +118,7 @@ export const SegmentedControl = <T extends string>({
     0,
     options.findIndex((o) => o.key === value),
   )
-  const segmentWidth = trackWidth > 0 ? (trackWidth - PADDING * 2) / count : 0
+  const segmentWidth = trackWidth > 0 ? (trackWidth - padding * 2) / count : 0
 
   const [spring, api] = useSpring(() => ({x: 0, config: springConfig}))
   const placed = useRef(false)
@@ -135,12 +146,19 @@ export const SegmentedControl = <T extends string>({
 
   return (
     <View
-      style={[styles.wrapper, scopedRtl && styles.wrapperRtl]}
+      style={[
+        styles.wrapper,
+        scopedRtl && styles.wrapperRtl,
+        fullWidth && styles.wrapperFull,
+      ]}
       accessibilityRole="radiogroup"
       accessibilityLabel={accessibilityLabel}
     >
       <View
-        style={[styles.track, {backgroundColor: trackColor}]}
+        style={[
+          styles.track,
+          {padding, borderRadius: trackRadius, backgroundColor: trackColor},
+        ]}
         onLayout={onTrackLayout}
       >
         <animated.View
@@ -148,6 +166,9 @@ export const SegmentedControl = <T extends string>({
           style={[
             styles.thumb,
             {
+              top: padding,
+              bottom: padding,
+              start: padding,
               width: segmentWidth,
               opacity: segmentWidth > 0 ? 1 : 0,
               transform: [{translateX: spring.x}],
@@ -157,6 +178,7 @@ export const SegmentedControl = <T extends string>({
           <View
             style={[
               styles.thumbFill,
+              {borderRadius: thumbRadius},
               thumbShadow,
               {backgroundColor: thumbColor},
               isAndroid && {
@@ -180,6 +202,7 @@ export const SegmentedControl = <T extends string>({
               }}
               style={[
                 styles.segment,
+                {minHeight: segmentHeight, borderRadius: thumbRadius},
                 labelWidth > 0 && {minWidth: labelWidth + 16},
               ]}
             >
@@ -232,9 +255,17 @@ export const SegmentedControl = <T extends string>({
 // Frank Ruhl Libre for every label, like the settings row labels around it:
 // it draws Hebrew and Latin at a matched weight, so 'After הלל' and
 // 'Fast Days' look like one family.
-const labelStyle = (selected: boolean): TextStyle => ({
-  fontFamily: selected ? FontFamily.FrankRuhlLibreBold : FontFamily.FrankRuhlLibre,
+const serifLabelStyle = (selected: boolean): TextStyle => ({
+  fontFamily: selected
+    ? FontFamily.FrankRuhlLibreBold
+    : FontFamily.FrankRuhlLibre,
   fontSize: 16,
+})
+
+// The UI face, like the screen chrome around a large control.
+const uiLabelStyle = (selected: boolean): TextStyle => ({
+  fontSize: 15,
+  fontWeight: selected ? '600' : '500',
 })
 
 const styles = StyleSheet.create({
@@ -245,27 +276,17 @@ const styles = StyleSheet.create({
     maxWidth: '100%',
   },
   wrapperRtl: Platform.OS === 'web' ? {alignSelf: 'flex-end'} : {},
-  track: {
-    flexDirection: 'row',
-    padding: PADDING,
-    borderRadius: TRACK_RADIUS,
-  },
-  thumb: {
-    position: 'absolute',
-    top: PADDING,
-    bottom: PADDING,
-    start: PADDING,
-  },
-  thumbFill: {flex: 1, borderRadius: THUMB_RADIUS},
+  wrapperFull: {alignSelf: 'stretch'},
+  track: {flexDirection: 'row'},
+  thumb: {position: 'absolute'},
+  thumbFill: {flex: 1},
   // flex: 1 (basis 0) shares the row evenly; the minWidth (set from the
   // longest measured label) stops it collapsing on web.
   segment: {
     flex: 1,
-    minHeight: SEGMENT_MIN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 8,
-    borderRadius: THUMB_RADIUS,
   },
   label: {textAlign: 'center'},
   // Zero-size clip so the wide measuring row never affects layout/scroll.

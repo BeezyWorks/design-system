@@ -168,6 +168,23 @@ describe.each(themes)('components (%s theme)', (theme) => {
     )
   })
 
+  it('SegmentedControl large, full width', () => {
+    expectSnapshot(
+      <SegmentedControl
+        size="large"
+        fullWidth
+        options={[
+          {key: 'today', label: 'Today'},
+          {key: 'zmanim', label: 'זמנים'},
+          {key: 'calendar', label: 'Calendar'},
+        ]}
+        value="today"
+        onChange={() => {}}
+      />,
+      theme,
+    )
+  })
+
   describe('EmptyState', () => {
     it('title only', () => {
       expectSnapshot(<EmptyState title="No notifications" />, theme)

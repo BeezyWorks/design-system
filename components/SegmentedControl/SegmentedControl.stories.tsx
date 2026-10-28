@@ -166,3 +166,38 @@ export const InSettingsCard: Story = {
     </SettingsCard>
   ),
 }
+
+/** A screen's own top-level switch: across the screen, taller, in the UI
+ * face. */
+export const LargeFullWidth: Story = {
+  render: () => {
+    const Large = () => {
+      const [value, setValue] = useState<'today' | 'zmanim' | 'calendar'>(
+        'today',
+      )
+      return (
+        <SegmentedControl
+          size="large"
+          fullWidth
+          options={[
+            {key: 'today', label: 'Today'},
+            {key: 'zmanim', label: 'זמנים'},
+            {key: 'calendar', label: 'Calendar'},
+          ]}
+          value={value}
+          onChange={setValue}
+        />
+      )
+    }
+    return (
+      <Stack gap="md">
+        <InMode mode="light">
+          <Large />
+        </InMode>
+        <InMode mode="dark">
+          <Large />
+        </InMode>
+      </Stack>
+    )
+  },
+}

@@ -2491,6 +2491,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         "maxWidth": "100%",
       },
       false,
+      undefined,
     ]
   }
 >
@@ -2499,12 +2500,12 @@ exports[`components (dark theme) SegmentedControl 1`] = `
     style={
       [
         {
-          "borderRadius": 10,
           "flexDirection": "row",
-          "padding": 2,
         },
         {
           "backgroundColor": "rgba(255, 255, 255, 0.08)",
+          "borderRadius": 10,
+          "padding": 2,
         },
       ]
     }
@@ -2531,8 +2532,10 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         style={
           [
             {
-              "borderRadius": 8,
               "flex": 1,
+            },
+            {
+              "borderRadius": 8,
             },
             {
               "elevation": 2,
@@ -2594,11 +2597,13 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         [
           {
             "alignItems": "center",
-            "borderRadius": 8,
             "flex": 1,
             "justifyContent": "center",
-            "minHeight": 32,
             "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 8,
+            "minHeight": 32,
           },
           false,
         ]
@@ -2670,11 +2675,13 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         [
           {
             "alignItems": "center",
-            "borderRadius": 8,
             "flex": 1,
             "justifyContent": "center",
-            "minHeight": 32,
             "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 8,
+            "minHeight": 32,
           },
           false,
         ]
@@ -2746,11 +2753,13 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         [
           {
             "alignItems": "center",
-            "borderRadius": 8,
             "flex": 1,
             "justifyContent": "center",
-            "minHeight": 32,
             "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 8,
+            "minHeight": 32,
           },
           false,
         ]
@@ -2855,6 +2864,396 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         }
       >
         Dark
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (dark theme) SegmentedControl large, full width 1`] = `
+<View
+  accessibilityRole="radiogroup"
+  style={
+    [
+      {
+        "maxWidth": "100%",
+      },
+      false,
+      {
+        "alignSelf": "stretch",
+      },
+    ]
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "flexDirection": "row",
+        },
+        {
+          "backgroundColor": "rgba(255, 255, 255, 0.08)",
+          "borderRadius": 12,
+          "padding": 3,
+        },
+      ]
+    }
+  >
+    <View
+      pointerEvents="none"
+      style={
+        {
+          "bottom": 3,
+          "opacity": 0,
+          "position": "absolute",
+          "start": 3,
+          "top": 3,
+          "transform": [
+            {
+              "translateX": 0,
+            },
+          ],
+          "width": 0,
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+            },
+            {
+              "borderRadius": 9,
+            },
+            {
+              "elevation": 2,
+              "shadowColor": "#000000",
+              "shadowOffset": {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.12,
+              "shadowRadius": 4,
+            },
+            {
+              "backgroundColor": "#262320",
+            },
+            false,
+          ]
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="Today"
+      accessibilityRole="radio"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": true,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      hitSlop={
+        {
+          "bottom": 6,
+          "top": 6,
+        }
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 9,
+            "minHeight": 36,
+          },
+          false,
+        ]
+      }
+    >
+      <Text
+        adjustsFontSizeToFit={true}
+        maxFontSizeMultiplier={1.6}
+        minimumFontScale={0.8}
+        numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+            {
+              "color": "#F0ECE4",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        Today
+      </Text>
+    </View>
+    <View
+      accessibilityLabel="זמנים"
+      accessibilityRole="radio"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": false,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      hitSlop={
+        {
+          "bottom": 6,
+          "top": 6,
+        }
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 9,
+            "minHeight": 36,
+          },
+          false,
+        ]
+      }
+    >
+      <Text
+        adjustsFontSizeToFit={true}
+        maxFontSizeMultiplier={1.6}
+        minimumFontScale={0.8}
+        numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "500",
+            },
+            {
+              "color": "#F0ECE4",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        זמנים
+      </Text>
+    </View>
+    <View
+      accessibilityLabel="Calendar"
+      accessibilityRole="radio"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": false,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      hitSlop={
+        {
+          "bottom": 6,
+          "top": 6,
+        }
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 9,
+            "minHeight": 36,
+          },
+          false,
+        ]
+      }
+    >
+      <Text
+        adjustsFontSizeToFit={true}
+        maxFontSizeMultiplier={1.6}
+        minimumFontScale={0.8}
+        numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "500",
+            },
+            {
+              "color": "#F0ECE4",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        Calendar
+      </Text>
+    </View>
+  </View>
+  <View
+    aria-hidden={true}
+    importantForAccessibility="no-hide-descendants"
+    pointerEvents="none"
+    style={
+      {
+        "height": 0,
+        "opacity": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "flexDirection": "row",
+          "position": "absolute",
+          "width": 10000,
+        }
+      }
+    >
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        Today
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        זמנים
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        Calendar
       </Text>
     </View>
   </View>
@@ -6266,6 +6665,7 @@ exports[`components (light theme) SegmentedControl 1`] = `
         "maxWidth": "100%",
       },
       false,
+      undefined,
     ]
   }
 >
@@ -6274,12 +6674,12 @@ exports[`components (light theme) SegmentedControl 1`] = `
     style={
       [
         {
-          "borderRadius": 10,
           "flexDirection": "row",
-          "padding": 2,
         },
         {
           "backgroundColor": "rgba(42, 37, 33, 0.07)",
+          "borderRadius": 10,
+          "padding": 2,
         },
       ]
     }
@@ -6306,8 +6706,10 @@ exports[`components (light theme) SegmentedControl 1`] = `
         style={
           [
             {
-              "borderRadius": 8,
               "flex": 1,
+            },
+            {
+              "borderRadius": 8,
             },
             {
               "elevation": 2,
@@ -6369,11 +6771,13 @@ exports[`components (light theme) SegmentedControl 1`] = `
         [
           {
             "alignItems": "center",
-            "borderRadius": 8,
             "flex": 1,
             "justifyContent": "center",
-            "minHeight": 32,
             "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 8,
+            "minHeight": 32,
           },
           false,
         ]
@@ -6445,11 +6849,13 @@ exports[`components (light theme) SegmentedControl 1`] = `
         [
           {
             "alignItems": "center",
-            "borderRadius": 8,
             "flex": 1,
             "justifyContent": "center",
-            "minHeight": 32,
             "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 8,
+            "minHeight": 32,
           },
           false,
         ]
@@ -6521,11 +6927,13 @@ exports[`components (light theme) SegmentedControl 1`] = `
         [
           {
             "alignItems": "center",
-            "borderRadius": 8,
             "flex": 1,
             "justifyContent": "center",
-            "minHeight": 32,
             "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 8,
+            "minHeight": 32,
           },
           false,
         ]
@@ -6630,6 +7038,396 @@ exports[`components (light theme) SegmentedControl 1`] = `
         }
       >
         Dark
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`components (light theme) SegmentedControl large, full width 1`] = `
+<View
+  accessibilityRole="radiogroup"
+  style={
+    [
+      {
+        "maxWidth": "100%",
+      },
+      false,
+      {
+        "alignSelf": "stretch",
+      },
+    ]
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "flexDirection": "row",
+        },
+        {
+          "backgroundColor": "rgba(42, 37, 33, 0.07)",
+          "borderRadius": 12,
+          "padding": 3,
+        },
+      ]
+    }
+  >
+    <View
+      pointerEvents="none"
+      style={
+        {
+          "bottom": 3,
+          "opacity": 0,
+          "position": "absolute",
+          "start": 3,
+          "top": 3,
+          "transform": [
+            {
+              "translateX": 0,
+            },
+          ],
+          "width": 0,
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+            },
+            {
+              "borderRadius": 9,
+            },
+            {
+              "elevation": 2,
+              "shadowColor": "#000000",
+              "shadowOffset": {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.12,
+              "shadowRadius": 4,
+            },
+            {
+              "backgroundColor": "#FFFFFF",
+            },
+            false,
+          ]
+        }
+      />
+    </View>
+    <View
+      accessibilityLabel="Today"
+      accessibilityRole="radio"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": true,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      hitSlop={
+        {
+          "bottom": 6,
+          "top": 6,
+        }
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 9,
+            "minHeight": 36,
+          },
+          false,
+        ]
+      }
+    >
+      <Text
+        adjustsFontSizeToFit={true}
+        maxFontSizeMultiplier={1.6}
+        minimumFontScale={0.8}
+        numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+            {
+              "color": "#2A2521",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        Today
+      </Text>
+    </View>
+    <View
+      accessibilityLabel="זמנים"
+      accessibilityRole="radio"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": false,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      hitSlop={
+        {
+          "bottom": 6,
+          "top": 6,
+        }
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 9,
+            "minHeight": 36,
+          },
+          false,
+        ]
+      }
+    >
+      <Text
+        adjustsFontSizeToFit={true}
+        maxFontSizeMultiplier={1.6}
+        minimumFontScale={0.8}
+        numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "500",
+            },
+            {
+              "color": "#2A2521",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        זמנים
+      </Text>
+    </View>
+    <View
+      accessibilityLabel="Calendar"
+      accessibilityRole="radio"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": false,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      hitSlop={
+        {
+          "bottom": 6,
+          "top": 6,
+        }
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingHorizontal": 8,
+          },
+          {
+            "borderRadius": 9,
+            "minHeight": 36,
+          },
+          false,
+        ]
+      }
+    >
+      <Text
+        adjustsFontSizeToFit={true}
+        maxFontSizeMultiplier={1.6}
+        minimumFontScale={0.8}
+        numberOfLines={1}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "500",
+            },
+            {
+              "color": "#2A2521",
+              "opacity": 1,
+            },
+          ]
+        }
+      >
+        Calendar
+      </Text>
+    </View>
+  </View>
+  <View
+    aria-hidden={true}
+    importantForAccessibility="no-hide-descendants"
+    pointerEvents="none"
+    style={
+      {
+        "height": 0,
+        "opacity": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "flexDirection": "row",
+          "position": "absolute",
+          "width": 10000,
+        }
+      }
+    >
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        Today
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        זמנים
+      </Text>
+      <Text
+        maxFontSizeMultiplier={1.6}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "textAlign": "center",
+            },
+            {
+              "fontSize": 15,
+              "fontWeight": "600",
+            },
+          ]
+        }
+      >
+        Calendar
       </Text>
     </View>
   </View>
