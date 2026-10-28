@@ -82,8 +82,12 @@ export const SemanticColor = {
   SurfaceHighlight: 'surfaceHighlight',
   SurfacePanel: 'surfacePanel',
   /** The recessed well of a segmented control; the selected thumb is
-   * `SurfaceCard`. */
+   * `SurfaceTrackThumb`. */
   SurfaceTrack: 'surfaceTrack',
+  /** A segmented control's selected thumb: a card lifted off the track.
+   * Not `SurfaceCard`, which goes black in the black theme and would sink
+   * below the lighter track. */
+  SurfaceTrackThumb: 'surfaceTrackThumb',
   SurfaceTrackOff: 'surfaceTrackOff',
   SurfaceThumb: 'surfaceThumb',
   SurfaceSwatchLight: 'surfaceSwatchLight',

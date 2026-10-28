@@ -70,6 +70,7 @@ const lightNeutrals: NeutralDefinition = {
   [S.SurfaceHover]: C.InkWash,
   [S.SurfacePanel]: C.PanelGray,
   [S.SurfaceTrack]: C.InkTrack,
+  [S.SurfaceTrackThumb]: C.White,
   [S.SurfaceTrackOff]: C.Sand,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,
@@ -124,6 +125,7 @@ const sepiaNeutrals: NeutralDefinition = {
   [S.SurfaceSelected]: C.SepiaLinen,
   [S.SurfaceHover]: C.SepiaInkWash,
   [S.SurfaceTrack]: C.SepiaInkTrack,
+  [S.SurfaceTrackThumb]: C.SepiaCard,
   [S.SurfaceTrackOff]: C.SepiaSand,
   [S.SurfaceGlass]: C.GlassSepia,
   [S.SurfaceGlassOpaque]: C.GlassSepiaOpaque,
@@ -147,6 +149,9 @@ const darkNeutrals: NeutralDefinition = {
   [S.SurfaceHover]: C.ParchmentWash,
   [S.SurfacePanel]: C.PanelGray,
   [S.SurfaceTrack]: C.WhiteWash,
+  // Kept by the black theme: its cards are black, but the thumb still has
+  // to sit lighter than the track.
+  [S.SurfaceTrackThumb]: C.Graphite,
   [S.SurfaceTrackOff]: C.Taupe,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,

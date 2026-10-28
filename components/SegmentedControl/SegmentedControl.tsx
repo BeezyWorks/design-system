@@ -100,7 +100,7 @@ export const SegmentedControl = <T extends string>({
   const options = scopedRtl ? [...optionsProp].reverse() : optionsProp
   const reduceMotion = useReduceMotion()
   const trackColor = useResolvedColor(SemanticColor.SurfaceTrack)
-  const thumbColor = useResolvedColor(SemanticColor.SurfaceCard)
+  const thumbColor = useResolvedColor(SemanticColor.SurfaceTrackThumb)
   // Like UISegmentedControl, every label is primary ink; weight marks the
   // selection. TextSecondary over the tinted track falls below 4.5:1.
   const labelColor = useResolvedColor(SemanticColor.TextPrimary)
