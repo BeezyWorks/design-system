@@ -309,7 +309,7 @@ const DayLabel: React.FunctionComponent<MonthGridLabel> = ({text, kind}) => {
         color={tone?.text ?? SemanticColor.TextSecondary}
         bold={!!tone}
         rtl={!latin}
-        numberOfLines={1}
+        numberOfLines={2}
       >
         {text}
       </Text>
