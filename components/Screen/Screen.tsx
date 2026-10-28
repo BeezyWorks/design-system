@@ -20,9 +20,10 @@ export interface ScreenProps {
    * would double up as a dead gap below the header. */
   hasNativeHeader?: boolean
   /** Caps the content column on every platform and centers it: `content`
-   * for lists and menus, `reader` for a wider long-form reading column.
-   * Unset, only web gets the `content` cap. */
-  width?: 'content' | 'reader'
+   * for lists and menus, `reader` for a wider long-form reading column,
+   * `wide` for a screen laid out in columns on a wide layout. Unset, only
+   * web gets the `content` cap. */
+  width?: 'content' | 'reader' | 'wide'
   /** A panel docked beside the content column, outside its width cap —
    * e.g. a `DetailOverlay` on a wide layout. */
   aside?: React.ReactNode
@@ -45,6 +46,7 @@ const isWeb = Platform.OS === 'web'
 // frees up a lot of extra horizontal space.
 const MAX_CONTENT_WIDTH = 720
 const MAX_READER_WIDTH = 860
+const MAX_WIDE_WIDTH = 1200
 
 /** The standard screen chrome: safe-area handling, the room the bottom tab
  * pill / side rail needs, and the web reading-width cap. Every top-level
@@ -100,7 +102,12 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
     paddingLeft:
       isWideWeb && insideTabs ? sideNavWidth + SIDE_NAV_CONTENT_GAP : 0,
     height: isWeb ? windowHeight - dockedBarHeight : undefined,
-    maxWidth: width === 'reader' ? MAX_READER_WIDTH : MAX_CONTENT_WIDTH,
+    maxWidth:
+      width === 'wide'
+        ? MAX_WIDE_WIDTH
+        : width === 'reader'
+          ? MAX_READER_WIDTH
+          : MAX_CONTENT_WIDTH,
     capEverywhere: width !== undefined,
     hasAside: aside !== undefined,
   })

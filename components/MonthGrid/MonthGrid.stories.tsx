@@ -32,3 +32,19 @@ export const Picker: Story = {
     selected: new Date(2026, 9, 30, 12),
   },
 }
+export const Roomy: Story = {
+  args: {
+    size: 'roomy',
+    labels: {
+      '2026-10-03': [{text: 'שמיני עצרת', kind: 'holiday'}],
+      '2026-10-10': [{text: 'נח'}],
+      '2026-10-11': [{text: 'ראש חודש חשון', kind: 'minor'}],
+      '2026-10-12': [
+        {text: 'ראש חודש חשון', kind: 'minor'},
+        {text: 'תענית שני', kind: 'fast'},
+      ],
+      '2026-10-29': [{text: 'Yahrzeit · Reb Yaakov', kind: 'personal'}],
+    },
+  },
+  parameters: {layout: 'fullscreen'},
+}
