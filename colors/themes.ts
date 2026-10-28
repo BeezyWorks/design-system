@@ -70,6 +70,7 @@ const lightNeutrals: NeutralDefinition = {
   [S.SurfaceHover]: C.InkWash,
   [S.SurfacePanel]: C.PanelGray,
   [S.SurfaceTrack]: C.InkTrack,
+  [S.SurfaceTrackThumb]: C.White,
   [S.SurfaceTrackOff]: C.Sand,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,
@@ -124,6 +125,7 @@ const sepiaNeutrals: NeutralDefinition = {
   [S.SurfaceSelected]: C.SepiaLinen,
   [S.SurfaceHover]: C.SepiaInkWash,
   [S.SurfaceTrack]: C.SepiaInkTrack,
+  [S.SurfaceTrackThumb]: C.SepiaCard,
   [S.SurfaceTrackOff]: C.SepiaSand,
   [S.SurfaceGlass]: C.GlassSepia,
   [S.SurfaceGlassOpaque]: C.GlassSepiaOpaque,
@@ -146,7 +148,11 @@ const darkNeutrals: NeutralDefinition = {
   [S.SurfaceSelected]: C.Smoke,
   [S.SurfaceHover]: C.ParchmentWash,
   [S.SurfacePanel]: C.PanelGray,
-  [S.SurfaceTrack]: C.WhiteWash,
+  // A well sunk below the card with a lighter thumb raised out of it, as in
+  // iOS dark mode: a white wash over the card left the thumb (the card's own
+  // color) darker than the track.
+  [S.SurfaceTrack]: C.BlackScrim50,
+  [S.SurfaceTrackThumb]: C.Taupe,
   [S.SurfaceTrackOff]: C.Taupe,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,
@@ -196,6 +202,8 @@ const blackNeutrals: NeutralDefinition = {
   [S.SurfaceBackground]: C.Black,
   [S.SurfaceCard]: C.Black,
   [S.SurfaceSelected]: C.Onyx,
+  // Nothing sinks below black, so the well is a white wash instead.
+  [S.SurfaceTrack]: C.WhiteWash,
   [S.SurfaceGlass]: C.GlassBlack,
   [S.SurfaceGlassOpaque]: C.GlassBlackOpaque,
 }
