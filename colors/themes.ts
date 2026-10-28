@@ -148,10 +148,11 @@ const darkNeutrals: NeutralDefinition = {
   [S.SurfaceSelected]: C.Smoke,
   [S.SurfaceHover]: C.ParchmentWash,
   [S.SurfacePanel]: C.PanelGray,
-  [S.SurfaceTrack]: C.WhiteWash,
-  // Kept by the black theme: its cards are black, but the thumb still has
-  // to sit lighter than the track.
-  [S.SurfaceTrackThumb]: C.Graphite,
+  // A well sunk below the card with a lighter thumb raised out of it, as in
+  // iOS dark mode: a white wash over the card left the thumb (the card's own
+  // color) darker than the track.
+  [S.SurfaceTrack]: C.BlackScrim50,
+  [S.SurfaceTrackThumb]: C.Taupe,
   [S.SurfaceTrackOff]: C.Taupe,
   [S.SurfaceThumb]: C.White,
   [S.SurfaceSwatchLight]: C.White,
@@ -201,6 +202,8 @@ const blackNeutrals: NeutralDefinition = {
   [S.SurfaceBackground]: C.Black,
   [S.SurfaceCard]: C.Black,
   [S.SurfaceSelected]: C.Onyx,
+  // Nothing sinks below black, so the well is a white wash instead.
+  [S.SurfaceTrack]: C.WhiteWash,
   [S.SurfaceGlass]: C.GlassBlack,
   [S.SurfaceGlassOpaque]: C.GlassBlackOpaque,
 }
