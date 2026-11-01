@@ -1,3 +1,10 @@
+# [0.31.0](https://github.com/BeezyWorks/design-system/compare/v0.30.0...v0.31.0) (2026-11-01)
+
+
+### Features
+
+* **MonthGrid:** a label can carry its own tone ([e71f783](https://github.com/BeezyWorks/design-system/commit/e71f78332a46e059dda6b010977a3d2d313b4645))
+
 # [0.30.0](https://github.com/BeezyWorks/design-system/compare/v0.29.1...v0.30.0) (2026-10-28)
 
 
