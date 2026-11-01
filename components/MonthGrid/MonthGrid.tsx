@@ -33,6 +33,9 @@ const startOfWeek = (date: Date) => addDays(date, -date.getDay())
 export interface MonthGridLabel {
   text: string
   kind?: EventKind
+  /** Its own colors, for a name whose color isn't one of the event kinds
+   * (a shul's). Wins over `kind`. */
+  tone?: {text: SemanticColor; tint: SemanticColor}
 }
 
 export interface MonthGridProps {
@@ -278,8 +281,8 @@ const RoomyDayCell: React.FunctionComponent<RoomyDayCellProps> = ({
                 {hebrewDay}
               </Text>
             </Stack>
-            {shown.map(({text, kind}, i) => (
-              <DayLabel key={`${i}-${text}`} text={text} kind={kind} />
+            {shown.map((label, i) => (
+              <DayLabel key={`${i}-${label.text}`} {...label} />
             ))}
             {overflow ? (
               <Text variant="caption" color={SemanticColor.TextSecondary} rtl>
@@ -294,8 +297,12 @@ const RoomyDayCell: React.FunctionComponent<RoomyDayCellProps> = ({
 }
 
 /** One name in a roomy cell, on its kind's wash; a plain one in grey. */
-const DayLabel: React.FunctionComponent<MonthGridLabel> = ({text, kind}) => {
-  const tone = kind ? eventTones[kind] : undefined
+const DayLabel: React.FunctionComponent<MonthGridLabel> = ({
+  text,
+  kind,
+  tone: own,
+}) => {
+  const tone = own ?? (kind ? eventTones[kind] : undefined)
   const latin = HAS_LATIN.test(text)
   return (
     <Stack
