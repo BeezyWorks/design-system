@@ -78,7 +78,8 @@ const useReduceMotion = () => {
  *
  * Use 2-4 options (5 at most) with short labels; segments are equal width and
  * the control is sized to fit the longest label, which shrinks
- * (down to 0.8x) rather than wrapping when space runs out.
+ * (down to 0.8x) when space runs short. When the labels can't share the
+ * parent's width even so, the options wrap onto more lines of the track.
  *
  * In an `RtlScope` the first option sits on the right.
  */
@@ -113,7 +114,13 @@ export const SegmentedControl = <T extends string>({
 
   const [trackWidth, setTrackWidth] = useState(0)
   const [labelWidth, setLabelWidth] = useState(0)
+  const [wrapperWidth, setWrapperWidth] = useState(0)
   const count = options.length
+  // Equal segments each need the longest label's width. When the room left
+  // by the parent is less than that, the options wrap onto more lines of the
+  // track instead, rather than running off it.
+  const needed = labelWidth > 0 ? count * (labelWidth + 16) + padding * 2 : 0
+  const wrapped = wrapperWidth > 0 && needed > wrapperWidth + 2
   const index = Math.max(
     0,
     options.findIndex((o) => o.key === value),
@@ -153,41 +160,45 @@ export const SegmentedControl = <T extends string>({
       ]}
       accessibilityRole="radiogroup"
       accessibilityLabel={accessibilityLabel}
+      onLayout={(e) => setWrapperWidth(e.nativeEvent.layout.width)}
     >
       <View
         style={[
           styles.track,
+          wrapped && styles.trackWrapped,
           {padding, borderRadius: trackRadius, backgroundColor: trackColor},
         ]}
         onLayout={onTrackLayout}
       >
-        <animated.View
-          pointerEvents="none"
-          style={[
-            styles.thumb,
-            {
-              top: padding,
-              bottom: padding,
-              start: padding,
-              width: segmentWidth,
-              opacity: segmentWidth > 0 ? 1 : 0,
-              transform: [{translateX: spring.x}],
-            },
-          ]}
-        >
-          <View
+        {wrapped ? null : (
+          <animated.View
+            pointerEvents="none"
             style={[
-              styles.thumbFill,
-              {borderRadius: thumbRadius},
-              thumbShadow,
-              {backgroundColor: thumbColor},
-              isAndroid && {
-                borderWidth: StyleSheet.hairlineWidth * 2,
-                borderColor: thumbBorderColor,
+              styles.thumb,
+              {
+                top: padding,
+                bottom: padding,
+                start: padding,
+                width: segmentWidth,
+                opacity: segmentWidth > 0 ? 1 : 0,
+                transform: [{translateX: spring.x}],
               },
             ]}
-          />
-        </animated.View>
+          >
+            <View
+              style={[
+                styles.thumbFill,
+                {borderRadius: thumbRadius},
+                thumbShadow,
+                {backgroundColor: thumbColor},
+                isAndroid && {
+                  borderWidth: StyleSheet.hairlineWidth * 2,
+                  borderColor: thumbBorderColor,
+                },
+              ]}
+            />
+          </animated.View>
+        )}
         {options.map((option) => {
           const selected = option.key === value
           return (
@@ -203,13 +214,25 @@ export const SegmentedControl = <T extends string>({
               style={[
                 styles.segment,
                 {minHeight: segmentHeight, borderRadius: thumbRadius},
-                labelWidth > 0 && {minWidth: labelWidth + 16},
+                wrapped
+                  ? [
+                      styles.segmentWrapped,
+                      selected && [
+                        thumbShadow,
+                        {backgroundColor: thumbColor},
+                        isAndroid && {
+                          borderWidth: StyleSheet.hairlineWidth * 2,
+                          borderColor: thumbBorderColor,
+                        },
+                      ],
+                    ]
+                  : labelWidth > 0 && {minWidth: labelWidth + 16},
               ]}
             >
               {({pressed}) => (
                 <RNText
-                  numberOfLines={1}
-                  adjustsFontSizeToFit
+                  numberOfLines={wrapped ? undefined : 1}
+                  adjustsFontSizeToFit={!wrapped}
                   minimumFontScale={0.8}
                   maxFontSizeMultiplier={1.6}
                   style={[
@@ -278,6 +301,8 @@ const styles = StyleSheet.create({
   wrapperRtl: Platform.OS === 'web' ? {alignSelf: 'flex-end'} : {},
   wrapperFull: {alignSelf: 'stretch'},
   track: {flexDirection: 'row'},
+  // Options that don't fit on a line go on the next, each line shared out.
+  trackWrapped: {flexWrap: 'wrap', gap: 2},
   thumb: {position: 'absolute'},
   thumbFill: {flex: 1},
   // flex: 1 (basis 0) shares the row evenly; the minWidth (set from the
@@ -287,6 +312,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 8,
+  },
+  // Grows to share its line; never wider than the track.
+  segmentWrapped: {
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 'auto',
+    maxWidth: '100%',
   },
   label: {textAlign: 'center'},
   // Zero-size clip so the wide measuring row never affects layout/scroll.

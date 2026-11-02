@@ -201,3 +201,24 @@ export const LargeFullWidth: Story = {
     )
   },
 }
+
+/** Labels too long to share the card's width wrap onto more lines of the
+ * track rather than running off it. */
+export const LongLabels: Story = {
+  render: () => (
+    <View style={{width: 260}}>
+      <SettingsCard>
+        <SettingsStackedRow title="Picture">
+          <Demo
+            options={[
+              {key: 'above', label: 'Above the month'},
+              {key: 'opposite', label: 'On the opposite page'},
+            ]}
+            initial="above"
+            label="Picture"
+          />
+        </SettingsStackedRow>
+      </SettingsCard>
+    </View>
+  ),
+}
