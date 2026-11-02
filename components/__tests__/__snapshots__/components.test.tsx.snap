@@ -2485,6 +2485,7 @@ exports[`components (dark theme) PillButton without a chevron 1`] = `
 exports[`components (dark theme) SegmentedControl 1`] = `
 <View
   accessibilityRole="radiogroup"
+  onLayout={[Function]}
   style={
     [
       {
@@ -2502,6 +2503,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
         {
           "flexDirection": "row",
         },
+        false,
         {
           "backgroundColor": "rgba(0, 0, 0, 0.5)",
           "borderRadius": 10,
@@ -2873,6 +2875,7 @@ exports[`components (dark theme) SegmentedControl 1`] = `
 exports[`components (dark theme) SegmentedControl large, full width 1`] = `
 <View
   accessibilityRole="radiogroup"
+  onLayout={[Function]}
   style={
     [
       {
@@ -2892,6 +2895,7 @@ exports[`components (dark theme) SegmentedControl large, full width 1`] = `
         {
           "flexDirection": "row",
         },
+        false,
         {
           "backgroundColor": "rgba(0, 0, 0, 0.5)",
           "borderRadius": 12,
@@ -6659,6 +6663,7 @@ exports[`components (light theme) PillButton without a chevron 1`] = `
 exports[`components (light theme) SegmentedControl 1`] = `
 <View
   accessibilityRole="radiogroup"
+  onLayout={[Function]}
   style={
     [
       {
@@ -6676,6 +6681,7 @@ exports[`components (light theme) SegmentedControl 1`] = `
         {
           "flexDirection": "row",
         },
+        false,
         {
           "backgroundColor": "rgba(42, 37, 33, 0.07)",
           "borderRadius": 10,
@@ -7047,6 +7053,7 @@ exports[`components (light theme) SegmentedControl 1`] = `
 exports[`components (light theme) SegmentedControl large, full width 1`] = `
 <View
   accessibilityRole="radiogroup"
+  onLayout={[Function]}
   style={
     [
       {
@@ -7066,6 +7073,7 @@ exports[`components (light theme) SegmentedControl large, full width 1`] = `
         {
           "flexDirection": "row",
         },
+        false,
         {
           "backgroundColor": "rgba(42, 37, 33, 0.07)",
           "borderRadius": 12,
