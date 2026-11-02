@@ -1,3 +1,11 @@
+## [0.31.1](https://github.com/BeezyWorks/design-system/compare/v0.31.0...v0.31.1) (2026-11-02)
+
+
+### Bug Fixes
+
+* **segmented-control:** give the wrapping story its own name ([8fd6491](https://github.com/BeezyWorks/design-system/commit/8fd64913bfb705b6badc6d0ded2c84cbdd896a95))
+* **segmented-control:** wrap options onto more lines when their labels don't fit ([7ad9e20](https://github.com/BeezyWorks/design-system/commit/7ad9e20658edcd28bb131244a6fd8f95db3bc832))
+
 # [0.31.0](https://github.com/BeezyWorks/design-system/compare/v0.30.0...v0.31.0) (2026-11-01)
 
 
