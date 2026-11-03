@@ -42,6 +42,7 @@ export const EveryKind: Story = {
         ]}
       />
       <EventCard kind="personal" lines={['Yahrzeit · Reb Yaakov']} />
+      <EventCard kind="shul" lines={['Shul BBQ']} />
       <EventCard lines={['מוריד הגשם', 'ותן טל ומטר']} />
     </Stack>
   ),
