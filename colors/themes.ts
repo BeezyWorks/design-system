@@ -258,6 +258,7 @@ const eventHues: Record<EventKind, string> = {
   minor: 'EventOchre',
   fast: 'EventOxblood',
   personal: 'EventSage',
+  shul: 'EventPlum',
 }
 
 /** The event hues for one mode: text colors, washes and their outlines. */

@@ -129,7 +129,7 @@ export const NamedColor = {
   Category18Light: '#E7A04D',
 
   // --- Calendar event hues: what kind of day it is (a festival, a lesser
-  // day, a fast, the user's own), on the calendar and the day's cards.
+  // day, a fast, the user's own, a shul's), on the calendar and the day's cards.
   // Earthy, to sit with the cream paper and stay apart from the brand blue.
   // The plain one carries text on light surfaces (>= 5:1 on its own wash),
   // the `Light` one on dark surfaces.
@@ -141,6 +141,8 @@ export const NamedColor = {
   EventOxbloodLight: '#EE8F88',
   EventSage: '#3F7346',
   EventSageLight: '#8FC489',
+  EventPlum: '#7A4A7D',
+  EventPlumLight: '#D0A7D3',
 
   // --- Status hues
   DangerRed: '#f44336',

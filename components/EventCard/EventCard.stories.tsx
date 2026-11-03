@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     kind: {
       control: 'select',
-      options: [undefined, 'holiday', 'minor', 'fast', 'personal'],
+      options: [undefined, 'holiday', 'minor', 'fast', 'personal', 'shul'],
     },
   },
   decorators: [
