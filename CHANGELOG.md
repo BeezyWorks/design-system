@@ -1,3 +1,10 @@
+# [0.32.0](https://github.com/BeezyWorks/design-system/compare/v0.31.1...v0.32.0) (2026-11-04)
+
+
+### Features
+
+* **colors:** add a shul event kind, its own plum, for events at a shul ([a529a7b](https://github.com/BeezyWorks/design-system/commit/a529a7bce3f0272c2d599900212fe058d6d6e6e6))
+
 ## [0.31.1](https://github.com/BeezyWorks/design-system/compare/v0.31.0...v0.31.1) (2026-11-02)
 
 
