@@ -73,6 +73,9 @@ export const SemanticColor = {
   EventPersonal: 'eventPersonal',
   EventPersonalTint: 'eventPersonalTint',
   EventPersonalBorder: 'eventPersonalBorder',
+  EventShul: 'eventShul',
+  EventShulTint: 'eventShulTint',
+  EventShulBorder: 'eventShulBorder',
 
   // Surface
   SurfaceBackground: 'surfaceBackground',
@@ -179,8 +182,8 @@ export const categoryColors: readonly CategoryColor[] = [
 ]
 
 /** A kind of calendar day: a festival, a lesser day (a new month, a minor
- * holiday), a fast, or one of the user's own events. */
-export type EventKind = 'holiday' | 'minor' | 'fast' | 'personal'
+ * holiday), a fast, one of the user's own events, or an event at a shul. */
+export type EventKind = 'holiday' | 'minor' | 'fast' | 'personal' | 'shul'
 
 /** One kind of event's colors: its marker/text color, a wash to lay behind
  * it, and the wash's outline. */
@@ -210,6 +213,11 @@ export const eventTones: Record<EventKind, EventTone> = {
     text: SemanticColor.EventPersonal,
     tint: SemanticColor.EventPersonalTint,
     border: SemanticColor.EventPersonalBorder,
+  },
+  shul: {
+    text: SemanticColor.EventShul,
+    tint: SemanticColor.EventShulTint,
+    border: SemanticColor.EventShulBorder,
   },
 }
 
