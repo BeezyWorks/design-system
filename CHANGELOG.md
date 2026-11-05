@@ -1,3 +1,10 @@
+# [0.33.0](https://github.com/BeezyWorks/design-system/compare/v0.32.0...v0.33.0) (2026-11-05)
+
+
+### Features
+
+* **icon:** add copy ([51075ab](https://github.com/BeezyWorks/design-system/commit/51075ab5fd363957bc60a929b1c0e85dc10927ac))
+
 # [0.32.0](https://github.com/BeezyWorks/design-system/compare/v0.31.1...v0.32.0) (2026-11-04)
 
 
