@@ -33,6 +33,7 @@ import {
   Mail,
   ExternalLink,
   Share,
+  Copy,
   Check,
   Search,
   EllipsisVertical,
@@ -80,6 +81,7 @@ export type IconName =
   | 'mail'
   | 'external-link'
   | 'share'
+  | 'copy'
   | 'check'
   | 'search'
   | 'more-vertical'
@@ -126,6 +128,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   mail: Mail,
   'external-link': ExternalLink,
   share: Share,
+  copy: Copy,
   check: Check,
   search: Search,
   'more-vertical': EllipsisVertical,
