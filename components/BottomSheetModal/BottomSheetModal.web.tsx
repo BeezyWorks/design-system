@@ -119,7 +119,10 @@ export const BottomSheetModal = ({
             // with the title centered and any `headerRight` opposite it.
             <>
               {headerRight ?? <View style={styles.closeSlot} />}
-              <View style={styles.titleCentered}>
+              <View
+                style={[styles.titleCentered, styles.titleFullLayer]}
+                pointerEvents="box-none"
+              >
                 {titleNode ?? (
                   <Text
                     style={[styles.title, styles.titleCenteredText, titleFont]}
@@ -256,6 +259,12 @@ const styleCreator = (
     titleCentered: {
       flex: 1,
       alignItems: 'center',
+    },
+    // Centered on the sheet, not in what the actions leave over.
+    titleFullLayer: {
+      ...StyleSheet.absoluteFillObject,
+      justifyContent: 'center',
+      paddingHorizontal: 112,
     },
     titleCenteredText: {
       flex: undefined,
