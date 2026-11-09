@@ -17,6 +17,11 @@ const HAS_LATIN = /[A-Za-z]/
 export interface HeaderProps {
   title?: string
   subtitle?: string
+  /** Arbitrary content for the middle of the bar — a pager pill, a
+   * segmented control. Replaces the title and subtitle (and `onTitlePress`);
+   * the back button and `actions` stay where they are and the content stays
+   * centered on the bar, not on the space between them. */
+  center?: React.ReactNode
   /** Makes the title area tappable (e.g. to open a section picker). In the
    * wide layout it also shows a chevron and the subtitle. */
   onTitlePress?: () => void
@@ -68,6 +73,7 @@ const WideIconButton = ({
 export const Header = ({
   title,
   subtitle,
+  center,
   onTitlePress,
   onBack,
   backLabel = 'Back',
@@ -87,7 +93,13 @@ export const Header = ({
         {transform: [{translateY}]},
       ]}
     >
-      {wide ? (
+      {center ? (
+        <View style={styles.titleBox} pointerEvents="box-none">
+          <View style={styles.centerSlot} pointerEvents="box-none">
+            {center}
+          </View>
+        </View>
+      ) : wide ? (
         <View style={styles.titleBox} pointerEvents="box-none">
           <Pressable
             onPress={onTitlePress}
@@ -234,6 +246,12 @@ const styleCreator = (resolve: ColorResolver) =>
       alignItems: 'center',
       textAlign: 'center',
       textAlignVertical: 'center',
+      justifyContent: 'center',
+    },
+    // Leaves the back button and actions their edges free.
+    centerSlot: {
+      maxWidth: '72%',
+      alignItems: 'center',
       justifyContent: 'center',
     },
     titleButtonWide: {
