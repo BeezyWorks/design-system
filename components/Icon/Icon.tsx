@@ -41,6 +41,7 @@ import {
   ScanQrCode,
   MapPin,
   GripVertical,
+  CircleUserRound,
   LucideIcon,
 } from 'lucide-react-native'
 import {Shul, Tefillin} from './customIcons'
@@ -94,6 +95,7 @@ export type IconName =
   | 'shul'
   | 'map-pin'
   | 'grip-vertical'
+  | 'user'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -142,6 +144,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   shul: Shul,
   'map-pin': MapPin,
   'grip-vertical': GripVertical,
+  user: CircleUserRound,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
