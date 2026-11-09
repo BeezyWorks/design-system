@@ -1,3 +1,10 @@
+# [0.35.0](https://github.com/BeezyWorks/design-system/compare/v0.34.0...v0.35.0) (2026-11-09)
+
+
+### Features
+
+* pager drag state, keyboard avoider, detail overlay center slot ([#52](https://github.com/BeezyWorks/design-system/issues/52)) ([c0b7557](https://github.com/BeezyWorks/design-system/commit/c0b75571a482e6a2a04d690a61abf540a5ae95ff))
+
 # [0.34.0](https://github.com/BeezyWorks/design-system/compare/v0.33.0...v0.34.0) (2026-11-09)
 
 
