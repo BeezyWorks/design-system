@@ -1,3 +1,11 @@
+# [0.36.0](https://github.com/BeezyWorks/design-system/compare/v0.35.0...v0.36.0) (2026-11-09)
+
+
+### Features
+
+* **icon:** add user ([#54](https://github.com/BeezyWorks/design-system/issues/54)) ([815740e](https://github.com/BeezyWorks/design-system/commit/815740e07edd456c2d4aef1c3279b550769aacf4))
+* **photo-sheet-scroll:** add a photo hero with a sheet that scrolls over it ([#53](https://github.com/BeezyWorks/design-system/issues/53)) ([1725002](https://github.com/BeezyWorks/design-system/commit/17250026903f0373708e70b91833a9cb137fec4f))
+
 # [0.35.0](https://github.com/BeezyWorks/design-system/compare/v0.34.0...v0.35.0) (2026-11-09)
 
 
