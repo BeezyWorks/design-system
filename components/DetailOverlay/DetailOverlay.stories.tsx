@@ -1,5 +1,6 @@
 import React from 'react'
 import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
+import {Chip} from '../Chip'
 import {Text} from '../Text'
 import {DetailOverlay} from './DetailOverlay'
 
@@ -22,3 +23,11 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+/** `headerCenter` replaces the title, centered on the bar. */
+export const HeaderCenter: Story = {
+  args: {
+    title: undefined,
+    headerCenter: <Chip label="משנה א׳" selected onPress={() => {}} />,
+  },
+}

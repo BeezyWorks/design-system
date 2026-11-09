@@ -16,6 +16,10 @@ export interface DetailOverlayProps {
   title?: string
   /** A right-to-left (Hebrew) title. */
   titleRtl?: boolean
+  /** Replaces the `title`, centered in the header bar (not in the space
+   * between the actions) — the same slot as `Header`'s `center`. Leaves the
+   * actions their edges free. */
+  headerCenter?: React.ReactNode
   /** Extra header controls (e.g. a bookmark toggle), before the close
    * button. */
   headerActions?: React.ReactNode
@@ -36,6 +40,7 @@ export const DetailOverlay: React.FunctionComponent<DetailOverlayProps> = ({
   onClose,
   title,
   titleRtl,
+  headerCenter,
   headerActions,
   children,
   panelWidth = 420,
@@ -45,25 +50,40 @@ export const DetailOverlay: React.FunctionComponent<DetailOverlayProps> = ({
   const insets = useSafeAreaInsets()
   const resolve = useColorResolver()
 
+  const header = (
+    <Stack
+      direction="row"
+      align="center"
+      gap="sm"
+      paddingHorizontal="md"
+      paddingVertical="sm"
+    >
+      <Stack grow width={0}>
+        {!headerCenter && !!title && (
+          <Text variant="headline" rtl={titleRtl}>
+            {title}
+          </Text>
+        )}
+      </Stack>
+      {headerActions}
+      <IconButton name="close" accessibilityLabel="Close" onPress={onClose} />
+    </Stack>
+  )
+
   const body = (
     <>
-      <Stack
-        direction="row"
-        align="center"
-        gap="sm"
-        paddingHorizontal="md"
-        paddingVertical="sm"
-      >
-        <Stack grow width={0}>
-          {!!title && (
-            <Text variant="headline" rtl={titleRtl}>
-              {title}
-            </Text>
-          )}
-        </Stack>
-        {headerActions}
-        <IconButton name="close" accessibilityLabel="Close" onPress={onClose} />
-      </Stack>
+      {headerCenter ? (
+        <View>
+          {header}
+          <View style={styles.centerLayer} pointerEvents="box-none">
+            <View style={styles.centerSlot} pointerEvents="box-none">
+              {headerCenter}
+            </View>
+          </View>
+        </View>
+      ) : (
+        header
+      )}
       <Divider />
       {scroll ? (
         <ScrollView
@@ -124,5 +144,12 @@ const styles = StyleSheet.create({
   sheet: {flex: 1},
   panel: {height: '100%', borderStartWidth: StyleSheet.hairlineWidth},
   scroll: {flex: 1},
+  centerLayer: {
+    ...StyleSheet.absoluteFill,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  // Leaves the actions and close button their edges free.
+  centerSlot: {maxWidth: '60%', alignItems: 'center'},
   content: {padding: spacing.md, gap: spacing.md},
 })

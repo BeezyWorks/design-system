@@ -1,0 +1,877 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailOverlay headerCenter (dark) replaces the title with the centered slot 1`] = `
+<Modal
+  animationType="slide"
+  onRequestClose={[Function]}
+  presentationStyle="pageSheet"
+  visible={true}
+>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+        },
+        {
+          "backgroundColor": "#1C1A17",
+        },
+      ]
+    }
+  >
+    <View>
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": undefined,
+              "borderBottomWidth": undefined,
+              "borderColor": undefined,
+              "borderRadius": undefined,
+              "borderWidth": undefined,
+              "bottom": undefined,
+              "flexDirection": "row",
+              "flexGrow": undefined,
+              "flexWrap": undefined,
+              "gap": 8,
+              "height": undefined,
+              "justifyContent": undefined,
+              "left": undefined,
+              "opacity": undefined,
+              "overflow": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingEnd": undefined,
+              "paddingHorizontal": 16,
+              "paddingStart": undefined,
+              "paddingTop": undefined,
+              "paddingVertical": 8,
+              "position": undefined,
+              "right": undefined,
+              "top": undefined,
+              "width": undefined,
+              "zIndex": undefined,
+            },
+            null,
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": undefined,
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": 0,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        />
+        <View
+          accessibilityLabel="Close"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={8}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderRadius": 9999,
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            aria-hidden="true"
+            bbHeight={24}
+            bbWidth={24}
+            className="lucide lucide-x"
+            fill="none"
+            focusable={false}
+            height={24}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            stroke="#F0ECE4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            style={
+              [
+                {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                {
+                  "flex": 0,
+                  "height": 24,
+                  "width": 24,
+                },
+              ]
+            }
+            vbHeight={24}
+            vbWidth={24}
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <RNSVGGroup
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4293979364,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            >
+              <RNSVGPath
+                d="M18 6 6 18"
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4293979364,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              />
+              <RNSVGPath
+                d="m6 6 12 12"
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4293979364,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+      </View>
+      <View
+        pointerEvents="box-none"
+        style={
+          {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          pointerEvents="box-none"
+          style={
+            {
+              "alignItems": "center",
+              "maxWidth": "60%",
+            }
+          }
+        >
+          <View
+            accessibilityLabel="משנה א׳"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": true,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#6DA8F5",
+                    "borderBottomWidth": undefined,
+                    "borderColor": "#6DA8F5",
+                    "borderRadius": 9999,
+                    "borderWidth": 1,
+                    "bottom": undefined,
+                    "flexDirection": "row",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": 4,
+                    "height": undefined,
+                    "justifyContent": undefined,
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": 16,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": 4,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": undefined,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F0ECE4",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                    },
+                    {
+                      "color": "#1C1A17",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                משנה א׳
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": "rgba(255, 255, 255, 0.12)",
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": 0.5,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": "100%",
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    />
+    <RCTScrollView
+      contentContainerStyle={
+        [
+          {
+            "gap": 16,
+            "padding": 16,
+          },
+          {
+            "paddingBottom": 24,
+          },
+        ]
+      }
+      style={
+        {
+          "flex": 1,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            [
+              {
+                "color": "#F0ECE4",
+                "fontSize": 14,
+                "fontWeight": "400",
+              },
+              {
+                "color": "#F0ECE4",
+              },
+              null,
+              null,
+              null,
+              null,
+            ]
+          }
+        >
+          Detail
+        </Text>
+      </View>
+    </RCTScrollView>
+  </View>
+</Modal>
+`;
+
+exports[`DetailOverlay headerCenter (light) replaces the title with the centered slot 1`] = `
+<Modal
+  animationType="slide"
+  onRequestClose={[Function]}
+  presentationStyle="pageSheet"
+  visible={true}
+>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+        },
+        {
+          "backgroundColor": "#FAF7F0",
+        },
+      ]
+    }
+  >
+    <View>
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": undefined,
+              "borderBottomWidth": undefined,
+              "borderColor": undefined,
+              "borderRadius": undefined,
+              "borderWidth": undefined,
+              "bottom": undefined,
+              "flexDirection": "row",
+              "flexGrow": undefined,
+              "flexWrap": undefined,
+              "gap": 8,
+              "height": undefined,
+              "justifyContent": undefined,
+              "left": undefined,
+              "opacity": undefined,
+              "overflow": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingEnd": undefined,
+              "paddingHorizontal": 16,
+              "paddingStart": undefined,
+              "paddingTop": undefined,
+              "paddingVertical": 8,
+              "position": undefined,
+              "right": undefined,
+              "top": undefined,
+              "width": undefined,
+              "zIndex": undefined,
+            },
+            null,
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": undefined,
+                "backgroundColor": undefined,
+                "borderBottomWidth": undefined,
+                "borderColor": undefined,
+                "borderRadius": undefined,
+                "borderWidth": undefined,
+                "bottom": undefined,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexWrap": undefined,
+                "gap": undefined,
+                "height": undefined,
+                "justifyContent": undefined,
+                "left": undefined,
+                "opacity": undefined,
+                "overflow": undefined,
+                "padding": undefined,
+                "paddingBottom": undefined,
+                "paddingEnd": undefined,
+                "paddingHorizontal": undefined,
+                "paddingStart": undefined,
+                "paddingTop": undefined,
+                "paddingVertical": undefined,
+                "position": undefined,
+                "right": undefined,
+                "top": undefined,
+                "width": 0,
+                "zIndex": undefined,
+              },
+              null,
+              null,
+            ]
+          }
+        />
+        <View
+          accessibilityLabel="Close"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={8}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderRadius": 9999,
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            aria-hidden="true"
+            bbHeight={24}
+            bbWidth={24}
+            className="lucide lucide-x"
+            fill="none"
+            focusable={false}
+            height={24}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            stroke="#2A2521"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            style={
+              [
+                {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                {
+                  "flex": 0,
+                  "height": 24,
+                  "width": 24,
+                },
+              ]
+            }
+            vbHeight={24}
+            vbWidth={24}
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <RNSVGGroup
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4280952097,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            >
+              <RNSVGPath
+                d="M18 6 6 18"
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4280952097,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              />
+              <RNSVGPath
+                d="m6 6 12 12"
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4280952097,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+      </View>
+      <View
+        pointerEvents="box-none"
+        style={
+          {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          pointerEvents="box-none"
+          style={
+            {
+              "alignItems": "center",
+              "maxWidth": "60%",
+            }
+          }
+        >
+          <View
+            accessibilityLabel="משנה א׳"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": true,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#3E7FD1",
+                    "borderBottomWidth": undefined,
+                    "borderColor": "#3E7FD1",
+                    "borderRadius": 9999,
+                    "borderWidth": 1,
+                    "bottom": undefined,
+                    "flexDirection": "row",
+                    "flexGrow": undefined,
+                    "flexWrap": undefined,
+                    "gap": 4,
+                    "height": undefined,
+                    "justifyContent": undefined,
+                    "left": undefined,
+                    "opacity": undefined,
+                    "overflow": undefined,
+                    "padding": undefined,
+                    "paddingBottom": undefined,
+                    "paddingEnd": undefined,
+                    "paddingHorizontal": 16,
+                    "paddingStart": undefined,
+                    "paddingTop": undefined,
+                    "paddingVertical": 4,
+                    "position": undefined,
+                    "right": undefined,
+                    "top": undefined,
+                    "width": undefined,
+                    "zIndex": undefined,
+                  },
+                  null,
+                  null,
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#2A2521",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                    },
+                    {
+                      "color": "#FAF7F0",
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+              >
+                משנה א׳
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        [
+          {
+            "alignItems": undefined,
+            "backgroundColor": "rgba(30, 25, 20, 0.10)",
+            "borderBottomWidth": undefined,
+            "borderColor": undefined,
+            "borderRadius": undefined,
+            "borderWidth": undefined,
+            "bottom": undefined,
+            "flexDirection": "column",
+            "flexGrow": undefined,
+            "flexWrap": undefined,
+            "gap": undefined,
+            "height": 0.5,
+            "justifyContent": undefined,
+            "left": undefined,
+            "opacity": undefined,
+            "overflow": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingEnd": undefined,
+            "paddingHorizontal": undefined,
+            "paddingStart": undefined,
+            "paddingTop": undefined,
+            "paddingVertical": undefined,
+            "position": undefined,
+            "right": undefined,
+            "top": undefined,
+            "width": "100%",
+            "zIndex": undefined,
+          },
+          null,
+          null,
+        ]
+      }
+    />
+    <RCTScrollView
+      contentContainerStyle={
+        [
+          {
+            "gap": 16,
+            "padding": 16,
+          },
+          {
+            "paddingBottom": 24,
+          },
+        ]
+      }
+      style={
+        {
+          "flex": 1,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            [
+              {
+                "color": "#2A2521",
+                "fontSize": 14,
+                "fontWeight": "400",
+              },
+              {
+                "color": "#2A2521",
+              },
+              null,
+              null,
+              null,
+              null,
+            ]
+          }
+        >
+          Detail
+        </Text>
+      </View>
+    </RCTScrollView>
+  </View>
+</Modal>
+`;
