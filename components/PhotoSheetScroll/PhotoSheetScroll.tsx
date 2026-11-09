@@ -38,13 +38,20 @@ export interface PhotoSheetScrollProps {
    * leaves it (`true`) — flip the status-bar glyphs from it. Never fires on
    * a wide layout, which has no sheet. */
   onOverPhotoChange?: (overPhoto: boolean) => void
+  /** How much of a phone's screen the hero takes at least, sheet overlap
+   * included, its content sitting at the bottom by the sheet. The default
+   * leaves a band of photo above the hero's content; `0` sizes the hero to
+   * its content, so the sheet starts right under it. Ignored on a wide
+   * layout. */
+  heroShare?: number
 }
 
 // How far the sheet rides up over the photo.
 const SHEET_OVERLAP = 28
 const SHEET_BOTTOM = 24
-// How much of a phone's screen the hero takes, sheet overlap included.
-const HERO_SHARE = 0.54
+// How much of a phone's screen the hero takes by default, sheet overlap
+// included.
+const DEFAULT_HERO_SHARE = 0.54
 // Readable line length of the content, on either side.
 const MAX_CONTENT_WIDTH = 720
 // The hero column of a wide layout.
@@ -65,7 +72,13 @@ const WIDE_HERO_WIDTH = 440
  * scroll position here — not a style escape hatch. */
 export const PhotoSheetScroll: React.FunctionComponent<
   PhotoSheetScrollProps
-> = ({source, hero, children, onOverPhotoChange}) => {
+> = ({
+  source,
+  hero,
+  children,
+  onOverPhotoChange,
+  heroShare = DEFAULT_HERO_SHARE,
+}) => {
   const isWide = useIsWideLayout()
   const isWideWeb = useIsWideWebNav()
   const sideNavWidth = useSideNavWidth()
@@ -97,6 +110,7 @@ export const PhotoSheetScroll: React.FunctionComponent<
       hero={hero}
       bottomInset={bottomInset}
       onOverPhotoChange={onOverPhotoChange}
+      heroShare={heroShare}
     >
       {children}
     </PhoneLayout>
@@ -167,8 +181,11 @@ const WideLayout: React.FunctionComponent<LayoutProps & {rtl: boolean}> = ({
 }
 
 const PhoneLayout: React.FunctionComponent<
-  LayoutProps & {onOverPhotoChange?: (overPhoto: boolean) => void}
-> = ({source, hero, children, bottomInset, onOverPhotoChange}) => {
+  LayoutProps & {
+    onOverPhotoChange?: (overPhoto: boolean) => void
+    heroShare: number
+  }
+> = ({source, hero, children, bottomInset, onOverPhotoChange, heroShare}) => {
   const insets = useSafeAreaInsets()
   const sheetColor = useResolvedColor(SemanticColor.SurfaceBackground)
   const isWeb = Platform.OS === 'web'
@@ -229,7 +246,7 @@ const PhoneLayout: React.FunctionComponent<
               paddingTop={insets.top + 16}
               paddingBottom={SHEET_OVERLAP + 20}
               paddingHorizontal="md"
-              minHeight={viewportHeight * HERO_SHARE}
+              minHeight={viewportHeight * heroShare}
               justify="end"
             >
               <Stack
