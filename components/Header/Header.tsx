@@ -58,7 +58,10 @@ const WideIconButton = ({
 }) => (
   <Pressable
     onPress={onPress}
-    style={({pressed}) => [styles.wideIconButton, pressed && styles.pressedTint]}
+    style={({pressed}) => [
+      styles.wideIconButton,
+      pressed && styles.pressedTint,
+    ]}
   >
     <Icon name={name} size={size} color={color} />
   </Pressable>
@@ -181,7 +184,11 @@ export const Header = ({
       {onBack && (
         // The same glass back button as the app's native nav bars.
         <View style={!wide && styles.backSlot}>
-          <GlassBackButton inline onPress={onBack} accessibilityLabel={backLabel} />
+          <GlassBackButton
+            inline
+            onPress={onBack}
+            accessibilityLabel={backLabel}
+          />
         </View>
       )}
       <View style={[styles.buttonBox, wide && styles.buttonBoxWide]}>

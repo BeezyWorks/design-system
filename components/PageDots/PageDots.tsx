@@ -58,9 +58,7 @@ export const PageDots: React.FunctionComponent<PageDotsProps> = ({
   const initial = edges(index)
   const left = useRef(new Animated.Value(initial.left)).current
   const right = useRef(new Animated.Value(initial.right)).current
-  const height = useRef(
-    new Animated.Value(dragging ? DOT_FLAT : DOT),
-  ).current
+  const height = useRef(new Animated.Value(dragging ? DOT_FLAT : DOT)).current
   const slot = useRef(slotOf(index))
 
   useEffect(() => {
@@ -87,14 +85,18 @@ export const PageDots: React.FunctionComponent<PageDotsProps> = ({
           useNativeDriver: false,
         }),
       ]).start()
-    spring(movingRight ? right : left, movingRight ? target.right : target.left, LEAD, 0)
+    spring(
+      movingRight ? right : left,
+      movingRight ? target.right : target.left,
+      LEAD,
+      0,
+    )
     spring(
       movingRight ? left : right,
       movingRight ? target.left : target.right,
       TRAIL,
       TRAIL_DELAY,
     )
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index, count, rtl, reduceMotion])
 
   useEffect(() => {
@@ -111,10 +113,7 @@ export const PageDots: React.FunctionComponent<PageDotsProps> = ({
   const width = Animated.subtract(right, left)
 
   return (
-    <View
-      accessibilityRole="tablist"
-      style={styles.row}
-    >
+    <View accessibilityRole="tablist" style={styles.row}>
       {slots.map((slotIndex) => {
         const page = slotOf(slotIndex) // the mapping is its own inverse
         const selected = page === index
@@ -141,10 +140,7 @@ export const PageDots: React.FunctionComponent<PageDotsProps> = ({
           </Pressable>
         )
       })}
-      <Animated.View
-        pointerEvents="none"
-        style={[styles.worm, {left, width}]}
-      >
+      <Animated.View pointerEvents="none" style={[styles.worm, {left, width}]}>
         <Animated.View
           style={[
             styles.pill,
