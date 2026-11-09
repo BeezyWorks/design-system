@@ -4,6 +4,12 @@ import {Badge} from '../Badge'
 import {Button} from '../Button'
 import {Card} from '../Card'
 import {Chip} from '../Chip'
+import {ChipScroller} from '../ChipScroller'
+import {Header} from '../Header'
+import {PageDots} from '../PageDots'
+import {PagerPill} from '../PagerPill'
+import {SortableList} from '../SortableList'
+import {RtlScope} from '../../layout'
 import {DetailOverlay} from '../DetailOverlay'
 import {EmptyState} from '../EmptyState'
 import {FontSwatch} from '../FontSwatch'
@@ -21,6 +27,8 @@ import {ThemeSwatch} from '../ThemeSwatch'
 import {ThemeSwatchPicker} from '../ThemeSwatchPicker'
 import {ToggleSetting} from '../ToggleSetting'
 import {LatinTypeface, Typeface} from '../../typography'
+import {DesignSystemProvider} from '../../theme'
+import {testBrand} from '../../colors/sampleBrands'
 import {
   pressables,
   renderWithTheme,
@@ -151,7 +159,11 @@ describe.each(themes)('family components (%s theme)', (theme) => {
         selectedKey="a"
         onSelect={onSelect}
         options={[
-          {key: 'a', label: 'Frank Ruhl Libre', typeface: Typeface.FrankRuhlLibre},
+          {
+            key: 'a',
+            label: 'Frank Ruhl Libre',
+            typeface: Typeface.FrankRuhlLibre,
+          },
           {key: 'b', label: 'David', typeface: Typeface.David},
         ]}
       />,
@@ -251,5 +263,123 @@ describe('family component behavior', () => {
     expect(onRow).not.toHaveBeenCalled()
     act(() => row.props.onPress())
     expect(onRow).toHaveBeenCalledTimes(1)
+  })
+
+  it('PageDots as a worm, dragging and in RTL', () => {
+    expectSnapshot(
+      <>
+        <PageDots count={4} index={1} />
+        <PageDots count={4} index={2} dragging />
+        <RtlScope>
+          <PageDots count={4} index={0} />
+        </RtlScope>
+      </>,
+      'light',
+    )
+  })
+
+  it('PagerPill, glass and plain, in RTL', () => {
+    expectSnapshot(
+      <RtlScope>
+        <PagerPill
+          title="פרק ב׳"
+          titleRtl
+          onNext={noop}
+          onTitlePress={noop}
+          previousLabel="Previous"
+          nextLabel="Next"
+        />
+        <PagerPill
+          glass={false}
+          title="פרק ג׳"
+          titleRtl
+          onPrevious={noop}
+          onNext={noop}
+          previousLabel="Previous"
+          nextLabel="Next"
+        />
+      </RtlScope>,
+      'light',
+    )
+  })
+
+  it('PagerPill puts next on the left in RTL and slides the title', () => {
+    const onNext = jest.fn()
+    const element = (title: string) => (
+      <RtlScope>
+        <PagerPill
+          title={title}
+          onNext={onNext}
+          previousLabel="Previous"
+          nextLabel="Next"
+        />
+      </RtlScope>
+    )
+    const renderer = renderWithTheme(element('א'))
+    const [first] = pressables(renderer)
+    expect(first.props.accessibilityLabel).toBe('Next')
+    act(() => first.props.onPress())
+    expect(onNext).toHaveBeenCalledTimes(1)
+    act(() =>
+      renderer.update(
+        <DesignSystemProvider mode="light" brand={testBrand}>
+          {element('ב')}
+        </DesignSystemProvider>,
+      ),
+    )
+    expect(renderer.toJSON()).toBeTruthy()
+  })
+
+  it('Header with a center slot', () => {
+    expectSnapshot(
+      <Header onBack={noop} center={<Chip label="ברכות" onPress={noop} />} />,
+      'light',
+    )
+  })
+
+  it('Chip with a leading check', () => {
+    expectSnapshot(
+      <>
+        <Chip label="שבת" selected check onPress={noop} />
+        <Chip label="פסחים" check onPress={noop} />
+      </>,
+      'light',
+    )
+  })
+
+  it('ChipScroller', () => {
+    expectSnapshot(
+      <ChipScroller rtl>
+        <Chip label="א" selected check onPress={noop} />
+        <Chip label="ב" check onPress={noop} />
+      </ChipScroller>,
+      'light',
+    )
+  })
+
+  it('SortableList reorders through its move actions', () => {
+    const onReorder = jest.fn()
+    const items = [
+      {key: 'a', label: 'ברטנורא', rtl: true},
+      {key: 'b', label: 'רמב״ם', rtl: true},
+    ]
+    const renderer = renderWithTheme(
+      <RtlScope>
+        <SortableList items={items} onReorder={onReorder} />
+      </RtlScope>,
+      'light',
+    )
+    expect(renderer.toJSON()).toMatchSnapshot()
+    const rows = renderer.root.findAll(
+      (n) =>
+        n.props.accessibilityLabel === 'ברטנורא' &&
+        !!n.props.onAccessibilityAction,
+    )
+    act(() =>
+      rows[0].props.onAccessibilityAction({
+        nativeEvent: {actionName: 'moveDown'},
+      }),
+    )
+    expect(onReorder).toHaveBeenCalledWith(['b', 'a'])
   })
 })

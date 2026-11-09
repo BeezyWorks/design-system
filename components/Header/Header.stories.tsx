@@ -1,4 +1,6 @@
+import React from 'react'
 import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
+import {Chip} from '../Chip'
 import {Header} from './Header'
 
 const noop = () => {}
@@ -33,5 +35,15 @@ export const TitleOnly: Story = {
     onTitlePress: undefined,
     onBack: undefined,
     actions: [],
+  },
+}
+
+/** `center` replaces the title: any content, centered on the bar. */
+export const CenterSlot: Story = {
+  args: {
+    title: undefined,
+    subtitle: undefined,
+    onTitlePress: undefined,
+    center: <Chip label="ברכות · פרק ב׳" selected onPress={noop} />,
   },
 }
