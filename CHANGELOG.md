@@ -1,3 +1,10 @@
+# [0.37.0](https://github.com/BeezyWorks/design-system/compare/v0.36.0...v0.37.0) (2026-11-09)
+
+
+### Features
+
+* heroShare on PhotoSheetScroll and a pill focus ring on SearchField ([#55](https://github.com/BeezyWorks/design-system/issues/55)) ([6ab0ea1](https://github.com/BeezyWorks/design-system/commit/6ab0ea1454517ce4befb3b22053698877f7065bd))
+
 # [0.36.0](https://github.com/BeezyWorks/design-system/compare/v0.35.0...v0.36.0) (2026-11-09)
 
 
