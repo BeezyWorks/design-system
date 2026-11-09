@@ -246,7 +246,12 @@ exports[`DetailOverlay headerCenter (dark) replaces the title with the centered 
         style={
           {
             "alignItems": "center",
+            "bottom": 0,
             "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
       >
@@ -684,7 +689,12 @@ exports[`DetailOverlay headerCenter (light) replaces the title with the centered
         style={
           {
             "alignItems": "center",
+            "bottom": 0,
             "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
       >
