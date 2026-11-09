@@ -14,6 +14,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 export const Selected: Story = {args: {selected: true}}
+export const SelectedWithCheck: Story = {args: {selected: true, check: true}}
 
 const Strip = () => {
   const [page, setPage] = useState(1)
