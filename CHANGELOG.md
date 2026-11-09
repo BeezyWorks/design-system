@@ -1,3 +1,10 @@
+# [0.34.0](https://github.com/BeezyWorks/design-system/compare/v0.33.0...v0.34.0) (2026-11-09)
+
+
+### Features
+
+* reader navigation components (pager pill, worm dots, sortable list, chip scroller) ([#51](https://github.com/BeezyWorks/design-system/issues/51)) ([4489d06](https://github.com/BeezyWorks/design-system/commit/4489d06170ffe0ccd414476fdaa9714d15521e25))
+
 # [0.33.0](https://github.com/BeezyWorks/design-system/compare/v0.32.0...v0.33.0) (2026-11-05)
 
 
