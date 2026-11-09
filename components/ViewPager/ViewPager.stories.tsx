@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
 import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
+import {ScrollStack} from '../ScrollStack'
 import {Text} from '../Text'
 import {ViewPager, ViewPagerProps} from './ViewPager'
 
@@ -67,4 +68,24 @@ const DragStateDemo = (args: ViewPagerProps) => {
 /** Reports drag state and continuous scroll progress. */
 export const DragState: Story = {
   render: (args: ViewPagerProps) => <DragStateDemo {...args} />,
+}
+
+/** Each page holds a long vertical scroller; it scrolls inside the
+ * fixed-height pager instead of stretching it. */
+export const VerticalScrollInPages: Story = {
+  render: (args: ViewPagerProps) => (
+    <Stack height={240} width={360}>
+      <ViewPager {...args}>
+        {pages.map((background, p) => (
+          <ScrollStack key={p} padding="md" gap="sm">
+            {Array.from({length: 40}, (_, i) => (
+              <Text key={i}>
+                Page {p + 1} · row {i + 1}
+              </Text>
+            ))}
+          </ScrollStack>
+        ))}
+      </ViewPager>
+    </Stack>
+  ),
 }

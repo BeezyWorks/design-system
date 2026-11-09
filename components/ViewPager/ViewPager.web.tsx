@@ -128,7 +128,7 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
         scrollEventThrottle={32}
       >
         {ordered.map((child, slot) => (
-          <View key={slot} style={{width, height: '100%'}}>
+          <View key={slot} style={[styles.page, {width}]}>
             {child}
           </View>
         ))}
@@ -138,6 +138,10 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
 }
 
 const styles = StyleSheet.create({
-  fill: {flex: 1},
+  // `minHeight: 0` lets flex children shrink below their content height
+  // (flexbox's `min-height: auto` would otherwise grow the scroller to fit
+  // its tallest page), so a page's own vertical scroller scrolls inside it.
+  fill: {flex: 1, minHeight: 0},
   fillHeight: {height: '100%'},
+  page: {height: '100%', minHeight: 0, overflow: 'hidden'},
 })
