@@ -21,9 +21,26 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
   initialPage = 0,
   page,
   onPageSelected,
+  onDraggingChange,
+  onPageScroll,
   children,
 }) => {
   const rtl = useRtl()
+  const dragging = useRef(false)
+  const settleTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const setDragging = (next: boolean) => {
+    if (settleTimer.current) clearTimeout(settleTimer.current)
+    settleTimer.current = null
+    if (dragging.current === next) return
+    dragging.current = next
+    onDraggingChange?.(next)
+  }
+  useEffect(
+    () => () => {
+      if (settleTimer.current) clearTimeout(settleTimer.current)
+    },
+    [],
+  )
   const pages = React.Children.toArray(children)
   const count = pages.length
   const [width, setWidth] = useState(0)
@@ -56,6 +73,13 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
     nativeEvent: {contentOffset},
   }: NativeSyntheticEvent<NativeScrollEvent>) => {
     if (width <= 0) return
+    if (onPageScroll) {
+      // Logical page position as a float, then split into index + fraction.
+      const slotFloat = contentOffset.x / width
+      const logical = rtl ? count - 1 - slotFloat : slotFloat
+      const position = Math.max(0, Math.min(count - 1, Math.floor(logical)))
+      onPageScroll(position, Math.max(0, Math.min(1, logical - position)))
+    }
     const slot = Math.round(contentOffset.x / width)
     const index = rtl ? count - 1 - slot : slot
     if (jumpTarget.current !== null) {
@@ -89,10 +113,22 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
         scrollEnabled={scrollEnabled}
         showsHorizontalScrollIndicator={false}
         onScroll={onScroll}
+        onScrollBeginDrag={() => setDragging(true)}
+        // Releasing mid-page starts a momentum settle; a release exactly on a
+        // page never does, so fall back to a short timer.
+        onScrollEndDrag={() => {
+          if (settleTimer.current) clearTimeout(settleTimer.current)
+          settleTimer.current = setTimeout(() => setDragging(false), 200)
+        }}
+        onMomentumScrollBegin={() => {
+          if (settleTimer.current) clearTimeout(settleTimer.current)
+          settleTimer.current = null
+        }}
+        onMomentumScrollEnd={() => setDragging(false)}
         scrollEventThrottle={32}
       >
         {ordered.map((child, slot) => (
-          <View key={slot} style={{width, height: '100%'}}>
+          <View key={slot} style={[styles.page, {width}]}>
             {child}
           </View>
         ))}
@@ -102,6 +138,10 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
 }
 
 const styles = StyleSheet.create({
-  fill: {flex: 1},
+  // `minHeight: 0` lets flex children shrink below their content height
+  // (flexbox's `min-height: auto` would otherwise grow the scroller to fit
+  // its tallest page), so a page's own vertical scroller scrolls inside it.
+  fill: {flex: 1, minHeight: 0},
   fillHeight: {height: '100%'},
+  page: {height: '100%', minHeight: 0, overflow: 'hidden'},
 })

@@ -12,6 +12,15 @@ export interface ViewPagerProps {
   page?: number
   /** The page a swipe (or a `page` jump) settled on. */
   onPageSelected?: (page: number) => void
+  /** `true` from the moment the user starts dragging until the pager is
+   * idle again (including the settle animation), then `false`. Lets a
+   * parent lock a vertical scroller or hide chrome while paging. */
+  onDraggingChange?: (dragging: boolean) => void
+  /** Continuous scroll progress. `position` is the logical page index (the
+   * page on the left in LTR, on the right in an `RtlScope`) and `offset`
+   * is 0..1 towards the next page in page order — the same in both
+   * directions. */
+  onPageScroll?: (position: number, offset: number) => void
   children: React.ReactNode
 }
 
@@ -25,6 +34,8 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
   initialPage = 0,
   page,
   onPageSelected,
+  onDraggingChange,
+  onPageScroll,
   children,
 }) => {
   const rtl = useRtl()
@@ -49,6 +60,20 @@ export const ViewPager: React.FunctionComponent<ViewPagerProps> = ({
           current.current = position
           onPageSelected?.(position)
         }}
+        onPageScroll={
+          onPageScroll
+            ? ({nativeEvent: {position, offset}}) =>
+                onPageScroll(position, offset)
+            : undefined
+        }
+        onPageScrollStateChanged={
+          onDraggingChange
+            ? ({nativeEvent: {pageScrollState}}) => {
+                if (pageScrollState === 'dragging') onDraggingChange(true)
+                else if (pageScrollState === 'idle') onDraggingChange(false)
+              }
+            : undefined
+        }
       >
         {children}
       </PagerView>
