@@ -32,3 +32,6 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+/** The hero sized to its content: the sheet starts right under it. */
+export const ContentSizedHero: Story = {args: {heroShare: 0}}
