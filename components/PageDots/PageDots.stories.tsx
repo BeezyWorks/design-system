@@ -18,11 +18,13 @@ const TappableDots = (args: React.ComponentProps<typeof PageDots>) => {
   return <PageDots {...args} index={index} onSelect={setIndex} />
 }
 
+/** Tap a dot: the pill stretches toward it, then its tail catches up. */
 export const Tappable: Story = {render: (args) => <TappableDots {...args} />}
+export const Dragging: Story = {args: {dragging: true}}
 export const RightToLeft: Story = {
   render: (args) => (
     <RtlScope>
-      <PageDots {...args} />
+      <TappableDots {...args} />
     </RtlScope>
   ),
 }
