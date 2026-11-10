@@ -192,3 +192,4 @@ if it never renders the components that use them.
 - David CLM, Hadasim CLM (regular + bold): Culmus 0.140 (GPL with font exception), from the Debian `fonts-culmus` package.
 - Rubik Bold: `@expo-google-fonts/rubik` (OFL).
 - Ezra SIL SR Bold and Mekorot Vilna Bold have no upstream bold. They are generated from the regular files with `scripts/embolden_font.py` (FreeType outline emboldening: Ezra 0.022 em, Vilna 0.03 em). Regenerate rather than hand-editing.
+- Cardo Hebrew Bold: Cardo's shipped bold draws only some Hebrew letters bold (bet, dalet, resh heavy; mem, alef, lamed regular), so the Hebrew bold is generated from Cardo Regular with `scripts/embolden_font.py` (0.03 em) and subset to Latin + Hebrew. `CardoBold` stays for Latin chrome.

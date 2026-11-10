@@ -19,6 +19,9 @@ export const FontFamily = {
   // te'amim support.
   Cardo: 'Cardo_400Regular',
   CardoBold: 'Cardo_700Bold',
+  // Cardo's own bold draws only some Hebrew letters bold; this one is
+  // generated from the regular so every letter matches (see README).
+  CardoHebrewBold: 'Cardo-Hebrew-Bold',
   // Editorial serif for the Latin/Hebrew chrome ramp (`pageHeader`, `item`).
   FrankRuhlLibre: 'FrankRuhlLibre_400Regular',
   FrankRuhlLibreBold: 'FrankRuhlLibre_700Bold',
