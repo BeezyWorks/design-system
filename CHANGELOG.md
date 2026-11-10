@@ -1,3 +1,10 @@
+## [0.37.1](https://github.com/BeezyWorks/design-system/compare/v0.37.0...v0.37.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **typography:** a real bold cut for every Hebrew face ([771bff7](https://github.com/BeezyWorks/design-system/commit/771bff7f334f64e569ec2dc8d79fdd9df3b14feb))
+
 # [0.37.0](https://github.com/BeezyWorks/design-system/compare/v0.36.0...v0.37.0) (2026-11-09)
 
 
