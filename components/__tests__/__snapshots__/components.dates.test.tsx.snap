@@ -128,6 +128,7 @@ exports[`date pickers (dark theme) GregorianDateField (android) 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
             },
             null,
             null,
@@ -1019,6 +1020,7 @@ exports[`date pickers (light theme) GregorianDateField (android) 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
             },
             null,
             null,
