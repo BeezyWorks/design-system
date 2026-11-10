@@ -1,3 +1,11 @@
+## [0.37.3](https://github.com/BeezyWorks/design-system/compare/v0.37.2...v0.37.3) (2026-11-10)
+
+
+### Bug Fixes
+
+* **text:** keep a token's own font face on Android ([093dbf9](https://github.com/BeezyWorks/design-system/commit/093dbf9c10e9e968cc855191a9dc27982c6c83ea))
+* **text:** update the Android snapshot for the token weight fix ([2a26be4](https://github.com/BeezyWorks/design-system/commit/2a26be48d113dd20736fdb4c27c53d7be8d10984))
+
 ## [0.37.2](https://github.com/BeezyWorks/design-system/compare/v0.37.1...v0.37.2) (2026-11-10)
 
 
