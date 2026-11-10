@@ -1,3 +1,10 @@
+## [0.37.2](https://github.com/BeezyWorks/design-system/compare/v0.37.1...v0.37.2) (2026-11-10)
+
+
+### Bug Fixes
+
+* **typography:** a consistent Hebrew bold for Cardo ([6d806ef](https://github.com/BeezyWorks/design-system/commit/6d806ef5a0528e05988721532ea6fce2cf0063ed))
+
 ## [0.37.1](https://github.com/BeezyWorks/design-system/compare/v0.37.0...v0.37.1) (2026-11-10)
 
 
