@@ -8,9 +8,13 @@ export const FontFamily = {
   TaameyFrank: 'Taamey Frank CLM',
   TaameyFrankBold: 'TaameyFrankCLM-Bold',
   MekorotVilna: 'Mekorot-Vilna',
+  MekorotVilnaBold: 'Mekorot-Vilna-Bold',
   EzraSIL: 'Ezra SIL SR',
+  EzraSILBold: 'Ezra SIL SR Bold',
   Hadasim: 'Hadasim CLM',
+  HadasimBold: 'Hadasim CLM Bold',
   David: 'David CLM',
+  DavidBold: 'David CLM Bold',
   // Cardo — the one Google Fonts Hebrew face with real OpenType niqqud and
   // te'amim support.
   Cardo: 'Cardo_400Regular',
@@ -27,6 +31,7 @@ export const FontFamily = {
   NotoSerifHebrew: 'NotoSerifHebrew_400Regular',
   NotoSerifHebrewBold: 'NotoSerifHebrew_700Bold',
   Rubik: 'Rubik',
+  RubikBold: 'Rubik-Bold',
   // Latin reading faces — translations and other long-form English (see
   // `LatinTypeface`). Each ships regular, bold and italic.
   SourceSerif4: 'SourceSerif4_400Regular',
