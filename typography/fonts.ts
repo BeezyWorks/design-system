@@ -58,6 +58,7 @@ export const DesignFonts = {
   [FontFamily.FrankRuhlLibreBlack]: FrankRuhlLibre_900Black,
   [FontFamily.Cardo]: Cardo_400Regular,
   [FontFamily.CardoBold]: Cardo_700Bold,
+  [FontFamily.CardoHebrewBold]: require('../assets/fonts/cardo-hebrew-bold.ttf'),
   [FontFamily.NotoSerifHebrew]: NotoSerifHebrew_400Regular,
   [FontFamily.NotoSerifHebrewBold]: NotoSerifHebrew_700Bold,
   [FontFamily.NotoRashiHebrew]: NotoRashiHebrew_400Regular,
