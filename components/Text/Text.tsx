@@ -175,6 +175,12 @@ export const Text: React.FunctionComponent<TextProps> = ({
         base,
         {
           color: resolvedColor,
+          // A token that names its own face (e.g. `pageHeader` on Frank Ruhl
+          // Libre Bold) already carries its weight; Android drops to the
+          // system font when a custom family is also given a weight.
+          ...(Platform.OS === 'android' && base.fontFamily
+            ? {fontWeight: 'normal' as const}
+            : null),
           ...(scopedRtl && {textAlign: 'right'}),
           ...(latinLabel && {writingDirection: 'ltr'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
@@ -200,12 +206,6 @@ export const Text: React.FunctionComponent<TextProps> = ({
           ...(onPhoto && photoShadow(resolve(SemanticColor.OverlayPhotoScrim))),
         },
         align ? {textAlign: align} : null,
-        // A token that names its own face (e.g. `pageHeader` on Frank Ruhl
-        // Libre Bold) already carries its weight; Android drops to the system
-        // font when a custom family is also given a weight.
-        Platform.OS === 'android' && base.fontFamily
-          ? {fontWeight: 'normal'}
-          : null,
         bold ? (boldFace ? {fontFamily: boldFace} : {fontWeight: '700'}) : null,
         typeface || latinFamily
           ? {
