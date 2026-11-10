@@ -186,3 +186,9 @@ if it never renders the components that use them.
 - `SiddurIcons` is registered in `FontFamily` but no component uses it.
 - The Storybook does not load `DesignFonts`, so Hebrew typeface stories fall
   back to system fonts.
+
+## Hebrew font sources
+
+- David CLM, Hadasim CLM (regular + bold): Culmus 0.140 (GPL with font exception), from the Debian `fonts-culmus` package.
+- Rubik Bold: `@expo-google-fonts/rubik` (OFL).
+- Ezra SIL SR Bold and Mekorot Vilna Bold have no upstream bold. They are generated from the regular files with `scripts/embolden_font.py` (FreeType outline emboldening: Ezra 0.022 em, Vilna 0.03 em). Regenerate rather than hand-editing.
