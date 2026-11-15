@@ -1,3 +1,10 @@
+## [0.37.4](https://github.com/BeezyWorks/design-system/compare/v0.37.3...v0.37.4) (2026-11-15)
+
+
+### Bug Fixes
+
+* **header:** chevron points up while the title picker is open ([eeecf6a](https://github.com/BeezyWorks/design-system/commit/eeecf6aebf19ae2c34229ef49aa41ce0e621216c))
+
 ## [0.37.3](https://github.com/BeezyWorks/design-system/compare/v0.37.2...v0.37.3) (2026-11-10)
 
 
