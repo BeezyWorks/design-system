@@ -25,6 +25,9 @@ export interface HeaderProps {
   /** Makes the title area tappable (e.g. to open a section picker). In the
    * wide layout it also shows a chevron and the subtitle. */
   onTitlePress?: () => void
+  /** True while the picker opened by `onTitlePress` is showing; flips the
+   * chevron to point up. */
+  titleOpen?: boolean
   /** Shows a back button. */
   onBack?: () => void
   /** The back button's accessibility label. */
@@ -78,6 +81,7 @@ export const Header = ({
   subtitle,
   center,
   onTitlePress,
+  titleOpen = false,
   onBack,
   backLabel = 'Back',
   actions = [],
@@ -123,7 +127,7 @@ export const Header = ({
             {!!onTitlePress && (
               <View style={styles.titleChevron}>
                 <Icon
-                  name="chevron-down"
+                  name={titleOpen ? 'chevron-up' : 'chevron-down'}
                   size={14}
                   color={SemanticColor.TextPrimary}
                 />
@@ -163,7 +167,7 @@ export const Header = ({
                       ]}
                     >
                       <Icon
-                        name="chevron-down"
+                        name={titleOpen ? 'chevron-up' : 'chevron-down'}
                         size={14}
                         color={SemanticColor.TextAccent}
                       />
@@ -171,7 +175,7 @@ export const Header = ({
                   </View>
                 ) : (
                   <Icon
-                    name="chevron-down"
+                    name={titleOpen ? 'chevron-up' : 'chevron-down'}
                     size={14}
                     color={SemanticColor.TextAccent}
                   />

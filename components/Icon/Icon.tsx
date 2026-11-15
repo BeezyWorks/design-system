@@ -11,6 +11,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronDown,
+  ChevronUp,
   ArrowLeft,
   Trash2,
   Navigation,
@@ -60,6 +61,7 @@ export type IconName =
   | 'chevron-right'
   | 'chevron-back'
   | 'chevron-down'
+  | 'chevron-up'
   | 'arrow-back'
   | 'delete'
   | 'navigation'
@@ -109,6 +111,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   'chevron-right': ChevronRight,
   'chevron-back': ChevronLeft,
   'chevron-down': ChevronDown,
+  'chevron-up': ChevronUp,
   'arrow-back': ArrowLeft,
   delete: Trash2,
   navigation: Navigation,
