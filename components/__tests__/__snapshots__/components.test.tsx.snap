@@ -1470,6 +1470,7 @@ exports[`components (dark theme) MenuItemRow last in a section has no divider 1`
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
               "textAlign": "right",
               "writingDirection": "rtl",
             },
@@ -1724,6 +1725,7 @@ exports[`components (dark theme) MenuItemRow with a divider 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
               "textAlign": "right",
               "writingDirection": "rtl",
             },
@@ -3352,6 +3354,7 @@ exports[`components (dark theme) SettingsRow 1`] = `
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -3427,6 +3430,7 @@ exports[`components (dark theme) Text as reading content 1`] = `
       },
       {
         "color": "#F0ECE4",
+        "fontWeight": "normal",
       },
       null,
       null,
@@ -3525,6 +3529,7 @@ exports[`components (dark theme) Text in ktav Rashi 1`] = `
       null,
       {
         "fontFamily": "NotoRashiHebrew_400Regular",
+        "fontWeight": "normal",
       },
     ]
   }
@@ -3545,6 +3550,7 @@ exports[`components (dark theme) Text pageHeader variant 1`] = `
       },
       {
         "color": "#6DA8F5",
+        "fontWeight": "normal",
       },
       null,
       null,
@@ -3569,6 +3575,7 @@ exports[`components (dark theme) Text sectionHeader variant 1`] = `
       },
       {
         "color": "#F0ECE4",
+        "fontWeight": "normal",
       },
       null,
       null,
@@ -3712,6 +3719,7 @@ exports[`components (dark theme) ToggleSetting enabled=false 1`] = `
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -3869,6 +3877,7 @@ exports[`components (dark theme) ToggleSetting enabled=true 1`] = `
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -4026,6 +4035,7 @@ exports[`components (dark theme) ToggleSetting with on/off titles 1`] = `
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -5648,6 +5658,7 @@ exports[`components (light theme) MenuItemRow last in a section has no divider 1
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
               "textAlign": "right",
               "writingDirection": "rtl",
             },
@@ -5902,6 +5913,7 @@ exports[`components (light theme) MenuItemRow with a divider 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
               "textAlign": "right",
               "writingDirection": "rtl",
             },
@@ -7530,6 +7542,7 @@ exports[`components (light theme) SettingsRow 1`] = `
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -7605,6 +7618,7 @@ exports[`components (light theme) Text as reading content 1`] = `
       },
       {
         "color": "#2A2521",
+        "fontWeight": "normal",
       },
       null,
       null,
@@ -7703,6 +7717,7 @@ exports[`components (light theme) Text in ktav Rashi 1`] = `
       null,
       {
         "fontFamily": "NotoRashiHebrew_400Regular",
+        "fontWeight": "normal",
       },
     ]
   }
@@ -7723,6 +7738,7 @@ exports[`components (light theme) Text pageHeader variant 1`] = `
       },
       {
         "color": "#3E7FD1",
+        "fontWeight": "normal",
       },
       null,
       null,
@@ -7747,6 +7763,7 @@ exports[`components (light theme) Text sectionHeader variant 1`] = `
       },
       {
         "color": "#2A2521",
+        "fontWeight": "normal",
       },
       null,
       null,
@@ -7890,6 +7907,7 @@ exports[`components (light theme) ToggleSetting enabled=false 1`] = `
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -8047,6 +8065,7 @@ exports[`components (light theme) ToggleSetting enabled=true 1`] = `
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -8204,6 +8223,7 @@ exports[`components (light theme) ToggleSetting with on/off titles 1`] = `
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,

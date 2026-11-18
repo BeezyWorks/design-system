@@ -1496,6 +1496,7 @@ exports[`more components (dark theme) lists and menus MenuOption selected=false 
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -1592,6 +1593,7 @@ exports[`more components (dark theme) lists and menus MenuOption selected=true 1
           },
           {
             "color": "#6DA8F5",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -1665,6 +1667,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
         },
         {
           "color": "#F0ECE4",
+          "fontWeight": "normal",
           "textAlign": "right",
         },
         null,
@@ -1832,6 +1835,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
                 },
                 {
                   "color": "#F0ECE4",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -2083,6 +2087,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
                 },
                 {
                   "color": "#F0ECE4",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -2334,6 +2339,7 @@ exports[`more components (dark theme) lists and menus MenuSection 1`] = `
                 },
                 {
                   "color": "#F0ECE4",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -2552,6 +2558,7 @@ exports[`more components (dark theme) settings NestedSettingHeader 1`] = `
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -2744,6 +2751,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
             "textAlign": "right",
             "writingDirection": "ltr",
           },
@@ -2898,6 +2906,7 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -3052,6 +3061,7 @@ exports[`more components (dark theme) settings SettingsListRow disabled=false 1`
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -3167,6 +3177,7 @@ exports[`more components (dark theme) settings SettingsListRow disabled=true 1`]
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -3411,6 +3422,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
             },
             {
               "textAlign": "center",
@@ -3776,6 +3788,7 @@ exports[`more components (dark theme) settings Stepper 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
             },
             {
               "textAlign": "center",
@@ -5615,6 +5628,7 @@ exports[`more components (light theme) lists and menus MenuOption selected=false
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -5711,6 +5725,7 @@ exports[`more components (light theme) lists and menus MenuOption selected=true 
           },
           {
             "color": "#3E7FD1",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -5784,6 +5799,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
         },
         {
           "color": "#2A2521",
+          "fontWeight": "normal",
           "textAlign": "right",
         },
         null,
@@ -5951,6 +5967,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
                 },
                 {
                   "color": "#2A2521",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -6202,6 +6219,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
                 },
                 {
                   "color": "#2A2521",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -6453,6 +6471,7 @@ exports[`more components (light theme) lists and menus MenuSection 1`] = `
                 },
                 {
                   "color": "#2A2521",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -6671,6 +6690,7 @@ exports[`more components (light theme) settings NestedSettingHeader 1`] = `
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -6863,6 +6883,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
             "textAlign": "right",
             "writingDirection": "ltr",
           },
@@ -7017,6 +7038,7 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -7171,6 +7193,7 @@ exports[`more components (light theme) settings SettingsListRow disabled=false 1
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -7286,6 +7309,7 @@ exports[`more components (light theme) settings SettingsListRow disabled=true 1`
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -7530,6 +7554,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
             },
             {
               "textAlign": "center",
@@ -7895,6 +7920,7 @@ exports[`more components (light theme) settings Stepper 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
             },
             {
               "textAlign": "center",

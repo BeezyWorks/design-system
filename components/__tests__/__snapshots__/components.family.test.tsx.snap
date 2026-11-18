@@ -2236,6 +2236,7 @@ exports[`family component behavior PagerPill, glass and plain, in RTL 1`] = `
                       },
                       {
                         "color": "#2A2521",
+                        "fontWeight": "normal",
                         "textAlign": "right",
                         "writingDirection": "rtl",
                       },
@@ -2711,6 +2712,7 @@ exports[`family component behavior PagerPill, glass and plain, in RTL 1`] = `
                 },
                 {
                   "color": "#2A2521",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -3074,6 +3076,7 @@ exports[`family component behavior SortableList reorders through its move action
               },
               {
                 "color": "#2A2521",
+                "fontWeight": "normal",
                 "textAlign": "right",
                 "writingDirection": "rtl",
               },
@@ -3516,6 +3519,7 @@ exports[`family component behavior SortableList reorders through its move action
               },
               {
                 "color": "#2A2521",
+                "fontWeight": "normal",
                 "textAlign": "right",
                 "writingDirection": "rtl",
               },
@@ -4763,6 +4767,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
               null,
               {
                 "fontFamily": "FrankRuhlLibre_400Regular",
+                "fontWeight": "normal",
               },
               null,
             ]
@@ -4920,6 +4925,7 @@ exports[`family components (dark theme) FontSwatch previews each typeface 1`] = 
               null,
               {
                 "fontFamily": "Inter_400Regular",
+                "fontWeight": "normal",
               },
               null,
             ]
@@ -8232,6 +8238,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
                   },
                   {
                     "color": "#F0ECE4",
+                    "fontWeight": "normal",
                     "textAlign": "right",
                     "writingDirection": "rtl",
                   },
@@ -8549,6 +8556,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
               "textAlign": "right",
               "writingDirection": "rtl",
             },
@@ -8638,11 +8646,13 @@ exports[`family components (dark theme) new props on existing components 1`] = `
         {
           "color": "#F0ECE4",
           "fontStyle": "italic",
+          "fontWeight": "normal",
         },
         null,
         null,
         {
           "fontFamily": "SourceSerif4_400Regular_Italic",
+          "fontWeight": "normal",
         },
         null,
       ]
@@ -8662,6 +8672,7 @@ exports[`family components (dark theme) new props on existing components 1`] = `
         },
         {
           "color": "#F0ECE4",
+          "fontWeight": "normal",
           "textAlign": "right",
           "writingDirection": "rtl",
         },
@@ -9662,6 +9673,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
               null,
               {
                 "fontFamily": "FrankRuhlLibre_400Regular",
+                "fontWeight": "normal",
               },
               null,
             ]
@@ -9819,6 +9831,7 @@ exports[`family components (light theme) FontSwatch previews each typeface 1`] =
               null,
               {
                 "fontFamily": "Inter_400Regular",
+                "fontWeight": "normal",
               },
               null,
             ]
@@ -13131,6 +13144,7 @@ exports[`family components (light theme) new props on existing components 1`] = 
                   },
                   {
                     "color": "#2A2521",
+                    "fontWeight": "normal",
                     "textAlign": "right",
                     "writingDirection": "rtl",
                   },
@@ -13448,6 +13462,7 @@ exports[`family components (light theme) new props on existing components 1`] = 
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
               "textAlign": "right",
               "writingDirection": "rtl",
             },
@@ -13537,11 +13552,13 @@ exports[`family components (light theme) new props on existing components 1`] = 
         {
           "color": "#2A2521",
           "fontStyle": "italic",
+          "fontWeight": "normal",
         },
         null,
         null,
         {
           "fontFamily": "SourceSerif4_400Regular_Italic",
+          "fontWeight": "normal",
         },
         null,
       ]
@@ -13561,6 +13578,7 @@ exports[`family components (light theme) new props on existing components 1`] = 
         },
         {
           "color": "#2A2521",
+          "fontWeight": "normal",
           "textAlign": "right",
           "writingDirection": "rtl",
         },

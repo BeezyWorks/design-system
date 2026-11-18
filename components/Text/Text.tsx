@@ -163,10 +163,11 @@ export const Text: React.FunctionComponent<TextProps> = ({
       : undefined
 
   // An explicit face carries its own weight. Android can't find a bold
-  // weight of a single-cut custom family and drops to the system font, so a
-  // bold variant (e.g. `titleLarge` in `FontSwatch`) must not leak through.
-  const androidPlainWeight =
-    Platform.OS === 'android' ? {fontWeight: 'normal' as const} : null
+  // weight of a single-cut custom family and drops to the system font; iOS
+  // layers a synthetic bold over a Bold face, smearing some Hebrew letters
+  // heavier than others. So a bold variant (e.g. `titleLarge` in
+  // `FontSwatch`) must not leak through on either.
+  const plainWeight = {fontWeight: 'normal' as const}
 
   return (
     <NativeText
@@ -177,10 +178,9 @@ export const Text: React.FunctionComponent<TextProps> = ({
           color: resolvedColor,
           // A token that names its own face (e.g. `pageHeader` on Frank Ruhl
           // Libre Bold) already carries its weight; Android drops to the
-          // system font when a custom family is also given a weight.
-          ...(Platform.OS === 'android' && base.fontFamily
-            ? {fontWeight: 'normal' as const}
-            : null),
+          // system font, and iOS double-bolds, when a custom family is also
+          // given a weight.
+          ...(base.fontFamily ? plainWeight : null),
           ...(scopedRtl && {textAlign: 'right'}),
           ...(latinLabel && {writingDirection: 'ltr'}),
           ...(rtl && {writingDirection: 'rtl', textAlign: 'right'}),
@@ -212,7 +212,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
               fontFamily:
                 boldFace ??
                 (typeface ? typefaceFontFamily[typeface] : latinFamily),
-              ...androidPlainWeight,
+              ...plainWeight,
             }
           : null,
         rashiScript
@@ -220,7 +220,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
               fontFamily: bold
                 ? FontFamily.NotoRashiHebrewBold
                 : FontFamily.NotoRashiHebrew,
-              ...androidPlainWeight,
+              ...plainWeight,
             }
           : null,
       ]}
