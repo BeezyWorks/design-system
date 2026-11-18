@@ -1,3 +1,10 @@
+# [0.40.0](https://github.com/BeezyWorks/design-system/compare/v0.39.0...v0.40.0) (2026-11-18)
+
+
+### Features
+
+* **screen:** add a full width that leaves content uncapped ([2b28577](https://github.com/BeezyWorks/design-system/commit/2b28577a7d83cb98a0b80dfce690dfb12dce6b16))
+
 # [0.39.0](https://github.com/BeezyWorks/design-system/compare/v0.38.2...v0.39.0) (2026-11-18)
 
 
