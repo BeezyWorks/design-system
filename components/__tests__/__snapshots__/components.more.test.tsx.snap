@@ -2744,19 +2744,21 @@ exports[`more components (dark theme) settings SettingsCard and SettingsBox 1`] 
       style={
         [
           {
-            "color": "#F0ECE4",
-            "fontFamily": "FrankRuhlLibre_700Bold",
-            "fontSize": 16,
-            "fontWeight": "600",
+            "color": "rgba(240, 236, 228, 0.5)",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
           {
-            "color": "#F0ECE4",
+            "color": "rgba(240, 236, 228, 0.5)",
             "fontWeight": "normal",
             "textAlign": "right",
             "writingDirection": "ltr",
           },
           null,
-          null,
+          {
+            "fontFamily": "FrankRuhlLibre_700Bold",
+          },
           null,
           null,
         ]
@@ -6876,19 +6878,21 @@ exports[`more components (light theme) settings SettingsCard and SettingsBox 1`]
       style={
         [
           {
-            "color": "#2A2521",
-            "fontFamily": "FrankRuhlLibre_700Bold",
-            "fontSize": 16,
-            "fontWeight": "600",
+            "color": "rgba(42, 37, 33, 0.5)",
+            "fontFamily": "FrankRuhlLibre_400Regular",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
           {
-            "color": "#2A2521",
+            "color": "rgba(42, 37, 33, 0.5)",
             "fontWeight": "normal",
             "textAlign": "right",
             "writingDirection": "ltr",
           },
           null,
-          null,
+          {
+            "fontFamily": "FrankRuhlLibre_700Bold",
+          },
           null,
           null,
         ]
