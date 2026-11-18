@@ -21,9 +21,10 @@ export interface ScreenProps {
   hasNativeHeader?: boolean
   /** Caps the content column on every platform and centers it: `content`
    * for lists and menus, `reader` for a wider long-form reading column,
-   * `wide` for a screen laid out in columns on a wide layout. Unset, only
-   * web gets the `content` cap. */
-  width?: 'content' | 'reader' | 'wide'
+   * `wide` for a screen laid out in columns on a wide layout. `full` never
+   * caps it, for a screen whose header spans the window and which caps its
+   * own column. Unset, only web gets the `content` cap. */
+  width?: 'content' | 'reader' | 'wide' | 'full'
   /** A panel docked beside the content column, outside its width cap —
    * e.g. a `DetailOverlay` on a wide layout. */
   aside?: React.ReactNode
@@ -109,6 +110,7 @@ export const Screen: React.FunctionComponent<ScreenProps> = ({
           ? MAX_READER_WIDTH
           : MAX_CONTENT_WIDTH,
     capEverywhere: width !== undefined,
+    uncapped: width === 'full',
     hasAside: aside !== undefined,
   })
   // Web has no notch/home-indicator to avoid.
@@ -138,6 +140,7 @@ const styleCreator = (
     height?: number
     maxWidth: number
     capEverywhere: boolean
+    uncapped: boolean
     hasAside: boolean
   },
 ) =>
@@ -164,17 +167,18 @@ const styleCreator = (
       paddingLeft: padding.paddingLeft,
       ...(padding.hasAside && {flexDirection: 'row' as const}),
     },
-    content: !(isWeb || padding.capEverywhere)
-      ? {flex: 1}
-      : padding.hasAside
-        ? // In the row beside an aside: take the leftover width (flex), cap
-          // it, and center it there with auto margins — `alignSelf` would
-          // act on the row's vertical axis instead.
-          {flex: 1, maxWidth: padding.maxWidth, marginHorizontal: 'auto'}
-        : {
-            flex: 1,
-            width: '100%',
-            maxWidth: padding.maxWidth,
-            alignSelf: 'center',
-          },
+    content:
+      padding.uncapped || !(isWeb || padding.capEverywhere)
+        ? {flex: 1}
+        : padding.hasAside
+          ? // In the row beside an aside: take the leftover width (flex), cap
+            // it, and center it there with auto margins — `alignSelf` would
+            // act on the row's vertical axis instead.
+            {flex: 1, maxWidth: padding.maxWidth, marginHorizontal: 'auto'}
+          : {
+              flex: 1,
+              width: '100%',
+              maxWidth: padding.maxWidth,
+              alignSelf: 'center',
+            },
   })
