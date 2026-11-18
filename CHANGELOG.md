@@ -1,3 +1,17 @@
+# [0.38.0](https://github.com/BeezyWorks/design-system/compare/v0.37.4...v0.38.0) (2026-11-18)
+
+
+### Bug Fixes
+
+* **bottom-sheet:** center the full-screen title regardless of header actions ([adc1d1d](https://github.com/BeezyWorks/design-system/commit/adc1d1d7307036996223ee8c300af969f2bcf3e8))
+* **bottom-sheet:** spread absoluteFill, which this react-native types ([947c032](https://github.com/BeezyWorks/design-system/commit/947c032bec346f638095801ad64ceb165b575a41))
+* **sortable-list:** activate pan immediately so a parent scroll view can't steal the drag ([b45deaf](https://github.com/BeezyWorks/design-system/commit/b45deafecf71ec5bf57505d134e64cbe776c8f06))
+
+
+### Features
+
+* **sections-popover:** the siddur's section picker, rising from a pager pill ([4ad86e4](https://github.com/BeezyWorks/design-system/commit/4ad86e409d40702fc49c1652dabac5e9b2cb2052))
+
 ## [0.37.4](https://github.com/BeezyWorks/design-system/compare/v0.37.3...v0.37.4) (2026-11-15)
 
 
