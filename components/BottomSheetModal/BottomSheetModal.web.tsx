@@ -262,7 +262,7 @@ const styleCreator = (
     },
     // Centered on the sheet, not in what the actions leave over.
     titleFullLayer: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       justifyContent: 'center',
       paddingHorizontal: 112,
     },
