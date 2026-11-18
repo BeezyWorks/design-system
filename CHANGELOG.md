@@ -1,3 +1,10 @@
+## [0.38.2](https://github.com/BeezyWorks/design-system/compare/v0.38.1...v0.38.2) (2026-11-18)
+
+
+### Bug Fixes
+
+* **settings-card:** make the card title a quiet label ([c2cb7ba](https://github.com/BeezyWorks/design-system/commit/c2cb7baa504731402119231504a5260bbd105144))
+
 ## [0.38.1](https://github.com/BeezyWorks/design-system/compare/v0.38.0...v0.38.1) (2026-11-18)
 
 
