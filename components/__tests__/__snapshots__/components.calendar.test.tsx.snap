@@ -359,6 +359,7 @@ exports[`calendar pieces (dark theme) DatePager 1`] = `
                 },
                 {
                   "color": "#F0ECE4",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -691,6 +692,7 @@ exports[`calendar pieces (dark theme) EventCard 1`] = `
             },
             {
               "color": "#EE8F88",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             {
@@ -756,6 +758,7 @@ exports[`calendar pieces (dark theme) EventCard 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             null,
@@ -983,6 +986,7 @@ exports[`calendar pieces (dark theme) EventCard 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             {
@@ -1049,6 +1053,7 @@ exports[`calendar pieces (dark theme) EventCard 1`] = `
             },
             {
               "color": "#F0ECE4",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             {
@@ -11895,6 +11900,7 @@ exports[`calendar pieces (dark theme) TimeTile 1`] = `
           },
           {
             "color": "rgba(240, 236, 228, 0.5)",
+            "fontWeight": "normal",
           },
           null,
           null,
@@ -12311,6 +12317,7 @@ exports[`calendar pieces (light theme) DatePager 1`] = `
                 },
                 {
                   "color": "#2A2521",
+                  "fontWeight": "normal",
                   "textAlign": "right",
                   "writingDirection": "rtl",
                 },
@@ -12643,6 +12650,7 @@ exports[`calendar pieces (light theme) EventCard 1`] = `
             },
             {
               "color": "#A23B3B",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             {
@@ -12708,6 +12716,7 @@ exports[`calendar pieces (light theme) EventCard 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             null,
@@ -12935,6 +12944,7 @@ exports[`calendar pieces (light theme) EventCard 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             {
@@ -13001,6 +13011,7 @@ exports[`calendar pieces (light theme) EventCard 1`] = `
             },
             {
               "color": "#2A2521",
+              "fontWeight": "normal",
               "textAlign": "right",
             },
             {
@@ -23847,6 +23858,7 @@ exports[`calendar pieces (light theme) TimeTile 1`] = `
           },
           {
             "color": "rgba(42, 37, 33, 0.5)",
+            "fontWeight": "normal",
           },
           null,
           null,

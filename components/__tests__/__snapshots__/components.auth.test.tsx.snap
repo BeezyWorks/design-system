@@ -355,6 +355,7 @@ exports[`auth components (dark theme) AccountCard signed out 1`] = `
           },
           {
             "color": "#F0ECE4",
+            "fontWeight": "normal",
           },
           {
             "textAlign": "left",
@@ -2671,6 +2672,7 @@ exports[`auth components (light theme) AccountCard signed out 1`] = `
           },
           {
             "color": "#2A2521",
+            "fontWeight": "normal",
           },
           {
             "textAlign": "left",
