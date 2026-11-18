@@ -21,6 +21,10 @@ export interface PagerPillProps {
   /** Makes the title a button (with a small chevron-down) — e.g. to open a
    * chapter picker. */
   onTitlePress?: () => void
+  /** The title's picker rises from the pill (a `SectionsPopover` placed
+   * at the bottom): the chevron points up while it's closed and down while
+   * it's open. Leave unset for a modal picker (chevron always down). */
+  pickerOpen?: boolean
   previousLabel: string
   nextLabel: string
   /** A glass capsule (default), or `false` for no surface at all — for a
@@ -54,6 +58,7 @@ export const PagerPill: React.FunctionComponent<PagerPillProps> = ({
   onPrevious,
   onNext,
   onTitlePress,
+  pickerOpen,
   previousLabel,
   nextLabel,
   glass = true,
@@ -170,7 +175,7 @@ export const PagerPill: React.FunctionComponent<PagerPillProps> = ({
       </Stack>
       {onTitlePress ? (
         <Icon
-          name="chevron-down"
+          name={pickerOpen === false ? 'chevron-up' : 'chevron-down'}
           size={14}
           color={SemanticColor.TextSecondary}
         />
