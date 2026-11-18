@@ -1,3 +1,10 @@
+## [0.38.1](https://github.com/BeezyWorks/design-system/compare/v0.38.0...v0.38.1) (2026-11-18)
+
+
+### Bug Fixes
+
+* **text:** drop the token's fontWeight on iOS when it names its own face ([28bb832](https://github.com/BeezyWorks/design-system/commit/28bb832282ad254ae43880e693b5224a0ce6651e))
+
 # [0.38.0](https://github.com/BeezyWorks/design-system/compare/v0.37.4...v0.38.0) (2026-11-18)
 
 
