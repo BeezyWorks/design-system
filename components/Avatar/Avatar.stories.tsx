@@ -16,3 +16,9 @@ export const Large: Story = {args: {size: 72}}
 export const BrokenImage: Story = {
   args: {imageUrl: 'https://invalid.example/missing.png'},
 }
+export const Framed: Story = {
+  args: {
+    size: 72,
+    imageUrl: 'https://picsum.photos/id/237/600/400#frame=3,2,0.3,-0.2',
+  },
+}

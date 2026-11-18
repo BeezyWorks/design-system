@@ -3,12 +3,14 @@ import {Image} from 'react-native'
 import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
+import {avatarFrameStyle, parseAvatarImage} from './avatarFrame'
 
 export interface AvatarProps {
   /** Used for the initials when there's no image (or it fails to load). */
   name?: string | null
   /** Falls back to `name` for the initials. */
   email?: string | null
+  /** May carry framing from `formatAvatarImage`. */
   imageUrl?: string | null
   /** Diameter. Default 44. */
   size?: number
@@ -34,8 +36,9 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
   size = 44,
 }) => {
   const [failed, setFailed] = React.useState(false)
-  React.useEffect(() => setFailed(false), [imageUrl])
-  const showImage = !!imageUrl && !failed
+  const {src, frame} = parseAvatarImage(imageUrl)
+  React.useEffect(() => setFailed(false), [src])
+  const showImage = !!src && !failed
   return (
     <Stack
       width={size}
@@ -48,9 +51,11 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
     >
       {showImage ? (
         <Image
-          source={{uri: imageUrl}}
+          source={{uri: src}}
           onError={() => setFailed(true)}
-          style={{width: size, height: size}}
+          style={
+            frame ? avatarFrameStyle(frame, size) : {width: size, height: size}
+          }
           accessibilityIgnoresInvertColors
         />
       ) : (
