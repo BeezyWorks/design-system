@@ -19,9 +19,10 @@ export interface SettingsCardProps {
  * Always right-to-left (an `RtlScope`): titles are a mix of Hebrew and
  * English, and each script aligning to its own side left the cards
  * ragged, so every card lays out RTL whatever the title's script. The
- * title uses `sectionHeader` (like `MenuSection`), whose Frank Ruhl Libre
- * draws Hebrew and Latin at a matched weight — the system font's Hebrew
- * fallback rendered noticeably lighter than its Latin. */
+ * title is a small, quiet label, so it reads as naming the group and not as
+ * one more row above the `itemHeader` row titles. It stays in Frank Ruhl
+ * Libre, which draws Hebrew and Latin at a matched weight — the system
+ * font's Hebrew fallback rendered noticeably lighter than its Latin. */
 export const SettingsCard: React.FunctionComponent<SettingsCardProps> = ({
   title,
   children,
@@ -29,7 +30,11 @@ export const SettingsCard: React.FunctionComponent<SettingsCardProps> = ({
 }) => (
   <RtlScope>
     <Card grow={grow} gap="sm">
-      {title && <Text variant="sectionHeader">{title}</Text>}
+      {title && (
+        <Text variant="labelSerif" bold>
+          {title}
+        </Text>
+      )}
       {children}
     </Card>
   </RtlScope>
