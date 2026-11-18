@@ -98,6 +98,24 @@ export const BottomSheetModal = ({
           ]}
         >
           <View style={styles.fullHeader}>
+            {/* Centered on the screen, not in what the sides leave over, so
+                a header with one action and one with two look the same. */}
+            <View style={styles.fullTitleLayer} pointerEvents="box-none">
+              {titleNode ?? (
+                <Text
+                  numberOfLines={1}
+                  style={[
+                    styles.fullTitle,
+                    {
+                      color: resolve(SemanticColor.TextPrimary),
+                      ...(titleFontFamily && {fontFamily: titleFontFamily}),
+                    },
+                  ]}
+                >
+                  {title}
+                </Text>
+              )}
+            </View>
             <View style={styles.fullSide}>
               <Icon
                 name="close"
@@ -106,20 +124,7 @@ export const BottomSheetModal = ({
                 onPress={dismiss}
               />
             </View>
-            {titleNode ?? (
-              <Text
-                numberOfLines={1}
-                style={[
-                  styles.fullTitle,
-                  {
-                    color: resolve(SemanticColor.TextPrimary),
-                    ...(titleFontFamily && {fontFamily: titleFontFamily}),
-                  },
-                ]}
-              >
-                {title}
-              </Text>
-            )}
+            <View style={styles.fullSpacer} />
             <View style={[styles.fullSide, styles.fullSideEnd]}>
               {headerRight}
             </View>
@@ -175,8 +180,17 @@ const styles = StyleSheet.create({
     width: undefined,
     minWidth: 44,
   },
-  fullTitle: {
+  fullSpacer: {
     flex: 1,
+  },
+  fullTitleLayer: {
+    ...StyleSheet.absoluteFill,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // Keeps a long plain title clear of the buttons either side.
+    paddingHorizontal: 104,
+  },
+  fullTitle: {
     fontSize: 20,
     fontWeight: '600',
     textAlign: 'center',

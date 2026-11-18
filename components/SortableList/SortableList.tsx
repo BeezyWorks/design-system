@@ -69,6 +69,11 @@ const SortableRow: React.FunctionComponent<RowProps> = ({
     () =>
       Gesture.Pan()
         .runOnJS(true)
+        // Claim the touch the instant it moves: inside the screen's
+        // ScrollView, the default 10pt threshold loses the race to the
+        // scroll's own pan and the page scrolls instead of the row moving.
+        .minDistance(0)
+        .shouldCancelWhenOutside(false)
         .onStart(() => handlers.current.begin(key))
         .onUpdate((e) => handlers.current.update(key, e.translationY))
         .onFinalize(() => handlers.current.end(key)),
