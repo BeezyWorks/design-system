@@ -1,3 +1,10 @@
+# [0.39.0](https://github.com/BeezyWorks/design-system/compare/v0.38.2...v0.39.0) (2026-11-18)
+
+
+### Features
+
+* **avatar:** add photo framing ([9c839f4](https://github.com/BeezyWorks/design-system/commit/9c839f424f527cf912f758130b8c2e2934c303b1))
+
 ## [0.38.2](https://github.com/BeezyWorks/design-system/compare/v0.38.1...v0.38.2) (2026-11-18)
 
 
