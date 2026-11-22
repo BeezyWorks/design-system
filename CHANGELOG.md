@@ -1,3 +1,10 @@
+# [0.42.0](https://github.com/BeezyWorks/design-system/compare/v0.41.0...v0.42.0) (2026-11-22)
+
+
+### Features
+
+* **docked-bar:** report layout so content can clear the bar ([5ce42f7](https://github.com/BeezyWorks/design-system/commit/5ce42f7cd6ed6d5c1ba88e5ed1135076a361c4f2))
+
 # [0.41.0](https://github.com/BeezyWorks/design-system/compare/v0.40.0...v0.41.0) (2026-11-22)
 
 
