@@ -25,3 +25,8 @@ type Story = StoryObj<typeof meta>
 export const Empty: Story = {}
 export const Filled: Story = {args: {value: 'berakhot'}}
 export const Hebrew: Story = {args: {placeholder: 'חיפוש', value: 'ברכות'}}
+
+/** Not editable: a tap target that opens a search screen. */
+export const Tappable: Story = {
+  args: {placeholder: 'Search the Talmud', onPress: () => {}},
+}
