@@ -1,5 +1,7 @@
+import React from 'react'
 import type {Meta, StoryObj} from '@storybook/react-native-web-vite'
 import {Card} from '../Card'
+import {GlassIconButton} from '../GlassIconButton'
 import {GlassSurface} from '../GlassSurface'
 import {Stack} from '../Stack'
 import {Text} from '../Text'
@@ -35,3 +37,17 @@ export const Default: Story = {}
 
 /** The hero sized to its content: the sheet starts right under it. */
 export const ContentSizedHero: Story = {args: {heroShare: 0}}
+
+/** An accessory in the photo's top corner (here a settings button). */
+export const WithCorner: Story = {
+  args: {
+    corner: (
+      <GlassIconButton
+        name="settings"
+        inline
+        accessibilityLabel="Settings"
+        onPress={() => {}}
+      />
+    ),
+  },
+}

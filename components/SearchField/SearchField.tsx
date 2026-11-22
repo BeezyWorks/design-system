@@ -6,6 +6,8 @@ import {useColorResolver} from '../../theme'
 import {Stack} from '../Stack'
 import {Icon} from '../Icon'
 import {IconButton} from '../IconButton'
+import {Text} from '../Text'
+import {Touchable} from '../Touchable'
 
 export interface SearchFieldProps extends Pick<
   TextInputProps,
@@ -15,6 +17,10 @@ export interface SearchFieldProps extends Pick<
   accessibilityLabel?: string
   /** Label for the clear button. Default `Clear search`. */
   clearLabel?: string
+  /** Makes the field a button: not editable, it shows `placeholder` (or
+   * `value`) and calls this on tap — a search entry point that opens a
+   * search screen. */
+  onPress?: () => void
 }
 
 /** A pill-shaped search input: a leading magnifier, the query, and a clear
@@ -22,12 +28,45 @@ export interface SearchFieldProps extends Pick<
  * `value`. */
 export const SearchField = React.forwardRef<TextInput, SearchFieldProps>(
   (
-    {value, onChangeText, clearLabel = 'Clear search', ...inputProps},
+    {value, onChangeText, clearLabel = 'Clear search', onPress, ...inputProps},
     ref,
   ) => {
     const type = useTypeStyle('body')
     const resolve = useColorResolver()
     const [focused, setFocused] = useState(false)
+    if (onPress) {
+      return (
+        <Touchable
+          onPress={onPress}
+          accessibilityRole="search"
+          accessibilityLabel={
+            inputProps.accessibilityLabel ?? inputProps.placeholder
+          }
+          testID={inputProps.testID}
+        >
+          <Stack
+            direction="row"
+            align="center"
+            gap="sm"
+            radius="full"
+            paddingHorizontal="md"
+            paddingVertical={10}
+            background={SemanticColor.SurfaceSelected}
+            borderWidth={1.5}
+            borderColor={SemanticColor.SurfaceSelected}
+          >
+            <Icon name="search" size={18} color={SemanticColor.TextSecondary} />
+            <Text
+              variant="body"
+              color={SemanticColor.TextSecondary}
+              numberOfLines={1}
+            >
+              {value || inputProps.placeholder}
+            </Text>
+          </Stack>
+        </Touchable>
+      )
+    }
     return (
       <Stack
         direction="row"

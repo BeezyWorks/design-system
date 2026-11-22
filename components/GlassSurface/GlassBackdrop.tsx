@@ -10,9 +10,18 @@ import {Stack} from '../Stack'
 // `blurTarget`), which a generic panel can't assume — it gets the opaque
 // tint instead, so text over a photo stays legible.
 const canBlur = Platform.OS !== 'android'
-const BLUR_INTENSITY = 60
+/** The default blur, on expo-blur's 0-100 scale. */
+export const GLASS_BLUR_INTENSITY = 60
 // Where the sheen has faded out, as a fraction of the panel's height.
 const SHEEN_END = 0.45
+
+export interface GlassBackdropProps {
+  /** How strongly the backdrop blurs, 0-100. Default 60. */
+  intensity?: number
+  /** How much of the glass shows, 0-1: below 1 the whole fill (blur, tint
+   * and sheen) fades toward what is behind it. Default 1. */
+  opacity?: number
+}
 
 /** The frosted-glass fill behind `GlassSurface` and the glass
  * `SideNavRail`: a backdrop blur, the mode's glass tint and light catching
@@ -21,13 +30,25 @@ const SHEEN_END = 0.45
  * lays its own white wash under the glass tint, which turns the glass
  * milky-opaque. The `style`/`colors` props are those libraries' own
  * contracts, derived from tokens here — not a style escape hatch. */
-export const GlassBackdrop: React.FunctionComponent = () => {
+export const GlassBackdrop: React.FunctionComponent<GlassBackdropProps> = ({
+  intensity = GLASS_BLUR_INTENSITY,
+  opacity = 1,
+}) => {
   const resolve = useColorResolver()
   const appearance = useAppearance()
-  return (
+  const webBlur = Math.round((36 * intensity) / GLASS_BLUR_INTENSITY)
+  const layers = (
     <>
       {Platform.OS === 'web' ? (
-        <View style={styles.webFrost} />
+        <View
+          style={[
+            styles.webFrost,
+            // Same CSS-passthrough contract as `webFrost` below.
+            {
+              backdropFilter: `blur(${webBlur}px) saturate(170%) brightness(1.04)`,
+            } as {},
+          ]}
+        />
       ) : (
         canBlur && (
           <BlurView
@@ -36,7 +57,7 @@ export const GlassBackdrop: React.FunctionComponent = () => {
                 ? 'systemUltraThinMaterialDark'
                 : 'systemUltraThinMaterialLight'
             }
-            intensity={BLUR_INTENSITY}
+            intensity={intensity}
             style={StyleSheet.absoluteFill}
           />
         )
@@ -58,6 +79,14 @@ export const GlassBackdrop: React.FunctionComponent = () => {
         style={styles.overlay}
       />
     </>
+  )
+  // Only a faded backdrop needs its own layer to fade as one.
+  return opacity < 1 ? (
+    <Stack position="absoluteFill" opacity={opacity} pointerEvents="none">
+      {layers}
+    </Stack>
+  ) : (
+    layers
   )
 }
 

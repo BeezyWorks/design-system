@@ -42,3 +42,12 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {}
 export const Flat: Story = {args: {shadow: 'none'}}
 export const Tinted: Story = {args: {background: SemanticColor.AccentTint}}
+/** An "add" affordance: a flat card with a dashed border. */
+export const Dashed: Story = {
+  args: {
+    shadow: 'none',
+    borderStyle: 'dashed',
+    background: SemanticColor.SurfaceBackground,
+    onPress: () => {},
+  },
+}

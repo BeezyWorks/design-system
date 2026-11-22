@@ -28,6 +28,11 @@ export interface GlassSurfaceProps extends Pick<
   radius?: RadiusToken
   /** Lifts the panel off its backdrop with a soft shadow. Default `true`. */
   raised?: boolean
+  /** Blur strength, 0-100. Default 60. Lower it for a lighter frost. */
+  intensity?: number
+  /** How much of the glass shows, 0-1 — the panel fades toward its
+   * backdrop. Default 1. */
+  opacity?: number
 }
 
 /** A frosted-glass panel: a backdrop blur, the mode's glass tint, light
@@ -38,6 +43,8 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
   children,
   radius = 'xl',
   raised = true,
+  intensity,
+  opacity,
   ...layout
 }) => {
   // The clipped panel fills the outer box only when that box is sized (a
@@ -65,7 +72,7 @@ export const GlassSurface: React.FunctionComponent<GlassSurfaceProps> = ({
         borderWidth={1}
         borderColor={SemanticColor.BorderGlass}
       >
-        <GlassBackdrop />
+        <GlassBackdrop intensity={intensity} opacity={opacity} />
         <Stack
           grow={sized}
           direction={layout.direction}

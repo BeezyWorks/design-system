@@ -30,6 +30,11 @@ const names: IconName[] = [
   'scan-qr',
   'shul',
   'share',
+  'play',
+  'pause',
+  'skip-back',
+  'skip-forward',
+  'headphones',
 ]
 
 const meta = {

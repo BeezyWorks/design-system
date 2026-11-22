@@ -10,6 +10,7 @@ const variants: ButtonVariant[] = [
   'destructive',
   'destructiveGhost',
   'outline',
+  'dashed',
 ]
 const sizes: ButtonSize[] = ['sm', 'md', 'lg']
 

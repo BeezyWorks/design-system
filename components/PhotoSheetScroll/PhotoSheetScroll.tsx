@@ -44,6 +44,11 @@ export interface PhotoSheetScrollProps {
    * its content, so the sheet starts right under it. Ignored on a wide
    * layout. */
   heroShare?: number
+  /** An accessory pinned to the photo's top corner on the end side (the
+   * right in LTR, the left in RTL) — e.g. a settings `GlassIconButton`.
+   * Sits below the status bar, over the photo; on a phone it stays with the
+   * hero as the sheet slides over it. */
+  corner?: React.ReactNode
 }
 
 // How far the sheet rides up over the photo.
@@ -78,6 +83,7 @@ export const PhotoSheetScroll: React.FunctionComponent<
   children,
   onOverPhotoChange,
   heroShare = DEFAULT_HERO_SHARE,
+  corner,
 }) => {
   const isWide = useIsWideLayout()
   const isWideWeb = useIsWideWebNav()
@@ -101,6 +107,7 @@ export const PhotoSheetScroll: React.FunctionComponent<
       hero={hero}
       bottomInset={bottomInset}
       rtl={rtl}
+      corner={corner}
     >
       {children}
     </WideLayout>
@@ -111,6 +118,7 @@ export const PhotoSheetScroll: React.FunctionComponent<
       bottomInset={bottomInset}
       onOverPhotoChange={onOverPhotoChange}
       heroShare={heroShare}
+      corner={corner}
     >
       {children}
     </PhoneLayout>
@@ -136,7 +144,28 @@ interface LayoutProps {
   hero: React.ReactNode
   children?: React.ReactNode
   bottomInset: number
+  corner?: React.ReactNode
 }
+
+/** The corner accessory's slot: fills its parent without catching touches,
+ * the accessory at the end of a row (so RTL flips it) below the status bar. */
+const CornerSlot: React.FunctionComponent<{
+  top: number
+  children?: React.ReactNode
+}> = ({top, children}) =>
+  children ? (
+    <Stack
+      position="absoluteFill"
+      direction="row"
+      justify="end"
+      align="start"
+      paddingTop={top}
+      paddingHorizontal="md"
+      pointerEvents="box-none"
+    >
+      {children}
+    </Stack>
+  ) : null
 
 const WideLayout: React.FunctionComponent<LayoutProps & {rtl: boolean}> = ({
   source,
@@ -144,6 +173,7 @@ const WideLayout: React.FunctionComponent<LayoutProps & {rtl: boolean}> = ({
   children,
   bottomInset,
   rtl,
+  corner,
 }) => {
   const insets = useSafeAreaInsets()
   return (
@@ -162,6 +192,8 @@ const WideLayout: React.FunctionComponent<LayoutProps & {rtl: boolean}> = ({
               {hero}
             </Stack>
           </ScrollView>
+          {/* After the scroller, so it sits (and takes touches) on top. */}
+          <CornerSlot top={16}>{corner}</CornerSlot>
         </PhotoBackground>
       </Stack>
       <Stack grow width={0}>
@@ -185,7 +217,15 @@ const PhoneLayout: React.FunctionComponent<
     onOverPhotoChange?: (overPhoto: boolean) => void
     heroShare: number
   }
-> = ({source, hero, children, bottomInset, onOverPhotoChange, heroShare}) => {
+> = ({
+  source,
+  hero,
+  children,
+  bottomInset,
+  onOverPhotoChange,
+  heroShare,
+  corner,
+}) => {
   const insets = useSafeAreaInsets()
   const sheetColor = useResolvedColor(SemanticColor.SurfaceBackground)
   const isWeb = Platform.OS === 'web'
@@ -258,6 +298,8 @@ const PhoneLayout: React.FunctionComponent<
                 {hero}
               </Stack>
             </Stack>
+            {/* After the hero, so it sits (and takes touches) on top. */}
+            <CornerSlot top={insets.top + 8}>{corner}</CornerSlot>
           </Animated.View>
           <View style={styles.sheet}>
             {/* Only the sheet's top corners are rounded: this squares the
