@@ -887,16 +887,6 @@ exports[`family component behavior Header with a center slot 1`] = `
       </View>
     </ViewManagerAdapter_ExpoGlassEffect>
   </View>
-  <View
-    style={
-      [
-        {
-          "flexDirection": "row",
-        },
-        false,
-      ]
-    }
-  />
 </View>
 `;
 
