@@ -1,4 +1,5 @@
 import React from 'react'
+import type {LayoutChangeEvent} from 'react-native'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {SemanticColor} from '../../colors'
 import {Stack} from '../Stack'
@@ -11,6 +12,11 @@ export interface DockedBarProps {
   /** Content under the bar's rounded body that should stay flush to its
    * bottom edge, e.g. a thin `ProgressBar`. */
   footer?: React.ReactNode
+  /** Layout of the whole docked area (bar + offset + safe area). Its height
+   * is how much of the parent's bottom the bar covers — use it to pad
+   * scrolling content or shrink a fit-to-screen area so nothing hides
+   * behind the bar. */
+  onLayout?: (event: LayoutChangeEvent) => void
   accessibilityLabel?: string
   testID?: string
 }
@@ -24,6 +30,7 @@ export const DockedBar: React.FunctionComponent<DockedBarProps> = ({
   children,
   bottomOffset = 0,
   footer,
+  onLayout,
   accessibilityLabel,
   testID,
 }) => {
@@ -37,6 +44,7 @@ export const DockedBar: React.FunctionComponent<DockedBarProps> = ({
       paddingHorizontal="sm"
       paddingBottom={bottomOffset + Math.max(insets.bottom, 8)}
       pointerEvents="box-none"
+      onLayout={onLayout}
     >
       <Stack
         radius="lg"

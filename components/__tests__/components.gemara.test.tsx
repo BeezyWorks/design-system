@@ -163,3 +163,22 @@ describe('behaviour', () => {
     expect(JSON.stringify(r.toJSON())).toContain('corner-x')
   })
 })
+
+describe('DockedBar onLayout', () => {
+  it('reports the docked area layout', () => {
+    const onLayout = jest.fn()
+    const renderer = renderWithTheme(
+      <DockedBar onLayout={onLayout}>
+        <Text>Now playing</Text>
+      </DockedBar>,
+      'light',
+    )
+    const event = {nativeEvent: {layout: {x: 0, y: 0, width: 300, height: 72}}}
+    const hosts = renderer.root.findAll(
+      (n) => typeof n.type === 'string' && n.props.onLayout === onLayout,
+    )
+    expect(hosts.length).toBeGreaterThan(0)
+    act(() => hosts[0].props.onLayout(event))
+    expect(onLayout).toHaveBeenCalledWith(event)
+  })
+})
