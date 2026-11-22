@@ -43,6 +43,11 @@ import {
   MapPin,
   GripVertical,
   CircleUserRound,
+  Play,
+  Pause,
+  RotateCcw,
+  RotateCw,
+  Headphones,
   LucideIcon,
 } from 'lucide-react-native'
 import {Shul, Tefillin} from './customIcons'
@@ -98,6 +103,11 @@ export type IconName =
   | 'map-pin'
   | 'grip-vertical'
   | 'user'
+  | 'play'
+  | 'pause'
+  | 'skip-back'
+  | 'skip-forward'
+  | 'headphones'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -148,6 +158,13 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   'map-pin': MapPin,
   'grip-vertical': GripVertical,
   user: CircleUserRound,
+  play: Play,
+  pause: Pause,
+  // Lucide has no "skip 15 s" glyph: these are the circular arrows, and
+  // `TransportButton` prints the distance beside them.
+  'skip-back': RotateCcw,
+  'skip-forward': RotateCw,
+  headphones: Headphones,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
@@ -155,6 +172,8 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
 const filledIcons: Partial<Record<IconName, true>> = {
   bookmark: true,
   star: true,
+  play: true,
+  pause: true,
 }
 
 export interface IconProps {
