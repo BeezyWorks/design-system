@@ -1,3 +1,18 @@
+# [0.41.0](https://github.com/BeezyWorks/design-system/compare/v0.40.0...v0.41.0) (2026-11-22)
+
+
+### Features
+
+* **border:** add dashed borderStyle to Stack, Card and Button ([8bc2b82](https://github.com/BeezyWorks/design-system/commit/8bc2b829cefff0a209aa0de4a45e32f911b92f21))
+* **glass-surface:** add intensity and opacity props ([e431e26](https://github.com/BeezyWorks/design-system/commit/e431e26b1b25fe869918deacceb40d8bec9e60aa))
+* **icon:** add play, pause, skip and headphones icons ([f91c981](https://github.com/BeezyWorks/design-system/commit/f91c9810533be4eac8b03acf7d08523f18bf8f6e))
+* **media:** add Artwork, TransportButton and DockedBar ([d7ee3b2](https://github.com/BeezyWorks/design-system/commit/d7ee3b2528e34b4d5616096fe76f2d0952733bc3))
+* **note-bar:** add NoteBar component ([5567580](https://github.com/BeezyWorks/design-system/commit/55675803335fcc91ecebe2b072fb367474f82263))
+* **photo-sheet-scroll:** add corner accessory slot ([2721f38](https://github.com/BeezyWorks/design-system/commit/2721f38fc8f1e3786de7f750d5b4c40daf3ab1d2))
+* **search-field:** add tappable onPress variant ([eebce70](https://github.com/BeezyWorks/design-system/commit/eebce708435f0fe531bc0d6f6f244ce336951274))
+* **toast:** add Toast component ([76dabda](https://github.com/BeezyWorks/design-system/commit/76dabdaf83fb65bffcd4c33cdf908e20c116c623))
+* **zoom-stepper:** add ZoomStepper component ([bba37be](https://github.com/BeezyWorks/design-system/commit/bba37be8b93a9a542300c31a96f29dd4d98fc3e2))
+
 # [0.40.0](https://github.com/BeezyWorks/design-system/compare/v0.39.0...v0.40.0) (2026-11-18)
 
 
