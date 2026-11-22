@@ -14,6 +14,7 @@ export type ButtonVariant =
   | 'destructive'
   | 'destructiveGhost'
   | 'outline'
+  | 'dashed'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 const variantColors: Record<
@@ -45,6 +46,12 @@ const variantColors: Record<
   // Outline: no fill, just a border — distinct from `secondary`, which is
   // a solid (if muted) filled button.
   outline: {
+    background: SemanticColor.SurfaceBackground,
+    label: SemanticColor.TextAccent,
+    border: SemanticColor.BorderDefault,
+  },
+  // An "add" affordance: the outline button with a dashed border.
+  dashed: {
     background: SemanticColor.SurfaceBackground,
     label: SemanticColor.TextAccent,
     border: SemanticColor.BorderDefault,
@@ -117,6 +124,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         // Every variant takes the border's 1px, transparent when it has no
         // outline, so a ghost beside an outline button is the same height.
         borderWidth: 1,
+        ...(variant === 'dashed' && {borderStyle: 'dashed' as const}),
         borderColor: variantStyle.border
           ? resolve(variantStyle.border)
           : 'transparent',
@@ -135,17 +143,21 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       ) : (
         <>
           {!!icon && iconPosition === 'start' && (
-            <Icon name={icon} size={sizeIcon[size]} color={variantStyle.label} />
+            <Icon
+              name={icon}
+              size={sizeIcon[size]}
+              color={variantStyle.label}
+            />
           )}
-          <Text
-            variant={sizeLabel[size]}
-            color={variantStyle.label}
-            rtl={rtl}
-          >
+          <Text variant={sizeLabel[size]} color={variantStyle.label} rtl={rtl}>
             {title}
           </Text>
           {!!icon && iconPosition === 'end' && (
-            <Icon name={icon} size={sizeIcon[size]} color={variantStyle.label} />
+            <Icon
+              name={icon}
+              size={sizeIcon[size]}
+              color={variantStyle.label}
+            />
           )}
         </>
       )}

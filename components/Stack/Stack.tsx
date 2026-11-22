@@ -112,6 +112,9 @@ export interface StackProps extends Pick<
   /** A divider-only top edge — pairs with `borderColor`. */
   borderTopWidth?: 'hairline' | 'none' | number
   borderColor?: SemanticColor
+  /** The line style of `borderWidth`'s border — `dashed` for an "add"
+   * affordance. Default `solid`. Needs a `borderWidth`. */
+  borderStyle?: 'solid' | 'dashed' | 'dotted'
 }
 
 /** The app's one generic layout primitive — every screen composes with this
@@ -154,6 +157,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   borderBottomWidth,
   borderTopWidth,
   borderColor,
+  borderStyle,
   ...viewProps
 }) => {
   const resolve = useColorResolver()
@@ -199,6 +203,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
         borderTopWidth: resolveEdge(borderTopWidth),
       }),
       borderColor: borderColor ? resolve(borderColor) : undefined,
+      ...(borderStyle && {borderStyle}),
     } as FlexStyle,
     // Must come *after* the object above, not before: RN's style-array
     // flattening does a plain per-key merge across entries in order, and
