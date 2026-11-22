@@ -27,3 +27,5 @@ type Story = StoryObj<typeof meta>
 
 export const Raised: Story = {}
 export const Flat: Story = {args: {raised: false}}
+/** A lighter blur and a fainter fill. */
+export const Subtle: Story = {args: {intensity: 25, opacity: 0.7}}
