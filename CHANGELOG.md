@@ -1,3 +1,10 @@
+# [0.44.0](https://github.com/BeezyWorks/design-system/compare/v0.43.0...v0.44.0) (2026-11-23)
+
+
+### Features
+
+* **sheet:** glass close button on full-screen sheets ([3d7d6ab](https://github.com/BeezyWorks/design-system/commit/3d7d6ab5da1ecacec2690d49ed58ef20e20de1a9))
+
 # [0.43.0](https://github.com/BeezyWorks/design-system/compare/v0.42.0...v0.43.0) (2026-11-23)
 
 
