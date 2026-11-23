@@ -5,11 +5,15 @@ import {useColorResolver, ColorResolver} from '../../theme'
 import {layout} from '../../layout'
 import {Icon, IconName} from '../Icon'
 import {GlassBackButton} from '../GlassIconButton'
+import {GlassSurface} from '../GlassSurface'
+import {IconButton} from '../IconButton'
 import {Text} from '../Text'
 
 export interface HeaderAction {
   icon: IconName
   onPress: () => void
+  /** Accessibility label, used by the phone layout's icon buttons. */
+  label?: string
 }
 
 const HAS_LATIN = /[A-Za-z]/
@@ -34,6 +38,9 @@ export interface HeaderProps {
   backLabel?: string
   /** Trailing icon buttons, in order. */
   actions?: HeaderAction[]
+  /** Leads the phone layout's action pill, for a control that isn't a plain
+   * icon button (the mizrach compass). */
+  accessory?: React.ReactNode
   /** The roomier layout for wide windows (iPad, desktop): the title becomes
    * a button with a chevron, icons get padded hit areas. */
   wide?: boolean
@@ -85,6 +92,7 @@ export const Header = ({
   onBack,
   backLabel = 'Back',
   actions = [],
+  accessory,
   wide = false,
   translateY = 0,
   children,
@@ -195,9 +203,9 @@ export const Header = ({
           />
         </View>
       )}
-      <View style={[styles.buttonBox, wide && styles.buttonBoxWide]}>
-        {actions.map(({icon, onPress}, index) =>
-          wide ? (
+      {wide ? (
+        <View style={[styles.buttonBox, styles.buttonBoxWide]}>
+          {actions.map(({icon, onPress}, index) => (
             <WideIconButton
               key={`${icon}-${index}`}
               name={icon}
@@ -205,17 +213,34 @@ export const Header = ({
               color={SemanticColor.TextPrimary}
               styles={styles}
             />
-          ) : (
-            <Pressable
-              key={`${icon}-${index}`}
-              style={styles.icon}
-              onPress={onPress}
+          ))}
+        </View>
+      ) : (
+        (actions.length > 0 || !!accessory) && (
+          // Glass, like the back button opposite.
+          <View style={styles.actionsSlot}>
+            <GlassSurface
+              direction="row"
+              align="center"
+              radius="full"
+              height={40}
             >
-              <Icon name={icon} color={SemanticColor.TextAccent} />
-            </Pressable>
-          ),
-        )}
-      </View>
+              {accessory}
+              {actions.map(({icon, onPress, label}, index) => (
+                <IconButton
+                  key={`${icon}-${index}`}
+                  name={icon}
+                  size={20}
+                  padding="sm"
+                  color={SemanticColor.TextAccent}
+                  onPress={onPress}
+                  accessibilityLabel={label ?? icon}
+                />
+              ))}
+            </GlassSurface>
+          </View>
+        )
+      )}
       {children}
     </View>
   )
@@ -301,8 +326,9 @@ const styleCreator = (resolve: ColorResolver) =>
     buttonBoxWide: {
       gap: 6,
     },
-    icon: {
-      padding: 16,
+    // Mirrors the back button's margin on the other edge.
+    actionsSlot: {
+      marginHorizontal: 8,
     },
     wideIconButton: {
       padding: 9,
