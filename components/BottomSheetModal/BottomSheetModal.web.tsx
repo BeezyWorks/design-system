@@ -13,6 +13,7 @@ import {SIDE_NAV_BREAKPOINT} from '../../layout'
 import {SemanticColor} from '../../colors'
 import {useColorResolver, ColorResolver} from '../../theme'
 import {Icon} from '../Icon'
+import {GlassIconButton} from '../GlassIconButton'
 import {useHeaderFontFamily} from '../../typography'
 
 const PANEL_WIDTH = 380
@@ -133,10 +134,10 @@ export const BottomSheetModal = ({
                 )}
               </View>
               <View style={styles.closeSlot}>
-                <Icon
+                <GlassIconButton
+                  inline
                   name="close"
-                  size={26}
-                  color={SemanticColor.TextPrimary}
+                  accessibilityLabel="Close"
                   onPress={dismiss}
                 />
               </View>
