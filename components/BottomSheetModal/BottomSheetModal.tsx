@@ -6,7 +6,7 @@ import {useSheetHost} from './SheetHost'
 import {BottomSheetProps} from '../BottomSheet/bottomSheet.props'
 import {AnimatedScrim} from '../Scrim'
 import {BottomSheet} from '../BottomSheet'
-import {Icon} from '../Icon'
+import {GlassIconButton} from '../GlassIconButton'
 import {SemanticColor} from '../../colors'
 import {useColorResolver} from '../../theme'
 import {useHeaderFontFamily} from '../../typography'
@@ -117,10 +117,10 @@ export const BottomSheetModal = ({
               )}
             </View>
             <View style={styles.fullSide}>
-              <Icon
+              <GlassIconButton
+                inline
                 name="close"
-                size={26}
-                color={SemanticColor.TextPrimary}
+                accessibilityLabel="Close"
                 onPress={dismiss}
               />
             </View>
