@@ -1,3 +1,10 @@
+# [0.43.0](https://github.com/BeezyWorks/design-system/compare/v0.42.0...v0.43.0) (2026-11-23)
+
+
+### Features
+
+* **header:** glass action pill with an accessory slot on phones ([f454c39](https://github.com/BeezyWorks/design-system/commit/f454c3961df033980e2068e8a3f1a5a0e6cae7f0))
+
 # [0.42.0](https://github.com/BeezyWorks/design-system/compare/v0.41.0...v0.42.0) (2026-11-22)
 
 
