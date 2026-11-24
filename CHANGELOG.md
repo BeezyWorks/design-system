@@ -1,3 +1,15 @@
+# [0.45.0](https://github.com/BeezyWorks/design-system/compare/v0.44.0...v0.45.0) (2026-11-24)
+
+
+### Bug Fixes
+
+* **fonts:** nikud sit under their letters in Mekorot Vilna ([05361dd](https://github.com/BeezyWorks/design-system/commit/05361dd56b0298c006866be2fdb297f7cba31320))
+
+
+### Features
+
+* **icon:** add a shrink glyph for fit-to-page ([9f8469e](https://github.com/BeezyWorks/design-system/commit/9f8469e9104a2d5d3c9cdc759b7949d1bb7a7f0d))
+
 # [0.44.0](https://github.com/BeezyWorks/design-system/compare/v0.43.0...v0.44.0) (2026-11-23)
 
 
