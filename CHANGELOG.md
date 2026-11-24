@@ -1,3 +1,10 @@
+## [0.45.1](https://github.com/BeezyWorks/design-system/compare/v0.45.0...v0.45.1) (2026-11-24)
+
+
+### Bug Fixes
+
+* **glass:** glass behind the icon button, so it takes the tap ([4af4431](https://github.com/BeezyWorks/design-system/commit/4af44312abc742d38480c90fe52edd22d038ce66))
+
 # [0.45.0](https://github.com/BeezyWorks/design-system/compare/v0.44.0...v0.45.0) (2026-11-24)
 
 
