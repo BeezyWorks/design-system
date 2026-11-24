@@ -49,10 +49,14 @@ export const GlassIconButton: React.FunctionComponent<GlassIconButtonProps> = ({
   // second glass here would show as a bubble inside a bubble.
   if (!inline && liquidGlass) return button
 
+  // The glass is a backdrop behind the Pressable, not its parent: an
+  // interactive GlassView laid out inline claims the touch for its own
+  // shimmer and the Pressable inside never sees it.
   const content = liquidGlass ? (
-    <GlassView glassEffectStyle="regular" isInteractive style={styles.circle}>
+    <View style={styles.circle}>
+      <GlassView glassEffectStyle="regular" style={StyleSheet.absoluteFill} pointerEvents="none" />
       {button}
-    </GlassView>
+    </View>
   ) : (
     <View
       style={[
