@@ -48,6 +48,7 @@ import {
   RotateCcw,
   RotateCw,
   Headphones,
+  Shrink,
   LucideIcon,
 } from 'lucide-react-native'
 import {Shul, Tefillin} from './customIcons'
@@ -108,6 +109,7 @@ export type IconName =
   | 'skip-back'
   | 'skip-forward'
   | 'headphones'
+  | 'shrink'
 
 const lucideIconForName: Record<IconName, LucideIcon> = {
   'calendar-today': Calendar,
@@ -165,6 +167,7 @@ const lucideIconForName: Record<IconName, LucideIcon> = {
   'skip-back': RotateCcw,
   'skip-forward': RotateCw,
   headphones: Headphones,
+  shrink: Shrink,
 }
 
 // Lucide draws line glyphs only; an "active" icon (a saved bookmark) is the
